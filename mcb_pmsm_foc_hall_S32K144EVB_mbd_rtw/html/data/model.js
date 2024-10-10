@@ -1,0 +1,1 @@
+var modelInfo = {model:"mcb_pmsm_foc_hall_S32K144EVB"};var modelHierarchy=[{model:"mcb_pmsm_foc_hall_S32K144EVB",relativePath:"_internal.html",parent:"null"},];var AddCode = true;var ProtectedModel = false;
