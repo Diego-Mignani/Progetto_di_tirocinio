@@ -2769,6 +2769,8 @@ function RTW_rtwnameSIDMap() {
 	this.sidHashMap["Foc_model_Matlab:2512"] = {rtwname: "<S149>/Kp1"};
 	this.rtwnameHashMap["<S149>/Kp2"] = {sid: "Foc_model_Matlab:3671"};
 	this.sidHashMap["Foc_model_Matlab:3671"] = {rtwname: "<S149>/Kp2"};
+	this.rtwnameHashMap["<S149>/Kp3"] = {sid: "Foc_model_Matlab:3689"};
+	this.sidHashMap["Foc_model_Matlab:3689"] = {rtwname: "<S149>/Kp3"};
 	this.rtwnameHashMap["<S149>/Logical Operator"] = {sid: "Foc_model_Matlab:2513"};
 	this.sidHashMap["Foc_model_Matlab:2513"] = {rtwname: "<S149>/Logical Operator"};
 	this.rtwnameHashMap["<S149>/MATLAB Function1"] = {sid: "Foc_model_Matlab:3585"};

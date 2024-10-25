@@ -161,8 +161,8 @@ t_iq = (2*zeta1*wnq*pmsm.Lq-pmsm.Rs)/(wnq^2*pmsm.Lq);
 Kiq = Kcq/t_iq;
 
 wnd = (1/(1-gamma1))*(pmsm.Rs/pmsm.Ld);
-Kcd = (2*zeta1*wnd*pmsm.Ld)-pmsm.Rs;
-t_id = (2*zeta1*wnd*pmsm.Ld-pmsm.Rs)/(wnd^2*pmsm.Ld);
+Kcd = (1/pmsm.p)*(2*zeta1*wnd*pmsm.Ld)-pmsm.Rs;
+t_id = (1/pmsm.p)*(2*zeta1*wnd*pmsm.Ld-pmsm.Rs)/(wnd^2*pmsm.Ld);
 Kid = Kcd/t_id;
 
 % PI Speed

@@ -7,10 +7,10 @@
  *
  * Code generated for Simulink model 'Foc_model_Matlab'.
  *
- * Model version                   : 10.6
+ * Model version                   : 10.16
  * Simulink Coder version          : 24.2 (R2024b) 21-Jun-2024
  * MBDT for S32K1xx Series Version : 4.2.0 (R2016a-R2020a) 20-Jul-2020
- * C/C++ source code generated on  : Fri Oct 11 10:23:04 2024
+ * C/C++ source code generated on  : Tue Oct 22 17:48:33 2024
  *
  * Target selection: mbd_s32k.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -1248,8 +1248,8 @@ void Foc_model_Ma_CurrentControl(void)
     }
 
     /* '<S41>:1:19' */
-    rtb_Merge1 = 1.61395F * Id_err;
-    rtb_Merge1_p = 0.675574064F * Foc_model_Matlab_DW.integral_k + rtb_Merge1;
+    rtb_Merge1 = 0.488641679F * Id_err;
+    rtb_Merge1_p = 0.409075439F * Foc_model_Matlab_DW.integral_k + rtb_Merge1;
     if (((rtb_Merge1_p < 1.0F) && (rtb_Merge1_p > -1.0F)) || ((rtb_Merge1_p >=
           1.0F) && (Id_err < 0.0F)) || ((rtb_Merge1_p <= -1.0F) && (Id_err >
           0.0F))) {
@@ -1262,7 +1262,7 @@ void Foc_model_Ma_CurrentControl(void)
 
     /* '<S41>:1:29' */
     /* '<S41>:1:32' */
-    Vd_ref_beforeLimiter = 0.675574064F * Foc_model_Matlab_DW.integral_k +
+    Vd_ref_beforeLimiter = 0.409075439F * Foc_model_Matlab_DW.integral_k +
       rtb_Merge1;
     if (!(Vd_ref_beforeLimiter >= -1.0F)) {
       Vd_ref_beforeLimiter = -1.0F;
@@ -1537,7 +1537,7 @@ void Foc_model_Matl_SpeedControl(void)
 
     /* '<S151>:1:19' */
     P = 0.12F * SpeedError;
-    tmp = 0.00173735572F * Foc_model_Matlab_DW.integral + P;
+    tmp = 6.25448047E-6F * Foc_model_Matlab_DW.integral + P;
     if (((tmp < 1.0F) && (tmp > -1.0F)) || ((tmp >= 1.0F) && (SpeedError < 0.0F))
         || ((tmp <= -1.0F) && (SpeedError > 0.0F))) {
       /* '<S151>:1:22' */
@@ -1549,7 +1549,7 @@ void Foc_model_Matl_SpeedControl(void)
 
     /* '<S151>:1:29' */
     /* '<S151>:1:32' */
-    Foc_model_Matlab_B.I_ref = 0.00173735572F * Foc_model_Matlab_DW.integral + P;
+    Foc_model_Matlab_B.I_ref = 6.25448047E-6F * Foc_model_Matlab_DW.integral + P;
     if (!(Foc_model_Matlab_B.I_ref >= -1.0F)) {
       Foc_model_Matlab_B.I_ref = -1.0F;
     }
