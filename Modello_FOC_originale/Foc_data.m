@@ -172,66 +172,16 @@ Kcs = (1/pmsm.p)*(2*zeta2*wns-(pmsm.B/pmsm.J))/((1.5*pmsm.p^2*pmsm.FluxPM)/pmsm.
 t_is = (1/pmsm.p)*(2*zeta2*wns-(pmsm.B/pmsm.J))/(wns^2);
 Kis = Kcs/t_is;
 
-%% PLOT GRAFICI
-% sim('Foc_model_Matlab.mdl');
- 
-% time1 = SpeedScope.time;
-% data1 = SpeedScope.signals.values;
-% 
-% time2 = VabcScope.time;
-% data2 = VabcScope.signals.values;
-% 
-% time3 = PWMScope.time;
-% data3 = PWMScope.signals.values;
-% 
-% time4 = IabScope.time;
-% data4 = IabScope.signals.values;
-% 
-% time5 = IdqScope.time;
-% data5 = IdqScope.signals.values;
-% 
-% time6 = PositionScope.time;
-% data6 = PositionScope.signals.values;
-% 
-% figure;
-% 
-% subplot(2, 3, 1);
-% plot(time1, data1);
-% title('Speed Scope');
-% xlabel('Time');
-% ylabel('Amplitude');
-% 
-% subplot(2, 3, 2);
-% plot(time2, data2);
-% title('Vabc Scope');
-% xlabel('Time');
-% ylabel('Amplitude');
-% 
-% subplot(2, 3, 3);
-% plot(time3, data3);
-% title('PWM Scope');
-% xlabel('Time');
-% ylabel('Amplitude');
-% 
-% subplot(2, 3, 4);
-% plot(time4, data4);
-% title('Iab Scope');
-% xlabel('Time');
-% ylabel('Amplitude');
-% 
-% subplot(2, 3, 5);
-% plot(time5, data5);
-% title('Idq Scope');
-% xlabel('Time');
-% ylabel('Amplitude');
-% 
-% subplot(2, 3, 6);
-% plot(time6, data6);
-% title('Position Scope');
-% xlabel('Time');
-% ylabel('Amplitude');
-% 
-% sgtitle('Field Oriented Control');
+%% CALCOLO PARAMETRI CONTROLLO SLINDING MODE
+% Parametri da assegnare
+rhoB = 0;
+rhoT = 0;
+rhoA = 0;
+
+fun = @(x)exp((-pmsm.B/pmsm.J) * x);
+Aw = exp((-pmsm.B/pmsm.J) * Ts_speed);
+Bw = (1/pmsm.J) * integral(fun, 0, Ts_speed);
+rhow = (abs(Bw)+rhoB)*rhoT + rhoA*pmsm.N_max + pmsm.Kt*rhoB*inverter.I_max;   %non so se è il giusto I_max
 
 %% CALCOLO INDICI INTEGRALI
  error = SpeedError.signals.values;
@@ -242,5 +192,3 @@ Kis = Kcs/t_is;
  fprintf('ISE: %.4f\n', ISE);
  fprintf('IAE: %.4f\n', IAE);
  fprintf('ITAE: %.4f\n', ITAE);
-
-
