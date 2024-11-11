@@ -152,7 +152,7 @@ pmsm.Rs = pmsm.Rs + inverter.R_board;
 % PI Current
 zeta1 = 0.707;              % Coefficiente di smorzamento
 zeta2 = 1;
-gamma1 = 0.6;               % Performance parameter corrente      
+gamma1 = 0.7;               % Performance parameter corrente      
 Rt_speed = 0.06;             % Tempo di salita desiderato  
 
 wnq = (1/(1-gamma1))*(pmsm.Rs/pmsm.Lq);
@@ -174,20 +174,18 @@ Kis = Kcs/t_is;
 
 %% CALCOLO PARAMETRI CONTROLLO SLINDING MODE
 % Parametri da assegnare
-rhoB = 0;
-rhoT = 0;
-rhoA = 0;
 
-fun = @(x)exp((-pmsm.B/pmsm.J) * x);
-Aw = exp((-pmsm.B/pmsm.J) * Ts_speed);
-Bw = (1/pmsm.J) * integral(fun, 0, Ts_speed);
-rhow = (abs(Bw)+rhoB)*rhoT + rhoA*pmsm.N_max + pmsm.Kt*rhoB*inverter.I_max;   %non so se è il giusto I_max
+tuning.lambda = 0.8;
+tuning.theta = 0.05;
+tuning.epsilon = 0.5;
 
 %% CALCOLO INDICI INTEGRALI
  error = SpeedError.signals.values;
 
  %Calcolo degli indici di prestazione
  [ISE, IAE, ITAE] = computeIndices(error, Ts_speed);
+
+ ok = carica_dati(gamma1, Rt_speed, tuning.lambda, tuning.theta, tuning.epsilon, ISE, IAE, ITAE, error);
 
  fprintf('ISE: %.4f\n', ISE);
  fprintf('IAE: %.4f\n', IAE);
