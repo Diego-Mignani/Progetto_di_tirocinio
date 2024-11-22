@@ -152,8 +152,8 @@ pmsm.Rs = pmsm.Rs + inverter.R_board;
 % PI Current
 zeta1 = 0.707;              % Coefficiente di smorzamento
 zeta2 = 1;
-gamma1 = 0.7;               % Performance parameter corrente      
-Rt_speed = 0.06;             % Tempo di salita desiderato  
+gamma1 = 0.68;        %0.68               % Performance parameter corrente      
+ 
 
 wnq = (1/(1-gamma1))*(pmsm.Rs/pmsm.Lq);
 Kcq = (2*zeta1*wnq*pmsm.Lq)-pmsm.Rs;
@@ -165,19 +165,12 @@ Kcd = (1/pmsm.p)*(2*zeta1*wnd*pmsm.Ld)-pmsm.Rs;
 t_id = (1/pmsm.p)*(2*zeta1*wnd*pmsm.Ld-pmsm.Rs)/(wnd^2*pmsm.Ld);
 Kid = Kcd/t_id;
 
-% PI Speed
-%wns = (1/(1-gamma2))*(pmsm.B/pmsm.J);
-wns = 5*zeta2/Rt_speed;
-Kcs = (1/pmsm.p)*(2*zeta2*wns-(pmsm.B/pmsm.J))/((1.5*pmsm.p^2*pmsm.FluxPM)/pmsm.J);
-t_is = (1/pmsm.p)*(2*zeta2*wns-(pmsm.B/pmsm.J))/(wns^2);
-Kis = Kcs/t_is;
-
 %% CALCOLO PARAMETRI CONTROLLO SLINDING MODE
 % Parametri da assegnare
 
-tuning.lambda = 0.8;
-tuning.theta = 0.05;
-tuning.epsilon = 0.5;
+tuning.lambda = 0.8;        %1
+tuning.theta = 0.005;        %0.07
+tuning.epsilon = 0.1;       %0.5
 
 %% CALCOLO INDICI INTEGRALI
  error = SpeedError.signals.values;
@@ -185,7 +178,7 @@ tuning.epsilon = 0.5;
  %Calcolo degli indici di prestazione
  [ISE, IAE, ITAE] = computeIndices(error, Ts_speed);
 
- ok = carica_dati(gamma1, Rt_speed, tuning.lambda, tuning.theta, tuning.epsilon, ISE, IAE, ITAE, error);
+ ok = carica_dati(gamma1, tuning.lambda, tuning.theta, tuning.epsilon, ISE, IAE, ITAE, error);
 
  fprintf('ISE: %.4f\n', ISE);
  fprintf('IAE: %.4f\n', IAE);

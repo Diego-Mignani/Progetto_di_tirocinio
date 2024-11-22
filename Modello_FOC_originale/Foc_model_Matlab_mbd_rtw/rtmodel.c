@@ -7,10 +7,10 @@
  *
  * Code generated for Simulink model 'Foc_model_Matlab'.
  *
- * Model version                   : 10.16
+ * Model version                   : 10.11
  * Simulink Coder version          : 24.2 (R2024b) 21-Jun-2024
  * MBDT for S32K1xx Series Version : 4.2.0 (R2016a-R2020a) 20-Jul-2020
- * C/C++ source code generated on  : Tue Oct 22 17:48:33 2024
+ * C/C++ source code generated on  : Fri Nov 22 11:45:38 2024
  *
  * Target selection: mbd_s32k.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -34,6 +34,10 @@ void Foc_model_Matlab_step(int_T tid)
 
    case 2 :
     Foc_model_Matlab_step2();
+    break;
+
+   case 3 :
+    Foc_model_Matlab_step3();
     break;
 
    default :

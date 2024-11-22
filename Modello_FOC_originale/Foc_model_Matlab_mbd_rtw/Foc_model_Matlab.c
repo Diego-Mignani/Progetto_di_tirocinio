@@ -7,10 +7,10 @@
  *
  * Code generated for Simulink model 'Foc_model_Matlab'.
  *
- * Model version                   : 10.16
+ * Model version                   : 10.11
  * Simulink Coder version          : 24.2 (R2024b) 21-Jun-2024
  * MBDT for S32K1xx Series Version : 4.2.0 (R2016a-R2020a) 20-Jul-2020
- * C/C++ source code generated on  : Tue Oct 22 17:48:33 2024
+ * C/C++ source code generated on  : Fri Nov 22 11:45:38 2024
  *
  * Target selection: mbd_s32k.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -246,6 +246,7 @@ void Foc_model_Matlab_SetEventsForThisBaseStep(boolean_T *eventFlags)
   /* Task runs when its counter is zero, computed via rtmStepTask macro */
   eventFlags[1] = ((boolean_T)rtmStepTask(Foc_model_Matlab_M, 1));
   eventFlags[2] = ((boolean_T)rtmStepTask(Foc_model_Matlab_M, 2));
+  eventFlags[3] = ((boolean_T)rtmStepTask(Foc_model_Matlab_M, 3));
 }
 
 /*
@@ -263,13 +264,18 @@ static void rate_monotonic_scheduler(void)
    * counter is reset when it reaches its limit (zero means run).
    */
   (Foc_model_Matlab_M->Timing.TaskCounters.TID[1])++;
-  if ((Foc_model_Matlab_M->Timing.TaskCounters.TID[1]) > 9) {/* Sample time: [0.001s, 0.0s] */
+  if ((Foc_model_Matlab_M->Timing.TaskCounters.TID[1]) > 1) {/* Sample time: [0.0001s, 0.0s] */
     Foc_model_Matlab_M->Timing.TaskCounters.TID[1] = 0;
   }
 
   (Foc_model_Matlab_M->Timing.TaskCounters.TID[2])++;
-  if ((Foc_model_Matlab_M->Timing.TaskCounters.TID[2]) > 999) {/* Sample time: [0.1s, 0.0s] */
+  if ((Foc_model_Matlab_M->Timing.TaskCounters.TID[2]) > 19) {/* Sample time: [0.001s, 0.0s] */
     Foc_model_Matlab_M->Timing.TaskCounters.TID[2] = 0;
+  }
+
+  (Foc_model_Matlab_M->Timing.TaskCounters.TID[3])++;
+  if ((Foc_model_Matlab_M->Timing.TaskCounters.TID[3]) > 1999) {/* Sample time: [0.1s, 0.0s] */
+    Foc_model_Matlab_M->Timing.TaskCounters.TID[3] = 0;
   }
 }
 
@@ -494,10 +500,10 @@ void Foc_mo_CurrentControl_Reset(void)
   Foc_model_Matlab_DW.DelayOneStep_DSTATE = 500U;
 
   /* SystemReset for MATLAB Function: '<S26>/MATLAB Function1' */
-  Foc_model_Matlab_DW.integral_not_empty_o = false;
+  Foc_model_Matlab_DW.integral_not_empty = false;
 
   /* SystemReset for MATLAB Function: '<S25>/MATLAB Function1' */
-  Foc_model_Matlab_DW.integral_not_empty_e = false;
+  Foc_model_Matlab_DW.integral_not_empty_p = false;
 }
 
 /* Output and update for function-call system: '<Root>/CurrentControl' */
@@ -1164,16 +1170,16 @@ void Foc_model_Ma_CurrentControl(void)
      *  Constant: '<S26>/Kp2'
      *  Logic: '<S26>/Logical Operator'
      */
-    if ((!Foc_model_Matlab_DW.integral_not_empty_o) || tmp) {
+    if ((!Foc_model_Matlab_DW.integral_not_empty) || tmp) {
       /* '<S42>:1:14' */
       /* '<S42>:1:15' */
-      Foc_model_Matlab_DW.integral_a = 0.0F;
-      Foc_model_Matlab_DW.integral_not_empty_o = true;
+      Foc_model_Matlab_DW.integral = 0.0F;
+      Foc_model_Matlab_DW.integral_not_empty = true;
     }
 
     /* '<S42>:1:19' */
-    rtb_Merge1 = 1.61395F * Iq_err;
-    rtb_Merge1_p = 0.582391441F * Foc_model_Matlab_DW.integral_a + rtb_Merge1;
+    rtb_Merge1 = 2.17660427F * Iq_err;
+    rtb_Merge1_p = 0.909986615F * Foc_model_Matlab_DW.integral + rtb_Merge1;
     if (((rtb_Merge1_p < 1.0F) && (rtb_Merge1_p > -1.0F)) || ((rtb_Merge1_p >=
           1.0F) && (Iq_err < 0.0F)) || ((rtb_Merge1_p <= -1.0F) && (Iq_err >
           0.0F))) {
@@ -1181,12 +1187,12 @@ void Foc_model_Ma_CurrentControl(void)
       /* '<S42>:1:23' */
       /* '<S42>:1:24' */
       /* '<S42>:1:25' */
-      Foc_model_Matlab_DW.integral_a += Iq_err;
+      Foc_model_Matlab_DW.integral += Iq_err;
     }
 
     /* '<S42>:1:29' */
     /* '<S42>:1:32' */
-    Vq_ref_beforeLimiter = 0.582391441F * Foc_model_Matlab_DW.integral_a +
+    Vq_ref_beforeLimiter = 0.909986615F * Foc_model_Matlab_DW.integral +
       rtb_Merge1;
     if (!(Vq_ref_beforeLimiter >= -1.0F)) {
       Vq_ref_beforeLimiter = -1.0F;
@@ -1240,16 +1246,16 @@ void Foc_model_Ma_CurrentControl(void)
     /* '<S41>:1:9' */
     /* '<S41>:1:10' */
     /* '<S41>:1:11' */
-    if ((!Foc_model_Matlab_DW.integral_not_empty_e) || tmp) {
+    if ((!Foc_model_Matlab_DW.integral_not_empty_p) || tmp) {
       /* '<S41>:1:14' */
       /* '<S41>:1:15' */
-      Foc_model_Matlab_DW.integral_k = 0.0F;
-      Foc_model_Matlab_DW.integral_not_empty_e = true;
+      Foc_model_Matlab_DW.integral_j = 0.0F;
+      Foc_model_Matlab_DW.integral_not_empty_p = true;
     }
 
     /* '<S41>:1:19' */
-    rtb_Merge1 = 0.488641679F * Id_err;
-    rtb_Merge1_p = 0.409075439F * Foc_model_Matlab_DW.integral_k + rtb_Merge1;
+    rtb_Merge1 = 0.769968748F * Id_err;
+    rtb_Merge1_p = 0.746821225F * Foc_model_Matlab_DW.integral_j + rtb_Merge1;
     if (((rtb_Merge1_p < 1.0F) && (rtb_Merge1_p > -1.0F)) || ((rtb_Merge1_p >=
           1.0F) && (Id_err < 0.0F)) || ((rtb_Merge1_p <= -1.0F) && (Id_err >
           0.0F))) {
@@ -1257,12 +1263,12 @@ void Foc_model_Ma_CurrentControl(void)
       /* '<S41>:1:23' */
       /* '<S41>:1:24' */
       /* '<S41>:1:25' */
-      Foc_model_Matlab_DW.integral_k += Id_err;
+      Foc_model_Matlab_DW.integral_j += Id_err;
     }
 
     /* '<S41>:1:29' */
     /* '<S41>:1:32' */
-    Vd_ref_beforeLimiter = 0.409075439F * Foc_model_Matlab_DW.integral_k +
+    Vd_ref_beforeLimiter = 0.746821225F * Foc_model_Matlab_DW.integral_j +
       rtb_Merge1;
     if (!(Vd_ref_beforeLimiter >= -1.0F)) {
       Vd_ref_beforeLimiter = -1.0F;
@@ -1478,8 +1484,10 @@ void Foc_model_Ma_CurrentControl(void)
 /* Output and update for atomic system: '<Root>/SpeedControl' */
 void Foc_model_Matl_SpeedControl(void)
 {
-  real32_T P;
-  real32_T tmp;
+  real32_T T_eq;
+  real32_T s;
+  real32_T speed_error;
+  boolean_T rtb_LogicalOperator1;
 
   /* user code (Output function Body) */
   {
@@ -1510,55 +1518,90 @@ void Foc_model_Matl_SpeedControl(void)
     Foc_model_Matlab_B.Id_ref = 0.0F;
 
     /* Outputs for Atomic SubSystem: '<S8>/PI_Controller_Speed' */
+    /* Logic: '<S149>/Logical Operator1' incorporates:
+     *  DataStoreRead: '<S149>/Data Store Read1'
+     */
+    rtb_LogicalOperator1 = !Enable;
+
+    /* MATLAB Function: '<S149>/MATLAB Function' incorporates:
+     *  Constant: '<S149>/Constant1'
+     *  Constant: '<S149>/Constant10'
+     *  Constant: '<S149>/Constant12'
+     *  Constant: '<S149>/Constant13'
+     *  Constant: '<S149>/Constant8'
+     *  Constant: '<S149>/Constant9'
+     */
+    /* MATLAB Function 'SpeedControl/PI_Controller_Speed/MATLAB Function': '<S151>:1' */
+    if ((!Foc_model_Matlab_DW.speed_error_pre_not_empty) || rtb_LogicalOperator1)
+    {
+      /* '<S151>:1:9' */
+      /* '<S151>:1:10' */
+      Foc_model_Matlab_DW.speed_error_pre = 0.0F;
+      Foc_model_Matlab_DW.speed_error_pre_not_empty = true;
+    }
+
+    if ((!Foc_model_Matlab_DW.N_ref_pre_not_empty) || rtb_LogicalOperator1) {
+      /* '<S151>:1:13' */
+      /* '<S151>:1:14' */
+      Foc_model_Matlab_DW.N_ref_pre = 0.0F;
+      Foc_model_Matlab_DW.N_ref_pre_not_empty = true;
+    }
+
+    if ((!Foc_model_Matlab_DW.T_n_pre_not_empty) || rtb_LogicalOperator1) {
+      /* '<S151>:1:17' */
+      /* '<S151>:1:18' */
+      Foc_model_Matlab_DW.T_n_pre_not_empty = true;
+    }
+
+    /* '<S151>:1:21' */
+    speed_error = Speed_fb - Speed_Ref;
+
+    /* '<S151>:1:23' */
+    s = 0.8F * Foc_model_Matlab_DW.speed_error_pre + speed_error;
+    if ((real32_T)fabs(s) > 0.1) {
+      /* '<S151>:1:26' */
+      /* '<S151>:1:27' */
+      if (rtIsNaNF(s)) {
+        s = (rtNaNF);
+      } else if (s < 0.0F) {
+        s = -1.0F;
+      } else {
+        s = (real32_T)(s > 0.0F);
+      }
+
+      s *= -0.005F;
+    } else {
+      /* '<S151>:1:29' */
+      s = s / 0.1F * -0.005F;
+    }
+
+    /* '<S151>:1:33' */
+    T_eq = (Speed_Ref - 0.8F * speed_error) * 1.2E-5F + 1.0E-7F *
+      Foc_model_Matlab_DW.N_ref_pre;
+
+    /* '<S151>:1:34' */
+    /* '<S151>:1:36' */
+    Foc_model_Matlab_DW.N_ref_pre = Speed_Ref;
+
+    /* '<S151>:1:37' */
+    Foc_model_Matlab_DW.speed_error_pre = speed_error;
+
+    /* '<S151>:1:38' */
+    /* '<S151>:1:42' */
+    Foc_model_Matlab_B.I_ref = (T_eq + s) / 0.097F;
+    if (!(Foc_model_Matlab_B.I_ref >= -0.5F)) {
+      Foc_model_Matlab_B.I_ref = -0.5F;
+    }
+
+    if (!(Foc_model_Matlab_B.I_ref <= 0.5F)) {
+      Foc_model_Matlab_B.I_ref = 0.5F;
+    }
+
+    /* End of MATLAB Function: '<S149>/MATLAB Function' */
+
     /* Sum: '<S149>/Sum' */
     SpeedError = Speed_Ref - Speed_fb;
 
-    /* MATLAB Function: '<S149>/MATLAB Function1' incorporates:
-     *  Constant: '<S149>/Constant'
-     *  Constant: '<S149>/Constant1'
-     *  Constant: '<S149>/Ki1'
-     *  Constant: '<S149>/Kp1'
-     *  DataStoreRead: '<S149>/Data Store Read1'
-     *  Logic: '<S149>/Logical Operator'
-     */
-    /* MATLAB Function 'SpeedControl/PI_Controller_Speed/MATLAB Function1': '<S151>:1' */
-    /* '<S151>:1:6' */
-    /* '<S151>:1:7' */
-    /* '<S151>:1:8' */
-    /* '<S151>:1:9' */
-    /* '<S151>:1:10' */
-    /* '<S151>:1:11' */
-    if ((!Foc_model_Matlab_DW.integral_not_empty) || (!Enable)) {
-      /* '<S151>:1:14' */
-      /* '<S151>:1:15' */
-      Foc_model_Matlab_DW.integral = 0.0F;
-      Foc_model_Matlab_DW.integral_not_empty = true;
-    }
-
-    /* '<S151>:1:19' */
-    P = 0.12F * SpeedError;
-    tmp = 6.25448047E-6F * Foc_model_Matlab_DW.integral + P;
-    if (((tmp < 1.0F) && (tmp > -1.0F)) || ((tmp >= 1.0F) && (SpeedError < 0.0F))
-        || ((tmp <= -1.0F) && (SpeedError > 0.0F))) {
-      /* '<S151>:1:22' */
-      /* '<S151>:1:23' */
-      /* '<S151>:1:24' */
-      /* '<S151>:1:25' */
-      Foc_model_Matlab_DW.integral += SpeedError;
-    }
-
-    /* '<S151>:1:29' */
-    /* '<S151>:1:32' */
-    Foc_model_Matlab_B.I_ref = 6.25448047E-6F * Foc_model_Matlab_DW.integral + P;
-    if (!(Foc_model_Matlab_B.I_ref >= -1.0F)) {
-      Foc_model_Matlab_B.I_ref = -1.0F;
-    }
-
-    if (!(Foc_model_Matlab_B.I_ref <= 1.0F)) {
-      Foc_model_Matlab_B.I_ref = 1.0F;
-    }
-
-    /* End of MATLAB Function: '<S149>/MATLAB Function1' */
     /* End of Outputs for SubSystem: '<S8>/PI_Controller_Speed' */
 
     /* user code (Output function Trailer) */
@@ -1572,13 +1615,17 @@ void Foc_model_Matl_SpeedControl(void)
 }
 
 /* Model step function for TID0 */
-void Foc_model_Matlab_step0(void)      /* Sample time: [0.0001s, 0.0s] */
+void Foc_model_Matlab_step0(void)      /* Sample time: [5.0E-5s, 0.0s] */
 {
-  int32_T tmp;
-
-  {                                    /* Sample time: [0.0001s, 0.0s] */
+  {                                    /* Sample time: [5.0E-5s, 0.0s] */
     rate_monotonic_scheduler();
   }
+}
+
+/* Model step function for TID1 */
+void Foc_model_Matlab_step1(void)      /* Sample time: [0.0001s, 0.0s] */
+{
+  int32_T tmp;
 
   /* End of Outputs for S-Function (ftm_s32k_hall_sensor): '<S3>/FTM_Hall_Sensor' */
 
@@ -1726,8 +1773,8 @@ void Foc_model_Matlab_step0(void)      /* Sample time: [0.0001s, 0.0s] */
   /* End of Outputs for S-Function (tpp_s32k_isr): '<S4>/GD300_ISR_Callback ' */
 }
 
-/* Model step function for TID1 */
-void Foc_model_Matlab_step1(void)      /* Sample time: [0.001s, 0.0s] */
+/* Model step function for TID2 */
+void Foc_model_Matlab_step2(void)      /* Sample time: [0.001s, 0.0s] */
 {
   /* RateTransition: '<Root>/RT2' */
   Speed_Ref_PU = Foc_model_Matlab_DW.RT2_Buffer0;
@@ -1749,8 +1796,8 @@ void Foc_model_Matlab_step1(void)      /* Sample time: [0.001s, 0.0s] */
     (Foc_model_Matlab_DW.RT11_ActiveBufIdx == 0);
 }
 
-/* Model step function for TID2 */
-void Foc_model_Matlab_step2(void)      /* Sample time: [0.1s, 0.0s] */
+/* Model step function for TID3 */
+void Foc_model_Matlab_step3(void)      /* Sample time: [0.1s, 0.0s] */
 {
   /* S-Function (fcgen): '<S3>/SCI_Rx_INT' incorporates:
    *  SubSystem: '<Root>/Serial Receive'

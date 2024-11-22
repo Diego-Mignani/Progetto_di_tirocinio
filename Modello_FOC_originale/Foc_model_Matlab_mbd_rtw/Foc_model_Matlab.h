@@ -7,10 +7,10 @@
  *
  * Code generated for Simulink model 'Foc_model_Matlab'.
  *
- * Model version                   : 10.16
+ * Model version                   : 10.11
  * Simulink Coder version          : 24.2 (R2024b) 21-Jun-2024
  * MBDT for S32K1xx Series Version : 4.2.0 (R2016a-R2020a) 20-Jul-2020
- * C/C++ source code generated on  : Tue Oct 22 17:48:33 2024
+ * C/C++ source code generated on  : Fri Nov 22 11:45:38 2024
  *
  * Target selection: mbd_s32k.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -56,6 +56,7 @@
 
 #include "Foc_model_Matlab_types.h"
 #include "rt_nonfinite.h"
+#include "rtGetNaN.h"
 
 /* Macros for accessing real-time model data structure */
 #ifndef rtmGetErrorStatus
@@ -78,7 +79,7 @@
 typedef struct {
   uint32_T ADC1_ISR_o2;                /* '<S136>/ADC1_ISR' */
   real32_T Id_ref;                     /* '<S8>/Id_ref' */
-  real32_T I_ref;                      /* '<S149>/MATLAB Function1' */
+  real32_T I_ref;                      /* '<S149>/MATLAB Function' */
   real32_T Merge;                      /* '<S89>/Merge' */
   uint16_T speedCountDelay;            /* '<S73>/speedCountDelay' */
   uint16_T DelayOneStep;               /* '<S74>/Delay One Step' */
@@ -99,17 +100,20 @@ typedef struct {
 typedef struct {
   volatile real32_T RT11_Buffer[4];    /* '<Root>/RT11' */
   volatile real32_T RT2_Buffer0;       /* '<Root>/RT2' */
-  real32_T integral;                   /* '<S149>/MATLAB Function1' */
-  real32_T integral_a;                 /* '<S26>/MATLAB Function1' */
-  real32_T integral_k;                 /* '<S25>/MATLAB Function1' */
+  real32_T N_ref_pre;                  /* '<S149>/MATLAB Function' */
+  real32_T speed_error_pre;            /* '<S149>/MATLAB Function' */
+  real32_T integral;                   /* '<S26>/MATLAB Function1' */
+  real32_T integral_j;                 /* '<S25>/MATLAB Function1' */
   uint16_T DelayOneStep_DSTATE;        /* '<S74>/Delay One Step' */
   boolean_T DelayOneStep1_DSTATE;      /* '<S74>/Delay One Step1' */
   volatile int8_T RT11_ActiveBufIdx;   /* '<Root>/RT11' */
   uint8_T is_active_c1_Foc_model_Matlab;/* '<S4>/Enable PDB and start FTM' */
   uint8_T is_c1_Foc_model_Matlab;      /* '<S4>/Enable PDB and start FTM' */
-  boolean_T integral_not_empty;        /* '<S149>/MATLAB Function1' */
-  boolean_T integral_not_empty_o;      /* '<S26>/MATLAB Function1' */
-  boolean_T integral_not_empty_e;      /* '<S25>/MATLAB Function1' */
+  boolean_T N_ref_pre_not_empty;       /* '<S149>/MATLAB Function' */
+  boolean_T speed_error_pre_not_empty; /* '<S149>/MATLAB Function' */
+  boolean_T T_n_pre_not_empty;         /* '<S149>/MATLAB Function' */
+  boolean_T integral_not_empty;        /* '<S26>/MATLAB Function1' */
+  boolean_T integral_not_empty_p;      /* '<S25>/MATLAB Function1' */
 } DW_Foc_model_Matlab_T;
 
 /* Invariant block signals (default storage) */
@@ -136,7 +140,7 @@ struct tag_RTM_Foc_model_Matlab_T {
    */
   struct {
     struct {
-      uint16_T TID[3];
+      uint16_T TID[4];
     } TaskCounters;
   } Timing;
 };
@@ -156,9 +160,10 @@ extern void Foc_model_Matlab_SetEventsForThisBaseStep(boolean_T *eventFlags);
 
 /* Model entry point functions */
 extern void Foc_model_Matlab_initialize(void);
-extern void Foc_model_Matlab_step0(void);/* Sample time: [0.0001s, 0.0s] */
-extern void Foc_model_Matlab_step1(void);/* Sample time: [0.001s, 0.0s] */
-extern void Foc_model_Matlab_step2(void);/* Sample time: [0.1s, 0.0s] */
+extern void Foc_model_Matlab_step0(void);/* Sample time: [5.0E-5s, 0.0s] */
+extern void Foc_model_Matlab_step1(void);/* Sample time: [0.0001s, 0.0s] */
+extern void Foc_model_Matlab_step2(void);/* Sample time: [0.001s, 0.0s] */
+extern void Foc_model_Matlab_step3(void);/* Sample time: [0.1s, 0.0s] */
 extern void Foc_model_Matlab_terminate(void);
 
 /* Exported data declaration */
@@ -261,7 +266,7 @@ extern RT_MODEL_Foc_model_Matlab_T *const Foc_model_Matlab_M;
  * Block '<Root>/RT8' : Unused code path elimination
  * Block '<Root>/RT9' : Unused code path elimination
  * Block '<Root>/Scope3' : Unused code path elimination
- * Block '<S149>/Speed Scope' : Unused code path elimination
+ * Block '<S149>/Scope' : Unused code path elimination
  * Block '<S149>/To Workspace' : Unused code path elimination
  * Block '<S8>/To Workspace' : Unused code path elimination
  * Block '<S20>/Kalpha' : Eliminated nontunable gain of 1
@@ -459,7 +464,7 @@ extern RT_MODEL_Foc_model_Matlab_T *const Foc_model_Matlab_M;
  * '<S148>' : 'Foc_model_Matlab/Serial Receive/Code Generation'
  * '<S149>' : 'Foc_model_Matlab/SpeedControl/PI_Controller_Speed'
  * '<S150>' : 'Foc_model_Matlab/SpeedControl/Speed_Ref_Selector'
- * '<S151>' : 'Foc_model_Matlab/SpeedControl/PI_Controller_Speed/MATLAB Function1'
+ * '<S151>' : 'Foc_model_Matlab/SpeedControl/PI_Controller_Speed/MATLAB Function'
  */
 #endif                                 /* Foc_model_Matlab_h_ */
 
