@@ -7,10 +7,10 @@
  *
  * Code generated for Simulink model 'Foc_model_Matlab'.
  *
- * Model version                   : 10.11
+ * Model version                   : 10.22
  * Simulink Coder version          : 24.2 (R2024b) 21-Jun-2024
  * MBDT for S32K1xx Series Version : 4.2.0 (R2016a-R2020a) 20-Jul-2020
- * C/C++ source code generated on  : Fri Nov 22 11:45:38 2024
+ * C/C++ source code generated on  : Tue Nov 26 12:30:44 2024
  *
  * Target selection: mbd_s32k.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -185,7 +185,9 @@ extern volatile uint16_T CntHallValidityIn;
                                 /* '<S2>/SigConvForSigProp_Variant_Source2_0' */
 extern volatile real32_T DesiredSpeed; /* '<Root>/Data Store Memory7' */
 extern volatile boolean_T Enable;      /* '<Root>/Data Store Memory29' */
+extern volatile real32_T Epsilon;      /* '<Root>/Data Store Memory13' */
 extern volatile boolean_T FAULT;       /* '<Root>/I_MAX Scalling3' */
+extern volatile real32_T Gamma;        /* '<Root>/Data Store Memory8' */
 extern volatile int16_T GlobalDirection;/* '<Root>/Data Store Memory3' */
 extern volatile uint32_T GlobalHallState;/* '<Root>/Data Store Memory4' */
 extern volatile uint16_T GlobalSpeedCount;/* '<Root>/Data Store Memory1' */
@@ -211,6 +213,7 @@ extern volatile real32_T Idc_afterOffset;/* '<S139>/Sum' */
 extern volatile real32_T Idq_ref_PU[2];/* '<Root>/RT11' */
 extern volatile real32_T Iq_err;       /* '<S26>/Sum' */
 extern volatile real32_T Iq_fb;        /* '<S15>/Signal Copy' */
+extern volatile real32_T Lambda;       /* '<Root>/Data Store Memory9' */
 extern volatile real32_T PWM[3];       /* '<S11>/Switch1' */
 extern volatile real32_T PWM_Duty_Cycles[3];/* '<S12>/Gain' */
 extern volatile real32_T PWM_Enable;   /* '<S12>/Data Type Conversion' */
@@ -222,6 +225,7 @@ extern volatile real32_T SpeedMeasured;/* '<S1>/Input Scaling' */
 extern volatile real32_T Speed_Ref;    /* '<S150>/Switch' */
 extern volatile real32_T Speed_Ref_PU; /* '<Root>/RT2' */
 extern volatile real32_T Speed_fb;     /* '<Root>/RT1' */
+extern volatile real32_T Theta;        /* '<Root>/Data Store Memory10' */
 extern volatile real32_T ThetaHalls;   /* '<S66>/Merge1' */
 extern volatile real32_T Vd_ref_beforeLimiter;/* '<S25>/MATLAB Function1' */
 extern volatile real32_T Vq_ref_beforeLimiter;/* '<S26>/MATLAB Function1' */

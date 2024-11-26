@@ -7,10 +7,10 @@
  *
  * Code generated for Simulink model 'Foc_model_Matlab'.
  *
- * Model version                   : 10.11
+ * Model version                   : 10.22
  * Simulink Coder version          : 24.2 (R2024b) 21-Jun-2024
  * MBDT for S32K1xx Series Version : 4.2.0 (R2016a-R2020a) 20-Jul-2020
- * C/C++ source code generated on  : Fri Nov 22 11:45:38 2024
+ * C/C++ source code generated on  : Tue Nov 26 12:30:44 2024
  *
  * Target selection: mbd_s32k.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -51,7 +51,9 @@ volatile uint16_T CntHallValidityIn;
                                 /* '<S2>/SigConvForSigProp_Variant_Source2_0' */
 volatile real32_T DesiredSpeed;        /* '<Root>/Data Store Memory7' */
 volatile boolean_T Enable;             /* '<Root>/Data Store Memory29' */
+volatile real32_T Epsilon;             /* '<Root>/Data Store Memory13' */
 volatile boolean_T FAULT;              /* '<Root>/I_MAX Scalling3' */
+volatile real32_T Gamma;               /* '<Root>/Data Store Memory8' */
 volatile int16_T GlobalDirection;      /* '<Root>/Data Store Memory3' */
 volatile uint32_T GlobalHallState;     /* '<Root>/Data Store Memory4' */
 volatile uint16_T GlobalSpeedCount;    /* '<Root>/Data Store Memory1' */
@@ -77,6 +79,7 @@ volatile real32_T Idc_afterOffset;     /* '<S139>/Sum' */
 volatile real32_T Idq_ref_PU[2];       /* '<Root>/RT11' */
 volatile real32_T Iq_err;              /* '<S26>/Sum' */
 volatile real32_T Iq_fb;               /* '<S15>/Signal Copy' */
+volatile real32_T Lambda;              /* '<Root>/Data Store Memory9' */
 volatile real32_T PWM[3];              /* '<S11>/Switch1' */
 volatile real32_T PWM_Duty_Cycles[3];  /* '<S12>/Gain' */
 volatile real32_T PWM_Enable;          /* '<S12>/Data Type Conversion' */
@@ -88,6 +91,7 @@ volatile real32_T SpeedMeasured;       /* '<S1>/Input Scaling' */
 volatile real32_T Speed_Ref;           /* '<S150>/Switch' */
 volatile real32_T Speed_Ref_PU;        /* '<Root>/RT2' */
 volatile real32_T Speed_fb;            /* '<Root>/RT1' */
+volatile real32_T Theta;               /* '<Root>/Data Store Memory10' */
 volatile real32_T ThetaHalls;          /* '<S66>/Merge1' */
 volatile real32_T Vd_ref_beforeLimiter;/* '<S25>/MATLAB Function1' */
 volatile real32_T Vq_ref_beforeLimiter;/* '<S26>/MATLAB Function1' */
@@ -1178,8 +1182,8 @@ void Foc_model_Ma_CurrentControl(void)
     }
 
     /* '<S42>:1:19' */
-    rtb_Merge1 = 2.17660427F * Iq_err;
-    rtb_Merge1_p = 0.909986615F * Foc_model_Matlab_DW.integral + rtb_Merge1;
+    rtb_Merge1 = 1.61395F * Iq_err;
+    rtb_Merge1_p = 0.582391441F * Foc_model_Matlab_DW.integral + rtb_Merge1;
     if (((rtb_Merge1_p < 1.0F) && (rtb_Merge1_p > -1.0F)) || ((rtb_Merge1_p >=
           1.0F) && (Iq_err < 0.0F)) || ((rtb_Merge1_p <= -1.0F) && (Iq_err >
           0.0F))) {
@@ -1192,7 +1196,7 @@ void Foc_model_Ma_CurrentControl(void)
 
     /* '<S42>:1:29' */
     /* '<S42>:1:32' */
-    Vq_ref_beforeLimiter = 0.909986615F * Foc_model_Matlab_DW.integral +
+    Vq_ref_beforeLimiter = 0.582391441F * Foc_model_Matlab_DW.integral +
       rtb_Merge1;
     if (!(Vq_ref_beforeLimiter >= -1.0F)) {
       Vq_ref_beforeLimiter = -1.0F;
@@ -1254,8 +1258,8 @@ void Foc_model_Ma_CurrentControl(void)
     }
 
     /* '<S41>:1:19' */
-    rtb_Merge1 = 0.769968748F * Id_err;
-    rtb_Merge1_p = 0.746821225F * Foc_model_Matlab_DW.integral_j + rtb_Merge1;
+    rtb_Merge1 = 0.488641679F * Id_err;
+    rtb_Merge1_p = 0.409075439F * Foc_model_Matlab_DW.integral_j + rtb_Merge1;
     if (((rtb_Merge1_p < 1.0F) && (rtb_Merge1_p > -1.0F)) || ((rtb_Merge1_p >=
           1.0F) && (Id_err < 0.0F)) || ((rtb_Merge1_p <= -1.0F) && (Id_err >
           0.0F))) {
@@ -1268,7 +1272,7 @@ void Foc_model_Ma_CurrentControl(void)
 
     /* '<S41>:1:29' */
     /* '<S41>:1:32' */
-    Vd_ref_beforeLimiter = 0.746821225F * Foc_model_Matlab_DW.integral_j +
+    Vd_ref_beforeLimiter = 0.409075439F * Foc_model_Matlab_DW.integral_j +
       rtb_Merge1;
     if (!(Vd_ref_beforeLimiter >= -1.0F)) {
       Vd_ref_beforeLimiter = -1.0F;
@@ -1524,12 +1528,12 @@ void Foc_model_Matl_SpeedControl(void)
     rtb_LogicalOperator1 = !Enable;
 
     /* MATLAB Function: '<S149>/MATLAB Function' incorporates:
-     *  Constant: '<S149>/Constant1'
      *  Constant: '<S149>/Constant10'
-     *  Constant: '<S149>/Constant12'
-     *  Constant: '<S149>/Constant13'
      *  Constant: '<S149>/Constant8'
      *  Constant: '<S149>/Constant9'
+     *  DataStoreRead: '<S149>/Data Store Read2'
+     *  DataStoreRead: '<S149>/Data Store Read3'
+     *  DataStoreRead: '<S149>/Data Store Read4'
      */
     /* MATLAB Function 'SpeedControl/PI_Controller_Speed/MATLAB Function': '<S151>:1' */
     if ((!Foc_model_Matlab_DW.speed_error_pre_not_empty) || rtb_LogicalOperator1)
@@ -1557,8 +1561,8 @@ void Foc_model_Matl_SpeedControl(void)
     speed_error = Speed_fb - Speed_Ref;
 
     /* '<S151>:1:23' */
-    s = 0.8F * Foc_model_Matlab_DW.speed_error_pre + speed_error;
-    if ((real32_T)fabs(s) > 0.1) {
+    s = Lambda * Foc_model_Matlab_DW.speed_error_pre + speed_error;
+    if ((real32_T)fabs(s) > Epsilon) {
       /* '<S151>:1:26' */
       /* '<S151>:1:27' */
       if (rtIsNaNF(s)) {
@@ -1569,14 +1573,14 @@ void Foc_model_Matl_SpeedControl(void)
         s = (real32_T)(s > 0.0F);
       }
 
-      s *= -0.005F;
+      s *= -Theta;
     } else {
       /* '<S151>:1:29' */
-      s = s / 0.1F * -0.005F;
+      s = s / Epsilon * -Theta;
     }
 
     /* '<S151>:1:33' */
-    T_eq = (Speed_Ref - 0.8F * speed_error) * 1.2E-5F + 1.0E-7F *
+    T_eq = (Speed_Ref - Lambda * speed_error) * 1.2E-5F + 1.0E-7F *
       Foc_model_Matlab_DW.N_ref_pre;
 
     /* '<S151>:1:34' */
@@ -2116,8 +2120,14 @@ void Foc_model_Matlab_initialize(void)
   /* Start for DataStoreMemory: '<Root>/Data Store Memory6' */
   IbOffset = 2040.0F;
 
-  /* Start for DataStoreMemory: '<Root>/Data Store Memory7' */
-  DesiredSpeed = 450.0F;
+  /* Start for DataStoreMemory: '<Root>/Data Store Memory10' */
+  Theta = 0.03F;
+
+  /* Start for DataStoreMemory: '<Root>/Data Store Memory13' */
+  Epsilon = 0.7F;
+
+  /* Start for DataStoreMemory: '<Root>/Data Store Memory9' */
+  Lambda = 0.8F;
 
   /* SystemInitialize for S-Function (ftm_s32k_hall_sensor): '<S3>/FTM_Hall_Sensor' incorporates:
    *  SubSystem: '<Root>/Hall Sensor'

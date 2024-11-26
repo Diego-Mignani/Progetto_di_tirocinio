@@ -7,10 +7,10 @@
  *
  * Code generated for Simulink model 'Foc_model_Matlab'.
  *
- * Model version                   : 10.11
+ * Model version                   : 10.22
  * Simulink Coder version          : 24.2 (R2024b) 21-Jun-2024
  * MBDT for S32K1xx Series Version : 4.2.0 (R2016a-R2020a) 20-Jul-2020
- * C/C++ source code generated on  : Fri Nov 22 11:45:38 2024
+ * C/C++ source code generated on  : Tue Nov 26 12:30:44 2024
  *
  * Target selection: mbd_s32k.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
