@@ -153,7 +153,6 @@ pmsm.Rs = pmsm.Rs + inverter.R_board;
 zeta1 = 0.707;              % Coefficiente di smorzamento
 zeta2 = 1;
 gamma1 = 0.60;        %0.68               % Performance parameter corrente      
- 
 
 wnq = (1/(1-gamma1))*(pmsm.Rs/pmsm.Lq);
 Kcq = (2*zeta1*wnq*pmsm.Lq)-pmsm.Rs;
