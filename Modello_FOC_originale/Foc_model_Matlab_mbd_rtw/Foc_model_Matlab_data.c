@@ -7,10 +7,10 @@
  *
  * Code generated for Simulink model 'Foc_model_Matlab'.
  *
- * Model version                   : 10.22
+ * Model version                   : 10.25
  * Simulink Coder version          : 24.2 (R2024b) 21-Jun-2024
  * MBDT for S32K1xx Series Version : 4.2.0 (R2016a-R2020a) 20-Jul-2020
- * C/C++ source code generated on  : Tue Nov 26 12:30:44 2024
+ * C/C++ source code generated on  : Wed Nov 27 10:00:34 2024
  *
  * Target selection: mbd_s32k.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -22,13 +22,13 @@
 
 /* Invariant block signals (default storage) */
 const ConstB_Foc_model_Matlab_T Foc_model_Matlab_ConstB = {
-  31250.0F                             /* '<S76>/SpeedConstData' */
+  31250.0F                             /* '<S78>/SpeedConstData' */
 };
 
 /* Constant parameters (default storage) */
 const ConstP_Foc_model_Matlab_T Foc_model_Matlab_ConstP = {
   /* Computed Parameter: sine_table_values_Value
-   * Referenced by: '<S47>/sine_table_values'
+   * Referenced by: '<S49>/sine_table_values'
    */
   { 0.0F, 0.00785390101F, 0.0157073177F, 0.023559764F, 0.0314107575F,
     0.0392598175F, 0.0471064523F, 0.0549501814F, 0.0627905205F, 0.070626989F,
