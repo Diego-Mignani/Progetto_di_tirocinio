@@ -7,10 +7,10 @@
  *
  * Code generated for Simulink model 'Foc_model_Matlab'.
  *
- * Model version                   : 10.25
+ * Model version                   : 10.28
  * Simulink Coder version          : 24.2 (R2024b) 21-Jun-2024
  * MBDT for S32K1xx Series Version : 4.2.0 (R2016a-R2020a) 20-Jul-2020
- * C/C++ source code generated on  : Wed Nov 27 10:00:34 2024
+ * C/C++ source code generated on  : Fri Nov 29 11:21:38 2024
  *
  * Target selection: mbd_s32k.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -44,9 +44,7 @@ volatile uint32_T ADC_IDC;             /* '<S139>/ADC_AD6_IDC' */
 volatile uint32_T ADC_VDC;             /* '<S139>/ADC_AD7_VDC' */
 volatile uint32_T CH0S_ERR;            /* '<S138>/PDB1_ISR' */
 volatile uint32_T CH1S_ERR;            /* '<S138>/PDB1_ISR' */
-volatile real32_T COS;                 /* '<S50>/Sum6' */
 volatile uint16_T CntHall;             /* '<S3>/FTM_Hall_Sensor' */
-volatile uint32_T CntHallDecoder;      /* '<S67>/Read_Register' */
 volatile uint16_T CntHallValidityIn;
                                 /* '<S2>/SigConvForSigProp_Variant_Source2_0' */
 volatile real32_T DesiredSpeed;        /* '<Root>/Data Store Memory7' */
@@ -67,11 +65,9 @@ volatile uint32_T HALL_C_controller;   /* '<S71>/bit_shift' */
 volatile uint16_T HallCntActual;       /* '<Root>/Data Store Memory25' */
 volatile uint16_T HallCntPrev;         /* '<Root>/Data Store Memory24' */
 volatile uint16_T HallStateChangeFlag; /* '<Root>/Data Store Memory' */
-volatile uint32_T HallVal;             /* '<S70>/Add1' */
 volatile uint16_T HallValididyInvalid; /* '<S125>/Merge' */
 volatile real32_T I_ab_afterOffset[2]; /* '<S66>/Add' */
 volatile real32_T IaOffset;            /* '<Root>/Data Store Memory5' */
-volatile real32_T Iab_fb[2];           /* '<S66>/Multiply' */
 volatile real32_T IbOffset;            /* '<Root>/Data Store Memory6' */
 volatile real32_T Id_err;              /* '<S25>/Sum' */
 volatile real32_T Id_fb;               /* '<S15>/Signal Copy1' */
@@ -83,9 +79,7 @@ volatile real32_T Lambda;              /* '<Root>/Data Store Memory9' */
 volatile real32_T PWM[3];              /* '<S11>/Switch1' */
 volatile real32_T PWM_Duty_Cycles[3];  /* '<S12>/Gain' */
 volatile real32_T PWM_Enable;          /* '<S12>/Data Type Conversion' */
-volatile real32_T Pos_PU;              /* '<S113>/Add' */
 volatile uint32_T SC_PDBIF;            /* '<S138>/PDB1_ISR' */
-volatile real32_T SIN;                 /* '<S50>/Sum4' */
 volatile real32_T SpeedError;          /* '<S151>/Sum' */
 volatile real32_T SpeedMeasured;       /* '<S1>/Input Scaling' */
 volatile real32_T Speed_Ref;           /* '<S152>/Switch' */
@@ -93,8 +87,6 @@ volatile real32_T Speed_Ref_PU;        /* '<Root>/RT2' */
 volatile real32_T Speed_fb;            /* '<Root>/RT1' */
 volatile real32_T Theta;               /* '<Root>/Data Store Memory10' */
 volatile real32_T ThetaHalls;          /* '<S68>/Merge1' */
-volatile real32_T Vd_ref_beforeLimiter;/* '<S25>/MATLAB Function1' */
-volatile real32_T Vq_ref_beforeLimiter;/* '<S26>/MATLAB Function1' */
 
 /* Block signals (default storage) */
 B_Foc_model_Matlab_T Foc_model_Matlab_B;
@@ -513,16 +505,21 @@ void Foc_mo_CurrentControl_Reset(void)
 /* Output and update for function-call system: '<Root>/CurrentControl' */
 void Foc_model_Ma_CurrentControl(void)
 {
-  real32_T rtb_Add1;
+  real32_T rtb_Add2;
+  real32_T rtb_Add3;
+  real32_T rtb_Kiqtq;
   real32_T rtb_Merge1;
+  real32_T rtb_Merge1_g_tmp;
   real32_T rtb_Merge1_p;
   real32_T rtb_Merge_a;
+  real32_T rtb_Sum_b;
+  real32_T tmp;
   real32_T wnq;
-  real32_T y;
+  uint32_T rtb_Add1;
   uint16_T rtb_DataStoreRead5;
   boolean_T OR;
   boolean_T rtb_Compare;
-  boolean_T tmp;
+  boolean_T tmp_0;
 
   /* user code (Output function Body) */
   {
@@ -537,7 +534,7 @@ void Foc_model_Ma_CurrentControl(void)
     /* S-Function (register_s32k_read): '<S67>/Read_Register' */
 
     /* read from <empty>_SC1A register */
-    CntHallDecoder = *((uint32_t *) 0x4003A004);
+    Foc_model_Matlab_B.Read_Register = *((uint32_t *) 0x4003A004);
 
     /* DataStoreRead: '<S67>/Data Store Read5' */
     rtb_DataStoreRead5 = HallStateChangeFlag;
@@ -584,7 +581,7 @@ void Foc_model_Ma_CurrentControl(void)
     HALL_A_controller = (uint32_T)Foc_model_Matlab_B.Digital_Input_HALL_A;
 
     /* Sum: '<S70>/Add1' */
-    HallVal = (HALL_C_controller + HALL_B_controller) + HALL_A_controller;
+    rtb_Add1 = (HALL_C_controller + HALL_B_controller) + HALL_A_controller;
 
     /* Switch: '<S68>/Switch' incorporates:
      *  Constant: '<S68>/WatchDog'
@@ -633,10 +630,10 @@ void Foc_model_Ma_CurrentControl(void)
        *  DataStoreRead: '<S67>/Data Store Read2'
        *  DataTypeConversion: '<S68>/counterSize1'
        */
-      if (GlobalSpeedCount >= (uint16_T)CntHallDecoder) {
+      if (GlobalSpeedCount >= (uint16_T)Foc_model_Matlab_B.Read_Register) {
         rtb_DataStoreRead5 = GlobalSpeedCount;
       } else {
-        rtb_DataStoreRead5 = (uint16_T)CntHallDecoder;
+        rtb_DataStoreRead5 = (uint16_T)Foc_model_Matlab_B.Read_Register;
       }
 
       /* Switch: '<S79>/speed check' incorporates:
@@ -714,8 +711,8 @@ void Foc_model_Ma_CurrentControl(void)
        *  Gain: '<S94>/Gain'
        *  Product: '<S94>/Divide'
        */
-      rtb_Merge1 = (real32_T)(uint16_T)CntHallDecoder / (real32_T)
-        GlobalSpeedCount * 0.166666672F;
+      rtb_Merge1 = (real32_T)(uint16_T)Foc_model_Matlab_B.Read_Register /
+        (real32_T)GlobalSpeedCount * 0.166666672F;
 
       /* End of Outputs for SubSystem: '<S91>/first_order' */
 
@@ -734,7 +731,7 @@ void Foc_model_Ma_CurrentControl(void)
          *  ActionPort: '<S93>/Action Port'
          */
         /* SwitchCase: '<S93>/Switch Case' */
-        switch ((int32_T)HallVal) {
+        switch ((int32_T)rtb_Add1) {
          case 6:
           /* Outputs for IfAction SubSystem: '<S93>/Hall Value of 1' incorporates:
            *  ActionPort: '<S103>/Action Port'
@@ -815,7 +812,7 @@ void Foc_model_Ma_CurrentControl(void)
          *  ActionPort: '<S92>/Action Port'
          */
         /* SwitchCase: '<S92>/Switch Case' */
-        switch ((int32_T)HallVal) {
+        switch ((int32_T)rtb_Add1) {
          case 6:
           /* Outputs for IfAction SubSystem: '<S92>/Hall Value of 1' incorporates:
            *  ActionPort: '<S96>/Action Port'
@@ -904,7 +901,7 @@ void Foc_model_Ma_CurrentControl(void)
        *  ActionPort: '<S77>/Action Port'
        */
       /* SwitchCase: '<S81>/Switch Case' */
-      switch ((int32_T)HallVal) {
+      switch ((int32_T)rtb_Add1) {
        case 6:
         /* Outputs for IfAction SubSystem: '<S81>/Hall Value of 1' incorporates:
          *  ActionPort: '<S82>/Action Port'
@@ -1019,7 +1016,7 @@ void Foc_model_Ma_CurrentControl(void)
       /* Sum: '<S114>/Add' incorporates:
        *  Constant: '<S114>/Constant'
        */
-      rtb_Add1 = (ThetaHalls + 1.0F) - 0.7061F;
+      rtb_Merge1_p = (ThetaHalls + 1.0F) - 0.7061F;
 
       /* End of Outputs for SubSystem: '<S112>/If Action Subsystem' */
     } else {
@@ -1027,7 +1024,7 @@ void Foc_model_Ma_CurrentControl(void)
        *  ActionPort: '<S115>/Action Port'
        */
       /* Sum: '<S115>/Add' */
-      rtb_Add1 = ThetaHalls - 0.7061F;
+      rtb_Merge1_p = ThetaHalls - 0.7061F;
 
       /* End of Outputs for SubSystem: '<S112>/If Action Subsystem1' */
     }
@@ -1037,7 +1034,7 @@ void Foc_model_Ma_CurrentControl(void)
     /* Sum: '<S113>/Add' incorporates:
      *  Rounding: '<S113>/Floor'
      */
-    Pos_PU = rtb_Add1 - (real32_T)floor(rtb_Add1);
+    rtb_Merge1 = rtb_Merge1_p - (real32_T)floor(rtb_Merge1_p);
 
     /* Sum: '<S66>/Add' incorporates:
      *  DataStoreRead: '<S118>/Data Store Read'
@@ -1049,14 +1046,14 @@ void Foc_model_Ma_CurrentControl(void)
     I_ab_afterOffset[1] = IbOffset - ADC_B;
 
     /* Gain: '<S66>/Multiply' */
-    Iab_fb[0] = 0.00048828125F * I_ab_afterOffset[0];
-    Iab_fb[1] = 0.00048828125F * I_ab_afterOffset[1];
+    rtb_Sum_b = 0.00048828125F * I_ab_afterOffset[0];
+    rtb_Add3 = 0.00048828125F * I_ab_afterOffset[1];
 
     /* Outputs for Atomic SubSystem: '<S20>/Two phase CRL wrap' */
     /* Gain: '<S21>/one_by_sqrt3' incorporates:
      *  Sum: '<S21>/a_plus_2b'
      */
-    rtb_Merge1 = ((Iab_fb[0] + Iab_fb[1]) + Iab_fb[1]) * 0.577350259F;
+    rtb_Add3 = ((rtb_Sum_b + rtb_Add3) + rtb_Add3) * 0.577350259F;
 
     /* End of Outputs for SubSystem: '<S20>/Two phase CRL wrap' */
 
@@ -1071,23 +1068,23 @@ void Foc_model_Ma_CurrentControl(void)
      *  Sum: '<S54>/Sum'
      *  Sum: '<S55>/Sum'
      */
-    if (Pos_PU < 0.0F) {
+    if (rtb_Merge1 < 0.0F) {
       /* Outputs for IfAction SubSystem: '<S51>/If Action Subsystem' incorporates:
        *  ActionPort: '<S54>/Action Port'
        */
-      rtb_Merge1_p = Pos_PU - (real32_T)(int16_T)(real32_T)floor(Pos_PU);
+      rtb_Merge1 -= (real32_T)(int16_T)(real32_T)floor(rtb_Merge1);
 
       /* End of Outputs for SubSystem: '<S51>/If Action Subsystem' */
     } else {
       /* Outputs for IfAction SubSystem: '<S51>/If Action Subsystem1' incorporates:
        *  ActionPort: '<S55>/Action Port'
        */
-      rtb_Merge1_p = Pos_PU - (real32_T)(int16_T)Pos_PU;
+      rtb_Merge1 -= (real32_T)(int16_T)rtb_Merge1;
 
       /* End of Outputs for SubSystem: '<S51>/If Action Subsystem1' */
     }
 
-    rtb_Add1 = 800.0F * rtb_Merge1_p;
+    rtb_Merge1_p = 800.0F * rtb_Merge1;
 
     /* End of If: '<S51>/If' */
 
@@ -1095,13 +1092,14 @@ void Foc_model_Ma_CurrentControl(void)
      *  DataTypeConversion: '<S49>/Data Type Conversion1'
      *  DataTypeConversion: '<S49>/Get_Integer'
      */
-    rtb_Merge1_p = rtb_Add1 - (real32_T)(uint16_T)rtb_Add1;
+    rtb_Add2 = rtb_Merge1_p - (real32_T)(uint16_T)rtb_Merge1_p;
 
     /* Selector: '<S49>/Lookup' incorporates:
      *  Constant: '<S49>/sine_table_values'
      *  DataTypeConversion: '<S49>/Get_Integer'
      */
-    wnq = Foc_model_Matlab_ConstP.sine_table_values_Value[(uint16_T)rtb_Add1];
+    rtb_Merge1 = Foc_model_Matlab_ConstP.sine_table_values_Value[(uint16_T)
+      rtb_Merge1_p];
 
     /* Sum: '<S50>/Sum4' incorporates:
      *  Constant: '<S49>/offset'
@@ -1112,8 +1110,8 @@ void Foc_model_Ma_CurrentControl(void)
      *  Sum: '<S49>/Sum'
      *  Sum: '<S50>/Sum3'
      */
-    SIN = (Foc_model_Matlab_ConstP.sine_table_values_Value[(int32_T)((uint16_T)
-            rtb_Add1 + 1U)] - wnq) * rtb_Merge1_p + wnq;
+    rtb_Merge1 += (Foc_model_Matlab_ConstP.sine_table_values_Value[(int32_T)
+                   ((uint16_T)rtb_Merge1_p + 1U)] - rtb_Merge1) * rtb_Add2;
 
     /* Selector: '<S49>/Lookup' incorporates:
      *  Constant: '<S49>/offset'
@@ -1122,8 +1120,8 @@ void Foc_model_Ma_CurrentControl(void)
      *  Sum: '<S49>/Sum'
      *  Sum: '<S50>/Sum5'
      */
-    wnq = Foc_model_Matlab_ConstP.sine_table_values_Value[(int32_T)((uint16_T)
-      rtb_Add1 + 200U)];
+    rtb_Merge1_g_tmp = Foc_model_Matlab_ConstP.sine_table_values_Value[(int32_T)
+      ((uint16_T)rtb_Merge1_p + 200U)];
 
     /* Sum: '<S50>/Sum6' incorporates:
      *  Constant: '<S49>/offset'
@@ -1134,8 +1132,9 @@ void Foc_model_Ma_CurrentControl(void)
      *  Sum: '<S49>/Sum'
      *  Sum: '<S50>/Sum5'
      */
-    COS = (Foc_model_Matlab_ConstP.sine_table_values_Value[(int32_T)((uint16_T)
-            rtb_Add1 + 201U)] - wnq) * rtb_Merge1_p + wnq;
+    rtb_Merge1_p = (Foc_model_Matlab_ConstP.sine_table_values_Value[(int32_T)
+                    ((uint16_T)rtb_Merge1_p + 201U)] - rtb_Merge1_g_tmp) *
+      rtb_Add2 + rtb_Merge1_g_tmp;
 
     /* Outputs for Atomic SubSystem: '<S17>/Two inputs CRL' */
     /* Outputs for Atomic SubSystem: '<S20>/Two phase CRL wrap' */
@@ -1145,7 +1144,7 @@ void Foc_model_Ma_CurrentControl(void)
      *  Product: '<S47>/bcos'
      *  Sum: '<S47>/sum_Qs'
      */
-    Iq_fb = rtb_Merge1 * COS - Iab_fb[0] * SIN;
+    Iq_fb = rtb_Add3 * rtb_Merge1_p - rtb_Sum_b * rtb_Merge1;
 
     /* End of Outputs for SubSystem: '<S20>/Two phase CRL wrap' */
     /* End of Outputs for SubSystem: '<S17>/Two inputs CRL' */
@@ -1161,18 +1160,18 @@ void Foc_model_Ma_CurrentControl(void)
      */
     /* MATLAB Function 'CurrentControl/Control_System/Current_Controllers/PI_Controller_Iq/MATLAB Function': '<S43>:1' */
     /* '<S43>:1:3' */
-    rtb_Add1 = 1.0F / (1.0F - Gamma);
-    wnq = rtb_Add1 * 1463.60156F;
+    rtb_Merge1_g_tmp = 1.0F / (1.0F - Gamma);
+    wnq = rtb_Merge1_g_tmp * 1463.60156F;
 
     /* '<S43>:1:4' */
-    rtb_Merge1_p = 1.414F * wnq * 0.000435F - 0.636666656F;
+    rtb_Add2 = 1.414F * wnq * 0.000435F - 0.636666656F;
 
     /* '<S43>:1:5' */
-    wnq = rtb_Merge1_p / (wnq * wnq * 0.000435F);
+    wnq = rtb_Add2 / (wnq * wnq * 0.000435F);
 
     /* '<S43>:1:6' */
     /* '<S43>:1:7' */
-    wnq *= rtb_Merge1_p / wnq;
+    rtb_Kiqtq = rtb_Add2 / wnq * wnq;
 
     /* Logic: '<S26>/Logical Operator' incorporates:
      *  DataStoreRead: '<S26>/Data Store Read1'
@@ -1185,7 +1184,7 @@ void Foc_model_Ma_CurrentControl(void)
     /* '<S44>:1:9' */
     /* '<S44>:1:10' */
     /* '<S44>:1:11' */
-    tmp = !Enable;
+    tmp_0 = !Enable;
 
     /* MATLAB Function: '<S26>/MATLAB Function1' incorporates:
      *  Constant: '<S26>/Kp1'
@@ -1193,7 +1192,7 @@ void Foc_model_Ma_CurrentControl(void)
      *  Logic: '<S26>/Logical Operator'
      *  MATLAB Function: '<S26>/MATLAB Function'
      */
-    if ((!Foc_model_Matlab_DW.integral_not_empty) || tmp) {
+    if ((!Foc_model_Matlab_DW.integral_not_empty) || tmp_0) {
       /* '<S44>:1:14' */
       /* '<S44>:1:15' */
       Foc_model_Matlab_DW.integral = 0.0F;
@@ -1201,10 +1200,10 @@ void Foc_model_Ma_CurrentControl(void)
     }
 
     /* '<S44>:1:19' */
-    rtb_Merge1_p *= Iq_err;
-    y = wnq * Foc_model_Matlab_DW.integral + rtb_Merge1_p;
-    if (((y < 1.0F) && (y > -1.0F)) || ((y >= 1.0F) && (Iq_err < 0.0F)) || ((y <=
-          -1.0F) && (Iq_err > 0.0F))) {
+    wnq = rtb_Add2 * Iq_err;
+    tmp = rtb_Kiqtq * Foc_model_Matlab_DW.integral + wnq;
+    if (((tmp < 1.0F) && (tmp > -1.0F)) || ((tmp >= 1.0F) && (Iq_err < 0.0F)) ||
+        ((tmp <= -1.0F) && (Iq_err > 0.0F))) {
       /* '<S44>:1:22' */
       /* '<S44>:1:23' */
       /* '<S44>:1:24' */
@@ -1212,21 +1211,10 @@ void Foc_model_Ma_CurrentControl(void)
       Foc_model_Matlab_DW.integral += Iq_err;
     }
 
+    /* Gain: '<S24>/Gain1' */
     /* '<S44>:1:29' */
     /* '<S44>:1:32' */
-    Vq_ref_beforeLimiter = wnq * Foc_model_Matlab_DW.integral + rtb_Merge1_p;
-    if (!(Vq_ref_beforeLimiter >= -1.0F)) {
-      Vq_ref_beforeLimiter = -1.0F;
-    }
-
-    if (!(Vq_ref_beforeLimiter <= 1.0F)) {
-      Vq_ref_beforeLimiter = 1.0F;
-    }
-
-    /* End of MATLAB Function: '<S26>/MATLAB Function1' */
-
-    /* Gain: '<S24>/Gain1' */
-    rtb_Merge1_p = 2.0F * rtb_Merge_a;
+    rtb_Add2 = 2.0F * rtb_Merge_a;
 
     /* Outputs for Atomic SubSystem: '<S17>/Two inputs CRL' */
     /* Outputs for Atomic SubSystem: '<S20>/Two phase CRL wrap' */
@@ -1236,20 +1224,31 @@ void Foc_model_Ma_CurrentControl(void)
      *  Product: '<S47>/bsin'
      *  Sum: '<S47>/sum_Ds'
      */
-    Id_fb = Iab_fb[0] * COS + rtb_Merge1 * SIN;
+    Id_fb = rtb_Sum_b * rtb_Merge1_p + rtb_Add3 * rtb_Merge1;
 
     /* End of Outputs for SubSystem: '<S20>/Two phase CRL wrap' */
     /* End of Outputs for SubSystem: '<S17>/Two inputs CRL' */
+
+    /* MATLAB Function: '<S26>/MATLAB Function1' */
+    rtb_Sum_b = rtb_Kiqtq * Foc_model_Matlab_DW.integral + wnq;
+    if (!(rtb_Sum_b >= -1.0F)) {
+      rtb_Sum_b = -1.0F;
+    }
+
+    if (!(rtb_Sum_b <= 1.0F)) {
+      rtb_Sum_b = 1.0F;
+    }
 
     /* Sum: '<S15>/Sum1' incorporates:
      *  Constant: '<S24>/Constant4'
      *  DataTypeConversion: '<S24>/Cast To Single'
      *  Gain: '<S24>/Gain'
+     *  MATLAB Function: '<S26>/MATLAB Function1'
      *  Product: '<S24>/Product'
      *  Product: '<S24>/Product1'
      */
-    rtb_Merge1 = ((real32_T)(0.0079942689836159844 * rtb_Merge1_p) +
-                  Vq_ref_beforeLimiter) + rtb_Merge1_p * Id_fb * 0.000375F;
+    rtb_Add3 = ((real32_T)(0.0079942689836159844 * rtb_Add2) + rtb_Sum_b) +
+      rtb_Add2 * Id_fb * 0.000375F;
 
     /* Sum: '<S25>/Sum' */
     Id_err = Idq_ref_PU[0] - Id_fb;
@@ -1260,17 +1259,17 @@ void Foc_model_Ma_CurrentControl(void)
      */
     /* MATLAB Function 'CurrentControl/Control_System/Current_Controllers/PI_Controller_Id/MATLAB Function': '<S41>:1' */
     /* '<S41>:1:3' */
-    wnq = rtb_Add1 * 1697.77783F;
+    rtb_Add2 = rtb_Merge1_g_tmp * 1697.77783F;
 
     /* '<S41>:1:4' */
-    rtb_Merge1_p = 1.414F * wnq * 0.000375F - 0.636666656F;
+    rtb_Sum_b = 1.414F * rtb_Add2 * 0.000375F - 0.636666656F;
 
     /* '<S41>:1:5' */
-    wnq = rtb_Merge1_p / (wnq * wnq * 0.000375F);
+    rtb_Add2 = rtb_Sum_b / (rtb_Add2 * rtb_Add2 * 0.000375F);
 
     /* '<S41>:1:6' */
     /* '<S41>:1:7' */
-    wnq *= rtb_Merge1_p / wnq;
+    rtb_Add2 *= rtb_Sum_b / rtb_Add2;
 
     /* MATLAB Function: '<S25>/MATLAB Function1' incorporates:
      *  Constant: '<S25>/Ki1'
@@ -1284,7 +1283,7 @@ void Foc_model_Ma_CurrentControl(void)
     /* '<S42>:1:9' */
     /* '<S42>:1:10' */
     /* '<S42>:1:11' */
-    if ((!Foc_model_Matlab_DW.integral_not_empty_p) || tmp) {
+    if ((!Foc_model_Matlab_DW.integral_not_empty_p) || tmp_0) {
       /* '<S42>:1:14' */
       /* '<S42>:1:15' */
       Foc_model_Matlab_DW.integral_j = 0.0F;
@@ -1292,10 +1291,10 @@ void Foc_model_Ma_CurrentControl(void)
     }
 
     /* '<S42>:1:19' */
-    rtb_Merge1_p *= Id_err;
-    y = wnq * Foc_model_Matlab_DW.integral_j + rtb_Merge1_p;
-    if (((y < 1.0F) && (y > -1.0F)) || ((y >= 1.0F) && (Id_err < 0.0F)) || ((y <=
-          -1.0F) && (Id_err > 0.0F))) {
+    wnq = rtb_Sum_b * Id_err;
+    tmp = rtb_Add2 * Foc_model_Matlab_DW.integral_j + wnq;
+    if (((tmp < 1.0F) && (tmp > -1.0F)) || ((tmp >= 1.0F) && (Id_err < 0.0F)) ||
+        ((tmp <= -1.0F) && (Id_err > 0.0F))) {
       /* '<S42>:1:22' */
       /* '<S42>:1:23' */
       /* '<S42>:1:24' */
@@ -1305,29 +1304,28 @@ void Foc_model_Ma_CurrentControl(void)
 
     /* '<S42>:1:29' */
     /* '<S42>:1:32' */
-    Vd_ref_beforeLimiter = wnq * Foc_model_Matlab_DW.integral_j + rtb_Merge1_p;
-    if (!(Vd_ref_beforeLimiter >= -1.0F)) {
-      Vd_ref_beforeLimiter = -1.0F;
+    rtb_Sum_b = rtb_Add2 * Foc_model_Matlab_DW.integral_j + wnq;
+    if (!(rtb_Sum_b >= -1.0F)) {
+      rtb_Sum_b = -1.0F;
     }
 
-    if (!(Vd_ref_beforeLimiter <= 1.0F)) {
-      Vd_ref_beforeLimiter = 1.0F;
+    if (!(rtb_Sum_b <= 1.0F)) {
+      rtb_Sum_b = 1.0F;
     }
-
-    /* End of MATLAB Function: '<S25>/MATLAB Function1' */
 
     /* Sum: '<S15>/Sum' incorporates:
      *  Gain: '<S23>/Gain'
      *  Gain: '<S23>/Gain1'
+     *  MATLAB Function: '<S25>/MATLAB Function1'
      *  Product: '<S23>/Product'
      */
-    rtb_Add1 = Vd_ref_beforeLimiter - 2.0F * rtb_Merge_a * Iq_fb * 0.000435F;
+    rtb_Sum_b -= 2.0F * rtb_Merge_a * Iq_fb * 0.000435F;
 
     /* Sum: '<S30>/Sum1' incorporates:
      *  Product: '<S30>/Product'
      *  Product: '<S30>/Product1'
      */
-    rtb_Merge1_p = rtb_Add1 * rtb_Add1 + rtb_Merge1 * rtb_Merge1;
+    rtb_Add2 = rtb_Sum_b * rtb_Sum_b + rtb_Add3 * rtb_Add3;
 
     /* Outputs for IfAction SubSystem: '<S22>/D-Q Equivalence' incorporates:
      *  ActionPort: '<S27>/Action Port'
@@ -1336,12 +1334,12 @@ void Foc_model_Ma_CurrentControl(void)
      *  If: '<S22>/If'
      *  RelationalOperator: '<S27>/Relational Operator'
      */
-    if (rtb_Merge1_p > 0.9025F) {
+    if (rtb_Add2 > 0.9025F) {
       /* Outputs for IfAction SubSystem: '<S27>/Limiter' incorporates:
        *  ActionPort: '<S31>/Action Port'
        */
       /* Sqrt: '<S31>/Square Root' */
-      rtb_Merge1_p = (real32_T)sqrt(rtb_Merge1_p);
+      rtb_Add2 = (real32_T)sqrt(rtb_Add2);
 
       /* Product: '<S31>/Divide' incorporates:
        *  Constant: '<S29>/Constant3'
@@ -1349,8 +1347,8 @@ void Foc_model_Ma_CurrentControl(void)
        *  Switch: '<S29>/Switch'
        *  Switch: '<S31>/Switch'
        */
-      rtb_Add1 = rtb_Add1 * 0.95F / rtb_Merge1_p;
-      rtb_Merge1 = rtb_Merge1 * 0.95F / rtb_Merge1_p;
+      rtb_Sum_b = rtb_Sum_b * 0.95F / rtb_Add2;
+      rtb_Add3 = rtb_Add3 * 0.95F / rtb_Add2;
 
       /* End of Outputs for SubSystem: '<S27>/Limiter' */
     }
@@ -1364,48 +1362,49 @@ void Foc_model_Ma_CurrentControl(void)
      *  Product: '<S45>/qsin'
      *  Sum: '<S45>/sum_alpha'
      */
-    wnq = rtb_Add1 * COS - rtb_Merge1 * SIN;
+    wnq = rtb_Sum_b * rtb_Merge1_p - rtb_Add3 * rtb_Merge1;
 
     /* Gain: '<S63>/one_by_two' incorporates:
      *  AlgorithmDescriptorDelegate generated from: '<S45>/a16'
      */
-    rtb_Merge1_p = 0.5F * wnq;
+    rtb_Add2 = 0.5F * wnq;
 
     /* Gain: '<S63>/sqrt3_by_two' incorporates:
      *  Product: '<S45>/dsin'
      *  Product: '<S45>/qcos'
      *  Sum: '<S45>/sum_beta'
      */
-    rtb_Merge1 = (rtb_Merge1 * COS + rtb_Add1 * SIN) * 0.866025388F;
+    rtb_Merge1 = (rtb_Add3 * rtb_Merge1_p + rtb_Sum_b * rtb_Merge1) *
+      0.866025388F;
 
     /* End of Outputs for SubSystem: '<S16>/Two inputs CRL' */
 
     /* Sum: '<S63>/add_b' */
-    rtb_Add1 = rtb_Merge1 - rtb_Merge1_p;
+    rtb_Merge1_p = rtb_Merge1 - rtb_Add2;
 
     /* Sum: '<S63>/add_c' */
-    rtb_Merge1_p = (0.0F - rtb_Merge1_p) - rtb_Merge1;
+    rtb_Add2 = (0.0F - rtb_Add2) - rtb_Merge1;
 
     /* MinMax: '<S60>/Max' incorporates:
      *  AlgorithmDescriptorDelegate generated from: '<S45>/a16'
      *  MinMax: '<S60>/Min'
      */
-    tmp = rtIsNaNF(rtb_Add1);
+    tmp_0 = rtIsNaNF(rtb_Merge1_p);
 
     /* Outputs for Atomic SubSystem: '<S16>/Two inputs CRL' */
-    if ((wnq >= rtb_Add1) || tmp) {
+    if ((wnq >= rtb_Merge1_p) || tmp_0) {
       rtb_Merge1 = wnq;
     } else {
-      rtb_Merge1 = rtb_Add1;
+      rtb_Merge1 = rtb_Merge1_p;
     }
 
     /* MinMax: '<S60>/Min' incorporates:
      *  AlgorithmDescriptorDelegate generated from: '<S45>/a16'
      */
-    if ((wnq <= rtb_Add1) || tmp) {
-      y = wnq;
+    if ((wnq <= rtb_Merge1_p) || tmp_0) {
+      rtb_Sum_b = wnq;
     } else {
-      y = rtb_Add1;
+      rtb_Sum_b = rtb_Merge1_p;
     }
 
     /* End of Outputs for SubSystem: '<S16>/Two inputs CRL' */
@@ -1413,14 +1412,14 @@ void Foc_model_Ma_CurrentControl(void)
     /* MinMax: '<S60>/Max' incorporates:
      *  MinMax: '<S60>/Min'
      */
-    tmp = !rtIsNaNF(rtb_Merge1_p);
-    if ((!(rtb_Merge1 >= rtb_Merge1_p)) && tmp) {
-      rtb_Merge1 = rtb_Merge1_p;
+    tmp_0 = !rtIsNaNF(rtb_Add2);
+    if ((!(rtb_Merge1 >= rtb_Add2)) && tmp_0) {
+      rtb_Merge1 = rtb_Add2;
     }
 
     /* MinMax: '<S60>/Min' */
-    if ((!(y <= rtb_Merge1_p)) && tmp) {
-      y = rtb_Merge1_p;
+    if ((!(rtb_Sum_b <= rtb_Add2)) && tmp_0) {
+      rtb_Sum_b = rtb_Add2;
     }
 
     /* Gain: '<S60>/one_by_two' incorporates:
@@ -1428,7 +1427,7 @@ void Foc_model_Ma_CurrentControl(void)
      *  MinMax: '<S60>/Min'
      *  Sum: '<S60>/Add'
      */
-    rtb_Merge1 = (rtb_Merge1 + y) * -0.5F;
+    rtb_Add3 = (rtb_Merge1 + rtb_Sum_b) * -0.5F;
 
     /* Outputs for Atomic SubSystem: '<S16>/Two inputs CRL' */
     /* Gain: '<S12>/Gain' incorporates:
@@ -1440,12 +1439,11 @@ void Foc_model_Ma_CurrentControl(void)
      *  Sum: '<S59>/Add2'
      *  Sum: '<S59>/Add3'
      */
-    PWM_Duty_Cycles[0] = ((wnq + rtb_Merge1) * 1.15470052F + 1.0F) * 0.5F;
+    PWM_Duty_Cycles[0] = ((wnq + rtb_Add3) * 1.15470052F + 1.0F) * 0.5F;
 
     /* End of Outputs for SubSystem: '<S16>/Two inputs CRL' */
-    PWM_Duty_Cycles[1] = ((rtb_Add1 + rtb_Merge1) * 1.15470052F + 1.0F) * 0.5F;
-    PWM_Duty_Cycles[2] = ((rtb_Merge1 + rtb_Merge1_p) * 1.15470052F + 1.0F) *
-      0.5F;
+    PWM_Duty_Cycles[1] = ((rtb_Merge1_p + rtb_Add3) * 1.15470052F + 1.0F) * 0.5F;
+    PWM_Duty_Cycles[2] = ((rtb_Add3 + rtb_Add2) * 1.15470052F + 1.0F) * 0.5F;
 
     /* DataTypeConversion: '<S12>/Data Type Conversion' incorporates:
      *  DataStoreRead: '<S12>/Enable'
@@ -2157,13 +2155,13 @@ void Foc_model_Matlab_initialize(void)
   Gamma = 0.6F;
 
   /* Start for DataStoreMemory: '<Root>/Data Store Memory10' */
-  Theta = 0.03F;
+  Theta = 0.005F;
 
   /* Start for DataStoreMemory: '<Root>/Data Store Memory13' */
-  Epsilon = 0.7F;
+  Epsilon = 0.5F;
 
   /* Start for DataStoreMemory: '<Root>/Data Store Memory9' */
-  Lambda = 0.8F;
+  Lambda = 0.5F;
 
   /* SystemInitialize for S-Function (ftm_s32k_hall_sensor): '<S3>/FTM_Hall_Sensor' incorporates:
    *  SubSystem: '<Root>/Hall Sensor'

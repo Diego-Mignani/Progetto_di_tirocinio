@@ -1,0 +1,1 @@
+var modelInfo = {model:"Foc_model_Matlab_1"};var modelHierarchy=[{model:"Foc_model_Matlab_1",relativePath:"_internal.html",parent:"null"},];var AddCode = true;var ProtectedModel = false;

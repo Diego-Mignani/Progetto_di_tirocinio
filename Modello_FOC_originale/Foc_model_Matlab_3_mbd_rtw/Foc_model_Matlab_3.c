@@ -1,0 +1,2468 @@
+/*
+ * Academic License - for use in teaching, academic research, and meeting
+ * course requirements at degree granting institutions only.  Not for
+ * government, commercial, or other organizational use.
+ *
+ * File: Foc_model_Matlab_3.c
+ *
+ * Code generated for Simulink model 'Foc_model_Matlab_3'.
+ *
+ * Model version                   : 10.38
+ * Simulink Coder version          : 24.2 (R2024b) 21-Jun-2024
+ * MBDT for S32K1xx Series Version : 4.2.0 (R2016a-R2020a) 20-Jul-2020
+ * C/C++ source code generated on  : Fri Nov 29 12:42:01 2024
+ *
+ * Target selection: mbd_s32k.tlc
+ * Embedded hardware selection: ARM Compatible->ARM Cortex
+ * Code generation objectives: Unspecified
+ * Validation result: Not run
+ */
+
+#include "Foc_model_Matlab_3.h"
+#include "rtwtypes.h"
+#include "Foc_model_Matlab_3_private.h"
+#include <math.h>
+#include "rt_nonfinite.h"
+
+/* Named constants for Chart: '<S4>/Enable PDB and start FTM' */
+#define Foc_model_Matlab_3_IN_A        ((uint8_T)1U)
+#define Foc_model_Matlab_3_IN_END      ((uint8_T)2U)
+
+lpspi_state_t lpspiMasterState0;
+void lpspi_master_transfer_callback0(void *driverState, spi_event_t event, void *
+  userData) __attribute__((weak));
+
+/* Exported data definition */
+
+/* Volatile memory section */
+/* Definition for custom storage class: Volatile */
+volatile real32_T ADC_A;               /* '<Root>/Data Store Memory11' */
+volatile real32_T ADC_B;               /* '<Root>/Data Store Memory12' */
+volatile uint32_T ADC_IA;              /* '<S207>/ADC_AD4_IA' */
+volatile uint32_T ADC_IB;              /* '<S207>/ADC_IB' */
+volatile uint32_T ADC_IDC;             /* '<S207>/ADC_AD6_IDC' */
+volatile uint32_T ADC_VDC;             /* '<S207>/ADC_AD7_VDC' */
+volatile uint32_T CH0S_ERR;            /* '<S206>/PDB1_ISR' */
+volatile uint32_T CH1S_ERR;            /* '<S206>/PDB1_ISR' */
+volatile uint16_T CntHall;             /* '<S3>/FTM_Hall_Sensor' */
+volatile uint16_T CntHallValidityIn;
+                                /* '<S2>/SigConvForSigProp_Variant_Source2_0' */
+volatile real32_T DesiredSpeed;        /* '<Root>/Data Store Memory7' */
+volatile boolean_T Enable;             /* '<Root>/Data Store Memory29' */
+volatile real32_T Epsilon;             /* '<Root>/Data Store Memory13' */
+volatile boolean_T FAULT;              /* '<Root>/I_MAX Scalling3' */
+volatile real32_T Gamma;               /* '<Root>/Data Store Memory8' */
+volatile int16_T GlobalDirection;      /* '<Root>/Data Store Memory3' */
+volatile uint32_T GlobalHallState;     /* '<Root>/Data Store Memory4' */
+volatile uint16_T GlobalSpeedCount;    /* '<Root>/Data Store Memory1' */
+volatile uint16_T GlobalSpeedValidity; /* '<Root>/Data Store Memory2' */
+volatile uint32_T HALL_A;              /* '<S189>/bit_shift' */
+volatile uint32_T HALL_B;              /* '<S190>/bit_shift' */
+volatile uint32_T HALL_C;              /* '<S187>/Data Type Conversion6' */
+volatile uint16_T HallCntActual;       /* '<Root>/Data Store Memory25' */
+volatile uint16_T HallCntPrev;         /* '<Root>/Data Store Memory24' */
+volatile uint16_T HallStateChangeFlag; /* '<Root>/Data Store Memory' */
+volatile uint16_T HallValididyInvalid; /* '<S193>/Merge' */
+volatile real32_T IaOffset;            /* '<Root>/Data Store Memory5' */
+volatile real32_T IbOffset;            /* '<Root>/Data Store Memory6' */
+volatile real32_T Idc_afterOffset;     /* '<S209>/Sum' */
+volatile real32_T Lambda;              /* '<Root>/Data Store Memory9' */
+volatile uint32_T SC_PDBIF;            /* '<S206>/PDB1_ISR' */
+volatile real32_T SpeedError;          /* '<S219>/Sum' */
+volatile real32_T Speed_Ref;           /* '<S220>/Switch' */
+volatile real32_T Speed_Ref_PU;        /* '<Root>/RT2' */
+volatile real32_T Speed_fb;            /* '<Root>/RT1' */
+volatile real32_T Theta;               /* '<Root>/Data Store Memory10' */
+
+/* Block signals (default storage) */
+B_Foc_model_Matlab_3_T Foc_model_Matlab_3_B;
+
+/* Block states (default storage) */
+DW_Foc_model_Matlab_3_T Foc_model_Matlab_3_DW;
+
+/* Real-time model */
+static RT_MODEL_Foc_model_Matlab_3_T Foc_model_Matlab_3_M_;
+RT_MODEL_Foc_model_Matlab_3_T *const Foc_model_Matlab_3_M =
+  &Foc_model_Matlab_3_M_;
+static void rate_monotonic_scheduler(void);
+trgmux_inout_mapping_config_t trgmuxAllMappingConfig[2];
+const trgmux_user_config_t pdbTrgmuxUserConfig = {
+  .numInOutMappingConfigs = 2,
+  .inOutMappingConfig = trgmuxAllMappingConfig
+};
+
+void pdb0_isr(void)
+{
+  uint32_t fPDBIF = (uint32_t)PDB_DRV_GetTimerIntFlag(0);
+  uint32_t errCh0 = PDB_DRV_GetAdcPreTriggerSeqErrFlags(0, 0, 0xFF);
+  uint32_t errCh1 = PDB_DRV_GetAdcPreTriggerSeqErrFlags(0, 1, 0xFF);
+  SC_PDBIF = fPDBIF;
+  CH0S_ERR = errCh0;
+  CH1S_ERR = errCh1;
+
+  /* Output and update for function-call system: '<S206>/PDB1_IRQHandler' */
+
+  /* S-Function (ftm_s32k_init_disen): '<S208>/FTM_Init_Trigger_Enable' */
+
+  /* FTM PWM Initialization Trigger Enable Disable*/
+  FTM_DRV_SetInitTriggerCmd(FTM3, true);
+  if (fPDBIF) {
+    PDB_DRV_ClearTimerIntFlag(0);
+  }
+
+  if (errCh0) {
+    PDB_DRV_ClearAdcPreTriggerSeqErrFlags(0, 0, errCh0);
+  }
+
+  if (errCh1) {
+    PDB_DRV_ClearAdcPreTriggerSeqErrFlags(0, 1, errCh1);
+  }
+}
+
+void ADC1_SC1reg2U_callback(void)
+{
+  adc_chan_config_t config;
+  uint16_t result;
+  ADC_DRV_GetChanResult(1, 2U, &result);
+  Foc_model_Matlab_3_B.ADC1_ISR_o2 = result;
+  ADC_DRV_GetChanConfig(1, 2U, &config);
+  Foc_model_Matlab_3_B.ADC1_ISR_o3 = config.channel;
+
+  /* Output and update for function-call system: '<S206>/ADC1_IRQHandler' */
+
+  /* user code (Output function Body) */
+  {
+    /* Start of Profile Code */
+    uint32_t tmp1;
+    uint32_t tmp2;
+    tmp1 = profiler_get_cnt();
+
+    /* Start Profiling This Function.*/
+
+    /* S-Function (ftm_s32k_init_disen): '<S207>/FTM_Init_Trigger_Disable' */
+
+    /* FTM PWM Initialization Trigger Enable Disable*/
+    FTM_DRV_SetInitTriggerCmd(FTM3, false);
+
+    /* S-Function (adc_s32k_start): '<S207>/ADC_AD4_IA' */
+    {
+      uint16_t result;
+
+      /* Get conversion result of ADC0 */
+      ADC_DRV_WaitConvDone(0);
+      ADC_DRV_GetChanResult(0, 0, &result);
+      ADC_IA = result;
+    }
+
+    /* SignalConversion generated from: '<S207>/ADC_IB' */
+    ADC_IB = Foc_model_Matlab_3_B.ADC1_ISR_o2;
+
+    /* S-Function (adc_s32k_start): '<S207>/ADC_AD7_VDC' */
+    {
+      uint16_t result;
+
+      /* Get conversion result of ADC1 */
+      ADC_DRV_WaitConvDone(1);
+      ADC_DRV_GetChanResult(1, 0, &result);
+      ADC_VDC = result;
+    }
+
+    /* S-Function (adc_s32k_start): '<S207>/ADC_AD6_IDC' */
+    {
+      uint16_t result;
+
+      /* Get conversion result of ADC1 */
+      ADC_DRV_WaitConvDone(1);
+      ADC_DRV_GetChanResult(1, 1, &result);
+      ADC_IDC = result;
+    }
+
+    /* Outputs for Atomic SubSystem: '<S207>/FaultDetection' */
+    Foc_model_Ma_FaultDetection(ADC_VDC, ADC_IDC);
+
+    /* End of Outputs for SubSystem: '<S207>/FaultDetection' */
+
+    /* S-Function (fcgen): '<S207>/Function-Call Generator' incorporates:
+     *  SubSystem: '<Root>/CurrentControl'
+     */
+    Foc_model_Ma_CurrentControl();
+
+    /* End of Outputs for S-Function (fcgen): '<S207>/Function-Call Generator' */
+
+    /* user code (Output function Trailer) */
+
+    /* Profile Code : Compute function execution time in us. */
+    tmp2 = profiler_get_cnt();
+    profile_buffer[2] = gt_pf(tmp1, tmp2);
+
+    /* End of Profile Code */
+  }
+}
+
+void GPIPORTE10_callback (void)
+{
+  /* Output and update for function-call system: '<S4>/GD3000_interrupt' */
+
+  /* DataStoreWrite: '<S214>/FAULT_write' incorporates:
+   *  Constant: '<S214>/NOK'
+   */
+  FAULT = true;
+
+  /* S-Function (ftm_s32k_pwm_disen): '<S214>/FTM_PWM_Disable_Enable' */
+  FTM_DRV_DeinitPwm(FTM_PWM3);
+
+  /* S-Function (tpp_s32k_func_mode): '<S214>/TPP_Functional_Mode' */
+  TPP_SetOperationalMode(&tppDrvConfig, tppModeSleep);
+
+  /* Clear interrupt flag */
+  PINS_DRV_ClearPinIntFlagCmd(PORTE, 10);
+}
+
+/*
+ * Set which subrates need to run this base step (base rate always runs).
+ * This function must be called prior to calling the model step function
+ * in order to remember which rates need to run this base step.  The
+ * buffering of events allows for overlapping preemption.
+ */
+void Foc_model_Matlab_3_SetEventsForThisBaseStep(boolean_T *eventFlags)
+{
+  /* Task runs when its counter is zero, computed via rtmStepTask macro */
+  eventFlags[1] = ((boolean_T)rtmStepTask(Foc_model_Matlab_3_M, 1));
+  eventFlags[2] = ((boolean_T)rtmStepTask(Foc_model_Matlab_3_M, 2));
+  eventFlags[3] = ((boolean_T)rtmStepTask(Foc_model_Matlab_3_M, 3));
+}
+
+/*
+ *         This function updates active task flag for each subrate
+ *         and rate transition flags for tasks that exchange data.
+ *         The function assumes rate-monotonic multitasking scheduler.
+ *         The function must be called at model base rate so that
+ *         the generated code self-manages all its subrates and rate
+ *         transition flags.
+ */
+static void rate_monotonic_scheduler(void)
+{
+  /* Compute which subrates run during the next base time step.  Subrates
+   * are an integer multiple of the base rate counter.  Therefore, the subtask
+   * counter is reset when it reaches its limit (zero means run).
+   */
+  (Foc_model_Matlab_3_M->Timing.TaskCounters.TID[1])++;
+  if ((Foc_model_Matlab_3_M->Timing.TaskCounters.TID[1]) > 1) {/* Sample time: [0.0001s, 0.0s] */
+    Foc_model_Matlab_3_M->Timing.TaskCounters.TID[1] = 0;
+  }
+
+  (Foc_model_Matlab_3_M->Timing.TaskCounters.TID[2])++;
+  if ((Foc_model_Matlab_3_M->Timing.TaskCounters.TID[2]) > 19) {/* Sample time: [0.001s, 0.0s] */
+    Foc_model_Matlab_3_M->Timing.TaskCounters.TID[2] = 0;
+  }
+
+  (Foc_model_Matlab_3_M->Timing.TaskCounters.TID[3])++;
+  if ((Foc_model_Matlab_3_M->Timing.TaskCounters.TID[3]) > 1999) {/* Sample time: [0.1s, 0.0s] */
+    Foc_model_Matlab_3_M->Timing.TaskCounters.TID[3] = 0;
+  }
+}
+
+/* Output and update for atomic system: '<S207>/FaultDetection' */
+void Foc_model_Ma_FaultDetection(uint32_T rtu_Vdc, uint32_T rtu_Idc)
+{
+  real32_T rtb_Product1_f;
+
+  /* Product: '<S209>/Product1' incorporates:
+   *  Constant: '<S209>/ADC1_AD7_Offset'
+   *  Constant: '<S209>/bits2volts'
+   *  DataTypeConversion: '<S209>/Data Type Conversion1'
+   *  Sum: '<S209>/Add'
+   */
+  rtb_Product1_f = ((real32_T)rtu_Vdc - 17.0F) * 0.0109890113F;
+
+  /* Sum: '<S209>/Sum' incorporates:
+   *  Constant: '<S209>/ADC_AD6 offset  and  Logic power supply compensation'
+   *  DataTypeConversion: '<S209>/Data Type Conversion'
+   */
+  Idc_afterOffset = (real32_T)rtu_Idc - 2090.0F;
+
+  /* If: '<S209>/Check_Voltage_Current_Limits' incorporates:
+   *  Constant: '<S209>/bits2amps'
+   *  Product: '<S209>/Product'
+   */
+  if ((rtb_Product1_f < 8.0F) || (rtb_Product1_f > 16.0F) || (Idc_afterOffset *
+       0.00805664062F > 2.3F)) {
+    /* Outputs for IfAction SubSystem: '<S209>/FAILURE' incorporates:
+     *  ActionPort: '<S210>/Action Port'
+     */
+    /* If: '<S210>/If' incorporates:
+     *  DataStoreRead: '<S210>/FAULT_read'
+     */
+    if (!FAULT) {
+      /* Outputs for IfAction SubSystem: '<S210>/Failed Subsystem' incorporates:
+       *  ActionPort: '<S211>/Action Port'
+       */
+      /* S-Function (ftm_s32k_pwm_disen): '<S211>/FTM_PWM_Disable_Enable' */
+      FTM_DRV_DeinitPwm(FTM_PWM3);
+
+      /* DataStoreWrite: '<S211>/FAULT_write' incorporates:
+       *  Constant: '<S211>/NOK'
+       */
+      FAULT = true;
+
+      /* S-Function (tpp_s32k_func_mode): '<S211>/TPP_Functional_Mode' */
+      TPP_SetOperationalMode(&tppDrvConfig, tppModeSleep);
+
+      /* End of Outputs for SubSystem: '<S210>/Failed Subsystem' */
+    }
+
+    /* End of If: '<S210>/If' */
+    /* End of Outputs for SubSystem: '<S209>/FAILURE' */
+  }
+
+  /* End of If: '<S209>/Check_Voltage_Current_Limits' */
+}
+
+/*
+ * Output and update for action system:
+ *    '<S96>/Hall Value of 1'
+ *    '<S95>/Hall Value of 2'
+ */
+void Foc_model_Matl_HallValueof1(real32_T *rty_position)
+{
+  /* SignalConversion generated from: '<S106>/position' incorporates:
+   *  Constant: '<S106>/Constant'
+   */
+  *rty_position = 0.16667F;
+}
+
+/*
+ * Output and update for action system:
+ *    '<S96>/Hall Value of 2'
+ *    '<S95>/Hall Value of 3'
+ */
+void Foc_model_Matl_HallValueof2(real32_T *rty_position)
+{
+  /* SignalConversion generated from: '<S107>/position' incorporates:
+   *  Constant: '<S107>/Constant'
+   */
+  *rty_position = 0.33333F;
+}
+
+/*
+ * Output and update for action system:
+ *    '<S96>/Hall Value of 3'
+ *    '<S95>/Hall Value of 4'
+ */
+void Foc_model_Matl_HallValueof3(real32_T *rty_position)
+{
+  /* SignalConversion generated from: '<S108>/position' incorporates:
+   *  Constant: '<S108>/Constant'
+   */
+  *rty_position = 0.5F;
+}
+
+/*
+ * Output and update for action system:
+ *    '<S96>/Hall Value of 4'
+ *    '<S95>/Hall Value of 5'
+ */
+void Foc_model_Matl_HallValueof4(real32_T *rty_position)
+{
+  /* SignalConversion generated from: '<S109>/position' incorporates:
+   *  Constant: '<S109>/Constant'
+   */
+  *rty_position = 0.66667F;
+}
+
+/*
+ * Output and update for action system:
+ *    '<S96>/Hall Value of 5'
+ *    '<S95>/Hall Value of 6'
+ */
+void Foc_model_Matl_HallValueof5(real32_T *rty_position)
+{
+  /* SignalConversion generated from: '<S110>/position' incorporates:
+   *  Constant: '<S110>/Constant'
+   */
+  *rty_position = 0.83333F;
+}
+
+/*
+ * Output and update for action system:
+ *    '<S96>/Hall Value of 7'
+ *    '<S95>/Hall Value of 1'
+ *    '<S95>/Hall Value of 7'
+ *    '<S84>/Hall Value of 7'
+ */
+void Foc_model_Matl_HallValueof7(real32_T *rty_position)
+{
+  /* SignalConversion generated from: '<S112>/position' incorporates:
+   *  Constant: '<S112>/Constant'
+   */
+  *rty_position = 0.0F;
+}
+
+/* System initialize for function-call system: '<Root>/CurrentControl' */
+void Foc_mod_CurrentControl_Init(void)
+{
+  /* Start for S-Function (ftm_s32k_pwm_config): '<S11>/FTM_PWM_Config' */
+
+  /* Enable clock for PORTB */
+  PCC_SetClockMode (PCC, PCC_PORTB_CLOCK, true);
+
+  /* Pin is configured for FTM function */
+  PINS_SetMuxModeSel (PORTB, 8, PORT_MUX_ALT2);
+
+  /* Enable clock for PORTB */
+  PCC_SetClockMode (PCC, PCC_PORTB_CLOCK, true);
+
+  /* Pin is configured for FTM function */
+  PINS_SetMuxModeSel (PORTB, 9, PORT_MUX_ALT2);
+
+  /* Enable clock for PORTB */
+  PCC_SetClockMode (PCC, PCC_PORTB_CLOCK, true);
+
+  /* Pin is configured for FTM function */
+  PINS_SetMuxModeSel (PORTB, 10, PORT_MUX_ALT2);
+
+  /* Enable clock for PORTB */
+  PCC_SetClockMode (PCC, PCC_PORTB_CLOCK, true);
+
+  /* Pin is configured for FTM function */
+  PINS_SetMuxModeSel (PORTB, 11, PORT_MUX_ALT2);
+
+  /* Enable clock for PORTC */
+  PCC_SetClockMode (PCC, PCC_PORTC_CLOCK, true);
+
+  /* Pin is configured for FTM function */
+  PINS_SetMuxModeSel (PORTC, 10, PORT_MUX_ALT2);
+
+  /* Enable clock for PORTC */
+  PCC_SetClockMode (PCC, PCC_PORTC_CLOCK, true);
+
+  /* Pin is configured for FTM function */
+  PINS_SetMuxModeSel (PORTC, 11, PORT_MUX_ALT2);
+
+  /* Set FTM_3 clock source */
+  PCC_SetPeripheralClockControl (PCC, FTM3_CLK, true, CLK_SRC_SPLL, 0, 0);
+
+  /* Enable clock for FTM_3 */
+  PCC_SetClockMode (PCC, FTM3_CLK, true);
+
+  /* PWM3 initialization */
+  FTM_DRV_Init (FTM_PWM3, &flexTimer_pwm3_InitConfig, &ftmStateStruct3);
+  FTM_DRV_SetChnTriggerCmd(FTM3, 1, false);
+  FTM_DRV_SetChnTriggerCmd(FTM3, 3, false);
+  FTM_DRV_SetChnTriggerCmd(FTM3, 5, false);
+
+  /* Start for S-Function (profiler_s32k_fcn): '<S1>/FOCProfiler' */
+  {
+    /* Un-gate pit clock*/
+    PCC_SetPeripheralClockControl(PCC, LPIT0_CLK, true, CLK_SRC_SPLL, 0, 0);
+  }
+
+  profiler_init();
+
+  /* InitializeConditions for Delay: '<S79>/Delay One Step1' */
+  Foc_model_Matlab_3_DW.DelayOneStep1_DSTATE = true;
+
+  /* InitializeConditions for Delay: '<S79>/Delay One Step' */
+  Foc_model_Matlab_3_DW.DelayOneStep_DSTATE = 500U;
+
+  /* SystemInitialize for Atomic SubSystem: '<S68>/Atomic Hall Reading' */
+
+  /* Start for S-Function (register_s32k_read): '<S70>/Read_Register' */
+  PCC_SetClockMode(PCC, FTM2_CLK, true);
+
+  /* End of SystemInitialize for SubSystem: '<S68>/Atomic Hall Reading' */
+}
+
+/* System reset for function-call system: '<Root>/CurrentControl' */
+void Foc_mo_CurrentControl_Reset(void)
+{
+  /* InitializeConditions for Delay: '<S79>/Delay One Step1' */
+  Foc_model_Matlab_3_DW.DelayOneStep1_DSTATE = true;
+
+  /* InitializeConditions for Delay: '<S79>/Delay One Step' */
+  Foc_model_Matlab_3_DW.DelayOneStep_DSTATE = 500U;
+
+  /* InitializeConditions for Delay: '<S16>/Delay' */
+  Foc_model_Matlab_3_DW.CircBufIdx = 0U;
+
+  /* SystemReset for MATLAB Function: '<S29>/MATLAB Function1' */
+  Foc_model_Matlab_3_DW.integral_not_empty = false;
+
+  /* SystemReset for MATLAB Function: '<S28>/MATLAB Function1' */
+  Foc_model_Matlab_3_DW.integral_not_empty_m = false;
+
+  /* SystemReset for Atomic SubSystem: '<S1>/STSMO' */
+  /* InitializeConditions for DiscreteIntegrator: '<S14>/Discrete-Time Integrator2' */
+  Foc_model_Matlab_3_DW.DiscreteTimeIntegrator2_PREV_U = 0.0F;
+
+  /* InitializeConditions for DiscreteIntegrator: '<S14>/Discrete-Time Integrator3' */
+  Foc_model_Matlab_3_DW.DiscreteTimeIntegrator3_PREV_U = 0.0F;
+
+  /* InitializeConditions for DiscreteIntegrator: '<S14>/Discrete-Time Integrator1' */
+  Foc_model_Matlab_3_DW.DiscreteTimeIntegrator1_PREV_U = 0.0F;
+
+  /* InitializeConditions for DiscreteIntegrator: '<S14>/Discrete-Time Integrator' */
+  Foc_model_Matlab_3_DW.DiscreteTimeIntegrator_PREV_U = 0.0F;
+
+  /* End of SystemReset for SubSystem: '<S1>/STSMO' */
+}
+
+/* Enable for function-call system: '<Root>/CurrentControl' */
+void Foc_m_CurrentControl_Enable(void)
+{
+  Foc_model_Matlab_3_DW.CurrentControl_RESET_ELAPS_T = true;
+
+  /* Enable for Atomic SubSystem: '<S1>/STSMO' */
+  /* Enable for DiscreteIntegrator: '<S14>/Discrete-Time Integrator2' */
+  Foc_model_Matlab_3_DW.DiscreteTimeIntegrator2_SYSTEM_ = 1U;
+
+  /* Enable for DiscreteIntegrator: '<S14>/Discrete-Time Integrator3' */
+  Foc_model_Matlab_3_DW.DiscreteTimeIntegrator3_SYSTEM_ = 1U;
+
+  /* Enable for DiscreteIntegrator: '<S14>/Discrete-Time Integrator1' */
+  Foc_model_Matlab_3_DW.DiscreteTimeIntegrator1_SYSTEM_ = 1U;
+
+  /* Enable for DiscreteIntegrator: '<S14>/Discrete-Time Integrator' */
+  Foc_model_Matlab_3_DW.DiscreteTimeIntegrator_SYSTEM_E = 1U;
+
+  /* End of Enable for SubSystem: '<S1>/STSMO' */
+}
+
+/* Output and update for function-call system: '<Root>/CurrentControl' */
+void Foc_model_Ma_CurrentControl(void)
+{
+  int32_T rtb_Add1;
+  real32_T P;
+  real32_T rtb_DTC;
+  real32_T rtb_Iq_err;
+  real32_T rtb_Merge1;
+  real32_T rtb_Merge_j;
+  real32_T rtb_Multiply_idx_0;
+  real32_T rtb_Sum4;
+  real32_T rtb_Sum6;
+  real32_T rtb_Switch_e_idx_0;
+  real32_T tmp;
+  real32_T wnq;
+  real32_T wnq_tmp;
+  uint32_T CurrentControl_ELAPS_T;
+  uint16_T rtb_DataStoreRead5;
+  boolean_T OR;
+  boolean_T rtb_Compare;
+  boolean_T tmp_0;
+
+  /* user code (Output function Body) */
+  {
+    /* Start of Profile Code */
+    uint32_t tmp1;
+    uint32_t tmp2;
+    tmp1 = profiler_get_cnt();
+
+    /* Start Profiling This Function.*/
+    if (Foc_model_Matlab_3_DW.CurrentControl_RESET_ELAPS_T) {
+      CurrentControl_ELAPS_T = 0U;
+    } else {
+      CurrentControl_ELAPS_T = Foc_model_Matlab_3_M->Timing.clockTick1 -
+        Foc_model_Matlab_3_DW.CurrentControl_PREV_T;
+    }
+
+    Foc_model_Matlab_3_DW.CurrentControl_PREV_T =
+      Foc_model_Matlab_3_M->Timing.clockTick1;
+    Foc_model_Matlab_3_DW.CurrentControl_RESET_ELAPS_T = false;
+
+    /* Outputs for Atomic SubSystem: '<S68>/Atomic Hall Reading' */
+    /* S-Function (register_s32k_read): '<S70>/Read_Register' */
+
+    /* read from <empty>_SC1A register */
+    Foc_model_Matlab_3_B.Read_Register = *((uint32_t *) 0x4003A004);
+
+    /* DataStoreRead: '<S70>/Data Store Read5' */
+    rtb_DataStoreRead5 = HallStateChangeFlag;
+
+    /* S-Function (gpio_s32k_input): '<S73>/Digital_Input_HALL_C' */
+
+    /* GPIPORTA1 signal update */
+    Foc_model_Matlab_3_B.Digital_Input_HALL_C = (PINS_DRV_ReadPins(PTA) >> 1) &
+      0x01;
+
+    /* S-Function (gpio_s32k_input): '<S73>/Digital_Input_HALL_B' */
+    /* MATLAB Function 'Logic and Bit Operations/Bit Shift/bit_shift': '<S76>:1' */
+    /* '<S76>:1:6' */
+
+    /* GPIPORTD10 signal update */
+    Foc_model_Matlab_3_B.Digital_Input_HALL_B = (PINS_DRV_ReadPins(PTD) >> 10) &
+      0x01;
+
+    /* S-Function (gpio_s32k_input): '<S73>/Digital_Input_HALL_A' */
+    /* MATLAB Function 'Logic and Bit Operations/Bit Shift/bit_shift': '<S77>:1' */
+    /* '<S77>:1:6' */
+
+    /* GPIPORTD11 signal update */
+    Foc_model_Matlab_3_B.Digital_Input_HALL_A = (PINS_DRV_ReadPins(PTD) >> 11) &
+      0x01;
+
+    /* Outputs for Atomic SubSystem: '<S73>/Bit Shift' */
+    /* Outputs for Atomic SubSystem: '<S73>/Bit Shift1' */
+    /* Sum: '<S73>/Add1' incorporates:
+     *  DataTypeConversion: '<S73>/Data Type Conversion2'
+     *  DataTypeConversion: '<S73>/Data Type Conversion3'
+     *  DataTypeConversion: '<S73>/Data Type Conversion6'
+     *  MATLAB Function: '<S74>/bit_shift'
+     *  MATLAB Function: '<S75>/bit_shift'
+     */
+    rtb_Add1 = (int32_T)((((uint32_T)Foc_model_Matlab_3_B.Digital_Input_HALL_C <<
+      2) + ((uint32_T)Foc_model_Matlab_3_B.Digital_Input_HALL_B << 1)) +
+                         Foc_model_Matlab_3_B.Digital_Input_HALL_A);
+
+    /* End of Outputs for SubSystem: '<S73>/Bit Shift1' */
+    /* End of Outputs for SubSystem: '<S73>/Bit Shift' */
+
+    /* Switch: '<S71>/Switch' incorporates:
+     *  Constant: '<S71>/WatchDog'
+     *  DataStoreRead: '<S70>/Data Store Read5'
+     *  DataStoreWrite: '<S68>/Data Store Write2'
+     */
+    if (HallStateChangeFlag != 0) {
+      HallStateChangeFlag = 0U;
+    }
+
+    /* End of Switch: '<S71>/Switch' */
+    /* End of Outputs for SubSystem: '<S68>/Atomic Hall Reading' */
+
+    /* Logic: '<S79>/OR' incorporates:
+     *  DataTypeConversion: '<S71>/Data Type Conversion4'
+     *  Delay: '<S79>/Delay One Step1'
+     */
+    OR = (Foc_model_Matlab_3_DW.DelayOneStep1_DSTATE || (rtb_DataStoreRead5 != 0));
+
+    /* Delay: '<S79>/Delay One Step' incorporates:
+     *  DataTypeConversion: '<S71>/Data Type Conversion4'
+     */
+    if (OR) {
+      if (rtb_DataStoreRead5 != 0) {
+        Foc_model_Matlab_3_DW.DelayOneStep_DSTATE = 500U;
+      }
+
+      /* Delay: '<S79>/Delay One Step' incorporates:
+       *  DataTypeConversion: '<S71>/Data Type Conversion4'
+       */
+      Foc_model_Matlab_3_B.DelayOneStep =
+        Foc_model_Matlab_3_DW.DelayOneStep_DSTATE;
+    }
+
+    /* End of Delay: '<S79>/Delay One Step' */
+
+    /* RelationalOperator: '<S83>/Compare' incorporates:
+     *  Constant: '<S83>/Constant'
+     */
+    rtb_Compare = (Foc_model_Matlab_3_B.DelayOneStep > 0);
+
+    /* Switch: '<S82>/watchdog check' incorporates:
+     *  Constant: '<S82>/Constant'
+     */
+    if (rtb_Compare) {
+      /* MinMax: '<S82>/Max' incorporates:
+       *  DataStoreRead: '<S70>/Data Store Read2'
+       *  DataTypeConversion: '<S71>/counterSize1'
+       */
+      if (GlobalSpeedCount >= (uint16_T)Foc_model_Matlab_3_B.Read_Register) {
+        rtb_DataStoreRead5 = GlobalSpeedCount;
+      } else {
+        rtb_DataStoreRead5 = (uint16_T)Foc_model_Matlab_3_B.Read_Register;
+      }
+
+      /* Switch: '<S82>/speed check' incorporates:
+       *  Constant: '<S82>/Constant'
+       *  DataStoreRead: '<S70>/Data Store Read4'
+       *  DataTypeConversion: '<S78>/Data Type Conversion'
+       *  Logic: '<S78>/Logical Operator'
+       *  MinMax: '<S82>/Max'
+       */
+      if (rtb_DataStoreRead5 >= 31250) {
+        rtb_DataStoreRead5 = 0U;
+      } else {
+        rtb_DataStoreRead5 = (uint16_T)((GlobalSpeedValidity != 0) ||
+          Foc_model_Matlab_3_B.validityDelay);
+      }
+
+      /* End of Switch: '<S82>/speed check' */
+    } else {
+      rtb_DataStoreRead5 = 0U;
+    }
+
+    /* End of Switch: '<S82>/watchdog check' */
+
+    /* If: '<S71>/If' */
+    if (rtb_DataStoreRead5 != 0) {
+      /* Outputs for IfAction SubSystem: '<S71>/Speed and direction are valid Use speed to extrapolate position' incorporates:
+       *  ActionPort: '<S81>/Action Port'
+       */
+      /* If: '<S81>/If' incorporates:
+       *  DataStoreRead: '<S70>/Data Store Read3'
+       */
+      if (GlobalDirection > 0) {
+        /* Outputs for IfAction SubSystem: '<S81>/If Action Subsystem' incorporates:
+         *  ActionPort: '<S92>/Action Port'
+         */
+        /* SignalConversion generated from: '<S92>/In1' incorporates:
+         *  DataStoreRead: '<S70>/Data Store Read2'
+         *  DataTypeConversion: '<S81>/currentSpeedData'
+         *  Gain: '<S81>/SpeedGain'
+         *  Product: '<S81>/Divide'
+         */
+        rtb_Merge_j = Foc_model_Matlab_3_ConstB.SpeedConstData / (real32_T)
+          GlobalSpeedCount * 0.05F;
+
+        /* End of Outputs for SubSystem: '<S81>/If Action Subsystem' */
+      } else {
+        /* Outputs for IfAction SubSystem: '<S81>/If Action Subsystem1' incorporates:
+         *  ActionPort: '<S93>/Action Port'
+         */
+        /* UnaryMinus: '<S93>/Unary Minus' incorporates:
+         *  DataStoreRead: '<S70>/Data Store Read2'
+         *  DataTypeConversion: '<S81>/currentSpeedData'
+         *  Gain: '<S81>/SpeedGain'
+         *  Product: '<S81>/Divide'
+         */
+        rtb_Merge_j = -(Foc_model_Matlab_3_ConstB.SpeedConstData / (real32_T)
+                        GlobalSpeedCount * 0.05F);
+
+        /* End of Outputs for SubSystem: '<S81>/If Action Subsystem1' */
+      }
+
+      /* End of If: '<S81>/If' */
+
+      /* Outputs for Enabled SubSystem: '<S81>/Subsystem1' incorporates:
+       *  EnablePort: '<S94>/Enable'
+       */
+      /* If: '<S94>/If' incorporates:
+       *  DataStoreRead: '<S70>/Data Store Read3'
+       */
+      if (GlobalDirection != 1) {
+        /* Outputs for IfAction SubSystem: '<S94>/-ve Direction' incorporates:
+         *  ActionPort: '<S96>/Action Port'
+         */
+        /* SwitchCase: '<S96>/Switch Case' */
+        switch (rtb_Add1) {
+         case 6:
+          /* Outputs for IfAction SubSystem: '<S96>/Hall Value of 1' incorporates:
+           *  ActionPort: '<S106>/Action Port'
+           */
+          Foc_model_Matl_HallValueof1(&rtb_Merge1);
+
+          /* End of Outputs for SubSystem: '<S96>/Hall Value of 1' */
+          break;
+
+         case 4:
+          /* Outputs for IfAction SubSystem: '<S96>/Hall Value of 2' incorporates:
+           *  ActionPort: '<S107>/Action Port'
+           */
+          Foc_model_Matl_HallValueof2(&rtb_Merge1);
+
+          /* End of Outputs for SubSystem: '<S96>/Hall Value of 2' */
+          break;
+
+         case 5:
+          /* Outputs for IfAction SubSystem: '<S96>/Hall Value of 3' incorporates:
+           *  ActionPort: '<S108>/Action Port'
+           */
+          Foc_model_Matl_HallValueof3(&rtb_Merge1);
+
+          /* End of Outputs for SubSystem: '<S96>/Hall Value of 3' */
+          break;
+
+         case 1:
+          /* Outputs for IfAction SubSystem: '<S96>/Hall Value of 4' incorporates:
+           *  ActionPort: '<S109>/Action Port'
+           */
+          Foc_model_Matl_HallValueof4(&rtb_Merge1);
+
+          /* End of Outputs for SubSystem: '<S96>/Hall Value of 4' */
+          break;
+
+         case 3:
+          /* Outputs for IfAction SubSystem: '<S96>/Hall Value of 5' incorporates:
+           *  ActionPort: '<S110>/Action Port'
+           */
+          Foc_model_Matl_HallValueof5(&rtb_Merge1);
+
+          /* End of Outputs for SubSystem: '<S96>/Hall Value of 5' */
+          break;
+
+         case 2:
+          break;
+
+         default:
+          /* Outputs for IfAction SubSystem: '<S96>/Hall Value of 7' incorporates:
+           *  ActionPort: '<S112>/Action Port'
+           */
+          Foc_model_Matl_HallValueof7(&rtb_Merge1);
+
+          /* End of Outputs for SubSystem: '<S96>/Hall Value of 7' */
+          break;
+        }
+
+        /* End of SwitchCase: '<S96>/Switch Case' */
+        /* End of Outputs for SubSystem: '<S94>/-ve Direction' */
+      } else {
+        /* Outputs for IfAction SubSystem: '<S94>/+ve Direction' incorporates:
+         *  ActionPort: '<S95>/Action Port'
+         */
+        /* SwitchCase: '<S95>/Switch Case' */
+        switch (rtb_Add1) {
+         case 6:
+          /* Outputs for IfAction SubSystem: '<S95>/Hall Value of 1' incorporates:
+           *  ActionPort: '<S99>/Action Port'
+           */
+          Foc_model_Matl_HallValueof7(&rtb_Merge1);
+
+          /* End of Outputs for SubSystem: '<S95>/Hall Value of 1' */
+          break;
+
+         case 4:
+          /* Outputs for IfAction SubSystem: '<S95>/Hall Value of 2' incorporates:
+           *  ActionPort: '<S100>/Action Port'
+           */
+          Foc_model_Matl_HallValueof1(&rtb_Merge1);
+
+          /* End of Outputs for SubSystem: '<S95>/Hall Value of 2' */
+          break;
+
+         case 5:
+          /* Outputs for IfAction SubSystem: '<S95>/Hall Value of 3' incorporates:
+           *  ActionPort: '<S101>/Action Port'
+           */
+          Foc_model_Matl_HallValueof2(&rtb_Merge1);
+
+          /* End of Outputs for SubSystem: '<S95>/Hall Value of 3' */
+          break;
+
+         case 1:
+          /* Outputs for IfAction SubSystem: '<S95>/Hall Value of 4' incorporates:
+           *  ActionPort: '<S102>/Action Port'
+           */
+          Foc_model_Matl_HallValueof3(&rtb_Merge1);
+
+          /* End of Outputs for SubSystem: '<S95>/Hall Value of 4' */
+          break;
+
+         case 3:
+          /* Outputs for IfAction SubSystem: '<S95>/Hall Value of 5' incorporates:
+           *  ActionPort: '<S103>/Action Port'
+           */
+          Foc_model_Matl_HallValueof4(&rtb_Merge1);
+
+          /* End of Outputs for SubSystem: '<S95>/Hall Value of 5' */
+          break;
+
+         case 2:
+          /* Outputs for IfAction SubSystem: '<S95>/Hall Value of 6' incorporates:
+           *  ActionPort: '<S104>/Action Port'
+           */
+          Foc_model_Matl_HallValueof5(&rtb_Merge1);
+
+          /* End of Outputs for SubSystem: '<S95>/Hall Value of 6' */
+          break;
+
+         default:
+          /* Outputs for IfAction SubSystem: '<S95>/Hall Value of 7' incorporates:
+           *  ActionPort: '<S105>/Action Port'
+           */
+          Foc_model_Matl_HallValueof7(&rtb_Merge1);
+
+          /* End of Outputs for SubSystem: '<S95>/Hall Value of 7' */
+          break;
+        }
+
+        /* End of SwitchCase: '<S95>/Switch Case' */
+        /* End of Outputs for SubSystem: '<S94>/+ve Direction' */
+      }
+
+      /* End of If: '<S94>/If' */
+      /* End of Outputs for SubSystem: '<S81>/Subsystem1' */
+      /* End of Outputs for SubSystem: '<S71>/Speed and direction are valid Use speed to extrapolate position' */
+    } else {
+      /* Outputs for IfAction SubSystem: '<S71>/Speed and direction are not valid Position will be set to the middle of the Hall quadrant' incorporates:
+       *  ActionPort: '<S80>/Action Port'
+       */
+      /* SwitchCase: '<S84>/Switch Case' */
+      switch (rtb_Add1) {
+       case 6:
+       case 4:
+       case 5:
+       case 1:
+       case 3:
+       case 2:
+        break;
+
+       default:
+        /* Outputs for IfAction SubSystem: '<S84>/Hall Value of 7' incorporates:
+         *  ActionPort: '<S91>/Action Port'
+         */
+        Foc_model_Matl_HallValueof7(&rtb_Merge1);
+
+        /* End of Outputs for SubSystem: '<S84>/Hall Value of 7' */
+        break;
+      }
+
+      /* End of SwitchCase: '<S84>/Switch Case' */
+
+      /* SignalConversion generated from: '<S80>/Speed(r.p.m)' incorporates:
+       *  Constant: '<S80>/Constant'
+       */
+      rtb_Merge_j = 0.0F;
+
+      /* End of Outputs for SubSystem: '<S71>/Speed and direction are not valid Position will be set to the middle of the Hall quadrant' */
+    }
+
+    /* End of If: '<S71>/If' */
+
+    /* Sum: '<S79>/Sum' */
+    rtb_DataStoreRead5 = Foc_model_Matlab_3_B.DelayOneStep;
+
+    /* Gain: '<S69>/Multiply' incorporates:
+     *  DataStoreRead: '<S184>/Data Store Read'
+     *  DataStoreRead: '<S184>/Data Store Read1'
+     *  DataStoreRead: '<S69>/Data Store Read'
+     *  DataStoreRead: '<S69>/Data Store Read1'
+     *  Sum: '<S69>/Add'
+     */
+    rtb_Multiply_idx_0 = (IaOffset - ADC_A) * 0.00048828125F;
+    rtb_Merge1 = (IbOffset - ADC_B) * 0.00048828125F;
+
+    /* Outputs for Atomic SubSystem: '<S23>/Two phase CRL wrap' */
+    /* Gain: '<S24>/one_by_sqrt3' incorporates:
+     *  Sum: '<S24>/a_plus_2b'
+     */
+    rtb_DTC = ((rtb_Multiply_idx_0 + rtb_Merge1) + rtb_Merge1) * 0.577350259F;
+
+    /* End of Outputs for SubSystem: '<S23>/Two phase CRL wrap' */
+
+    /* Sum: '<S53>/Sum4' incorporates:
+     *  Constant: '<S52>/sine_table_values'
+     *  Product: '<S53>/Product'
+     *  Selector: '<S52>/Lookup'
+     *  Sum: '<S53>/Sum3'
+     */
+    rtb_Sum4 = (Foc_model_Matlab_3_ConstP.sine_table_values_Value[1] -
+                Foc_model_Matlab_3_ConstP.sine_table_values_Value[0]) * 0.0F +
+      Foc_model_Matlab_3_ConstP.sine_table_values_Value[0];
+
+    /* Sum: '<S53>/Sum6' incorporates:
+     *  Constant: '<S52>/sine_table_values'
+     *  Product: '<S53>/Product1'
+     *  Selector: '<S52>/Lookup'
+     *  Sum: '<S53>/Sum5'
+     */
+    rtb_Sum6 = (Foc_model_Matlab_3_ConstP.sine_table_values_Value[201] -
+                Foc_model_Matlab_3_ConstP.sine_table_values_Value[200]) * 0.0F +
+      Foc_model_Matlab_3_ConstP.sine_table_values_Value[200];
+
+    /* Outputs for Atomic SubSystem: '<S20>/Two inputs CRL' */
+    /* Outputs for Atomic SubSystem: '<S23>/Two phase CRL wrap' */
+    /* Switch: '<S51>/Switch' incorporates:
+     *  AlgorithmDescriptorDelegate generated from: '<S24>/a16'
+     *  Product: '<S50>/acos'
+     *  Product: '<S50>/asin'
+     *  Product: '<S50>/bcos'
+     *  Product: '<S50>/bsin'
+     *  Sum: '<S50>/sum_Ds'
+     *  Sum: '<S50>/sum_Qs'
+     */
+    rtb_Switch_e_idx_0 = rtb_Multiply_idx_0 * rtb_Sum6 + rtb_DTC * rtb_Sum4;
+    rtb_Merge1 = rtb_DTC * rtb_Sum6 - rtb_Multiply_idx_0 * rtb_Sum4;
+
+    /* End of Outputs for SubSystem: '<S23>/Two phase CRL wrap' */
+
+    /* Sum: '<S29>/Sum' incorporates:
+     *  AlgorithmDescriptorDelegate generated from: '<S50>/a16'
+     */
+    rtb_Iq_err = Foc_model_Matlab_3_B.RT11[1] - rtb_Merge1;
+
+    /* End of Outputs for SubSystem: '<S20>/Two inputs CRL' */
+
+    /* MATLAB Function: '<S29>/MATLAB Function' incorporates:
+     *  Constant: '<S29>/Constant'
+     *  Constant: '<S29>/Constant1'
+     *  DataStoreRead: '<S29>/Data Store Read4'
+     *  MATLAB Function: '<S28>/MATLAB Function'
+     */
+    /* MATLAB Function 'CurrentControl/Control_System/Current_Controllers/PI_Controller_Iq/MATLAB Function': '<S46>:1' */
+    /* '<S46>:1:3' */
+    wnq_tmp = 1.0F / (1.0F - Gamma);
+    wnq = wnq_tmp * 1463.60156F;
+
+    /* '<S46>:1:4' */
+    P = 1.414F * wnq * 0.000435F - 0.636666656F;
+
+    /* '<S46>:1:5' */
+    wnq = P / (wnq * wnq * 0.000435F);
+
+    /* '<S46>:1:6' */
+    /* '<S46>:1:7' */
+    wnq *= P / wnq;
+
+    /* Logic: '<S29>/Logical Operator' incorporates:
+     *  DataStoreRead: '<S29>/Data Store Read1'
+     *  Logic: '<S28>/Logical Operator'
+     */
+    /* MATLAB Function 'CurrentControl/Control_System/Current_Controllers/PI_Controller_Iq/MATLAB Function1': '<S47>:1' */
+    /* '<S47>:1:6' */
+    /* '<S47>:1:7' */
+    /* '<S47>:1:8' */
+    /* '<S47>:1:9' */
+    /* '<S47>:1:10' */
+    /* '<S47>:1:11' */
+    tmp_0 = !Enable;
+
+    /* MATLAB Function: '<S29>/MATLAB Function1' incorporates:
+     *  Constant: '<S29>/Kp1'
+     *  Constant: '<S29>/Kp2'
+     *  Logic: '<S29>/Logical Operator'
+     *  MATLAB Function: '<S29>/MATLAB Function'
+     */
+    if ((!Foc_model_Matlab_3_DW.integral_not_empty) || tmp_0) {
+      /* '<S47>:1:14' */
+      /* '<S47>:1:15' */
+      Foc_model_Matlab_3_DW.integral = 0.0F;
+      Foc_model_Matlab_3_DW.integral_not_empty = true;
+    }
+
+    /* '<S47>:1:19' */
+    P *= rtb_Iq_err;
+    tmp = wnq * Foc_model_Matlab_3_DW.integral + P;
+    if (((tmp < 1.0F) && (tmp > -1.0F)) || ((tmp >= 1.0F) && (rtb_Iq_err < 0.0F))
+        || ((tmp <= -1.0F) && (rtb_Iq_err > 0.0F))) {
+      /* '<S47>:1:22' */
+      /* '<S47>:1:23' */
+      /* '<S47>:1:24' */
+      /* '<S47>:1:25' */
+      Foc_model_Matlab_3_DW.integral += rtb_Iq_err;
+    }
+
+    /* Gain: '<S27>/Gain1' */
+    /* '<S47>:1:29' */
+    /* '<S47>:1:32' */
+    rtb_Iq_err = 2.0F * rtb_Merge_j;
+
+    /* MATLAB Function: '<S29>/MATLAB Function1' */
+    P += wnq * Foc_model_Matlab_3_DW.integral;
+    if (!(P >= -1.0F)) {
+      P = -1.0F;
+    }
+
+    if (!(P <= 1.0F)) {
+      P = 1.0F;
+    }
+
+    /* Outputs for Atomic SubSystem: '<S20>/Two inputs CRL' */
+    /* Sum: '<S18>/Sum1' incorporates:
+     *  AlgorithmDescriptorDelegate generated from: '<S50>/a16'
+     *  Constant: '<S27>/Constant4'
+     *  DataTypeConversion: '<S27>/Cast To Single'
+     *  Gain: '<S27>/Gain'
+     *  MATLAB Function: '<S29>/MATLAB Function1'
+     *  Product: '<S27>/Product'
+     *  Product: '<S27>/Product1'
+     */
+    rtb_Iq_err = ((real32_T)(0.0079942689836159844 * rtb_Iq_err) + P) +
+      rtb_Iq_err * rtb_Switch_e_idx_0 * 0.000375F;
+
+    /* Sum: '<S28>/Sum' incorporates:
+     *  AlgorithmDescriptorDelegate generated from: '<S50>/a16'
+     */
+    rtb_Switch_e_idx_0 = Foc_model_Matlab_3_B.RT11[0] - rtb_Switch_e_idx_0;
+
+    /* End of Outputs for SubSystem: '<S20>/Two inputs CRL' */
+
+    /* MATLAB Function: '<S28>/MATLAB Function' incorporates:
+     *  Constant: '<S28>/Constant'
+     *  Constant: '<S28>/Constant1'
+     */
+    /* MATLAB Function 'CurrentControl/Control_System/Current_Controllers/PI_Controller_Id/MATLAB Function': '<S44>:1' */
+    /* '<S44>:1:3' */
+    wnq = wnq_tmp * 1697.77783F;
+
+    /* '<S44>:1:4' */
+    P = 1.414F * wnq * 0.000375F - 0.636666656F;
+
+    /* '<S44>:1:5' */
+    wnq = P / (wnq * wnq * 0.000375F);
+
+    /* '<S44>:1:6' */
+    /* '<S44>:1:7' */
+    wnq *= P / wnq;
+
+    /* MATLAB Function: '<S28>/MATLAB Function1' incorporates:
+     *  Constant: '<S28>/Ki1'
+     *  Constant: '<S28>/Ki2'
+     *  MATLAB Function: '<S28>/MATLAB Function'
+     */
+    /* MATLAB Function 'CurrentControl/Control_System/Current_Controllers/PI_Controller_Id/MATLAB Function1': '<S45>:1' */
+    /* '<S45>:1:6' */
+    /* '<S45>:1:7' */
+    /* '<S45>:1:8' */
+    /* '<S45>:1:9' */
+    /* '<S45>:1:10' */
+    /* '<S45>:1:11' */
+    if ((!Foc_model_Matlab_3_DW.integral_not_empty_m) || tmp_0) {
+      /* '<S45>:1:14' */
+      /* '<S45>:1:15' */
+      Foc_model_Matlab_3_DW.integral_g = 0.0F;
+      Foc_model_Matlab_3_DW.integral_not_empty_m = true;
+    }
+
+    /* '<S45>:1:19' */
+    P *= rtb_Switch_e_idx_0;
+    tmp = wnq * Foc_model_Matlab_3_DW.integral_g + P;
+    if (((tmp < 1.0F) && (tmp > -1.0F)) || ((tmp >= 1.0F) && (rtb_Switch_e_idx_0
+          < 0.0F)) || ((tmp <= -1.0F) && (rtb_Switch_e_idx_0 > 0.0F))) {
+      /* '<S45>:1:22' */
+      /* '<S45>:1:23' */
+      /* '<S45>:1:24' */
+      /* '<S45>:1:25' */
+      Foc_model_Matlab_3_DW.integral_g += rtb_Switch_e_idx_0;
+    }
+
+    /* '<S45>:1:29' */
+    /* '<S45>:1:32' */
+    P += wnq * Foc_model_Matlab_3_DW.integral_g;
+    if (!(P >= -1.0F)) {
+      P = -1.0F;
+    }
+
+    if (!(P <= 1.0F)) {
+      P = 1.0F;
+    }
+
+    /* Outputs for Atomic SubSystem: '<S20>/Two inputs CRL' */
+    /* Sum: '<S18>/Sum' incorporates:
+     *  AlgorithmDescriptorDelegate generated from: '<S50>/a16'
+     *  Gain: '<S26>/Gain'
+     *  Gain: '<S26>/Gain1'
+     *  MATLAB Function: '<S28>/MATLAB Function1'
+     *  Product: '<S26>/Product'
+     */
+    rtb_Merge1 = P - 2.0F * rtb_Merge_j * rtb_Merge1 * 0.000435F;
+
+    /* End of Outputs for SubSystem: '<S20>/Two inputs CRL' */
+
+    /* Sum: '<S33>/Sum1' incorporates:
+     *  Product: '<S33>/Product'
+     *  Product: '<S33>/Product1'
+     */
+    rtb_Switch_e_idx_0 = rtb_Merge1 * rtb_Merge1 + rtb_Iq_err * rtb_Iq_err;
+
+    /* Outputs for IfAction SubSystem: '<S25>/D-Q Equivalence' incorporates:
+     *  ActionPort: '<S30>/Action Port'
+     */
+    /* If: '<S30>/If' incorporates:
+     *  If: '<S25>/If'
+     *  RelationalOperator: '<S30>/Relational Operator'
+     */
+    if (rtb_Switch_e_idx_0 > 0.9025F) {
+      /* Outputs for IfAction SubSystem: '<S30>/Limiter' incorporates:
+       *  ActionPort: '<S34>/Action Port'
+       */
+      /* Sqrt: '<S34>/Square Root' */
+      rtb_Switch_e_idx_0 = (real32_T)sqrt(rtb_Switch_e_idx_0);
+
+      /* Product: '<S34>/Divide' incorporates:
+       *  Constant: '<S32>/Constant3'
+       *  Product: '<S34>/Product'
+       *  Switch: '<S32>/Switch'
+       *  Switch: '<S34>/Switch'
+       */
+      rtb_Merge1 = rtb_Merge1 * 0.95F / rtb_Switch_e_idx_0;
+      rtb_Iq_err = rtb_Iq_err * 0.95F / rtb_Switch_e_idx_0;
+
+      /* End of Outputs for SubSystem: '<S30>/Limiter' */
+    }
+
+    /* End of If: '<S30>/If' */
+    /* End of Outputs for SubSystem: '<S25>/D-Q Equivalence' */
+
+    /* Outputs for Atomic SubSystem: '<S19>/Two inputs CRL' */
+    /* Switch: '<S49>/Switch' incorporates:
+     *  Product: '<S48>/dcos'
+     *  Product: '<S48>/dsin'
+     *  Product: '<S48>/qcos'
+     *  Product: '<S48>/qsin'
+     *  Sum: '<S48>/sum_alpha'
+     *  Sum: '<S48>/sum_beta'
+     */
+    rtb_Switch_e_idx_0 = rtb_Merge1 * rtb_Sum6 - rtb_Iq_err * rtb_Sum4;
+    rtb_Merge1 = rtb_Iq_err * rtb_Sum6 + rtb_Merge1 * rtb_Sum4;
+
+    /* End of Outputs for SubSystem: '<S19>/Two inputs CRL' */
+
+    /* Switch: '<S11>/Switch1' incorporates:
+     *  DataStoreRead: '<S13>/Enable'
+     *  DataTypeConversion: '<S13>/Data Type Conversion'
+     */
+    if ((real32_T)Enable >= 0.5F) {
+      /* Outputs for Atomic SubSystem: '<S19>/Two inputs CRL' */
+      /* Gain: '<S66>/sqrt3_by_two' incorporates:
+       *  AlgorithmDescriptorDelegate generated from: '<S48>/a16'
+       */
+      rtb_Sum6 = 0.866025388F * rtb_Merge1;
+
+      /* Gain: '<S66>/one_by_two' incorporates:
+       *  AlgorithmDescriptorDelegate generated from: '<S48>/a16'
+       */
+      rtb_Merge_j = 0.5F * rtb_Switch_e_idx_0;
+
+      /* End of Outputs for SubSystem: '<S19>/Two inputs CRL' */
+
+      /* Sum: '<S66>/add_c' */
+      rtb_Sum4 = (0.0F - rtb_Merge_j) - rtb_Sum6;
+
+      /* Sum: '<S66>/add_b' */
+      rtb_Merge_j = rtb_Sum6 - rtb_Merge_j;
+
+      /* MinMax: '<S63>/Max' incorporates:
+       *  AlgorithmDescriptorDelegate generated from: '<S48>/a16'
+       *  MinMax: '<S63>/Min'
+       */
+      tmp_0 = rtIsNaNF(rtb_Merge_j);
+
+      /* Outputs for Atomic SubSystem: '<S19>/Two inputs CRL' */
+      if ((rtb_Switch_e_idx_0 >= rtb_Merge_j) || tmp_0) {
+        rtb_Sum6 = rtb_Switch_e_idx_0;
+      } else {
+        rtb_Sum6 = rtb_Merge_j;
+      }
+
+      /* MinMax: '<S63>/Min' incorporates:
+       *  AlgorithmDescriptorDelegate generated from: '<S48>/a16'
+       */
+      if ((rtb_Switch_e_idx_0 <= rtb_Merge_j) || tmp_0) {
+        rtb_Iq_err = rtb_Switch_e_idx_0;
+      } else {
+        rtb_Iq_err = rtb_Merge_j;
+      }
+
+      /* End of Outputs for SubSystem: '<S19>/Two inputs CRL' */
+
+      /* MinMax: '<S63>/Max' incorporates:
+       *  MinMax: '<S63>/Min'
+       */
+      tmp_0 = !rtIsNaNF(rtb_Sum4);
+      if ((!(rtb_Sum6 >= rtb_Sum4)) && tmp_0) {
+        rtb_Sum6 = rtb_Sum4;
+      }
+
+      /* MinMax: '<S63>/Min' */
+      if ((!(rtb_Iq_err <= rtb_Sum4)) && tmp_0) {
+        rtb_Iq_err = rtb_Sum4;
+      }
+
+      /* Gain: '<S63>/one_by_two' incorporates:
+       *  MinMax: '<S63>/Max'
+       *  MinMax: '<S63>/Min'
+       *  Sum: '<S63>/Add'
+       */
+      rtb_Sum6 = (rtb_Sum6 + rtb_Iq_err) * -0.5F;
+
+      /* Outputs for Atomic SubSystem: '<S19>/Two inputs CRL' */
+      /* Switch: '<S11>/Switch1' incorporates:
+       *  AlgorithmDescriptorDelegate generated from: '<S48>/a16'
+       *  Constant: '<S13>/Constant1'
+       *  Gain: '<S13>/Gain'
+       *  Gain: '<S62>/Gain'
+       *  Sum: '<S13>/Sum1'
+       *  Sum: '<S62>/Add1'
+       *  Sum: '<S62>/Add2'
+       *  Sum: '<S62>/Add3'
+       */
+      Foc_model_Matlab_3_B.PWM[0] = ((rtb_Switch_e_idx_0 + rtb_Sum6) *
+        1.15470052F + 1.0F) * 0.5F;
+
+      /* End of Outputs for SubSystem: '<S19>/Two inputs CRL' */
+      Foc_model_Matlab_3_B.PWM[1] = ((rtb_Merge_j + rtb_Sum6) * 1.15470052F +
+        1.0F) * 0.5F;
+      Foc_model_Matlab_3_B.PWM[2] = ((rtb_Sum6 + rtb_Sum4) * 1.15470052F + 1.0F)
+        * 0.5F;
+    } else {
+      /* Switch: '<S11>/Switch1' incorporates:
+       *  Constant: '<S11>/stop'
+       */
+      Foc_model_Matlab_3_B.PWM[0] = 0.0F;
+      Foc_model_Matlab_3_B.PWM[1] = 0.0F;
+      Foc_model_Matlab_3_B.PWM[2] = 0.0F;
+    }
+
+    /* End of Switch: '<S11>/Switch1' */
+
+    /* S-Function (ftm_s32k_pwm_config): '<S11>/FTM_PWM_Config' */
+    {
+      uint16_t dutyA = FTM_MAX_DUTY_CYCLE * Foc_model_Matlab_3_B.PWM[0];
+      FTM_DRV_UpdatePwmChannel(FTM_PWM3, 0U, FTM_PWM_UPDATE_IN_DUTY_CYCLE, dutyA,
+        0, true);
+    }
+
+    {
+      uint16_t dutyA = FTM_MAX_DUTY_CYCLE * Foc_model_Matlab_3_B.PWM[1];
+      FTM_DRV_UpdatePwmChannel(FTM_PWM3, 2U, FTM_PWM_UPDATE_IN_DUTY_CYCLE, dutyA,
+        0, true);
+    }
+
+    {
+      uint16_t dutyA = FTM_MAX_DUTY_CYCLE * Foc_model_Matlab_3_B.PWM[2];
+      FTM_DRV_UpdatePwmChannel(FTM_PWM3, 4U, FTM_PWM_UPDATE_IN_DUTY_CYCLE, dutyA,
+        0, true);
+    }
+
+    /* S-Function (fm_s32k_recorder_call): '<S11>/FreeMaster_Recorder_Call' */
+    FMSTR_Recorder();
+
+    /* Step: '<S1>/Step' */
+    rtb_Add1 = !(((Foc_model_Matlab_3_M->Timing.clockTick1) * 0.0001) < 0.0);
+
+    /* Outputs for Atomic SubSystem: '<S1>/STSMO' */
+    /* DiscreteIntegrator: '<S14>/Discrete-Time Integrator2' */
+    if (Foc_model_Matlab_3_DW.DiscreteTimeIntegrator2_SYSTEM_ == 0) {
+      /* DiscreteIntegrator: '<S14>/Discrete-Time Integrator2' */
+      Foc_model_Matlab_3_DW.DiscreteTimeIntegrator2_DSTATE += 0.0001F *
+        (real32_T)CurrentControl_ELAPS_T
+        * Foc_model_Matlab_3_DW.DiscreteTimeIntegrator2_PREV_U;
+    }
+
+    /* End of DiscreteIntegrator: '<S14>/Discrete-Time Integrator2' */
+
+    /* DiscreteIntegrator: '<S14>/Discrete-Time Integrator3' */
+    if (Foc_model_Matlab_3_DW.DiscreteTimeIntegrator3_SYSTEM_ == 0) {
+      /* DiscreteIntegrator: '<S14>/Discrete-Time Integrator3' */
+      Foc_model_Matlab_3_DW.DiscreteTimeIntegrator3_DSTATE += 0.0001F *
+        (real32_T)CurrentControl_ELAPS_T
+        * Foc_model_Matlab_3_DW.DiscreteTimeIntegrator3_PREV_U;
+    }
+
+    /* End of DiscreteIntegrator: '<S14>/Discrete-Time Integrator3' */
+
+    /* Outputs for Atomic SubSystem: '<S23>/Two phase CRL wrap' */
+    /* MATLAB Function: '<S14>/Saturation ' incorporates:
+     *  AlgorithmDescriptorDelegate generated from: '<S24>/a16'
+     *  Constant: '<S14>/epsilona'
+     *  Constant: '<S14>/epsilonb'
+     *  MATLAB Function: '<S14>/Back-EMF Estimation'
+     *  Product: '<S1>/Product'
+     */
+    /* MATLAB Function 'CurrentControl/STSMO/Saturation ': '<S131>:1' */
+    /* '<S131>:1:7' */
+    rtb_Multiply_idx_0 = Foc_model_Matlab_3_DW.DiscreteTimeIntegrator2_DSTATE -
+      (real32_T)(rtb_Multiply_idx_0 * (real_T)rtb_Add1);
+
+    /* '<S131>:1:8' */
+    rtb_Sum4 = Foc_model_Matlab_3_DW.DiscreteTimeIntegrator3_DSTATE - (real32_T)
+      (rtb_DTC * (real_T)rtb_Add1);
+
+    /* End of Outputs for SubSystem: '<S23>/Two phase CRL wrap' */
+    rtb_DTC = (real32_T)fabs(rtb_Multiply_idx_0);
+    if (rtb_DTC > 0.0001) {
+      /* '<S131>:1:10' */
+      /* '<S131>:1:11' */
+      if (rtIsNaNF(rtb_Multiply_idx_0)) {
+        rtb_Multiply_idx_0 = (rtNaNF);
+      } else if (rtb_Multiply_idx_0 < 0.0F) {
+        rtb_Multiply_idx_0 = -1.0F;
+      } else {
+        rtb_Multiply_idx_0 = (real32_T)(rtb_Multiply_idx_0 > 0.0F);
+      }
+    } else {
+      /* '<S131>:1:13' */
+      rtb_Multiply_idx_0 = rtb_DTC / 0.0001F;
+    }
+
+    rtb_Merge_j = (real32_T)fabs(rtb_Sum4);
+    if (rtb_Merge_j > 0.0001) {
+      /* '<S131>:1:16' */
+      /* '<S131>:1:17' */
+      if (rtIsNaNF(rtb_Sum4)) {
+        rtb_Sum4 = (rtNaNF);
+      } else if (rtb_Sum4 < 0.0F) {
+        rtb_Sum4 = -1.0F;
+      } else {
+        rtb_Sum4 = (real32_T)(rtb_Sum4 > 0.0F);
+      }
+    } else {
+      /* '<S131>:1:19' */
+      rtb_Sum4 = rtb_Merge_j / 0.0001F;
+    }
+
+    /* End of MATLAB Function: '<S14>/Saturation ' */
+
+    /* DiscreteIntegrator: '<S14>/Discrete-Time Integrator1' */
+    if (Foc_model_Matlab_3_DW.DiscreteTimeIntegrator1_SYSTEM_ == 0) {
+      /* DiscreteIntegrator: '<S14>/Discrete-Time Integrator1' */
+      Foc_model_Matlab_3_DW.DiscreteTimeIntegrator1_DSTATE += 0.0001F *
+        (real32_T)CurrentControl_ELAPS_T
+        * Foc_model_Matlab_3_DW.DiscreteTimeIntegrator1_PREV_U;
+    }
+
+    /* End of DiscreteIntegrator: '<S14>/Discrete-Time Integrator1' */
+
+    /* DiscreteIntegrator: '<S14>/Discrete-Time Integrator' */
+    if (Foc_model_Matlab_3_DW.DiscreteTimeIntegrator_SYSTEM_E == 0) {
+      /* DiscreteIntegrator: '<S14>/Discrete-Time Integrator' */
+      Foc_model_Matlab_3_DW.DiscreteTimeIntegrator_DSTATE += 0.0001F * (real32_T)
+        CurrentControl_ELAPS_T
+        * Foc_model_Matlab_3_DW.DiscreteTimeIntegrator_PREV_U;
+    }
+
+    /* End of DiscreteIntegrator: '<S14>/Discrete-Time Integrator' */
+
+    /* Update for DiscreteIntegrator: '<S14>/Discrete-Time Integrator2' incorporates:
+     *  AlgorithmDescriptorDelegate generated from: '<S48>/a16'
+     *  MATLAB Function: '<S14>/Back-EMF Estimation'
+     *  Product: '<S1>/Product'
+     */
+    /* MATLAB Function 'CurrentControl/STSMO/Back-EMF Estimation': '<S129>:1' */
+    /* '<S129>:1:9' */
+    /* '<S129>:1:10' */
+    /* '<S129>:1:12' */
+    /* '<S129>:1:13' */
+    /* '<S129>:1:15' */
+    /* '<S129>:1:16' */
+    Foc_model_Matlab_3_DW.DiscreteTimeIntegrator2_SYSTEM_ = 0U;
+
+    /* Outputs for Atomic SubSystem: '<S19>/Two inputs CRL' */
+    Foc_model_Matlab_3_DW.DiscreteTimeIntegrator2_PREV_U = ((real32_T)
+      (rtb_Switch_e_idx_0 * (real_T)rtb_Add1 * 2666.6666666666665) + -1697.8667F
+      * Foc_model_Matlab_3_DW.DiscreteTimeIntegrator2_DSTATE) -
+      (Foc_model_Matlab_3_ConstB.CastToSingle6 * (real32_T)sqrt(rtb_DTC) *
+       rtb_Multiply_idx_0 + Foc_model_Matlab_3_ConstB.CastToSingle7 *
+       Foc_model_Matlab_3_DW.DiscreteTimeIntegrator1_DSTATE) * 2666.66675F;
+
+    /* End of Outputs for SubSystem: '<S19>/Two inputs CRL' */
+
+    /* Update for DiscreteIntegrator: '<S14>/Discrete-Time Integrator3' incorporates:
+     *  AlgorithmDescriptorDelegate generated from: '<S48>/a16'
+     *  MATLAB Function: '<S14>/Back-EMF Estimation'
+     *  Product: '<S1>/Product'
+     */
+    Foc_model_Matlab_3_DW.DiscreteTimeIntegrator3_SYSTEM_ = 0U;
+
+    /* Outputs for Atomic SubSystem: '<S19>/Two inputs CRL' */
+    Foc_model_Matlab_3_DW.DiscreteTimeIntegrator3_PREV_U = ((real32_T)
+      (rtb_Merge1 * (real_T)rtb_Add1 * 2666.6666666666665) + -1697.8667F *
+      Foc_model_Matlab_3_DW.DiscreteTimeIntegrator3_DSTATE) -
+      (Foc_model_Matlab_3_ConstB.CastToSingle6 * (real32_T)sqrt(rtb_Merge_j) *
+       rtb_Sum4 + Foc_model_Matlab_3_ConstB.CastToSingle7 *
+       Foc_model_Matlab_3_DW.DiscreteTimeIntegrator_DSTATE) * 2666.66675F;
+
+    /* End of Outputs for SubSystem: '<S19>/Two inputs CRL' */
+
+    /* Update for DiscreteIntegrator: '<S14>/Discrete-Time Integrator1' */
+    Foc_model_Matlab_3_DW.DiscreteTimeIntegrator1_SYSTEM_ = 0U;
+    Foc_model_Matlab_3_DW.DiscreteTimeIntegrator1_PREV_U = rtb_Multiply_idx_0;
+
+    /* Update for DiscreteIntegrator: '<S14>/Discrete-Time Integrator' */
+    Foc_model_Matlab_3_DW.DiscreteTimeIntegrator_SYSTEM_E = 0U;
+    Foc_model_Matlab_3_DW.DiscreteTimeIntegrator_PREV_U = rtb_Sum4;
+
+    /* End of Outputs for SubSystem: '<S1>/STSMO' */
+
+    /* Gain: '<S16>/SpeedGain' incorporates:
+     *  DataTypeConversion: '<S186>/DTC'
+     *  Delay: '<S16>/Delay'
+     *  Sum: '<S16>/SpeedCount'
+     */
+    Foc_model_Matlab_3_B.SpeedGain = (real32_T)((int32_T)
+      Foc_model_Matlab_3_ConstB.PositionToCount - (int32_T)
+      Foc_model_Matlab_3_DW.Delay_DSTATE[Foc_model_Matlab_3_DW.CircBufIdx]) *
+      6.98491931E-9F;
+
+    /* Update for Delay: '<S79>/Delay One Step1' */
+    Foc_model_Matlab_3_DW.DelayOneStep1_DSTATE = rtb_Compare;
+
+    /* Update for Delay: '<S79>/Delay One Step' incorporates:
+     *  Constant: '<S79>/Constant2'
+     *  Sum: '<S79>/Sum'
+     */
+    if (OR) {
+      Foc_model_Matlab_3_DW.DelayOneStep_DSTATE = (uint16_T)(rtb_DataStoreRead5
+        - 1);
+    }
+
+    /* End of Update for Delay: '<S79>/Delay One Step' */
+
+    /* Update for Delay: '<S16>/Delay' */
+    Foc_model_Matlab_3_DW.Delay_DSTATE[Foc_model_Matlab_3_DW.CircBufIdx] =
+      Foc_model_Matlab_3_ConstB.PositionToCount;
+    if (Foc_model_Matlab_3_DW.CircBufIdx < 9U) {
+      Foc_model_Matlab_3_DW.CircBufIdx++;
+    } else {
+      Foc_model_Matlab_3_DW.CircBufIdx = 0U;
+    }
+
+    /* End of Update for Delay: '<S16>/Delay' */
+
+    /* user code (Output function Trailer) */
+
+    /* Profile Code : Compute function execution time in us. */
+    tmp2 = profiler_get_cnt();
+    profile_buffer[0] = gt_pf(tmp1, tmp2);
+
+    /* End of Profile Code */
+  }
+}
+
+/* Output and update for atomic system: '<Root>/SpeedControl' */
+void Foc_model_Matl_SpeedControl(void)
+{
+  real32_T T_eq;
+  real32_T s;
+  real32_T speed_error;
+  boolean_T rtb_LogicalOperator1;
+
+  /* user code (Output function Body) */
+  {
+    /* Start of Profile Code */
+    uint32_t tmp1;
+    uint32_t tmp2;
+    tmp1 = profiler_get_cnt();
+
+    /* Start Profiling This Function.*/
+
+    /* Outputs for Atomic SubSystem: '<S8>/Speed_Ref_Selector' */
+    /* Switch: '<S220>/Switch' incorporates:
+     *  DataStoreRead: '<S220>/Data Store Read1'
+     *  DataTypeConversion: '<S220>/Data Type Conversion'
+     */
+    if ((real32_T)Enable > 0.5F) {
+      /* Switch: '<S220>/Switch' */
+      Speed_Ref = Speed_Ref_PU;
+    } else {
+      /* Switch: '<S220>/Switch' */
+      Speed_Ref = Speed_fb;
+    }
+
+    /* End of Switch: '<S220>/Switch' */
+    /* End of Outputs for SubSystem: '<S8>/Speed_Ref_Selector' */
+
+    /* Constant: '<S8>/Id_ref' */
+    Foc_model_Matlab_3_B.Id_ref = 0.0F;
+
+    /* Outputs for Atomic SubSystem: '<S8>/PI_Controller_Speed' */
+    /* Logic: '<S219>/Logical Operator1' incorporates:
+     *  DataStoreRead: '<S219>/Data Store Read1'
+     */
+    rtb_LogicalOperator1 = !Enable;
+
+    /* MATLAB Function: '<S219>/MATLAB Function' incorporates:
+     *  Constant: '<S219>/Constant10'
+     *  Constant: '<S219>/Constant8'
+     *  Constant: '<S219>/Constant9'
+     *  DataStoreRead: '<S219>/Data Store Read2'
+     *  DataStoreRead: '<S219>/Data Store Read3'
+     *  DataStoreRead: '<S219>/Data Store Read4'
+     */
+    /* MATLAB Function 'SpeedControl/PI_Controller_Speed/MATLAB Function': '<S221>:1' */
+    if ((!Foc_model_Matlab_3_DW.speed_error_pre_not_empty) ||
+        rtb_LogicalOperator1) {
+      /* '<S221>:1:9' */
+      /* '<S221>:1:10' */
+      Foc_model_Matlab_3_DW.speed_error_pre = 0.0F;
+      Foc_model_Matlab_3_DW.speed_error_pre_not_empty = true;
+    }
+
+    if ((!Foc_model_Matlab_3_DW.N_ref_pre_not_empty) || rtb_LogicalOperator1) {
+      /* '<S221>:1:13' */
+      /* '<S221>:1:14' */
+      Foc_model_Matlab_3_DW.N_ref_pre = 0.0F;
+      Foc_model_Matlab_3_DW.N_ref_pre_not_empty = true;
+    }
+
+    if ((!Foc_model_Matlab_3_DW.T_n_pre_not_empty) || rtb_LogicalOperator1) {
+      /* '<S221>:1:17' */
+      /* '<S221>:1:18' */
+      Foc_model_Matlab_3_DW.T_n_pre_not_empty = true;
+    }
+
+    /* '<S221>:1:21' */
+    speed_error = Speed_fb - Speed_Ref;
+
+    /* '<S221>:1:23' */
+    s = Lambda * Foc_model_Matlab_3_DW.speed_error_pre + speed_error;
+    if ((real32_T)fabs(s) > Epsilon) {
+      /* '<S221>:1:26' */
+      /* '<S221>:1:27' */
+      if (rtIsNaNF(s)) {
+        s = (rtNaNF);
+      } else if (s < 0.0F) {
+        s = -1.0F;
+      } else {
+        s = (real32_T)(s > 0.0F);
+      }
+
+      s *= -Theta;
+    } else {
+      /* '<S221>:1:29' */
+      s = s / Epsilon * -Theta;
+    }
+
+    /* '<S221>:1:33' */
+    T_eq = (Speed_Ref - Lambda * speed_error) * 1.2E-5F + 1.0E-7F *
+      Foc_model_Matlab_3_DW.N_ref_pre;
+
+    /* '<S221>:1:34' */
+    /* '<S221>:1:36' */
+    Foc_model_Matlab_3_DW.N_ref_pre = Speed_Ref;
+
+    /* '<S221>:1:37' */
+    Foc_model_Matlab_3_DW.speed_error_pre = speed_error;
+
+    /* '<S221>:1:38' */
+    /* '<S221>:1:42' */
+    Foc_model_Matlab_3_B.I_ref = (T_eq + s) / 0.097F;
+    if (!(Foc_model_Matlab_3_B.I_ref >= -0.5F)) {
+      Foc_model_Matlab_3_B.I_ref = -0.5F;
+    }
+
+    if (!(Foc_model_Matlab_3_B.I_ref <= 0.5F)) {
+      Foc_model_Matlab_3_B.I_ref = 0.5F;
+    }
+
+    /* End of MATLAB Function: '<S219>/MATLAB Function' */
+
+    /* Sum: '<S219>/Sum' */
+    SpeedError = Speed_Ref - Speed_fb;
+
+    /* End of Outputs for SubSystem: '<S8>/PI_Controller_Speed' */
+
+    /* user code (Output function Trailer) */
+
+    /* Profile Code : Compute function execution time in us. */
+    tmp2 = profiler_get_cnt();
+    profile_buffer[1] = gt_pf(tmp1, tmp2);
+
+    /* End of Profile Code */
+  }
+}
+
+/* Model step function for TID0 */
+void Foc_model_Matlab_3_step0(void)    /* Sample time: [5.0E-5s, 0.0s] */
+{
+  {                                    /* Sample time: [5.0E-5s, 0.0s] */
+    rate_monotonic_scheduler();
+  }
+}
+
+/* Model step function for TID1 */
+void Foc_model_Matlab_3_step1(void)    /* Sample time: [0.0001s, 0.0s] */
+{
+  int32_T tmp;
+
+  /* End of Outputs for S-Function (ftm_s32k_hall_sensor): '<S3>/FTM_Hall_Sensor' */
+
+  /* DataStoreWrite: '<S3>/Data Store Write1' */
+  HallCntActual = CntHall;
+
+  /* RateTransition: '<Root>/RT11' */
+  tmp = Foc_model_Matlab_3_DW.RT11_ActiveBufIdx << 1;
+  Foc_model_Matlab_3_B.RT11[0] = Foc_model_Matlab_3_DW.RT11_Buffer[tmp];
+  Foc_model_Matlab_3_B.RT11[1] = Foc_model_Matlab_3_DW.RT11_Buffer[tmp + 1];
+
+  /* End of Outputs for S-Function (pdb_s32k_isr): '<S206>/PDB1_ISR' */
+  /* End of Outputs for S-Function (adc_s32k_isr): '<S206>/ADC1_ISR' */
+
+  /* DataStoreWrite: '<S206>/Data Store Write' incorporates:
+   *  DataTypeConversion: '<S206>/Data Type Conversion'
+   */
+  ADC_A = (real32_T)ADC_IA;
+
+  /* DataStoreWrite: '<S206>/Data Store Write1' incorporates:
+   *  DataTypeConversion: '<S206>/Data Type Conversion'
+   */
+  ADC_B = (real32_T)ADC_IB;
+
+  /* End of Outputs for SubSystem: '<S3>/Subsystem2' */
+  /* S-Function (adc_s32k_start): '<S4>/ADC1_IRQ' */
+  {
+  }
+
+  /* If: '<S4>/If' incorporates:
+   *  DataStoreRead: '<S4>/Data Store Read'
+   */
+  if (!FAULT) {
+    /* Outputs for IfAction SubSystem: '<S4>/If Action Subsystem' incorporates:
+     *  ActionPort: '<S215>/Action Port'
+     */
+    /* S-Function (gpio_s32k_output): '<S215>/LED_GREEN_ON' incorporates:
+     *  Constant: '<S215>/LED_GREEN'
+     */
+
+    /* GPOPORTD16 Data Signal Update */
+    if (false) {
+      PINS_DRV_SetPins(PTD, 1UL<<16);
+    } else {
+      PINS_DRV_ClearPins(PTD, 1UL<<16);
+    }
+
+    /* S-Function (gpio_s32k_output): '<S215>/LED_RED_OFF' incorporates:
+     *  Constant: '<S215>/LED_RED'
+     */
+
+    /* GPOPORTD15 Data Signal Update */
+    if (true) {
+      PINS_DRV_SetPins(PTD, 1UL<<15);
+    } else {
+      PINS_DRV_ClearPins(PTD, 1UL<<15);
+    }
+
+    /* End of Outputs for SubSystem: '<S4>/If Action Subsystem' */
+  } else {
+    /* Outputs for IfAction SubSystem: '<S4>/FAULT' incorporates:
+     *  ActionPort: '<S213>/Action Port'
+     */
+    /* S-Function (gpio_s32k_output): '<S213>/LED_GREEN' incorporates:
+     *  Constant: '<S213>/OFF'
+     */
+
+    /* GPOPORTD16 Data Signal Update */
+    if (true) {
+      PINS_DRV_SetPins(PTD, 1UL<<16);
+    } else {
+      PINS_DRV_ClearPins(PTD, 1UL<<16);
+    }
+
+    /* S-Function (gpio_s32k_output): '<S213>/LED_RED' incorporates:
+     *  Constant: '<S213>/ON'
+     */
+
+    /* GPOPORTD15 Data Signal Update */
+    if (false) {
+      PINS_DRV_SetPins(PTD, 1UL<<15);
+    } else {
+      PINS_DRV_ClearPins(PTD, 1UL<<15);
+    }
+
+    /* End of Outputs for SubSystem: '<S4>/FAULT' */
+  }
+
+  /* End of If: '<S4>/If' */
+
+  /* Chart: '<S4>/Enable PDB and start FTM' */
+  /* Gateway: Hardware Initialization/Enable PDB and start FTM */
+  /* During: Hardware Initialization/Enable PDB and start FTM */
+  if (Foc_model_Matlab_3_DW.is_active_c1_Foc_model_Matlab_3 == 0) {
+    /* Entry: Hardware Initialization/Enable PDB and start FTM */
+    Foc_model_Matlab_3_DW.is_active_c1_Foc_model_Matlab_3 = 1U;
+
+    /* Entry Internal: Hardware Initialization/Enable PDB and start FTM */
+    /* Transition: '<S212>:10' */
+    Foc_model_Matlab_3_DW.is_c1_Foc_model_Matlab_3 = Foc_model_Matlab_3_IN_A;
+  } else if (Foc_model_Matlab_3_DW.is_c1_Foc_model_Matlab_3 ==
+             Foc_model_Matlab_3_IN_A) {
+    /* Outputs for Function Call SubSystem: '<S4>/enable_FTM_PDB_ADC_triggering' */
+    /* During 'A': '<S212>:5' */
+    /* Transition: '<S212>:103' */
+    /* Event: '<S212>:104' */
+
+    /* S-Function (ftm_s32k_pwm_disen): '<S216>/FTM_PWM_Disable_Enable' */
+    FTM_DRV_InitPwm(FTM_PWM3, &flexTimer_pwm3_PwmConfig);
+
+    /* S-Function (ftm_s32k_init_disen): '<S216>/FTM_Init_Trigger_Disable_Enable' */
+
+    /* FTM PWM Initialization Trigger Enable Disable*/
+    FTM_DRV_SetInitTriggerCmd(FTM3, true);
+
+    /* S-Function (pdb_s32k_enable): '<S216>/PDB0_Enable' */
+
+    /* Enable PDB Module0 */
+    PDB_DRV_Enable(0);
+
+    /* S-Function (pdb_s32k_enable): '<S216>/PDB1_Enable' */
+
+    /* Enable PDB Module1 */
+    PDB_DRV_Enable(1);
+
+    /* S-Function (tpp_s32k_isr_enable): '<S216>/TPP_ISR_Enable_Disable' */
+    tpp_interrupt_enable(15);
+
+    /* user code (Output function Trailer) */
+
+    /* System '<S4>/enable_FTM_PDB_ADC_triggering' */
+    PDB_DRV_LoadValuesCmd(0);
+    PDB_DRV_LoadValuesCmd(1);
+
+    /* End of Outputs for SubSystem: '<S4>/enable_FTM_PDB_ADC_triggering' */
+    Foc_model_Matlab_3_DW.is_c1_Foc_model_Matlab_3 = Foc_model_Matlab_3_IN_END;
+  } else {
+    /* During 'END': '<S212>:39' */
+    /* Transition: '<S212>:41' */
+    /* Event: '<S212>:36' */
+    Foc_model_Matlab_3_DW.is_c1_Foc_model_Matlab_3 = Foc_model_Matlab_3_IN_END;
+  }
+
+  /* End of Chart: '<S4>/Enable PDB and start FTM' */
+  /* End of Outputs for S-Function (tpp_s32k_isr): '<S4>/GD300_ISR_Callback ' */
+
+  /* Update absolute time */
+  /* The "clockTick1" counts the number of times the code of this task has
+   * been executed. The resolution of this integer timer is 0.0001, which is the step size
+   * of the task. Size of "clockTick1" ensures timer will not overflow during the
+   * application lifespan selected.
+   */
+  Foc_model_Matlab_3_M->Timing.clockTick1++;
+}
+
+/* Model step function for TID2 */
+void Foc_model_Matlab_3_step2(void)    /* Sample time: [0.001s, 0.0s] */
+{
+  /* RateTransition: '<Root>/RT2' */
+  Speed_Ref_PU = Foc_model_Matlab_3_DW.RT2_Buffer0;
+
+  /* RateTransition: '<Root>/RT1' */
+  Speed_fb = Foc_model_Matlab_3_B.SpeedGain;
+
+  /* Outputs for Atomic SubSystem: '<Root>/SpeedControl' */
+  Foc_model_Matl_SpeedControl();
+
+  /* End of Outputs for SubSystem: '<Root>/SpeedControl' */
+
+  /* RateTransition: '<Root>/RT11' */
+  Foc_model_Matlab_3_DW.RT11_Buffer[(Foc_model_Matlab_3_DW.RT11_ActiveBufIdx ==
+    0) << 1] = Foc_model_Matlab_3_B.Id_ref;
+  Foc_model_Matlab_3_DW.RT11_Buffer[1 +
+    ((Foc_model_Matlab_3_DW.RT11_ActiveBufIdx == 0) << 1)] =
+    Foc_model_Matlab_3_B.I_ref;
+  Foc_model_Matlab_3_DW.RT11_ActiveBufIdx = (int8_T)
+    (Foc_model_Matlab_3_DW.RT11_ActiveBufIdx == 0);
+}
+
+/* Model step function for TID3 */
+void Foc_model_Matlab_3_step3(void)    /* Sample time: [0.1s, 0.0s] */
+{
+  /* S-Function (fcgen): '<S3>/SCI_Rx_INT' incorporates:
+   *  SubSystem: '<Root>/Serial Receive'
+   */
+  /* RateTransition: '<Root>/RT2' incorporates:
+   *  DataStoreRead: '<S218>/Data Store Read2'
+   *  Gain: '<S218>/rpm2PU'
+   */
+  Foc_model_Matlab_3_DW.RT2_Buffer0 = 0.0005F * DesiredSpeed;
+
+  /* End of Outputs for S-Function (fcgen): '<S3>/SCI_Rx_INT' */
+}
+
+/* Model initialize function */
+void Foc_model_Matlab_3_initialize(void)
+{
+  /* Registration code */
+
+  /* initialize non-finites */
+  rt_InitInfAndNaN(sizeof(real_T));
+
+  /* Start for S-Function (pdb_s32k_config): '<S4>/PDB0_Init' */
+  trgmuxAllMappingConfig[0] = pdb0MappingConfig;
+  trgmuxAllMappingConfig[1] = pdb1MappingConfig;
+
+  /* Initializes TRGMUX instance for operation. */
+  TRGMUX_DRV_Init(0, &pdbTrgmuxUserConfig);
+
+  /* Set PDB0 clock source */
+  PCC_SetPeripheralClockControl(PCC, PDB0_CLK, true, CLK_SRC_SPLL, 0, 0);
+
+  /* Enable clock for PDB0 */
+  PCC_SetClockMode(PCC, PDB0_CLK, true);
+
+  /* Initialize PDB0 driver. */
+  PDB_DRV_Init(0, &pdb0TimerConfig);
+
+  /* Set the value to PDB modulus register */
+  PDB_DRV_SetTimerModulusValue(0, 5000U);
+
+  /* Configure the ADC pre_trigger 0U in the PDB0 module */
+  PDB_DRV_ConfigAdcPreTrigger(0, 0U, &pdb0Ch0UPreTrigConfig0U);
+
+  /* Set the ADC pre_trigger 0U delay value in the PDB0 module */
+  PDB_DRV_SetAdcPreTriggerDelayValue(0, 0U, 0U, 2000U);
+
+  /* Command the PDB instance to load the fresh values */
+  PDB_DRV_LoadValuesCmd(0);
+
+  /* Start for S-Function (pdb_s32k_config): '<S4>/PDB1_Init' */
+  trgmuxAllMappingConfig[0] = pdb0MappingConfig;
+  trgmuxAllMappingConfig[1] = pdb1MappingConfig;
+
+  /* Initializes TRGMUX instance for operation. */
+  TRGMUX_DRV_Init(0, &pdbTrgmuxUserConfig);
+
+  /* Set PDB1 clock source */
+  PCC_SetPeripheralClockControl(PCC, PDB1_CLK, true, CLK_SRC_SPLL, 0, 0);
+
+  /* Enable clock for PDB1 */
+  PCC_SetClockMode(PCC, PDB1_CLK, true);
+
+  /* Initialize PDB1 driver. */
+  PDB_DRV_Init(1, &pdb1TimerConfig);
+
+  /* Set the value to PDB modulus register */
+  PDB_DRV_SetTimerModulusValue(1, 5000U);
+
+  /* Configure the ADC pre_trigger 0U in the PDB1 module */
+  PDB_DRV_ConfigAdcPreTrigger(1, 0U, &pdb1Ch0UPreTrigConfig0U);
+
+  /* Set the ADC pre_trigger 0U delay value in the PDB1 module */
+  PDB_DRV_SetAdcPreTriggerDelayValue(1, 0U, 0U, 0U);
+
+  /* Configure the ADC pre_trigger 1U in the PDB1 module */
+  PDB_DRV_ConfigAdcPreTrigger(1, 0U, &pdb1Ch0UPreTrigConfig1U);
+
+  /* Set the ADC pre_trigger 1U delay value in the PDB1 module */
+  PDB_DRV_SetAdcPreTriggerDelayValue(1, 0U, 1U, 1000U);
+
+  /* Configure the ADC pre_trigger 2U in the PDB1 module */
+  PDB_DRV_ConfigAdcPreTrigger(1, 0U, &pdb1Ch0UPreTrigConfig2U);
+
+  /* Set the ADC pre_trigger 2U delay value in the PDB1 module */
+  PDB_DRV_SetAdcPreTriggerDelayValue(1, 0U, 2U, 2000U);
+
+  /* Command the PDB instance to load the fresh values */
+  PDB_DRV_LoadValuesCmd(1);
+
+  /* Start for S-Function (adc_s32k_config): '<S4>/ADC0_Init' */
+  {
+    const adc_converter_config_t adc0_cfg = {
+      .clockDivide = ADC_CLK_DIVIDE_1,
+      .sampleTime = 1.0,
+      .resolution = ADC_RESOLUTION_12BIT,
+      .inputClock = ADC_CLK_ALT_1,
+      .trigger = ADC_TRIGGER_HARDWARE,
+      .pretriggerSel = ADC_PRETRIGGER_SEL_PDB,
+      .triggerSel = ADC_TRIGGER_SEL_PDB,
+      .dmaEnable = false,
+      .voltageRef = ADC_VOLTAGEREF_VREF,
+      .continuousConvEnable = false,
+      .supplyMonitoringEnable = false
+    };
+
+    const adc_compare_config_t adc0_cmp_cfg = {
+      .compareEnable = false,
+      .compareGreaterThanEnable = false,
+      .compareRangeFuncEnable = false,
+      .compVal1 = 0,
+      .compVal2 = 0
+    };
+
+    const adc_average_config_t adc0_avrg_cfg = {
+      .hwAvgEnable = false,
+      .hwAverage = ADC_AVERAGE_4
+    };
+
+    /* Enable ADC0 clock */
+    PCC_SetClockMode(PCC, PCC_ADC0_CLOCK, false);
+
+    /* Set ADC0 clock source */
+    PCC_SetPeripheralClockControl(PCC, PCC_ADC0_CLOCK, true, CLK_SRC_SPLL, 0, 0);
+
+    /* Enable ADC0 clock */
+    PCC_SetClockMode(PCC, PCC_ADC0_CLOCK, true);
+    ADC_DRV_Reset(0);
+
+    /* Configure ADC0 */
+    ADC_DRV_ConfigConverter(0, &adc0_cfg);
+    ADC_DRV_SetSwPretrigger(0,ADC_SW_PRETRIGGER_DISABLED);
+    ADC_DRV_ConfigHwCompare(0, &adc0_cmp_cfg);
+    ADC_DRV_ConfigHwAverage(0, &adc0_avrg_cfg);
+
+    /* Do calibration before initialize the ADC0. */
+    ADC_DRV_AutoCalibration(0);
+  }
+
+  /* Start for S-Function (adc_s32k_config): '<S4>/ADC1_Init' */
+  {
+    const adc_converter_config_t adc1_cfg = {
+      .clockDivide = ADC_CLK_DIVIDE_1,
+      .sampleTime = 1.0,
+      .resolution = ADC_RESOLUTION_12BIT,
+      .inputClock = ADC_CLK_ALT_1,
+      .trigger = ADC_TRIGGER_HARDWARE,
+      .pretriggerSel = ADC_PRETRIGGER_SEL_PDB,
+      .triggerSel = ADC_TRIGGER_SEL_PDB,
+      .dmaEnable = false,
+      .voltageRef = ADC_VOLTAGEREF_VREF,
+      .continuousConvEnable = false,
+      .supplyMonitoringEnable = false
+    };
+
+    const adc_compare_config_t adc1_cmp_cfg = {
+      .compareEnable = false,
+      .compareGreaterThanEnable = false,
+      .compareRangeFuncEnable = false,
+      .compVal1 = 0,
+      .compVal2 = 0
+    };
+
+    const adc_average_config_t adc1_avrg_cfg = {
+      .hwAvgEnable = false,
+      .hwAverage = ADC_AVERAGE_4
+    };
+
+    /* Enable ADC1 clock */
+    PCC_SetClockMode(PCC, PCC_ADC1_CLOCK, false);
+
+    /* Set ADC1 clock source */
+    PCC_SetPeripheralClockControl(PCC, PCC_ADC1_CLOCK, true, CLK_SRC_SPLL, 0, 0);
+
+    /* Enable ADC1 clock */
+    PCC_SetClockMode(PCC, PCC_ADC1_CLOCK, true);
+    ADC_DRV_Reset(1);
+
+    /* Configure ADC1 */
+    ADC_DRV_ConfigConverter(1, &adc1_cfg);
+    ADC_DRV_SetSwPretrigger(1,ADC_SW_PRETRIGGER_DISABLED);
+    ADC_DRV_ConfigHwCompare(1, &adc1_cmp_cfg);
+    ADC_DRV_ConfigHwAverage(1, &adc1_avrg_cfg);
+
+    /* Do calibration before initialize the ADC1. */
+    ADC_DRV_AutoCalibration(1);
+  }
+
+  /* Start for S-Function (adc_s32k_start): '<S4>/ADC1_IRQ' */
+  {
+    adc_chan_config_t adc1_chan_cfg = {
+      .interruptEnable = true,
+      .channel = ADC_INPUTCHAN_EXT15
+    };
+
+    /* Initialize channel configuration of ADC1. */
+    ADC_DRV_ConfigChan(1, 2, &adc1_chan_cfg);
+  }
+
+  /* Start for S-Function (adc_s32k_interleave): '<S4>/ADC_Interleave' */
+  SIM_HAL_SetAdcInterleaveSel(SIM, 2U);
+
+  /* Start for S-Function (fm_s32k_config): '<S4>/FreeMaster_Config' */
+
+  /* Initialize FreeMaster. */
+  freemaster_interface_init();
+  freemaster_interface_isr_init();
+  FMSTR_Init();
+
+  /* Start for S-Function (lpspi_s32k_config): '<S4>/LPSPI_Config ' */
+  {
+    /* Enable LPSPI clock */
+    PCC_SetPeripheralClockControl(PCC, LPSPI0_CLK, true, CLK_SRC_FIRC_DIV2,
+      DIVIDE_BY_ONE, MULTIPLY_BY_ONE);
+
+    /* Enable clock for PORTB */
+    PCC_SetPeripheralClockControl(PCC, PORTB_CLK, true, CLK_SRC_OFF,
+      DIVIDE_BY_ONE, MULTIPLY_BY_ONE);
+
+    /* Enable clock for PORTB */
+    PCC_SetPeripheralClockControl(PCC, PORTB_CLK, true, CLK_SRC_OFF,
+      DIVIDE_BY_ONE, MULTIPLY_BY_ONE);
+
+    /* Enable clock for PORTB */
+    PCC_SetPeripheralClockControl(PCC, PORTB_CLK, true, CLK_SRC_OFF,
+      DIVIDE_BY_ONE, MULTIPLY_BY_ONE);
+
+    /* PCS1! Enable clock for PORTB */
+    PCC_SetPeripheralClockControl(PCC, PORTB_CLK, true, CLK_SRC_OFF,
+      DIVIDE_BY_ONE, MULTIPLY_BY_ONE);
+
+    /* Setup SPI pins */
+    pin_settings_config_t spi_pin_mux[4U]= {
+      {
+        /* SIN pin */
+        .base = PORTB,
+        .pinPortIdx = 3,
+        .pullConfig = PORT_INTERNAL_PULL_NOT_ENABLED,
+        .passiveFilter = false,
+        .driveSelect = PORT_LOW_DRIVE_STRENGTH,
+        .mux = PORT_MUX_ALT3,
+        .pinLock = false,
+        .intConfig = PORT_DMA_INT_DISABLED,
+        .clearIntFlag = false,
+      },
+
+      {
+        /* SOUT pin */
+        .base = PORTB,
+        .pinPortIdx = 4,
+        .pullConfig = PORT_INTERNAL_PULL_NOT_ENABLED,
+        .passiveFilter = false,
+        .driveSelect = PORT_LOW_DRIVE_STRENGTH,
+        .mux = PORT_MUX_ALT3,
+        .pinLock = false,
+        .intConfig = PORT_DMA_INT_DISABLED,
+        .clearIntFlag = false,
+      },
+
+      {
+        /* SCK pin */
+        .base = PORTB,
+        .pinPortIdx = 2,
+        .pullConfig = PORT_INTERNAL_PULL_NOT_ENABLED,
+        .passiveFilter = false,
+        .driveSelect = PORT_LOW_DRIVE_STRENGTH,
+        .mux = PORT_MUX_ALT3,
+        .pinLock = false,
+        .intConfig = PORT_DMA_INT_DISABLED,
+        .clearIntFlag = false,
+      },
+
+      {
+        /* PCS1 pin */
+        .base = PORTB,
+        .pinPortIdx = 5,
+        .pullConfig = PORT_INTERNAL_PULL_NOT_ENABLED,
+        .passiveFilter = false,
+        .driveSelect = PORT_LOW_DRIVE_STRENGTH,
+        .mux = PORT_MUX_ALT3,
+        .pinLock = false,
+        .intConfig = PORT_DMA_INT_DISABLED,
+        .clearIntFlag = false,
+      },
+    };
+
+    PINS_DRV_Init(4U, spi_pin_mux);
+  }
+
+  {
+    /* Configure the SPI init structure. */
+    lpspi_master_config_t spiConfig0 = {
+      .bitsPerSec = 1000000U,
+      .whichPcs = LPSPI_PCS0,
+      .pcsPolarity = LPSPI_ACTIVE_LOW,
+      .isPcsContinuous = false,
+      .bitcount = 8U,
+      .clkPhase = LPSPI_CLOCK_PHASE_2ND_EDGE,
+      .clkPolarity = LPSPI_SCK_ACTIVE_HIGH,
+      .lsbFirst = false,
+      .transferType = LPSPI_USING_INTERRUPTS,
+      .callback = (spi_callback_t)lpspi_master_transfer_callback0,
+    };
+
+    /* Module source clock */
+    uint32_t frequency;
+    CLOCK_SYS_GetFreq(LPSPI0_CLK, &frequency);
+    spiConfig0.lpspiSrcClk = frequency;
+
+    /* Initializes a LPSPI instance for interrupt driven master mode operation */
+    LPSPI_DRV_MasterInit(0, &lpspiMasterState0, &spiConfig0);
+  }
+
+  /* Start for DataStoreMemory: '<Root>/Data Store Memory5' */
+  IaOffset = 2040.0F;
+
+  /* Start for DataStoreMemory: '<Root>/Data Store Memory6' */
+  IbOffset = 2040.0F;
+
+  /* Start for DataStoreMemory: '<Root>/Data Store Memory8' */
+  Gamma = 0.6F;
+
+  /* Start for DataStoreMemory: '<Root>/Data Store Memory10' */
+  Theta = 0.005F;
+
+  /* Start for DataStoreMemory: '<Root>/Data Store Memory13' */
+  Epsilon = 0.5F;
+
+  /* Start for DataStoreMemory: '<Root>/Data Store Memory9' */
+  Lambda = 0.5F;
+
+  /* SystemInitialize for S-Function (ftm_s32k_hall_sensor): '<S3>/FTM_Hall_Sensor' incorporates:
+   *  SubSystem: '<Root>/Hall Sensor'
+   */
+  /* System initialize for function-call system: '<Root>/Hall Sensor' */
+
+  /* Start for S-Function (gpio_s32k_input): '<S187>/Digital_Input_HALL_A' */
+  {
+    /* Enable clock for PORTA */
+    PCC_SetClockMode(PCC, PCC_PORTA_CLOCK, true);
+
+    /* Configure the input port init structure. */
+    const pin_settings_config_t gpioPORTAPin1 = {
+      .base = PORTA,
+      .pinPortIdx = 1,
+      .pullConfig = PORT_INTERNAL_PULL_NOT_ENABLED,
+      .passiveFilter = false,
+      .driveSelect = PORT_LOW_DRIVE_STRENGTH,
+      .mux = PORT_MUX_AS_GPIO,
+      .pinLock = false,
+      .intConfig = PORT_DMA_INT_DISABLED,
+      .clearIntFlag = true,
+      .gpioBase = PTA,
+      .direction = GPIO_INPUT_DIRECTION,
+    };
+
+    /* Initialize GPIPORTA1. */
+    PINS_DRV_Init(1, &gpioPORTAPin1);
+  }
+
+  /* Start for S-Function (gpio_s32k_input): '<S187>/Digital_Input_HALL_B' */
+  {
+    /* Enable clock for PORTD */
+    PCC_SetClockMode(PCC, PCC_PORTD_CLOCK, true);
+
+    /* Configure the input port init structure. */
+    const pin_settings_config_t gpioPORTDPin10 = {
+      .base = PORTD,
+      .pinPortIdx = 10,
+      .pullConfig = PORT_INTERNAL_PULL_NOT_ENABLED,
+      .passiveFilter = false,
+      .driveSelect = PORT_LOW_DRIVE_STRENGTH,
+      .mux = PORT_MUX_AS_GPIO,
+      .pinLock = false,
+      .intConfig = PORT_DMA_INT_DISABLED,
+      .clearIntFlag = true,
+      .gpioBase = PTD,
+      .direction = GPIO_INPUT_DIRECTION,
+    };
+
+    /* Initialize GPIPORTD10. */
+    PINS_DRV_Init(1, &gpioPORTDPin10);
+  }
+
+  /* Start for S-Function (gpio_s32k_input): '<S187>/Digital_Input_HALL_C' */
+  {
+    /* Enable clock for PORTD */
+    PCC_SetClockMode(PCC, PCC_PORTD_CLOCK, true);
+
+    /* Configure the input port init structure. */
+    const pin_settings_config_t gpioPORTDPin11 = {
+      .base = PORTD,
+      .pinPortIdx = 11,
+      .pullConfig = PORT_INTERNAL_PULL_NOT_ENABLED,
+      .passiveFilter = false,
+      .driveSelect = PORT_LOW_DRIVE_STRENGTH,
+      .mux = PORT_MUX_AS_GPIO,
+      .pinLock = false,
+      .intConfig = PORT_DMA_INT_DISABLED,
+      .clearIntFlag = true,
+      .gpioBase = PTD,
+      .direction = GPIO_INPUT_DIRECTION,
+    };
+
+    /* Initialize GPIPORTD11. */
+    PINS_DRV_Init(1, &gpioPORTDPin11);
+  }
+
+  /* Set FTM_2 clock source */
+  PCC_SetPeripheralClockControl (PCC, FTM2_CLK, true, CLK_SRC_SPLL, 0, 0);
+
+  /* Enable clock for FTM_2 */
+  PCC_SetClockMode (PCC, FTM2_CLK, true);
+
+  /* Initialize FTM instances, PWM and Input capture */
+  static ftm_state_t ftm2StateStruct;
+  FTM_DRV_Init(2, &flexTimer_ic2_InitConfig, &ftm2StateStruct);
+
+  /* Setup input capture for FMT2*/
+  FTM_DRV_InitInputCapture(2, &flexTimer_ic2_InputCaptureConfig);
+
+  /* Enable clock for PORTA */
+  PCC_SetClockMode (PCC, PCC_PORTA_CLOCK, true);
+
+  /* Pin is configured for FTM function */
+  PINS_SetMuxModeSel(PORTA, 1, PORT_MUX_ALT2);
+
+  /* Enable clock for PORTD */
+  PCC_SetClockMode (PCC, PCC_PORTD_CLOCK, true);
+
+  /* Pin is configured for FTM function */
+  PINS_SetMuxModeSel(PORTD, 10, PORT_MUX_ALT2);
+
+  /* Enable clock for PORTD */
+  PCC_SetClockMode (PCC, PCC_PORTD_CLOCK, true);
+
+  /* Pin is configured for FTM function */
+  PINS_SetMuxModeSel(PORTD, 11, PORT_MUX_ALT2);
+
+  /* FTM2: channel 1 counter reset */
+  FTM_RMW_CnSCV_REG(FTM2, 1, FTM_CnSC_ICRST_MASK , FTM_CnSC_ICRST(true));
+
+  /* FTM2: channel 1 ISR enable */
+  FTM_DRV_EnableChnInt(FTM2, 1);
+
+  /* Select as the input of FTM2: XOR of FTM2_CH0, FTM2_CH1 and FTM1_CH1 */
+  SIM->FTMOPT1 |= SIM_FTMOPT1_FTM2CH1SEL(1);
+
+  /* FTM2: ISR level */
+  INT_SYS_SetPriority(FTM2_Ch0_Ch1_IRQn, 5.0);
+
+  /* FTM2: enable ISR */
+  INT_SYS_EnableIRQ(FTM2_Ch0_Ch1_IRQn);
+
+  /* FTM2:installing ISR Handler */
+  INT_SYS_InstallHandler(FTM2_Ch0_Ch1_IRQn, FTM2_Ch0_1_IRQHandler, (isr_t *)0);
+
+  /* Adding interrupt handler in the vector from ftm_chn_irq.c file */
+  FTM_CHR_DRV_InstallCallback(2, 1, FTM2_Ch1_Hall_Sensor_isr);
+
+  /* SystemInitialize for Atomic SubSystem: '<S3>/Subsystem2' */
+  /* SystemInitialize for S-Function (pdb_s32k_isr): '<S206>/PDB1_ISR' */
+
+  /* Table of base addresses for PDB instances. */
+  static PDB_Type * const s_pdbBase[PDB_INSTANCE_COUNT] = PDB_BASE_PTRS;
+
+  /* Set value for PDB0_IDLY register (interrupt delay) */
+  PDB_DRV_SetValueForTimerInterrupt(0, 4999U);
+
+  /* Load and lock interrupt delay value */
+  PDB_DRV_LoadValuesCmd(0);
+
+  {
+    uint32_t sc = 0;
+    PDB_Type * base = s_pdbBase[0];
+    sc = base->SC;
+    sc &= ~((uint32_t) PDB_SC_PDBEIE_MASK |
+            (uint32_t)PDB_SC_PDBIE_MASK);
+
+    /* Enable PDB interrupt */
+    sc |= PDB_SC_PDBIE_MASK;
+    base->SC = sc;
+
+    /* Enable PDB0 interrupt and set priority for it */
+    INT_SYS_InstallHandler(PDB0_IRQn, pdb0_isr, (isr_t *)0);
+    INT_SYS_SetPriority(PDB0_IRQn, 6);
+    INT_SYS_EnableIRQ(PDB0_IRQn);
+  }
+
+  /* SystemInitialize for S-Function (adc_s32k_isr): '<S206>/ADC1_ISR' incorporates:
+   *  SubSystem: '<S206>/ADC1_IRQHandler'
+   */
+  /* System initialize for function-call system: '<S206>/ADC1_IRQHandler' */
+
+  /* Start for S-Function (adc_s32k_start): '<S207>/ADC_AD4_IA' */
+  {
+    adc_chan_config_t adc0_chan_cfg = {
+      .interruptEnable = false,
+      .channel = ADC_INPUTCHAN_EXT4
+    };
+
+    /* Initialize channel configuration of ADC0. */
+    ADC_DRV_ConfigChan(0, 0, &adc0_chan_cfg);
+  }
+
+  /* Start for S-Function (adc_s32k_start): '<S207>/ADC_AD7_VDC' */
+  {
+    adc_chan_config_t adc1_chan_cfg = {
+      .interruptEnable = false,
+      .channel = ADC_INPUTCHAN_EXT7
+    };
+
+    /* Initialize channel configuration of ADC1. */
+    ADC_DRV_ConfigChan(1, 0, &adc1_chan_cfg);
+  }
+
+  /* Start for S-Function (adc_s32k_start): '<S207>/ADC_AD6_IDC' */
+  {
+    adc_chan_config_t adc1_chan_cfg = {
+      .interruptEnable = false,
+      .channel = ADC_INPUTCHAN_EXT6
+    };
+
+    /* Initialize channel configuration of ADC1. */
+    ADC_DRV_ConfigChan(1, 1, &adc1_chan_cfg);
+  }
+
+  /* SystemInitialize for S-Function (fcgen): '<S207>/Function-Call Generator' incorporates:
+   *  SubSystem: '<Root>/CurrentControl'
+   */
+  Foc_mod_CurrentControl_Init();
+
+  /* End of SystemInitialize for S-Function (fcgen): '<S207>/Function-Call Generator' */
+  ADC_InstallCallback(1, 2U, ADC1_SC1reg2U_callback);
+
+  /* Set ADC1 interrupt priority */
+  INT_SYS_SetPriority(ADC1_IRQn, 5);
+
+  /* Enable ADC1 interrupt */
+  INT_SYS_EnableIRQ(ADC1_IRQn);
+
+  /* SystemInitialize for IfAction SubSystem: '<S4>/FAULT' */
+  /* Start for S-Function (gpio_s32k_output): '<S213>/LED_GREEN' incorporates:
+   *  Constant: '<S213>/OFF'
+   */
+  {
+    /* Enable clock for PORTD */
+    PCC_SetClockMode(PCC, PCC_PORTD_CLOCK, true);
+
+    /* Configure the output port init structure. */
+    const pin_settings_config_t gpioPORTDPin16 = {
+      .base = PORTD,
+      .pinPortIdx = 16,
+      .pullConfig = PORT_INTERNAL_PULL_NOT_ENABLED,
+      .passiveFilter = false,
+      .driveSelect = PORT_LOW_DRIVE_STRENGTH,
+      .mux = PORT_MUX_AS_GPIO,
+      .pinLock = false,
+      .intConfig = PORT_DMA_INT_DISABLED,
+      .clearIntFlag = true,
+      .gpioBase = PTD,
+      .direction = GPIO_OUTPUT_DIRECTION,
+      .initValue = 0U
+    };
+
+    /* Initialize GPIPORTD16. */
+    PINS_DRV_Init(1, &gpioPORTDPin16);
+  }
+
+  /* Start for S-Function (gpio_s32k_output): '<S213>/LED_RED' incorporates:
+   *  Constant: '<S213>/ON'
+   */
+  {
+    /* Enable clock for PORTD */
+    PCC_SetClockMode(PCC, PCC_PORTD_CLOCK, true);
+
+    /* Configure the output port init structure. */
+    const pin_settings_config_t gpioPORTDPin15 = {
+      .base = PORTD,
+      .pinPortIdx = 15,
+      .pullConfig = PORT_INTERNAL_PULL_NOT_ENABLED,
+      .passiveFilter = false,
+      .driveSelect = PORT_LOW_DRIVE_STRENGTH,
+      .mux = PORT_MUX_AS_GPIO,
+      .pinLock = false,
+      .intConfig = PORT_DMA_INT_DISABLED,
+      .clearIntFlag = true,
+      .gpioBase = PTD,
+      .direction = GPIO_OUTPUT_DIRECTION,
+      .initValue = 0U
+    };
+
+    /* Initialize GPIPORTD15. */
+    PINS_DRV_Init(1, &gpioPORTDPin15);
+  }
+
+  /* End of SystemInitialize for SubSystem: '<S4>/FAULT' */
+  /* SystemInitialize for Chart: '<S4>/Enable PDB and start FTM' incorporates:
+   *  SubSystem: '<S4>/enable_FTM_PDB_ADC_triggering'
+   */
+
+  /* SystemInitialize for S-Function (tpp_s32k_isr): '<S4>/GD300_ISR_Callback ' */
+  {
+  }
+
+  /* End of Enable for S-Function (adc_s32k_isr): '<S206>/ADC1_ISR' */
+
+  /* Enable for S-Function (adc_s32k_isr): '<S206>/ADC1_ISR' incorporates:
+   *  SubSystem: '<S206>/ADC1_IRQHandler'
+   */
+  /* Enable for function-call system: '<S206>/ADC1_IRQHandler' */
+
+  /* Enable for S-Function (fcgen): '<S207>/Function-Call Generator' incorporates:
+   *  SubSystem: '<Root>/CurrentControl'
+   */
+  Foc_m_CurrentControl_Enable();
+
+  /* End of Enable for S-Function (fcgen): '<S207>/Function-Call Generator' */
+
+  /* End of Enable for S-Function (adc_s32k_isr): '<S206>/ADC1_ISR' */
+  /* End of Enable for SubSystem: '<S3>/Subsystem2' */
+}
+
+/* Model terminate function */
+void Foc_model_Matlab_3_terminate(void)
+{
+  /* (no terminate code required) */
+}
+
+/*
+ * File trailer for generated code.
+ *
+ * [EOF]
+ */

@@ -152,7 +152,7 @@ pmsm.Rs = pmsm.Rs + inverter.R_board;
 % PI Current
 zeta1 = 0.707;              % Coefficiente di smorzamento
 zeta2 = 1;
-gamma1 = 0.60;        %0.68               % Performance parameter corrente      
+gamma1 = 0.6;        %0.68               % Performance parameter corrente      
 
 wnq = (1/(1-gamma1))*(pmsm.Rs/pmsm.Lq);
 Kcq = (2*zeta1*wnq*pmsm.Lq)-pmsm.Rs;
@@ -167,9 +167,9 @@ Kid = Kcd/t_id;
 %% CALCOLO PARAMETRI CONTROLLO SLINDING MODE
 % Parametri da assegnare
 
-tuning.lambda = 0.8;        %0.5        %1
-tuning.theta = 0.03;        % 0.003     %0.07
-tuning.epsilon = 0.7;       %0.3        %0.5
+tuning.lambda = 0.5;        %0.5        %1
+tuning.theta = 0.005;        % 0.001     %0.07
+tuning.epsilon = 0.55;       %0.03        %0.5
 
 %% CALCOLO INDICI INTEGRALI
  error = SpeedError.signals.values;

@@ -7,10 +7,10 @@
  *
  * Code generated for Simulink model 'Foc_model_Matlab'.
  *
- * Model version                   : 10.25
+ * Model version                   : 10.28
  * Simulink Coder version          : 24.2 (R2024b) 21-Jun-2024
  * MBDT for S32K1xx Series Version : 4.2.0 (R2016a-R2020a) 20-Jul-2020
- * C/C++ source code generated on  : Wed Nov 27 10:00:34 2024
+ * C/C++ source code generated on  : Fri Nov 29 11:21:38 2024
  *
  * Target selection: mbd_s32k.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -78,6 +78,7 @@
 /* Block signals (default storage) */
 typedef struct {
   uint32_T ADC1_ISR_o2;                /* '<S138>/ADC1_ISR' */
+  uint32_T Read_Register;              /* '<S67>/Read_Register' */
   real32_T Id_ref;                     /* '<S8>/Id_ref' */
   real32_T I_ref;                      /* '<S151>/MATLAB Function' */
   real32_T Merge;                      /* '<S91>/Merge' */
@@ -178,9 +179,7 @@ extern volatile uint32_T ADC_IDC;      /* '<S139>/ADC_AD6_IDC' */
 extern volatile uint32_T ADC_VDC;      /* '<S139>/ADC_AD7_VDC' */
 extern volatile uint32_T CH0S_ERR;     /* '<S138>/PDB1_ISR' */
 extern volatile uint32_T CH1S_ERR;     /* '<S138>/PDB1_ISR' */
-extern volatile real32_T COS;          /* '<S50>/Sum6' */
 extern volatile uint16_T CntHall;      /* '<S3>/FTM_Hall_Sensor' */
-extern volatile uint32_T CntHallDecoder;/* '<S67>/Read_Register' */
 extern volatile uint16_T CntHallValidityIn;
                                 /* '<S2>/SigConvForSigProp_Variant_Source2_0' */
 extern volatile real32_T DesiredSpeed; /* '<Root>/Data Store Memory7' */
@@ -201,11 +200,9 @@ extern volatile uint32_T HALL_C_controller;/* '<S71>/bit_shift' */
 extern volatile uint16_T HallCntActual;/* '<Root>/Data Store Memory25' */
 extern volatile uint16_T HallCntPrev;  /* '<Root>/Data Store Memory24' */
 extern volatile uint16_T HallStateChangeFlag;/* '<Root>/Data Store Memory' */
-extern volatile uint32_T HallVal;      /* '<S70>/Add1' */
 extern volatile uint16_T HallValididyInvalid;/* '<S125>/Merge' */
 extern volatile real32_T I_ab_afterOffset[2];/* '<S66>/Add' */
 extern volatile real32_T IaOffset;     /* '<Root>/Data Store Memory5' */
-extern volatile real32_T Iab_fb[2];    /* '<S66>/Multiply' */
 extern volatile real32_T IbOffset;     /* '<Root>/Data Store Memory6' */
 extern volatile real32_T Id_err;       /* '<S25>/Sum' */
 extern volatile real32_T Id_fb;        /* '<S15>/Signal Copy1' */
@@ -217,9 +214,7 @@ extern volatile real32_T Lambda;       /* '<Root>/Data Store Memory9' */
 extern volatile real32_T PWM[3];       /* '<S11>/Switch1' */
 extern volatile real32_T PWM_Duty_Cycles[3];/* '<S12>/Gain' */
 extern volatile real32_T PWM_Enable;   /* '<S12>/Data Type Conversion' */
-extern volatile real32_T Pos_PU;       /* '<S113>/Add' */
 extern volatile uint32_T SC_PDBIF;     /* '<S138>/PDB1_ISR' */
-extern volatile real32_T SIN;          /* '<S50>/Sum4' */
 extern volatile real32_T SpeedError;   /* '<S151>/Sum' */
 extern volatile real32_T SpeedMeasured;/* '<S1>/Input Scaling' */
 extern volatile real32_T Speed_Ref;    /* '<S152>/Switch' */
@@ -227,8 +222,6 @@ extern volatile real32_T Speed_Ref_PU; /* '<Root>/RT2' */
 extern volatile real32_T Speed_fb;     /* '<Root>/RT1' */
 extern volatile real32_T Theta;        /* '<Root>/Data Store Memory10' */
 extern volatile real32_T ThetaHalls;   /* '<S68>/Merge1' */
-extern volatile real32_T Vd_ref_beforeLimiter;/* '<S25>/MATLAB Function1' */
-extern volatile real32_T Vq_ref_beforeLimiter;/* '<S26>/MATLAB Function1' */
 
 /* Real-time Model object */
 extern RT_MODEL_Foc_model_Matlab_T *const Foc_model_Matlab_M;

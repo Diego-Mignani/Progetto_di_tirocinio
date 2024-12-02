@@ -1,0 +1,2709 @@
+Archive member included to satisfy reference by file (symbol)
+
+C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_cos.o)
+                              Foc_model_Matlab_1.o (cos)
+C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_floor.o)
+                              Foc_model_Matlab_1.o (floor)
+C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_sin.o)
+                              Foc_model_Matlab_1.o (sin)
+C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-w_fmod.o)
+                              Foc_model_Matlab_1.o (fmod)
+C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-w_sqrt.o)
+                              Foc_model_Matlab_1.o (sqrt)
+C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_fmod.o)
+                              C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-w_fmod.o) (__ieee754_fmod)
+C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_rem_pio2.o)
+                              C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_cos.o) (__ieee754_rem_pio2)
+C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_sqrt.o)
+                              C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-w_sqrt.o) (__ieee754_sqrt)
+C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-k_cos.o)
+                              C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_cos.o) (__kernel_cos)
+C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-k_rem_pio2.o)
+                              C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_rem_pio2.o) (__kernel_rem_pio2)
+C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-k_sin.o)
+                              C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_cos.o) (__kernel_sin)
+C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_fabs.o)
+                              C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_rem_pio2.o) (fabs)
+C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_lib_ver.o)
+                              C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-w_fmod.o) (__fdlib_version)
+C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_matherr.o)
+                              C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-w_fmod.o) (matherr)
+C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_scalbn.o)
+                              C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-k_rem_pio2.o) (scalbn)
+C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_copysign.o)
+                              C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_scalbn.o) (copysign)
+c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_addsubdf3.o)
+                              C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_cos.o) (__aeabi_dsub)
+c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_muldivdf3.o)
+                              Foc_model_Matlab_1.o (__aeabi_dmul)
+c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_cmpdf2.o)
+                              rt_nonfinite.o (__aeabi_dcmpeq)
+c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_unorddf2.o)
+                              C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-w_fmod.o) (__aeabi_dcmpun)
+c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_fixdfsi.o)
+                              C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_rem_pio2.o) (__aeabi_d2iz)
+c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_truncdfsf2.o)
+                              Foc_model_Matlab_1.o (__aeabi_d2f)
+c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_aeabi_uldivmod.o)
+                              lpit_driver.o (__aeabi_uldivmod)
+c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_udivmoddi4.o)
+                              c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_aeabi_uldivmod.o) (__udivmoddi4)
+c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_dvmd_tls.o)
+                              c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_aeabi_uldivmod.o) (__aeabi_ldiv0)
+C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-errno.o)
+                              C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-w_fmod.o) (__errno)
+C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-exit.o)
+                              C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard/crt0.o (exit)
+C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-impure.o)
+                              C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-exit.o) (_global_impure_ptr)
+C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-init.o)
+                              C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard/crt0.o (__libc_init_array)
+C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-memset.o)
+                              C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard/crt0.o (memset)
+C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__call_atexit.o)
+                              C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-exit.o) (__call_exitprocs)
+C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-fini.o)
+                              C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__call_atexit.o) (__libc_fini_array)
+C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-atexit.o)
+                              C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__call_atexit.o) (atexit)
+C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__atexit.o)
+                              C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-atexit.o) (__register_exitproc)
+C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libnosys.a(_exit.o)
+                              C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-exit.o) (_exit)
+
+Allocating common symbols
+Common symbol       size              file
+
+FAULT               0x1               Foc_model_Matlab_1.o
+HALL_B              0x4               Foc_model_Matlab_1.o
+GlobalSpeedCount    0x2               Foc_model_Matlab_1.o
+Foc_model_Matlab_1_B
+                    0x2c              Foc_model_Matlab_1.o
+IaOffset            0x4               Foc_model_Matlab_1.o
+Vd_ref_beforeLimiter
+                    0x4               Foc_model_Matlab_1.o
+HALL_C              0x4               Foc_model_Matlab_1.o
+Foc_model_Matlab_1_DW
+                    0x98              Foc_model_Matlab_1.o
+Lambda              0x4               Foc_model_Matlab_1.o
+SIN                 0x4               Foc_model_Matlab_1.o
+rtNaNF              0x4               rt_nonfinite.o
+pcm_pRecVarAddr     0x20              freemaster_rec.o
+pcm_wRecBuffStartIx
+                    0x2               freemaster_rec.o
+COS                 0x4               Foc_model_Matlab_1.o
+Ki                  0x4               Foc_model_Matlab_1.o
+Idc_afterOffset     0x4               Foc_model_Matlab_1.o
+ADC_IA              0x4               Foc_model_Matlab_1.o
+ADC_IDC             0x4               Foc_model_Matlab_1.o
+profile_buffer      0xc               profile_buffer.o
+CntHallDecoder      0x4               Foc_model_Matlab_1.o
+Id_err              0x4               Foc_model_Matlab_1.o
+g_xtal0ClkFreq      0x4               clock_S32K1xx.o
+I_ab_afterOffset    0x8               Foc_model_Matlab_1.o
+pcm_dwRecEndBuffPtr
+                    0x4               freemaster_rec.o
+Idq_ref_PU          0x8               Foc_model_Matlab_1.o
+pcm_pRecVarSize     0x8               freemaster_rec.o
+pcm_wRecTotalSmps   0x2               freemaster_rec.o
+Vq_ref_beforeLimiter
+                    0x4               Foc_model_Matlab_1.o
+HALL_C_controller   0x4               Foc_model_Matlab_1.o
+Speed_Ref_PU        0x4               Foc_model_Matlab_1.o
+GlobalDirection     0x2               Foc_model_Matlab_1.o
+pcm_nRecVarCount    0x1               freemaster_rec.o
+Speed_Ref           0x4               Foc_model_Matlab_1.o
+trgmuxAllMappingConfig
+                    0x6               Foc_model_Matlab_1.o
+PWM_Enable          0x4               Foc_model_Matlab_1.o
+ADC_B               0x4               Foc_model_Matlab_1.o
+SpeedMeasured       0x4               Foc_model_Matlab_1.o
+Pos_PU              0x4               Foc_model_Matlab_1.o
+ADC_A               0x4               Foc_model_Matlab_1.o
+rtInfF              0x4               rt_nonfinite.o
+g_lpspiState        0x34              Foc_model_Matlab_1.o
+CntHallValidityIn   0x2               Foc_model_Matlab_1.o
+ADC_IB              0x4               Foc_model_Matlab_1.o
+HallStateChangeFlag
+                    0x2               Foc_model_Matlab_1.o
+HallVal             0x4               Foc_model_Matlab_1.o
+rtInf               0x8               rt_nonfinite.o
+Iq_err              0x4               Foc_model_Matlab_1.o
+pcm_wRecTimeDivCtr  0x2               freemaster_rec.o
+Enable              0x1               Foc_model_Matlab_1.o
+pcm_wStoprecCountDown
+                    0x2               freemaster_rec.o
+CH1S_ERR            0x4               Foc_model_Matlab_1.o
+g_RtcClkInFreq      0x4               clock_S32K1xx.o
+rtNaN               0x8               rt_nonfinite.o
+Theta               0x4               Foc_model_Matlab_1.o
+gPowerManagerState  0x10              power_manager_S32K1xx.o
+rtMinusInf          0x8               rt_nonfinite.o
+HALL_A              0x4               Foc_model_Matlab_1.o
+IbOffset            0x4               Foc_model_Matlab_1.o
+CH0S_ERR            0x4               Foc_model_Matlab_1.o
+GlobalSpeedValidity
+                    0x2               Foc_model_Matlab_1.o
+PWM_Duty_Cycles     0xc               Foc_model_Matlab_1.o
+Iq_fb               0x4               Foc_model_Matlab_1.o
+pcm_nRecTriggerMode
+                    0x1               freemaster_rec.o
+SC_PDBIF            0x4               Foc_model_Matlab_1.o
+pcm_wRecFlags       0x4               freemaster_rec.o
+DesiredSpeed        0x4               Foc_model_Matlab_1.o
+Epsilon             0x4               Foc_model_Matlab_1.o
+PWM                 0xc               Foc_model_Matlab_1.o
+ThetaHalls          0x4               Foc_model_Matlab_1.o
+lpspiMasterState0   0x34              Foc_model_Matlab_1.o
+g_TClkFreq          0xc               clock_S32K1xx.o
+K2                  0x4               Foc_model_Matlab_1.o
+HallValididyInvalid
+                    0x2               Foc_model_Matlab_1.o
+pcm_wRecTimeDiv     0x2               freemaster_rec.o
+Gamma               0x4               Foc_model_Matlab_1.o
+HALL_B_controller   0x4               Foc_model_Matlab_1.o
+tppDrvConfig        0x38              Foc_model_Matlab_1.o
+Kp                  0x4               Foc_model_Matlab_1.o
+Iab_fb              0x8               Foc_model_Matlab_1.o
+tppStatus           0x2               Foc_model_Matlab_1.o
+GlobalHallState     0x4               Foc_model_Matlab_1.o
+Speed_fb            0x4               Foc_model_Matlab_1.o
+SpeedError          0x4               Foc_model_Matlab_1.o
+HallCntPrev         0x2               Foc_model_Matlab_1.o
+HallCntActual       0x2               Foc_model_Matlab_1.o
+ADC_VDC             0x4               Foc_model_Matlab_1.o
+rtMinusInfF         0x4               rt_nonfinite.o
+ftmStateStruct3     0x60              ftm3_pwm_params.o
+pcm_wRecPostTrigger
+                    0x2               freemaster_rec.o
+pcm_dwRecWritePtr   0x4               freemaster_rec.o
+HALL_A_controller   0x4               Foc_model_Matlab_1.o
+CntHall             0x2               Foc_model_Matlab_1.o
+Id_fb               0x4               Foc_model_Matlab_1.o
+
+Discarded input sections
+
+ .text          0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crti.o
+ .data          0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crti.o
+ .bss           0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crti.o
+ .data          0x00000000        0x4 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+ .text          0x00000000       0x74 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard/crt0.o
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard/crt0.o
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard/crt0.o
+ .ARM.extab     0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard/crt0.o
+ .ARM.exidx     0x00000000        0x8 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard/crt0.o
+ .ARM.attributes
+                0x00000000       0x20 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard/crt0.o
+ .data          0x00000000        0x0 startup_S32K144.o
+ .bss           0x00000000        0x0 startup_S32K144.o
+ .data          0x00000000        0x0 Foc_model_Matlab_1.o
+ .text          0x00000000        0x0 Foc_model_Matlab_1_data.o
+ .data          0x00000000        0x0 Foc_model_Matlab_1_data.o
+ .bss           0x00000000        0x0 Foc_model_Matlab_1_data.o
+ .data          0x00000000        0x0 adc_driver.o
+ .bss           0x00000000        0x0 adc_driver.o
+ .data          0x00000000        0x0 edma_driver.o
+ .data          0x00000000        0x0 edma_hw_access.o
+ .bss           0x00000000        0x0 edma_hw_access.o
+ .data          0x00000000        0x0 edma_irq.o
+ .bss           0x00000000        0x0 edma_irq.o
+ .data          0x00000000        0x0 freemaster_S32K1xx.o
+ .text          0x00000000       0x10 freemaster_appcmd.o
+ .data          0x00000000        0x0 freemaster_appcmd.o
+ .bss           0x00000000        0x0 freemaster_appcmd.o
+ .debug_info    0x00000000      0x19d freemaster_appcmd.o
+ .debug_abbrev  0x00000000       0xc1 freemaster_appcmd.o
+ .debug_loc     0x00000000       0x26 freemaster_appcmd.o
+ .debug_aranges
+                0x00000000       0x20 freemaster_appcmd.o
+ .debug_line    0x00000000       0x5b freemaster_appcmd.o
+ .debug_str     0x00000000      0x318 freemaster_appcmd.o
+ .comment       0x00000000       0xa1 freemaster_appcmd.o
+ .debug_frame   0x00000000       0x60 freemaster_appcmd.o
+ .ARM.attributes
+                0x00000000       0x39 freemaster_appcmd.o
+ .data          0x00000000        0x0 freemaster_interface_init.o
+ .bss           0x00000000        0x0 freemaster_interface_init.o
+ .data          0x00000000        0x0 freemaster_protocol.o
+ .bss           0x00000000        0x0 freemaster_protocol.o
+ .data          0x00000000        0x0 freemaster_rec.o
+ .data          0x00000000        0x0 freemaster_scope.o
+ .data          0x00000000        0x0 freemaster_serial.o
+ .text          0x00000000        0x0 freemaster_sfio.o
+ .data          0x00000000        0x0 freemaster_sfio.o
+ .bss           0x00000000        0x0 freemaster_sfio.o
+ .debug_info    0x00000000       0x4f freemaster_sfio.o
+ .debug_abbrev  0x00000000       0x1b freemaster_sfio.o
+ .debug_aranges
+                0x00000000       0x18 freemaster_sfio.o
+ .debug_line    0x00000000       0x1d freemaster_sfio.o
+ .debug_str     0x00000000      0x1f7 freemaster_sfio.o
+ .comment       0x00000000       0xa1 freemaster_sfio.o
+ .ARM.attributes
+                0x00000000       0x39 freemaster_sfio.o
+ .text          0x00000000        0x0 freemaster_tsa.o
+ .data          0x00000000        0x0 freemaster_tsa.o
+ .bss           0x00000000        0x0 freemaster_tsa.o
+ .debug_info    0x00000000       0x4f freemaster_tsa.o
+ .debug_abbrev  0x00000000       0x1b freemaster_tsa.o
+ .debug_aranges
+                0x00000000       0x18 freemaster_tsa.o
+ .debug_line    0x00000000       0x1d freemaster_tsa.o
+ .debug_str     0x00000000      0x1f6 freemaster_tsa.o
+ .comment       0x00000000       0xa1 freemaster_tsa.o
+ .ARM.attributes
+                0x00000000       0x39 freemaster_tsa.o
+ .data          0x00000000        0x0 ftm2_ch1_hall_sensor_isr.o
+ .bss           0x00000000        0x0 ftm2_ch1_hall_sensor_isr.o
+ .text          0x00000000        0x0 ftm2_input_params_config.o
+ .bss           0x00000000        0x0 ftm2_input_params_config.o
+ .text          0x00000000        0x0 ftm3_pwm_params.o
+ .bss           0x00000000        0x0 ftm3_pwm_params.o
+ .data          0x00000000        0x0 ftm_chn_irq.o
+ .data          0x00000000        0x0 ftm_common.o
+ .data          0x00000000        0x0 ftm_fault_irq.o
+ .data          0x00000000        0x0 ftm_hw_access.o
+ .bss           0x00000000        0x0 ftm_hw_access.o
+ .data          0x00000000        0x0 ftm_ic_driver.o
+ .bss           0x00000000        0x0 ftm_ic_driver.o
+ .text          0x00000000      0x108 ftm_mc_driver.o
+ .data          0x00000000        0x0 ftm_mc_driver.o
+ .bss           0x00000000        0x0 ftm_mc_driver.o
+ .debug_info    0x00000000      0xe40 ftm_mc_driver.o
+ .debug_abbrev  0x00000000      0x22b ftm_mc_driver.o
+ .debug_loc     0x00000000      0x1cf ftm_mc_driver.o
+ .debug_aranges
+                0x00000000       0x20 ftm_mc_driver.o
+ .debug_ranges  0x00000000       0x18 ftm_mc_driver.o
+ .debug_line    0x00000000      0x299 ftm_mc_driver.o
+ .debug_str     0x00000000     0x15fc ftm_mc_driver.o
+ .comment       0x00000000       0xa1 ftm_mc_driver.o
+ .debug_frame   0x00000000       0x70 ftm_mc_driver.o
+ .ARM.attributes
+                0x00000000       0x39 ftm_mc_driver.o
+ .text          0x00000000      0x22c ftm_oc_driver.o
+ .data          0x00000000        0x0 ftm_oc_driver.o
+ .bss           0x00000000        0x0 ftm_oc_driver.o
+ .debug_info    0x00000000     0x1395 ftm_oc_driver.o
+ .debug_abbrev  0x00000000      0x239 ftm_oc_driver.o
+ .debug_loc     0x00000000      0x5dd ftm_oc_driver.o
+ .debug_aranges
+                0x00000000       0x20 ftm_oc_driver.o
+ .debug_ranges  0x00000000       0xa8 ftm_oc_driver.o
+ .debug_line    0x00000000      0x393 ftm_oc_driver.o
+ .debug_str     0x00000000     0x188c ftm_oc_driver.o
+ .comment       0x00000000       0xa1 ftm_oc_driver.o
+ .debug_frame   0x00000000       0x74 ftm_oc_driver.o
+ .ARM.attributes
+                0x00000000       0x39 ftm_oc_driver.o
+ .data          0x00000000        0x0 ftm_pwm_driver.o
+ .bss           0x00000000        0x0 ftm_pwm_driver.o
+ .text          0x00000000      0x190 ftm_qd_driver.o
+ .data          0x00000000        0x0 ftm_qd_driver.o
+ .bss           0x00000000        0x0 ftm_qd_driver.o
+ .debug_info    0x00000000     0x104c ftm_qd_driver.o
+ .debug_abbrev  0x00000000      0x253 ftm_qd_driver.o
+ .debug_loc     0x00000000      0x308 ftm_qd_driver.o
+ .debug_aranges
+                0x00000000       0x20 ftm_qd_driver.o
+ .debug_ranges  0x00000000       0x78 ftm_qd_driver.o
+ .debug_line    0x00000000      0x2e6 ftm_qd_driver.o
+ .debug_str     0x00000000     0x17c6 ftm_qd_driver.o
+ .comment       0x00000000       0xa1 ftm_qd_driver.o
+ .debug_frame   0x00000000       0x68 ftm_qd_driver.o
+ .ARM.attributes
+                0x00000000       0x39 ftm_qd_driver.o
+ .data          0x00000000        0x0 gpio_irq.o
+ .data          0x00000000        0x0 gt_pf.o
+ .bss           0x00000000        0x0 gt_pf.o
+ .data          0x00000000        0x0 interrupt_manager.o
+ .text          0x00000000       0x90 lin_common.o
+ .data          0x00000000        0x0 lin_common.o
+ .bss           0x00000000        0x0 lin_common.o
+ .debug_info    0x00000000      0x203 lin_common.o
+ .debug_abbrev  0x00000000      0x11c lin_common.o
+ .debug_loc     0x00000000      0x1a0 lin_common.o
+ .debug_aranges
+                0x00000000       0x20 lin_common.o
+ .debug_line    0x00000000      0x1e6 lin_common.o
+ .debug_str     0x00000000      0x2e0 lin_common.o
+ .comment       0x00000000       0xa1 lin_common.o
+ .debug_frame   0x00000000       0x3c lin_common.o
+ .ARM.attributes
+                0x00000000       0x39 lin_common.o
+ .text          0x00000000       0xb0 lin_driver.o
+ .data          0x00000000        0x0 lin_driver.o
+ .bss           0x00000000        0x0 lin_driver.o
+ .debug_info    0x00000000      0xfb0 lin_driver.o
+ .debug_abbrev  0x00000000      0x1da lin_driver.o
+ .debug_loc     0x00000000      0x507 lin_driver.o
+ .debug_aranges
+                0x00000000       0x20 lin_driver.o
+ .debug_line    0x00000000      0x28c lin_driver.o
+ .debug_str     0x00000000     0x17ee lin_driver.o
+ .comment       0x00000000       0xa1 lin_driver.o
+ .debug_frame   0x00000000      0x220 lin_driver.o
+ .ARM.attributes
+                0x00000000       0x39 lin_driver.o
+ .text          0x00000000       0x1e lin_irq.o
+ .data          0x00000000        0xc lin_irq.o
+ .bss           0x00000000        0x0 lin_irq.o
+ .debug_info    0x00000000       0xee lin_irq.o
+ .debug_abbrev  0x00000000       0x8a lin_irq.o
+ .debug_aranges
+                0x00000000       0x20 lin_irq.o
+ .debug_line    0x00000000       0x70 lin_irq.o
+ .debug_str     0x00000000      0x2a1 lin_irq.o
+ .comment       0x00000000       0xa1 lin_irq.o
+ .debug_frame   0x00000000       0x58 lin_irq.o
+ .ARM.attributes
+                0x00000000       0x39 lin_irq.o
+ .text          0x00000000      0xfa0 lin_lpuart_driver.o
+ .data          0x00000000        0x0 lin_lpuart_driver.o
+ .bss           0x00000000       0x37 lin_lpuart_driver.o
+ .rodata        0x00000000       0x13 lin_lpuart_driver.o
+ .debug_info    0x00000000     0x2245 lin_lpuart_driver.o
+ .debug_abbrev  0x00000000      0x313 lin_lpuart_driver.o
+ .debug_loc     0x00000000     0x1935 lin_lpuart_driver.o
+ .debug_aranges
+                0x00000000       0x20 lin_lpuart_driver.o
+ .debug_ranges  0x00000000       0x68 lin_lpuart_driver.o
+ .debug_line    0x00000000      0x725 lin_lpuart_driver.o
+ .debug_str     0x00000000     0x23f5 lin_lpuart_driver.o
+ .comment       0x00000000       0xa1 lin_lpuart_driver.o
+ .debug_frame   0x00000000      0x29c lin_lpuart_driver.o
+ .ARM.attributes
+                0x00000000       0x39 lin_lpuart_driver.o
+ .data          0x00000000        0x0 lpit_driver.o
+ .data          0x00000000        0x0 lpspi_hw_access.o
+ .bss           0x00000000        0x0 lpspi_hw_access.o
+ .data          0x00000000        0x0 lpspi_irq.o
+ .bss           0x00000000        0x0 lpspi_irq.o
+ .data          0x00000000        0x0 lpspi_master_driver.o
+ .bss           0x00000000        0x0 lpspi_master_driver.o
+ .data          0x00000000        0x0 lpspi_slave_driver.o
+ .bss           0x00000000        0x0 lpspi_slave_driver.o
+ .data          0x00000000        0x0 lpuart_driver.o
+ .data          0x00000000        0x0 lpuart_hw_access.o
+ .bss           0x00000000        0x0 lpuart_hw_access.o
+ .bss           0x00000000        0x0 lpuart_irq.o
+ .data          0x00000000        0x0 mbd_adc_irq.o
+ .bss           0x00000000        0x0 mbd_main.o
+ .text          0x00000000        0x0 pdb0_params.o
+ .text          0x00000000        0x0 pdb1_params.o
+ .data          0x00000000        0x0 pdb_driver.o
+ .bss           0x00000000        0x0 pdb_driver.o
+ .data          0x00000000        0x0 pdb_hw_access.o
+ .bss           0x00000000        0x0 pdb_hw_access.o
+ .data          0x00000000        0x0 pins_driver.o
+ .bss           0x00000000        0x0 pins_driver.o
+ .data          0x00000000        0x0 pins_port_hw_access.o
+ .bss           0x00000000        0x0 pins_port_hw_access.o
+ .data          0x00000000        0x0 power_manager.o
+ .bss           0x00000000        0x0 power_manager.o
+ .data          0x00000000        0x0 power_manager_S32K1xx.o
+ .data          0x00000000        0x0 power_smc_hw_access.o
+ .bss           0x00000000        0x0 power_smc_hw_access.o
+ .text          0x00000000        0x0 profile_buffer.o
+ .data          0x00000000        0x0 profile_buffer.o
+ .bss           0x00000000        0x0 profile_buffer.o
+ .data          0x00000000        0x0 rtGetInf.o
+ .bss           0x00000000        0x0 rtGetInf.o
+ .data          0x00000000        0x0 rtGetNaN.o
+ .bss           0x00000000        0x0 rtGetNaN.o
+ .data          0x00000000        0x0 rt_nonfinite.o
+ .bss           0x00000000        0x0 rt_nonfinite.o
+ .data          0x00000000        0x0 rtmodel.o
+ .bss           0x00000000        0x0 rtmodel.o
+ .data          0x00000000        0x0 s32k_clock_init.o
+ .bss           0x00000000        0x0 s32k_clock_init.o
+ .data          0x00000000        0x0 spi_aml.o
+ .bss           0x00000000        0x0 spi_aml.o
+ .data          0x00000000        0x0 startup.o
+ .bss           0x00000000        0x0 startup.o
+ .bss           0x00000000        0x0 system_S32K144.o
+ .data          0x00000000        0x0 tpp.o
+ .bss           0x00000000        0x0 tpp.o
+ .data          0x00000000        0x0 tpp_ic_init.o
+ .bss           0x00000000        0x0 tpp_ic_init.o
+ .data          0x00000000        0x0 trgmux_driver.o
+ .bss           0x00000000        0x0 trgmux_driver.o
+ .data          0x00000000        0x0 trgmux_hw_access.o
+ .bss           0x00000000        0x0 trgmux_hw_access.o
+ .data          0x00000000        0x0 wait_aml.o
+ .bss           0x00000000        0x0 wait_aml.o
+ .text          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_cos.o)
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_cos.o)
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_cos.o)
+ .text          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_floor.o)
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_floor.o)
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_floor.o)
+ .text          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_sin.o)
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_sin.o)
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_sin.o)
+ .text          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-w_fmod.o)
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-w_fmod.o)
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-w_fmod.o)
+ .text          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-w_sqrt.o)
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-w_sqrt.o)
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-w_sqrt.o)
+ .text          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_fmod.o)
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_fmod.o)
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_fmod.o)
+ .text          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_rem_pio2.o)
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_rem_pio2.o)
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_rem_pio2.o)
+ .text          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_sqrt.o)
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_sqrt.o)
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_sqrt.o)
+ .text          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-k_cos.o)
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-k_cos.o)
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-k_cos.o)
+ .text          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-k_rem_pio2.o)
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-k_rem_pio2.o)
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-k_rem_pio2.o)
+ .text          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-k_sin.o)
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-k_sin.o)
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-k_sin.o)
+ .text          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_fabs.o)
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_fabs.o)
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_fabs.o)
+ .text          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_lib_ver.o)
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_lib_ver.o)
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_lib_ver.o)
+ .text          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_matherr.o)
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_matherr.o)
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_matherr.o)
+ .text          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_scalbn.o)
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_scalbn.o)
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_scalbn.o)
+ .text          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_copysign.o)
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_copysign.o)
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_copysign.o)
+ .data          0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_addsubdf3.o)
+ .bss           0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_addsubdf3.o)
+ .data          0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_muldivdf3.o)
+ .bss           0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_muldivdf3.o)
+ .data          0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_cmpdf2.o)
+ .bss           0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_cmpdf2.o)
+ .data          0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_unorddf2.o)
+ .bss           0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_unorddf2.o)
+ .data          0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_fixdfsi.o)
+ .bss           0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_fixdfsi.o)
+ .data          0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_truncdfsf2.o)
+ .bss           0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_truncdfsf2.o)
+ .data          0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_aeabi_uldivmod.o)
+ .bss           0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_aeabi_uldivmod.o)
+ .data          0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_udivmoddi4.o)
+ .bss           0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_udivmoddi4.o)
+ .ARM.extab     0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_udivmoddi4.o)
+ .data          0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_dvmd_tls.o)
+ .bss           0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_dvmd_tls.o)
+ .text          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-errno.o)
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-errno.o)
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-errno.o)
+ .text          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-exit.o)
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-exit.o)
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-exit.o)
+ .text.exit     0x00000000       0x20 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-exit.o)
+ .debug_frame   0x00000000       0x28 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-exit.o)
+ .ARM.attributes
+                0x00000000       0x34 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-exit.o)
+ .text          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-impure.o)
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-impure.o)
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-impure.o)
+ .text          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-init.o)
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-init.o)
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-init.o)
+ .text.__libc_init_array
+                0x00000000       0x48 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-init.o)
+ .debug_frame   0x00000000       0x2c C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-init.o)
+ .ARM.attributes
+                0x00000000       0x34 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-init.o)
+ .text          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-memset.o)
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-memset.o)
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-memset.o)
+ .text          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__call_atexit.o)
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__call_atexit.o)
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__call_atexit.o)
+ .text.__call_exitprocs
+                0x00000000       0xc8 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__call_atexit.o)
+ .text          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-fini.o)
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-fini.o)
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-fini.o)
+ .text          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-atexit.o)
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-atexit.o)
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-atexit.o)
+ .text          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__atexit.o)
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__atexit.o)
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__atexit.o)
+ .text          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libnosys.a(_exit.o)
+ .data          0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libnosys.a(_exit.o)
+ .bss           0x00000000        0x0 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libnosys.a(_exit.o)
+ .text._exit    0x00000000        0x2 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libnosys.a(_exit.o)
+ .debug_frame   0x00000000       0x20 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libnosys.a(_exit.o)
+ .ARM.attributes
+                0x00000000       0x34 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libnosys.a(_exit.o)
+ .text          0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtend.o
+ .data          0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtend.o
+ .bss           0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtend.o
+ .eh_frame      0x00000000        0x4 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtend.o
+ .text          0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
+ .data          0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
+ .bss           0x00000000        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+m_interrupts     0x00000000         0x00000400         xr
+m_flash_config   0x00000400         0x00000010         xr
+m_text           0x00000410         0x0007fbf0         xr
+m_data           0x1fff8000         0x00008000         rw
+m_data_2         0x20000000         0x00007000         rw
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crti.o
+LOAD c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+LOAD C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard/crt0.o
+                0x00000001                __ram_vector_table__ = 0x1
+LOAD startup_S32K144.o
+LOAD Foc_model_Matlab_1.o
+LOAD Foc_model_Matlab_1_data.o
+LOAD adc_driver.o
+LOAD clock_S32K1xx.o
+LOAD edma_driver.o
+LOAD edma_hw_access.o
+LOAD edma_irq.o
+LOAD freemaster_S32K1xx.o
+LOAD freemaster_appcmd.o
+LOAD freemaster_interface_init.o
+LOAD freemaster_protocol.o
+LOAD freemaster_rec.o
+LOAD freemaster_scope.o
+LOAD freemaster_serial.o
+LOAD freemaster_sfio.o
+LOAD freemaster_tsa.o
+LOAD ftm2_ch1_hall_sensor_isr.o
+LOAD ftm2_input_params_config.o
+LOAD ftm3_pwm_params.o
+LOAD ftm_chn_irq.o
+LOAD ftm_common.o
+LOAD ftm_fault_irq.o
+LOAD ftm_hw_access.o
+LOAD ftm_ic_driver.o
+LOAD ftm_mc_driver.o
+LOAD ftm_oc_driver.o
+LOAD ftm_pwm_driver.o
+LOAD ftm_qd_driver.o
+LOAD gpio_irq.o
+LOAD gt_pf.o
+LOAD interrupt_manager.o
+LOAD lin_common.o
+LOAD lin_driver.o
+LOAD lin_irq.o
+LOAD lin_lpuart_driver.o
+LOAD lpit_driver.o
+LOAD lpspi_hw_access.o
+LOAD lpspi_irq.o
+LOAD lpspi_master_driver.o
+LOAD lpspi_shared_function.o
+LOAD lpspi_slave_driver.o
+LOAD lpuart_driver.o
+LOAD lpuart_hw_access.o
+LOAD lpuart_irq.o
+LOAD mbd_adc_irq.o
+LOAD mbd_main.o
+LOAD osif_baremetal.o
+LOAD pdb0_params.o
+LOAD pdb1_params.o
+LOAD pdb_driver.o
+LOAD pdb_hw_access.o
+LOAD pins_driver.o
+LOAD pins_port_hw_access.o
+LOAD power_manager.o
+LOAD power_manager_S32K1xx.o
+LOAD power_smc_hw_access.o
+LOAD profile_buffer.o
+LOAD rtGetInf.o
+LOAD rtGetNaN.o
+LOAD rt_nonfinite.o
+LOAD rtmodel.o
+LOAD s32k_clock_init.o
+LOAD spi_aml.o
+LOAD startup.o
+LOAD system_S32K144.o
+LOAD tpp.o
+LOAD tpp_ic_init.o
+LOAD trgmux_driver.o
+LOAD trgmux_hw_access.o
+LOAD wait_aml.o
+LOAD C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a
+LOAD S32K14x_AMMCLIB.a
+START GROUP
+LOAD c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a
+LOAD C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a
+END GROUP
+START GROUP
+LOAD c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a
+LOAD C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a
+LOAD C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libnosys.a
+END GROUP
+LOAD c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtend.o
+LOAD c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
+                0x00000400                HEAP_SIZE = DEFINED (__heap_size__)?__heap_size__:0x400
+                0x00000400                STACK_SIZE = DEFINED (__stack_size__)?__stack_size__:0x400
+                0x00000400                M_VECTOR_RAM_SIZE = DEFINED (__flash_vector_table__)?0x0:0x400
+
+.interrupts     0x00000000      0x400
+                0x00000000                __VECTOR_TABLE = .
+                0x00000000                __interrupts_start__ = .
+                0x00000000                . = ALIGN (0x4)
+ *(.isr_vector)
+ .isr_vector    0x00000000      0x400 startup_S32K144.o
+                0x00000000                __isr_vector
+                0x00000400                __interrupts_end__ = .
+                0x00000400                . = ALIGN (0x4)
+
+.flash_config   0x00000400       0x10
+                0x00000400                . = ALIGN (0x4)
+ *(.FlashConfig)
+ .FlashConfig   0x00000400       0x10 startup_S32K144.o
+                0x00000410                . = ALIGN (0x4)
+
+.text           0x00000410    0x108dc
+                0x00000410                . = ALIGN (0x4)
+ *(.text)
+ .text          0x00000410       0xa4 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+ .text          0x000004b4       0x6c startup_S32K144.o
+                0x000004b4                Reset_Handler
+                0x0000051c                DebugMon_Handler
+                0x0000051c                Reserved88_IRQHandler
+                0x0000051c                CAN0_ORed_IRQHandler
+                0x0000051c                HardFault_Handler
+                0x0000051c                Reserved86_IRQHandler
+                0x0000051c                Reserved103_IRQHandler
+                0x0000051c                FTM2_Ovf_Reload_IRQHandler
+                0x0000051c                Reserved50_IRQHandler
+                0x0000051c                FTFC_Fault_IRQHandler
+                0x0000051c                Reserved114_IRQHandler
+                0x0000051c                PendSV_Handler
+                0x0000051c                NMI_Handler
+                0x0000051c                Reserved89_IRQHandler
+                0x0000051c                ERM_double_fault_IRQHandler
+                0x0000051c                Reserved59_IRQHandler
+                0x0000051c                Reserved99_IRQHandler
+                0x0000051c                CAN2_ORed_0_15_MB_IRQHandler
+                0x0000051c                LPIT0_Ch3_IRQHandler
+                0x0000051c                Reserved92_IRQHandler
+                0x0000051c                CAN1_Error_IRQHandler
+                0x0000051c                SWI_IRQHandler
+                0x0000051c                UsageFault_Handler
+                0x0000051c                FTM0_Ovf_Reload_IRQHandler
+                0x0000051c                DefaultISR
+                0x0000051c                Reserved58_IRQHandler
+                0x0000051c                CAN1_ORed_0_15_MB_IRQHandler
+                0x0000051c                Reserved82_IRQHandler
+                0x0000051c                CAN0_ORed_16_31_MB_IRQHandler
+                0x0000051c                LPI2C0_Slave_IRQHandler
+                0x0000051c                Reserved71_IRQHandler
+                0x0000051c                Reserved69_IRQHandler
+                0x0000051c                Reserved70_IRQHandler
+                0x0000051c                Reserved53_IRQHandler
+                0x0000051c                RTC_IRQHandler
+                0x0000051c                PDB0_IRQHandler
+                0x0000051c                Reserved54_IRQHandler
+                0x0000051c                LPUART1_RxTx_IRQHandler
+                0x0000051c                RTC_Seconds_IRQHandler
+                0x0000051c                CAN2_ORed_IRQHandler
+                0x0000051c                Reserved72_IRQHandler
+                0x0000051c                Reserved110_IRQHandler
+                0x0000051c                Reserved107_IRQHandler
+                0x0000051c                Read_Collision_IRQHandler
+                0x0000051c                CAN2_Error_IRQHandler
+                0x0000051c                FTFC_IRQHandler
+                0x0000051c                Reserved105_IRQHandler
+                0x0000051c                LPIT0_Ch1_IRQHandler
+                0x0000051c                FTM3_Ovf_Reload_IRQHandler
+                0x0000051c                LPUART2_RxTx_IRQHandler
+                0x0000051c                WDOG_EWM_IRQHandler
+                0x0000051c                MemManage_Handler
+                0x0000051c                Reserved90_IRQHandler
+                0x0000051c                Reserved83_IRQHandler
+                0x0000051c                Reserved48_IRQHandler
+                0x0000051c                SVC_Handler
+                0x0000051c                ERM_single_fault_IRQHandler
+                0x0000051c                RCM_IRQHandler
+                0x0000051c                Reserved100_IRQHandler
+                0x0000051c                Reserved91_IRQHandler
+                0x0000051c                CAN1_ORed_IRQHandler
+                0x0000051c                SCG_IRQHandler
+                0x0000051c                PDB1_IRQHandler
+                0x0000051c                Reserved81_IRQHandler
+                0x0000051c                Reserved46_IRQHandler
+                0x0000051c                Reserved45_IRQHandler
+                0x0000051c                CAN0_Error_IRQHandler
+                0x0000051c                Reserved112_IRQHandler
+                0x0000051c                LPI2C0_Master_IRQHandler
+                0x0000051c                Reserved106_IRQHandler
+                0x0000051c                LVD_LVW_IRQHandler
+                0x0000051c                LPIT0_Ch2_IRQHandler
+                0x0000051c                MCM_IRQHandler
+                0x0000051c                CAN0_ORed_0_15_MB_IRQHandler
+                0x0000051c                LPUART0_RxTx_IRQHandler
+                0x0000051c                LPTMR0_IRQHandler
+                0x0000051c                BusFault_Handler
+                0x0000051c                Reserved87_IRQHandler
+                0x0000051c                FTM1_Ovf_Reload_IRQHandler
+                0x0000051c                Reserved93_IRQHandler
+                0x0000051c                CAN0_Wake_Up_IRQHandler
+                0x0000051c                CMP0_IRQHandler
+                0x0000051c                Reserved52_IRQHandler
+                0x0000051c                FLEXIO_IRQHandler
+                0x0000051c                Reserved113_IRQHandler
+ .text          0x00000520     0x1ed4 Foc_model_Matlab_1.o
+                0x00000520                pdb0_isr
+                0x00000590                GPIPORTE10_callback
+                0x000005bc                Foc_model_Matlab_1_SetEventsForThisBaseStep
+                0x000005e4                Foc_model_Ma_FaultDetection
+                0x00000684                Foc_model_Matl_HallValueof1
+                0x00000690                Foc_model_Matl_HallValueof2
+                0x0000069c                Foc_model_Matl_HallValueof3
+                0x000006a4                Foc_model_Matl_HallValueof4
+                0x000006b0                Foc_model_Matl_HallValueof5
+                0x000006bc                Foc_model_Matl_HallValueof7
+                0x000006c2                rt_modf_snf
+                0x00000854                Foc_mod_CurrentControl_Init
+                0x00000980                Foc_mo_CurrentControl_Reset
+                0x000009b4                Foc_m_CurrentControl_Enable
+                0x000009dc                Foc_model_Ma_CurrentControl
+                0x0000191c                ADC1_SC1reg2U_callback
+                0x000019e8                Foc_model_Matl_SpeedControl
+                0x00001c00                Foc_model_Matlab_1_step0
+                0x00001c50                Foc_model_Matlab_1_step1
+                0x00001d74                Foc_model_Matlab_1_step2
+                0x00001df0                Foc_model_Matlab_1_step3
+                0x00001e14                Foc_model_Matlab_1_initialize
+                0x000023f0                Foc_model_Matlab_1_terminate
+ .text          0x000023f4      0x788 adc_driver.o
+                0x000023f4                ADC_DRV_InitConverterStruct
+                0x00002410                ADC_DRV_ConfigConverter
+                0x00002598                ADC_DRV_GetConverterConfig
+                0x00002684                ADC_DRV_InitHwCompareStruct
+                0x00002692                ADC_DRV_ConfigHwCompare
+                0x000026f4                ADC_DRV_GetHwCompareConfig
+                0x0000272c                ADC_DRV_InitHwAverageStruct
+                0x00002734                ADC_DRV_ConfigHwAverage
+                0x0000276c                ADC_DRV_GetHwAverageConfig
+                0x0000278c                ADC_DRV_InitChanStruct
+                0x00002796                ADC_DRV_ConfigChan
+                0x000027ec                ADC_DRV_GetChanConfig
+                0x0000282c                ADC_DRV_SetSwPretrigger
+                0x00002870                ADC_DRV_Reset
+                0x00002908                ADC_DRV_WaitConvDone
+                0x00002920                ADC_DRV_GetConvCompleteFlag
+                0x00002934                ADC_DRV_GetChanResult
+                0x0000294c                ADC_DRV_AutoCalibration
+                0x00002aa4                ADC_DRV_InitUserCalibrationStruct
+                0x00002aae                ADC_DRV_ConfigUserCalibration
+                0x00002afc                ADC_DRV_GetUserCalibration
+                0x00002b1c                ADC_DRV_GetInterruptNumber
+                0x00002b2c                ADC_DRV_ClearLatchedTriggers
+                0x00002b50                ADC_DRV_ClearTriggerErrors
+                0x00002b68                ADC_DRV_GetTriggerErrorFlags
+ .text          0x00002b7c     0x1c88 clock_S32K1xx.o
+                0x000038f2                CLOCK_DRV_Init
+                0x00003f20                CLOCK_DRV_GetFreq
+                0x00004128                CLOCK_DRV_SetModuleClock
+                0x00004294                CLOCK_DRV_SetSystemClock
+                0x000043bc                CLOCK_DRV_GetSystemClockSource
+                0x00004418                CLOCK_DRV_SetClockSource
+                0x000046c8                CLOCK_SYS_Init
+                0x000046e4                CLOCK_SYS_UpdateConfiguration
+                0x000047cc                CLOCK_SYS_GetCurrentConfiguration
+                0x000047d8                CLOCK_SYS_GetErrorCallback
+                0x000047f4                CLOCK_SYS_GetFreq
+                0x000047fc                CLOCK_SYS_SetConfiguration
+ .text          0x00004804      0xae4 edma_driver.o
+                0x00004814                EDMA_DRV_InstallCallback
+                0x00004834                EDMA_DRV_ReleaseChannel
+                0x00004868                EDMA_DRV_Deinit
+                0x000048b8                EDMA_DRV_IRQHandler
+                0x000048e4                EDMA_DRV_ErrorIRQHandler
+                0x00004920                EDMA_DRV_ConfigSingleBlockTransfer
+                0x00004a68                EDMA_DRV_ConfigMultiBlockTransfer
+                0x00004acc                EDMA_DRV_StartChannel
+                0x00004ae4                EDMA_DRV_StopChannel
+                0x00004afc                EDMA_DRV_SetChannelRequestAndTrigger
+                0x00004b40                EDMA_DRV_ChannelInit
+                0x00004be0                EDMA_DRV_Init
+                0x00004c90                EDMA_DRV_ClearTCD
+                0x00004ca4                EDMA_DRV_SetSrcAddr
+                0x00004cb8                EDMA_DRV_SetSrcOffset
+                0x00004ccc                EDMA_DRV_SetSrcReadChunkSize
+                0x00004cf2                EDMA_DRV_SetSrcLastAddrAdjustment
+                0x00004d08                EDMA_DRV_SetDestLastAddrAdjustment
+                0x00004d1e                EDMA_DRV_SetDestAddr
+                0x00004d34                EDMA_DRV_SetDestOffset
+                0x00004d4c                EDMA_DRV_SetDestWriteChunkSize
+                0x00004d70                EDMA_DRV_SetMinorLoopBlockSize
+                0x00004d84                EDMA_DRV_SetMajorLoopIterationCount
+                0x00004d98                EDMA_DRV_GetRemainingMajorIterationsCount
+                0x00004dac                EDMA_DRV_SetScatterGatherLink
+                0x00004dc0                EDMA_DRV_DisableRequestsOnTransferComplete
+                0x00004df8                EDMA_DRV_ConfigureInterrupt
+                0x00004e78                EDMA_DRV_CancelTransfer
+                0x00004e90                EDMA_DRV_TriggerSwRequest
+                0x00004ea0                EDMA_DRV_PushConfigToSTCD
+                0x00004f2e                EDMA_DRV_PushConfigToReg
+                0x00005108                EDMA_DRV_ConfigLoopTransfer
+                0x00005130                EDMA_DRV_ConfigScatterGatherTransfer
+                0x000052d0                EDMA_DRV_GetChannelStatus
+                0x000052e0                EDMA_DRV_GetDmaRegBaseAddr
+ .text          0x000052e8      0x284 edma_hw_access.o
+                0x000052e8                EDMA_CancelTransfer
+                0x000052fa                EDMA_CancelTransferWithError
+                0x0000530c                EDMA_SetErrorIntCmd
+                0x00005316                EDMA_SetDmaRequestCmd
+                0x00005320                EDMA_TCDClearReg
+                0x0000536a                EDMA_Init
+                0x0000538c                EDMA_TCDSetAttribute
+                0x000053bc                EDMA_TCDSetNbytes
+                0x00005418                EDMA_TCDSetMinorLoopOffset
+                0x0000545c                EDMA_TCDSetScatterGatherLink
+                0x00005468                EDMA_TCDSetChannelMinorLink
+                0x000054d2                EDMA_TCDSetMajorCount
+                0x00005530                EDMA_TCDGetCurrentMajorCount
+                0x0000555c                DMAMUX_Init
+ .text          0x0000556c       0xc8 edma_irq.o
+                0x0000556c                DMA0_IRQHandler
+                0x00005576                DMA1_IRQHandler
+                0x00005580                DMA2_IRQHandler
+                0x0000558a                DMA3_IRQHandler
+                0x00005594                DMA4_IRQHandler
+                0x0000559e                DMA5_IRQHandler
+                0x000055a8                DMA6_IRQHandler
+                0x000055b2                DMA7_IRQHandler
+                0x000055bc                DMA8_IRQHandler
+                0x000055c6                DMA9_IRQHandler
+                0x000055d0                DMA10_IRQHandler
+                0x000055da                DMA11_IRQHandler
+                0x000055e4                DMA12_IRQHandler
+                0x000055ee                DMA13_IRQHandler
+                0x000055f8                DMA14_IRQHandler
+                0x00005602                DMA15_IRQHandler
+                0x0000560c                DMA_Error_IRQHandler
+ .text          0x00005634      0x130 freemaster_S32K1xx.o
+                0x00005634                FMSTR_Isr
+                0x0000563c                FMSTR_CopyMemory
+                0x0000565a                FMSTR_CopyToBuffer
+                0x0000567a                FMSTR_CopyFromBuffer
+                0x000056a0                FMSTR_ValueFromBuffer16
+                0x000056aa                FMSTR_ValueFromBuffer32
+                0x000056b4                FMSTR_ValueToBuffer16
+                0x000056cc                FMSTR_ValueToBuffer32
+                0x000056e4                FMSTR_CopyFromBufferWithMask
+                0x00005710                FMSTR_SetExAddr
+                0x0000571c                FMSTR_AddressToBuffer
+                0x00005748                FMSTR_AddressFromBuffer
+ .text          0x00005764       0xc0 freemaster_interface_init.o
+                0x00005764                freemaster_interface_init
+                0x00005804                freemaster_interface_isr_init
+ .text          0x00005824      0x284 freemaster_protocol.o
+                0x00005824                FMSTR_Init
+                0x0000583a                FMSTR_GetBoardInfo
+                0x0000588c                FMSTR_ReadMem
+                0x000058be                FMSTR_ReadVar
+                0x000058e2                FMSTR_WriteMem
+                0x00005908                FMSTR_WriteVar
+                0x0000592e                FMSTR_WriteMemMask
+                0x00005954                FMSTR_ProtocolDecoder
+                0x00005a66                FMSTR_WriteVarMask
+                0x00005a8c                FMSTR_StrLen
+ .text          0x00005aa8      0x4e4 freemaster_rec.o
+                0x00005b40                FMSTR_InitRec
+                0x00005b5c                FMSTR_AbortRec
+                0x00005b68                FMSTR_SetUpRecBuff
+                0x00005b6a                FMSTR_SetUpRec
+                0x00005cf4                FMSTR_TriggerRec
+                0x00005d20                FMSTR_StartRec
+                0x00005d8c                FMSTR_StopRec
+                0x00005dc0                FMSTR_GetRecStatus
+                0x00005de8                FMSTR_GetRecBuffSize
+                0x00005dee                FMSTR_IsInRecBuffer
+                0x00005e10                FMSTR_GetRecBuff
+                0x00005e68                FMSTR_Recorder
+ .text          0x00005f8c       0xb4 freemaster_scope.o
+                0x00005f8c                FMSTR_InitScope
+                0x00005f8e                FMSTR_SetUpScope
+                0x00006008                FMSTR_ReadScope
+ .text          0x00006040      0x32c freemaster_serial.o
+                0x00006074                FMSTR_SendResponse
+                0x000060f0                FMSTR_Tx
+                0x00006140                FMSTR_ProcessSCI
+                0x000061c8                FMSTR_Rx
+                0x00006308                FMSTR_InitSerial
+                0x00006328                FMSTR_Poll
+ .text          0x0000636c      0x1a0 ftm2_ch1_hall_sensor_isr.o
+                0x0000636c                FTM2_Ch1_Hall_Sensor_isr
+ .text          0x0000650c      0x440 ftm_chn_irq.o
+                0x0000650c                FTM0_Ch0_1_IRQHandler
+                0x0000654c                FTM0_Ch2_3_IRQHandler
+                0x0000658c                FTM0_Ch4_5_IRQHandler
+                0x000065cc                FTM0_Ch6_7_IRQHandler
+                0x0000660c                FTM1_Ch0_1_IRQHandler
+                0x00006650                FTM1_Ch2_3_IRQHandler
+                0x00006694                FTM1_Ch4_5_IRQHandler
+                0x000066d8                FTM1_Ch6_7_IRQHandler
+                0x0000671c                FTM2_Ch0_1_IRQHandler
+                0x00006760                FTM2_Ch2_3_IRQHandler
+                0x000067a4                FTM2_Ch4_5_IRQHandler
+                0x000067e8                FTM2_Ch6_7_IRQHandler
+                0x0000682c                FTM3_Ch0_1_IRQHandler
+                0x00006870                FTM3_Ch2_3_IRQHandler
+                0x000068b4                FTM3_Ch4_5_IRQHandler
+                0x000068f8                FTM3_Ch6_7_IRQHandler
+                0x0000693c                FTM_CHR_DRV_InstallCallback
+ .text          0x0000694c      0x798 ftm_common.o
+                0x0000694c                FTM_DRV_Deinit
+                0x0000696c                FTM_DRV_GetDefaultConfig
+                0x00006998                FTM_DRV_MaskOutputChannels
+                0x000069b8                FTM_DRV_SetInitialCounterValue
+                0x000069e0                FTM_DRV_SetHalfCycleReloadPoint
+                0x00006a00                FTM_DRV_SetSoftOutChnValue
+                0x00006a38                FTM_DRV_SetSoftwareOutputChannelControl
+                0x00006a64                FTM_DRV_SetAllChnSoftwareOutputControl
+                0x00006a94                FTM_DRV_SetInvertingControl
+                0x00006ab4                FTM_DRV_SetModuloCounterValue
+                0x00006adc                FTM_DRV_SetOutputlevel
+                0x00006b10                FTM_DRV_SetSync
+                0x00006ccc                FTM_DRV_GenerateHardwareTrigger
+                0x00006ce8                FTM_DRV_EnableInterrupts
+                0x00006d88                FTM_DRV_DisableInterrupts
+                0x00006e24                FTM_DRV_GetEnabledInterrupts
+                0x00006e80                FTM_DRV_GetStatusFlags
+                0x00006edc                FTM_DRV_ClearStatusFlags
+                0x00006f68                FTM_DRV_GetFrequency
+                0x00006fcc                FTM_DRV_Init
+                0x000070ac                FTM_DRV_ConvertFreqToPeriodTicks
+                0x000070c0                FTM_DRV_CounterReset
+ .text          0x000070e4      0x110 ftm_fault_irq.o
+                0x000070e4                FTM0_Fault_IRQHandler
+                0x00007124                FTM1_Fault_IRQHandler
+                0x00007164                FTM2_Fault_IRQHandler
+                0x000071a4                FTM3_Fault_IRQHandler
+                0x000071e4                FTM_FAULT_DRV_InstallCallback
+ .text          0x000071f4       0xfe ftm_hw_access.o
+                0x000071f4                FTM_DRV_InitModule
+                0x0000720c                FTM_DRV_Reset
+                0x00007272                FTM_DRV_SetChnTriggerCmd
+                0x000072a4                FTM_DRV_SetChnInputCaptureFilter
+ *fill*         0x000072f2        0x2 
+ .text          0x000072f4      0x6dc ftm_ic_driver.o
+                0x000073ac                FTM_DRV_InitInputCapture
+                0x0000767c                FTM_DRV_DeinitInputCapture
+                0x0000774c                FTM_DRV_GetInputCaptureMeasurement
+                0x00007764                FTM_DRV_StartNewSignalMeasurement
+                0x000077cc                FTM_IC_DRV_SetChannelMode
+                0x00007910                FTM0_Ch0_Ch1_IRQHandler
+                0x0000791c                FTM0_Ch2_Ch3_IRQHandler
+                0x00007928                FTM0_Ch4_Ch5_IRQHandler
+                0x00007934                FTM0_Ch6_Ch7_IRQHandler
+                0x00007940                FTM1_Ch0_Ch1_IRQHandler
+                0x0000794c                FTM1_Ch2_Ch3_IRQHandler
+                0x00007958                FTM1_Ch4_Ch5_IRQHandler
+                0x00007964                FTM1_Ch6_Ch7_IRQHandler
+                0x00007970                FTM2_Ch0_Ch1_IRQHandler
+                0x0000797c                FTM2_Ch2_Ch3_IRQHandler
+                0x00007988                FTM2_Ch4_Ch5_IRQHandler
+                0x00007994                FTM2_Ch6_Ch7_IRQHandler
+                0x000079a0                FTM3_Ch0_Ch1_IRQHandler
+                0x000079ac                FTM3_Ch2_Ch3_IRQHandler
+                0x000079b8                FTM3_Ch4_Ch5_IRQHandler
+                0x000079c4                FTM3_Ch6_Ch7_IRQHandler
+ .text          0x000079d0      0x9b4 ftm_pwm_driver.o
+                0x000079d0                FTM_DRV_DeinitPwm
+                0x00007adc                FTM_DRV_UpdatePwmChannel
+                0x00007be0                FTM_DRV_InitPwm
+                0x00008218                FTM_DRV_UpdatePwmPeriod
+                0x00008274                FTM_DRV_FastUpdatePwmChannels
+                0x000082b4                FTM_DRV_ControlChannelOutput
+                0x000082e4                FTM_PWM_DRV_IrqHandler
+ .text          0x00008384      0x128 gpio_irq.o
+                0x00008384                PORTA_IRQHandler
+                0x000083bc                PORTB_IRQHandler
+                0x000083f4                PORTC_IRQHandler
+                0x0000842c                PORTD_IRQHandler
+                0x00008464                PORTE_IRQHandler
+                0x0000849c                GPI_DRV_InstallCallback
+ .text          0x000084ac       0x3c gt_pf.o
+                0x000084ac                profiler_init
+                0x000084dc                gt_pf
+ .text          0x000084e8      0x1ac interrupt_manager.o
+                0x000084e8                INT_SYS_InstallHandler
+                0x00008528                INT_SYS_EnableIRQ
+                0x00008540                INT_SYS_DisableIRQ
+                0x0000855c                INT_SYS_EnableIRQGlobal
+                0x00008578                INT_SYS_DisableIRQGlobal
+                0x00008588                INT_SYS_SetPriority
+                0x000085e0                INT_SYS_GetPriority
+                0x00008624                INT_SYS_ClearPending
+                0x00008640                INT_SYS_SetPending
+                0x0000865c                INT_SYS_GetPending
+                0x00008678                INT_SYS_GetActive
+ .text          0x00008694      0x62c lpit_driver.o
+                0x00008694                LPIT_DRV_GetDefaultConfig
+                0x0000869c                LPIT_DRV_GetDefaultChanConfig
+                0x000086bc                LPIT_DRV_Init
+                0x00008768                LPIT_DRV_Deinit
+                0x00008778                LPIT_DRV_StartTimerChannels
+                0x00008788                LPIT_DRV_StopTimerChannels
+                0x00008798                LPIT_DRV_SetTimerPeriodByUs
+                0x00008844                LPIT_DRV_InitChannel
+                0x000089cc                LPIT_DRV_SetTimerPeriodInDual16ModeByUs
+                0x00008a50                LPIT_DRV_GetTimerPeriodByUs
+                0x00008b64                LPIT_DRV_GetCurrentTimerUs
+                0x00008c1c                LPIT_DRV_SetTimerPeriodByCount
+                0x00008c2c                LPIT_DRV_SetTimerPeriodInDual16ModeByCount
+                0x00008c40                LPIT_DRV_GetTimerPeriodByCount
+                0x00008c64                LPIT_DRV_GetCurrentTimerCount
+                0x00008c88                LPIT_DRV_EnableTimerChannelInterrupt
+                0x00008c98                LPIT_DRV_DisableTimerChannelInterrupt
+                0x00008ca8                LPIT_DRV_GetInterruptFlagTimerChannels
+                0x00008cb4                LPIT_DRV_ClearInterruptFlagTimerChannels
+ .text          0x00008cc0      0x20c lpspi_hw_access.o
+                0x00008cc0                LPSPI_Init
+                0x00008cca                LPSPI_Disable
+                0x00008ce2                LPSPI_SetMasterSlaveMode
+                0x00008cf0                LPSPI_SetFlushFifoCmd
+                0x00008cfe                LPSPI_ClearStatusFlag
+                0x00008d1e                LPSPI_SetPcsPolarityMode
+                0x00008d3a                LPSPI_SetPinConfigMode
+                0x00008d5c                LPSPI_SetBaudRateDivisor
+                0x00008d6c                LPSPI_SetBaudRate
+                0x00008e74                LPSPI_SetTxCommandReg
+                0x00008ebe                LPSPI_SetPcs
+ .text          0x00008ecc       0x1e lpspi_irq.o
+                0x00008ecc                LPSPI0_IRQHandler
+                0x00008ed6                LPSPI1_IRQHandler
+                0x00008ee0                LPSPI2_IRQHandler
+ *fill*         0x00008eea        0x2 
+ .text          0x00008eec      0x744 lpspi_master_driver.o
+                0x00009164                LPSPI_DRV_MasterGetDefaultConfig
+                0x00009194                LPSPI_DRV_MasterDeinit
+                0x000091cc                LPSPI_DRV_MasterSetDelay
+                0x0000921c                LPSPI_DRV_MasterConfigureBus
+                0x00009330                LPSPI_DRV_MasterInit
+                0x000093b0                LPSPI_DRV_MasterTransferBlocking
+                0x00009470                LPSPI_DRV_MasterTransfer
+                0x0000947e                LPSPI_DRV_MasterGetTransferStatus
+                0x000094ac                LPSPI_DRV_MasterAbortTransfer
+                0x00009538                LPSPI_DRV_SetPcs
+                0x0000957c                LPSPI_DRV_MasterIRQHandler
+ .text          0x00009630      0x198 lpspi_shared_function.o
+                0x00009630                LPSPI_DRV_IRQHandler
+                0x00009658                LPSPI_DRV_FillupTxBuffer
+                0x0000970c                LPSPI_DRV_ReadRXBuffer
+                0x00009798                LPSPI_DRV_DisableTEIEInterrupts
+ .text          0x000097c8      0x5d0 lpspi_slave_driver.o
+                0x000097c8                LPSPI_DRV_SlaveGetDefaultConfig
+                0x000097e6                LPSPI_DRV_SlaveInit
+                0x000098e4                LPSPI_DRV_SlaveDeinit
+                0x00009920                LPSPI_DRV_SlaveTransfer
+                0x00009b58                LPSPI_DRV_SlaveAbortTransfer
+                0x00009bcc                LPSPI_DRV_SlaveTransferBlocking
+                0x00009c98                LPSPI_DRV_SlaveIRQHandler
+                0x00009d6c                LPSPI_DRV_SlaveGetTransferStatus
+ .text          0x00009d98      0xdf4 lpuart_driver.o
+                0x0000a29c                LPUART_DRV_GetDefaultConfig
+                0x0000a2b4                LPUART_DRV_Deinit
+                0x0000a324                LPUART_DRV_InstallRxCallback
+                0x0000a338                LPUART_DRV_InstallTxCallback
+                0x0000a34c                LPUART_DRV_SendDataBlocking
+                0x0000a3a8                LPUART_DRV_SendDataPolling
+                0x0000a42c                LPUART_DRV_SendData
+                0x0000a450                LPUART_DRV_GetTransmitStatus
+                0x0000a488                LPUART_DRV_AbortSendingData
+                0x0000a4b4                LPUART_DRV_ReceiveDataBlocking
+                0x0000a510                LPUART_DRV_ReceiveDataPolling
+                0x0000a658                LPUART_DRV_ReceiveData
+                0x0000a67c                LPUART_DRV_GetReceiveStatus
+                0x0000a6b4                LPUART_DRV_AbortReceivingData
+                0x0000a6e0                LPUART_DRV_SetBaudRate
+                0x0000a7cc                LPUART_DRV_Init
+                0x0000a8a8                LPUART_DRV_GetBaudRate
+                0x0000a8e0                LPUART_DRV_SetTxBuffer
+                0x0000a8f4                LPUART_DRV_SetRxBuffer
+                0x0000a908                LPUART_DRV_IRQHandler
+ .text          0x0000ab8c      0x34c lpuart_hw_access.o
+                0x0000ab8c                LPUART_Init
+                0x0000abb0                LPUART_SetBitCountPerChar
+                0x0000abe0                LPUART_SetParityMode
+                0x0000abfe                LPUART_Putchar9
+                0x0000ac14                LPUART_Putchar10
+                0x0000ac36                LPUART_Getchar9
+                0x0000ac48                LPUART_Getchar10
+                0x0000ac66                LPUART_SetIntMode
+                0x0000acd6                LPUART_GetIntMode
+                0x0000ad20                LPUART_GetStatusFlag
+                0x0000ad68                LPUART_ClearStatusFlag
+                0x0000ae98                LPUART_SetErrorInterrupts
+ .text          0x0000aed8       0x1e lpuart_irq.o
+                0x0000aed8                LPUART0_IrqHandler
+                0x0000aee2                LPUART1_IrqHandler
+                0x0000aeec                LPUART2_IrqHandler
+ *fill*         0x0000aef6        0x2 
+ .text          0x0000aef8       0x74 mbd_adc_irq.o
+                0x0000aef8                ADC_CommonIRQHandler
+                0x0000af48                ADC_InstallCallback
+                0x0000af58                ADC0_IRQHandler
+                0x0000af62                ADC1_IRQHandler
+ .text          0x0000af6c       0xc8 mbd_main.o
+                0x0000af6c                TPP_InitializeOutputs
+                0x0000af6e                SYSTEM_INIT_TASK
+                0x0000af76                SYSTEM_TASK
+                0x0000afbc                LPIT0_Ch0_IRQHandler
+                0x0000afcc                lpit0_init
+                0x0000afce                lpit0_init_step_timer
+                0x0000b008                main
+ .text          0x0000b034      0x150 osif_baremetal.o
+                0x0000b034                SysTick_Handler
+                0x0000b044                OSIF_TimeDelay
+                0x0000b0a4                OSIF_GetMilliseconds
+                0x0000b0b0                OSIF_MutexLock
+                0x0000b0b4                OSIF_MutexUnlock
+                0x0000b0b8                OSIF_MutexCreate
+                0x0000b0bc                OSIF_MutexDestroy
+                0x0000b0c0                OSIF_SemaWait
+                0x0000b144                OSIF_SemaPost
+                0x0000b16a                OSIF_SemaCreate
+                0x0000b17e                OSIF_SemaDestroy
+ .text          0x0000b184      0x284 pdb_driver.o
+                0x0000b184                PDB_DRV_Init
+                0x0000b1f0                PDB_DRV_Deinit
+                0x0000b220                PDB_DRV_GetDefaultConfig
+                0x0000b236                PDB_DRV_Enable
+                0x0000b24c                PDB_DRV_Disable
+                0x0000b260                PDB_DRV_SoftTriggerCmd
+                0x0000b274                PDB_DRV_GetTimerValue
+                0x0000b284                PDB_DRV_GetTimerIntFlag
+                0x0000b298                PDB_DRV_ClearTimerIntFlag
+                0x0000b2b8                PDB_DRV_LoadValuesCmd
+                0x0000b2cc                PDB_DRV_SetTimerModulusValue
+                0x0000b2e4                PDB_DRV_SetValueForTimerInterrupt
+                0x0000b2fc                PDB_DRV_ConfigAdcPreTrigger
+                0x0000b340                PDB_DRV_GetAdcPreTriggerFlags
+                0x0000b35c                PDB_DRV_ClearAdcPreTriggerFlags
+                0x0000b370                PDB_DRV_GetAdcPreTriggerSeqErrFlags
+                0x0000b38c                PDB_DRV_ClearAdcPreTriggerSeqErrFlags
+                0x0000b3a0                PDB_DRV_SetAdcPreTriggerDelayValue
+                0x0000b3c4                PDB_DRV_SetCmpPulseOutEnable
+                0x0000b3d8                PDB_DRV_SetCmpPulseOutDelayForHigh
+                0x0000b3f0                PDB_DRV_SetCmpPulseOutDelayForLow
+ .text          0x0000b408      0x19c pdb_hw_access.o
+                0x0000b408                PDB_Init
+                0x0000b460                PDB_ConfigTimer
+                0x0000b4bc                PDB_SetAdcPreTriggerBackToBackEnable
+                0x0000b4ee                PDB_SetAdcPreTriggerOutputEnable
+                0x0000b51c                PDB_SetAdcPreTriggerEnable
+                0x0000b546                PDB_ClearAdcPreTriggerFlags
+                0x0000b56a                PDB_ClearAdcPreTriggerSeqErrFlags
+                0x0000b58c                PDB_SetCmpPulseOutEnable
+ .text          0x0000b5a4      0x144 pins_driver.o
+                0x0000b5a4                PINS_DRV_Init
+                0x0000b5c4                PINS_DRV_SetPullSel
+                0x0000b5fe                PINS_DRV_SetMuxModeSel
+                0x0000b606                PINS_DRV_SetPinIntSel
+                0x0000b61c                PINS_DRV_GetPinIntSel
+                0x0000b626                PINS_DRV_ClearPinIntFlagCmd
+                0x0000b634                PINS_DRV_EnableDigitalFilter
+                0x0000b646                PINS_DRV_DisableDigitalFilter
+                0x0000b65a                PINS_DRV_ConfigDigitalFilter
+                0x0000b670                PINS_DRV_GetPortIntFlag
+                0x0000b676                PINS_DRV_ClearPortIntFlagCmd
+                0x0000b680                PINS_DRV_GetPinsDirection
+                0x0000b684                PINS_DRV_SetPinDirection
+                0x0000b69c                PINS_DRV_SetPinsDirection
+                0x0000b6a0                PINS_DRV_SetPortInputDisable
+                0x0000b6a4                PINS_DRV_GetPortInputDisable
+                0x0000b6a8                PINS_DRV_SetGlobalPinControl
+                0x0000b6b0                PINS_DRV_SetGlobalIntControl
+                0x0000b6b8                PINS_DRV_WritePin
+                0x0000b6d0                PINS_DRV_WritePins
+                0x0000b6d4                PINS_DRV_GetPinsOutput
+                0x0000b6d8                PINS_DRV_SetPins
+                0x0000b6dc                PINS_DRV_ClearPins
+                0x0000b6e0                PINS_DRV_TogglePins
+                0x0000b6e4                PINS_DRV_ReadPins
+ .text          0x0000b6e8      0x224 pins_port_hw_access.o
+                0x0000b758                PINS_Init
+                0x0000b86c                PINS_SetMuxModeSel
+                0x0000b8bc                PINS_SetGlobalPinControl
+                0x0000b8e8                PINS_SetGlobalIntControl
+ .text          0x0000b90c      0x1d0 power_manager.o
+                0x0000b9b0                POWER_SYS_Init
+                0x0000b9dc                POWER_SYS_Deinit
+                0x0000b9f4                POWER_SYS_GetLastMode
+                0x0000ba0c                POWER_SYS_GetLastModeConfig
+                0x0000ba28                POWER_SYS_GetErrorCallbackIndex
+                0x0000ba34                POWER_SYS_GetErrorCallback
+                0x0000ba50                POWER_SYS_SetMode
+                0x0000bad0                POWER_SYS_GetDefaultConfig
+ .text          0x0000badc      0x504 power_manager_S32K1xx.o
+                0x0000bba8                POWER_SYS_DoInit
+                0x0000bc40                POWER_SYS_DoDeinit
+                0x0000bc54                POWER_SYS_GetCurrentMode
+                0x0000bc78                POWER_SYS_DoSetMode
+                0x0000bf7e                POWER_SYS_GetResetSrcStatusCmd
+ .text          0x0000bfe0      0x184 power_smc_hw_access.o
+                0x0000c050                SMC_SetPowerMode
+                0x0000c14c                SMC_SetProtectionMode
+ *fill*         0x0000c164        0x4 
+ .text          0x0000c168       0x3c rtGetInf.o
+                0x0000c168                rtGetInf
+                0x0000c178                rtGetInfF
+                0x0000c184                rtGetMinusInf
+                0x0000c198                rtGetMinusInfF
+ *fill*         0x0000c1a4        0x4 
+ .text          0x0000c1a8       0x1c rtGetNaN.o
+                0x0000c1a8                rtGetNaN
+                0x0000c1b8                rtGetNaNF
+ .text          0x0000c1c4      0x114 rt_nonfinite.o
+                0x0000c1c4                rt_InitInfAndNaN
+                0x0000c21c                rtIsInf
+                0x0000c25c                rtIsInfF
+                0x0000c290                rtIsNaN
+                0x0000c2b8                rtIsNaNF
+ .text          0x0000c2d8       0x26 rtmodel.o
+                0x0000c2d8                Foc_model_Matlab_1_step
+ *fill*         0x0000c2fe        0x2 
+ .text          0x0000c300      0x118 s32k_clock_init.o
+                0x0000c300                Clock_Setup
+                0x0000c400                UpdateSystickConfig
+ .text          0x0000c418      0x170 spi_aml.o
+                0x0000c418                SPI_AML_MasterInit
+                0x0000c428                SPI_AML_SlaveInit
+                0x0000c438                SPI_AML_MasterDeinit
+                0x0000c440                SPI_AML_SlaveDeinit
+                0x0000c448                SPI_AML_MasterGetDefaultConfig
+                0x0000c478                SPI_AML_SlaveGetDefaultConfig
+                0x0000c494                SPI_AML_MasterFillSdkConfig
+                0x0000c4d8                SPI_AML_SlaveFillSdkConfig
+                0x0000c4fa                SPI_AML_MasterSelectDevice
+                0x0000c518                SPI_AML_MasterUnselectDevice
+                0x0000c534                SPI_AML_MasterTransfer
+                0x0000c562                SPI_AML_SlaveTransfer
+ .text          0x0000c588       0xd8 startup.o
+                0x0000c588                init_data_bss
+ .text          0x0000c660       0xd4 system_S32K144.o
+                0x0000c660                SystemInit
+                0x0000c69c                SystemCoreClockUpdate
+                0x0000c71c                SystemSoftwareReset
+ .text          0x0000c734      0x55c tpp.o
+                0x0000c734                TPP_ConfigureGpio
+                0x0000c798                TPP_ConfigureSpi
+                0x0000c824                TPP_SendCommand
+                0x0000c868                TPP_GetStatusRegister
+                0x0000c8a4                TPP_SetInterruptMasks
+                0x0000c918                TPP_ClearInterrupts
+                0x0000c974                TPP_SetModeRegister
+                0x0000c9da                TPP_SetDeadtime
+                0x0000cb04                TPP_SetOperationalMode
+                0x0000cc48                TPP_Init
+                0x0000cc84                TPP_Deinit
+ .text          0x0000cc90      0x4e4 tpp_ic_init.o
+                0x0000cc90                TPP_tppDrvConfig
+                0x0000cce8                TPP_init_pins
+                0x0000ce9c                TPP_reconfig_pwm_pins
+                0x0000cf68                toggle_restoreTppPwmPins
+                0x0000d108                TPP_IC_Init
+                0x0000d130                tpp_interrupt_enable
+                0x0000d160                tpp_interrupt_disable
+ .text          0x0000d174       0xdc trgmux_driver.o
+                0x0000d174                TRGMUX_DRV_Init
+                0x0000d1d8                TRGMUX_DRV_Deinit
+                0x0000d1e8                TRGMUX_DRV_SetTrigSourceForTargetModule
+                0x0000d210                TRGMUX_DRV_GetTrigSourceForTargetModule
+                0x0000d220                TRGMUX_DRV_SetLockForTargetModule
+                0x0000d230                TRGMUX_DRV_GetLockForTargetModule
+                0x0000d240                TRGMUX_DRV_GenSWTrigger
+ .text          0x0000d250       0xb0 trgmux_hw_access.o
+                0x0000d250                TRGMUX_Init
+                0x0000d2ac                TRGMUX_SetTrigSourceForTargetModule
+                0x0000d2d2                TRGMUX_GetTrigSourceForTargetModule
+                0x0000d2e6                TRGMUX_SetLockForTargetModule
+                0x0000d2f6                TRGMUX_GetLockForTargetModule
+ .text          0x0000d300       0xb8 wait_aml.o
+                0x0000d300                WAIT_AML_GetSysFreq
+                0x0000d314                WAIT_AML_WaitCycles
+                0x0000d326                WAIT_AML_WaitMs
+                0x0000d360                WAIT_AML_WaitSec
+                0x0000d37c                WAIT_AML_WaitUs
+ .text          0x0000d3b8      0x378 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_addsubdf3.o)
+                0x0000d3b8                __aeabi_drsub
+                0x0000d3c0                __aeabi_dsub
+                0x0000d3c0                __subdf3
+                0x0000d3c4                __aeabi_dadd
+                0x0000d3c4                __adddf3
+                0x0000d63c                __floatunsidf
+                0x0000d63c                __aeabi_ui2d
+                0x0000d65c                __floatsidf
+                0x0000d65c                __aeabi_i2d
+                0x0000d680                __aeabi_f2d
+                0x0000d680                __extendsfdf2
+                0x0000d6c4                __floatundidf
+                0x0000d6c4                __aeabi_ul2d
+                0x0000d6d4                __floatdidf
+                0x0000d6d4                __aeabi_l2d
+ .text          0x0000d730      0x424 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_muldivdf3.o)
+                0x0000d730                __aeabi_dmul
+                0x0000d730                __muldf3
+                0x0000d984                __divdf3
+                0x0000d984                __aeabi_ddiv
+ .text          0x0000db54      0x110 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_cmpdf2.o)
+                0x0000db54                __gtdf2
+                0x0000db54                __gedf2
+                0x0000db5c                __ltdf2
+                0x0000db5c                __ledf2
+                0x0000db64                __nedf2
+                0x0000db64                __eqdf2
+                0x0000db64                __cmpdf2
+                0x0000dbe0                __aeabi_cdrcmple
+                0x0000dbf0                __aeabi_cdcmpeq
+                0x0000dbf0                __aeabi_cdcmple
+                0x0000dc00                __aeabi_dcmpeq
+                0x0000dc14                __aeabi_dcmplt
+                0x0000dc28                __aeabi_dcmple
+                0x0000dc3c                __aeabi_dcmpge
+                0x0000dc50                __aeabi_dcmpgt
+ .text          0x0000dc64       0x2c c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_unorddf2.o)
+                0x0000dc64                __unorddf2
+                0x0000dc64                __aeabi_dcmpun
+ .text          0x0000dc90       0x50 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_fixdfsi.o)
+                0x0000dc90                __aeabi_d2iz
+                0x0000dc90                __fixdfsi
+ .text          0x0000dce0       0xa0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_truncdfsf2.o)
+                0x0000dce0                __truncdfsf2
+                0x0000dce0                __aeabi_d2f
+ .text          0x0000dd80       0x30 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_aeabi_uldivmod.o)
+                0x0000dd80                __aeabi_uldivmod
+ .text          0x0000ddb0      0x2e4 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_udivmoddi4.o)
+                0x0000ddb0                __udivmoddi4
+ .text          0x0000e094        0x4 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_dvmd_tls.o)
+                0x0000e094                __aeabi_idiv0
+                0x0000e094                __aeabi_ldiv0
+ *(.text*)
+ .text.cos      0x0000e098       0x88 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_cos.o)
+                0x0000e098                cos
+ .text.floor    0x0000e120      0x108 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_floor.o)
+                0x0000e120                floor
+ .text.sin      0x0000e228       0x90 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_sin.o)
+                0x0000e228                sin
+ .text.fmod     0x0000e2b8       0xc8 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-w_fmod.o)
+                0x0000e2b8                fmod
+ .text.sqrt     0x0000e380       0xb4 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-w_sqrt.o)
+                0x0000e380                sqrt
+ .text.__ieee754_fmod
+                0x0000e434      0x230 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_fmod.o)
+                0x0000e434                __ieee754_fmod
+ *fill*         0x0000e664        0x4 
+ .text.__ieee754_rem_pio2
+                0x0000e668      0x3e4 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_rem_pio2.o)
+                0x0000e668                __ieee754_rem_pio2
+ .text.__ieee754_sqrt
+                0x0000ea4c      0x160 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_sqrt.o)
+                0x0000ea4c                __ieee754_sqrt
+ *fill*         0x0000ebac        0x4 
+ .text.__kernel_cos
+                0x0000ebb0      0x1cc C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-k_cos.o)
+                0x0000ebb0                __kernel_cos
+ *fill*         0x0000ed7c        0x4 
+ .text.__kernel_rem_pio2
+                0x0000ed80      0x69c C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-k_rem_pio2.o)
+                0x0000ed80                __kernel_rem_pio2
+ *fill*         0x0000f41c        0x4 
+ .text.__kernel_sin
+                0x0000f420      0x174 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-k_sin.o)
+                0x0000f420                __kernel_sin
+ .text.fabs     0x0000f594        0xe C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_fabs.o)
+                0x0000f594                fabs
+ .text.matherr  0x0000f5a2        0x4 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_matherr.o)
+                0x0000f5a2                matherr
+ *fill*         0x0000f5a6        0x2 
+ .text.scalbn   0x0000f5a8       0xf4 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_scalbn.o)
+                0x0000f5a8                scalbn
+ .text.copysign
+                0x0000f69c       0x1a C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_copysign.o)
+                0x0000f69c                copysign
+ *fill*         0x0000f6b6        0x2 
+ .text.__errno  0x0000f6b8        0xc C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-errno.o)
+                0x0000f6b8                __errno
+ .text.memset   0x0000f6c4       0x10 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-memset.o)
+                0x0000f6c4                memset
+ .text.startup.register_fini
+                0x0000f6d4       0x14 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__call_atexit.o)
+ .text.__libc_fini_array
+                0x0000f6e8       0x28 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-fini.o)
+                0x0000f6e8                __libc_fini_array
+ .text.atexit   0x0000f710        0xc C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-atexit.o)
+                0x0000f710                atexit
+ .text.__register_exitproc
+                0x0000f71c       0x98 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__atexit.o)
+                0x0000f71c                __register_exitproc
+ *(.rodata)
+ .rodata        0x0000f7b4       0x1c Foc_model_Matlab_1.o
+                0x0000f7b4                pdbTrgmuxUserConfig
+                0x0000f7cc                Foc_model_Matlab_1_M
+ .rodata        0x0000f7d0      0xfb0 Foc_model_Matlab_1_data.o
+                0x0000f7d0                Foc_model_Matlab_1_ConstP
+                0x00010778                Foc_model_Matlab_1_ConstB
+ .rodata        0x00010780        0xa adc_driver.o
+ *fill*         0x0001078a        0x2 
+ .rodata        0x0001078c      0x20d clock_S32K1xx.o
+                0x00010888                clockNameMappings
+                0x00010938                peripheralFeaturesList
+ *fill*         0x00010999        0x3 
+ .rodata        0x0001099c       0x10 edma_driver.o
+ .rodata        0x000109ac       0x40 ftm_common.o
+                0x000109ac                g_ftmBase
+                0x000109bc                g_ftmOverflowIrqId
+                0x000109c0                g_ftmFaultIrqId
+                0x000109c4                g_ftmReloadIrqId
+                0x000109c8                g_ftmIrqId
+ .rodata        0x000109ec       0x1c gt_pf.o
+ .rodata        0x00010a08       0x20 lpspi_hw_access.o
+ .rodata        0x00010a28       0x13 lpuart_driver.o
+ *fill*         0x00010a3b        0x1 
+ .rodata        0x00010a3c       0x18 mbd_main.o
+ .rodata        0x00010a54        0xe pdb_driver.o
+ *fill*         0x00010a62        0x2 
+ .rodata        0x00010a64       0x14 spi_aml.o
+ .rodata        0x00010a78       0x14 tpp.o
+ .rodata        0x00010a8c       0x35 trgmux_hw_access.o
+ *(.rodata*)
+ *fill*         0x00010ac1        0x3 
+ .rodata.str1.4
+                0x00010ac4       0x14 freemaster_protocol.o
+                                 0x13 (size before relaxing)
+ .rodata.fmod.str1.1
+                0x00010ad8        0x5 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-w_fmod.o)
+ .rodata.sqrt.str1.1
+                0x00010add        0x5 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-w_sqrt.o)
+ *fill*         0x00010ae2        0x6 
+ .rodata.Zero   0x00010ae8       0x10 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_fmod.o)
+ .rodata.npio2_hw
+                0x00010af8       0x80 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_rem_pio2.o)
+ .rodata.two_over_pi
+                0x00010b78      0x108 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_rem_pio2.o)
+ .rodata.PIo2   0x00010c80       0x40 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-k_rem_pio2.o)
+ .rodata.init_jk
+                0x00010cc0       0x10 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-k_rem_pio2.o)
+ .rodata._global_impure_ptr
+                0x00010cd0        0x4 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-impure.o)
+                0x00010cd0                _global_impure_ptr
+ *(.glue_7)
+ .glue_7        0x00010cd4        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x00010cd4        0x0 linker stubs
+ *(.eh_frame)
+ .eh_frame      0x00010cd4        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+ *(.init)
+ .init          0x00010cd4        0x4 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crti.o
+                0x00010cd4                _init
+ .init          0x00010cd8        0x8 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
+ *(.fini)
+ .fini          0x00010ce0        0x4 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crti.o
+                0x00010ce0                _fini
+ .fini          0x00010ce4        0x8 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
+                0x00010cec                . = ALIGN (0x4)
+
+.vfp11_veneer   0x00010cec        0x0
+ .vfp11_veneer  0x00010cec        0x0 linker stubs
+
+.v4_bx          0x00010cec        0x0
+ .v4_bx         0x00010cec        0x0 linker stubs
+
+.iplt           0x00010cec        0x0
+ .iplt          0x00010cec        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+
+.ARM            0x00010cec        0x8
+                0x00010cec                __exidx_start = .
+ *(.ARM.exidx*)
+ .ARM.exidx     0x00010cec        0x8 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_udivmoddi4.o)
+                0x00010cf4                __exidx_end = .
+
+.rel.dyn        0x00010cf4        0x0
+ .rel.iplt      0x00010cf4        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+
+.ctors          0x00010cf4        0x0
+                0x00010cf4                __CTOR_LIST__ = .
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend.o *crtend?.o) .ctors)
+ *(SORT(.ctors.*))
+ *(.ctors)
+                0x00010cf4                __CTOR_END__ = .
+
+.dtors          0x00010cf4        0x0
+                0x00010cf4                __DTOR_LIST__ = .
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend.o *crtend?.o) .dtors)
+ *(SORT(.dtors.*))
+ *(.dtors)
+                0x00010cf4                __DTOR_END__ = .
+
+.preinit_array  0x00010cf4        0x0
+                0x00010cf4                PROVIDE (__preinit_array_start, .)
+ *(.preinit_array*)
+                0x00010cf4                PROVIDE (__preinit_array_end, .)
+
+.init_array     0x00010cf4        0x8
+                0x00010cf4                PROVIDE (__init_array_start, .)
+ *(SORT(.init_array.*))
+ .init_array.00000
+                0x00010cf4        0x4 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__call_atexit.o)
+ *(.init_array*)
+ .init_array    0x00010cf8        0x4 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+                0x00010cfc                PROVIDE (__init_array_end, .)
+
+.fini_array     0x00010cfc        0x4
+                0x00010cfc                PROVIDE (__fini_array_start, .)
+ *(SORT(.fini_array.*))
+ *(.fini_array*)
+ .fini_array    0x00010cfc        0x4 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+                0x00010d00                PROVIDE (__fini_array_end, .)
+                0x00010d00                __etext = .
+                0x00010d00                __DATA_ROM = .
+
+.interrupts_ram
+                0x1fff8000      0x400
+                0x1fff8000                . = ALIGN (0x4)
+                0x1fff8000                __VECTOR_RAM__ = .
+                0x1fff8000                __RAM_START = .
+                0x1fff8000                __interrupts_ram_start__ = .
+ *(.m_interrupts_ram)
+                0x1fff8400                . = (. + M_VECTOR_RAM_SIZE)
+ *fill*         0x1fff8000      0x400 
+                0x1fff8400                . = ALIGN (0x4)
+                0x1fff8400                __interrupts_ram_end__ = .
+                0x1fff8000                __VECTOR_RAM = DEFINED (__flash_vector_table__)?ORIGIN (m_interrupts):__VECTOR_RAM__
+                0x00000400                __RAM_VECTOR_TABLE_SIZE = DEFINED (__flash_vector_table__)?0x0:(__interrupts_ram_end__ - __interrupts_ram_start__)
+
+.data           0x1fff8400      0x59c load address 0x00010d00
+                0x1fff8400                . = ALIGN (0x4)
+                0x1fff8400                __DATA_RAM = .
+                0x1fff8400                __data_start__ = .
+ *(.data)
+ .data          0x1fff8400       0xa0 clock_S32K1xx.o
+ .data          0x1fff84a0       0x2c ftm2_input_params_config.o
+                0x1fff84a0                flexTimer_ic2_InitConfig
+                0x1fff84b4                flexTimer_ic2_InputCaptureConfig
+                0x1fff84bc                ftm2input_ch_param
+ .data          0x1fff84cc       0x5c ftm3_pwm_params.o
+                0x1fff84cc                flexTimer_pwm3_InitConfig
+                0x1fff84e0                flexTimer_pwm3_PwmConfig
+                0x1fff84f8                flexTimer_pwm3_IndependentChannelsConfig
+                0x1fff8518                flexTimer_pwm3_FaultConfig
+ .data          0x1fff8528        0xf lpspi_shared_function.o
+                0x1fff8528                g_lpspiBase
+                0x1fff8534                g_lpspiIrqId
+ *fill*         0x1fff8537        0x1 
+ .data          0x1fff8538        0xc lpuart_irq.o
+                0x1fff8538                g_lpuartIsr
+ .data          0x1fff8544        0x1 mbd_main.o
+ .data          0x1fff8545        0x1 osif_baremetal.o
+ *fill*         0x1fff8546        0x2 
+ .data          0x1fff8548        0xb pdb0_params.o
+                0x1fff8548                pdb0Ch0UPreTrigConfig0U
+                0x1fff8550                pdb0MappingConfig
+ *fill*         0x1fff8553        0x1 
+ .data          0x1fff8554       0x1b pdb1_params.o
+                0x1fff8554                pdb1Ch0UPreTrigConfig2U
+                0x1fff855c                pdb1Ch0UPreTrigConfig1U
+                0x1fff8564                pdb1Ch0UPreTrigConfig0U
+                0x1fff856c                pdb1MappingConfig
+ *fill*         0x1fff856f        0x1 
+ .data          0x1fff8570        0x4 system_S32K144.o
+                0x1fff8570                SystemCoreClock
+ *(.data*)
+ .data.__fdlib_version
+                0x1fff8574        0x1 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_lib_ver.o)
+                0x1fff8574                __fdlib_version
+ *fill*         0x1fff8575        0x3 
+ .data._impure_ptr
+                0x1fff8578        0x4 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-impure.o)
+                0x1fff8578                _impure_ptr
+ *fill*         0x1fff857c        0x4 
+ .data.impure_data
+                0x1fff8580      0x418 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-impure.o)
+ *(.jcr*)
+ .jcr           0x1fff8998        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+ .jcr           0x1fff8998        0x4 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtend.o
+                0x1fff899c                . = ALIGN (0x4)
+                0x1fff899c                __data_end__ = .
+                0x0001129c                __DATA_END = (__DATA_ROM + (__data_end__ - __data_start__))
+                0x0001129c                __CODE_ROM = __DATA_END
+
+.tm_clone_table
+                0x1fff899c        0x0 load address 0x0001129c
+ .tm_clone_table
+                0x1fff899c        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+ .tm_clone_table
+                0x1fff899c        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtend.o
+
+.igot.plt       0x1fff899c        0x0 load address 0x0001129c
+ .igot.plt      0x1fff899c        0x0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+
+.code           0x1fff899c        0x0 load address 0x0001129c
+                0x1fff899c                . = ALIGN (0x4)
+                0x1fff899c                __CODE_RAM = .
+                0x1fff899c                __code_start__ = .
+                0x1fff899c                __code_ram_start__ = .
+ *(.code_ram)
+                0x1fff899c                . = ALIGN (0x4)
+                0x1fff899c                __code_end__ = .
+                0x1fff899c                __code_ram_end__ = .
+                0x0001129c                __CODE_END = (__CODE_ROM + (__code_end__ - __code_start__))
+                0x0001129c                __CUSTOM_ROM = __CODE_END
+
+.customSectionBlock
+                0x20000000        0x0 load address 0x0001129c
+                0x20000000                __customSection_start__ = .
+ *(.customSection)
+                0x20000000                __customSection_end__ = .
+                0x0001129c                __CUSTOM_END = (__CUSTOM_ROM + (__customSection_end__ - __customSection_start__))
+
+.bss            0x20000000     0x29bc
+                0x20000000                . = ALIGN (0x4)
+                0x20000000                __BSS_START = .
+                0x20000000                __bss_start__ = .
+ *(.bss)
+ .bss           0x20000000       0x1c c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+ .bss           0x2000001c       0x74 Foc_model_Matlab_1.o
+ .bss           0x20000090       0x10 clock_S32K1xx.o
+ .bss           0x200000a0        0x4 edma_driver.o
+ .bss           0x200000a4        0x1 freemaster_S32K1xx.o
+ *fill*         0x200000a5        0x3 
+ .bss           0x200000a8     0x2014 freemaster_rec.o
+ .bss           0x200020bc       0x2c freemaster_scope.o
+ .bss           0x200020e8       0x7a freemaster_serial.o
+ *fill*         0x20002162        0x2 
+ .bss           0x20002164      0x100 ftm_chn_irq.o
+ .bss           0x20002264       0x11 ftm_common.o
+                0x20002264                ftmStatePtr
+                0x20002274                faultDetection
+ *fill*         0x20002275        0x3 
+ .bss           0x20002278       0x80 ftm_fault_irq.o
+ .bss           0x200022f8      0x280 gpio_irq.o
+ .bss           0x20002578        0x4 interrupt_manager.o
+ .bss           0x2000257c        0x4 lpit_driver.o
+ .bss           0x20002580        0xc lpspi_shared_function.o
+                0x20002580                g_lpspiStatePtr
+ .bss           0x2000258c        0xc lpuart_driver.o
+ .bss           0x20002598       0x80 mbd_adc_irq.o
+ .bss           0x20002618        0x4 osif_baremetal.o
+ .bss           0x2000261c        0x9 pdb0_params.o
+                0x2000261c                pdb0TimerConfig
+ *fill*         0x20002625        0x3 
+ .bss           0x20002628        0x9 pdb1_params.o
+                0x20002628                pdb1TimerConfig
+ *fill*         0x20002631        0x3 
+ .bss           0x20002634        0xc power_manager_S32K1xx.o
+ *(.bss*)
+ *(COMMON)
+ COMMON         0x20002640      0x27c Foc_model_Matlab_1.o
+                0x20002640                FAULT
+                0x20002644                HALL_B
+                0x20002648                GlobalSpeedCount
+                0x2000264c                Foc_model_Matlab_1_B
+                0x20002678                IaOffset
+                0x2000267c                Vd_ref_beforeLimiter
+                0x20002680                HALL_C
+                0x20002684                Foc_model_Matlab_1_DW
+                0x2000271c                Lambda
+                0x20002720                SIN
+                0x20002724                COS
+                0x20002728                Ki
+                0x2000272c                Idc_afterOffset
+                0x20002730                ADC_IA
+                0x20002734                ADC_IDC
+                0x20002738                CntHallDecoder
+                0x2000273c                Id_err
+                0x20002740                I_ab_afterOffset
+                0x20002748                Idq_ref_PU
+                0x20002750                Vq_ref_beforeLimiter
+                0x20002754                HALL_C_controller
+                0x20002758                Speed_Ref_PU
+                0x2000275c                GlobalDirection
+                0x20002760                Speed_Ref
+                0x20002764                trgmuxAllMappingConfig
+                0x2000276c                PWM_Enable
+                0x20002770                ADC_B
+                0x20002774                SpeedMeasured
+                0x20002778                Pos_PU
+                0x2000277c                ADC_A
+                0x20002780                g_lpspiState
+                0x200027b4                CntHallValidityIn
+                0x200027b8                ADC_IB
+                0x200027bc                HallStateChangeFlag
+                0x200027c0                HallVal
+                0x200027c4                Iq_err
+                0x200027c8                Enable
+                0x200027cc                CH1S_ERR
+                0x200027d0                Theta
+                0x200027d4                HALL_A
+                0x200027d8                IbOffset
+                0x200027dc                CH0S_ERR
+                0x200027e0                GlobalSpeedValidity
+                0x200027e4                PWM_Duty_Cycles
+                0x200027f0                Iq_fb
+                0x200027f4                SC_PDBIF
+                0x200027f8                DesiredSpeed
+                0x200027fc                Epsilon
+                0x20002800                PWM
+                0x2000280c                ThetaHalls
+                0x20002810                lpspiMasterState0
+                0x20002844                K2
+                0x20002848                HallValididyInvalid
+                0x2000284c                Gamma
+                0x20002850                HALL_B_controller
+                0x20002854                tppDrvConfig
+                0x2000288c                Kp
+                0x20002890                Iab_fb
+                0x20002898                tppStatus
+                0x2000289c                GlobalHallState
+                0x200028a0                Speed_fb
+                0x200028a4                SpeedError
+                0x200028a8                HallCntPrev
+                0x200028aa                HallCntActual
+                0x200028ac                ADC_VDC
+                0x200028b0                HALL_A_controller
+                0x200028b4                CntHall
+                0x200028b8                Id_fb
+ COMMON         0x200028bc       0x14 clock_S32K1xx.o
+                0x200028bc                g_xtal0ClkFreq
+                0x200028c0                g_RtcClkInFreq
+                0x200028c4                g_TClkFreq
+ COMMON         0x200028d0       0x48 freemaster_rec.o
+                0x200028d0                pcm_pRecVarAddr
+                0x200028f0                pcm_wRecBuffStartIx
+                0x200028f4                pcm_dwRecEndBuffPtr
+                0x200028f8                pcm_pRecVarSize
+                0x20002900                pcm_wRecTotalSmps
+                0x20002902                pcm_nRecVarCount
+                0x20002904                pcm_wRecTimeDivCtr
+                0x20002906                pcm_wStoprecCountDown
+                0x20002908                pcm_nRecTriggerMode
+                0x2000290c                pcm_wRecFlags
+                0x20002910                pcm_wRecTimeDiv
+                0x20002912                pcm_wRecPostTrigger
+                0x20002914                pcm_dwRecWritePtr
+ COMMON         0x20002918       0x60 ftm3_pwm_params.o
+                0x20002918                ftmStateStruct3
+ COMMON         0x20002978       0x10 power_manager_S32K1xx.o
+                0x20002978                gPowerManagerState
+ COMMON         0x20002988        0xc profile_buffer.o
+                0x20002988                profile_buffer
+ *fill*         0x20002994        0x4 
+ COMMON         0x20002998       0x24 rt_nonfinite.o
+                0x20002998                rtNaNF
+                0x2000299c                rtInfF
+                0x200029a0                rtInf
+                0x200029a8                rtNaN
+                0x200029b0                rtMinusInf
+                0x200029b8                rtMinusInfF
+                0x200029bc                . = ALIGN (0x4)
+                0x200029bc                __bss_end__ = .
+                0x200029bc                __BSS_END = .
+
+.heap           0x200029bc      0x404
+                0x200029c0                . = ALIGN (0x8)
+ *fill*         0x200029bc        0x4 
+                0x200029c0                __end__ = .
+                0x200029c0                __heap_start__ = .
+                [!provide]                PROVIDE (end, .)
+                [!provide]                PROVIDE (_end, .)
+                [!provide]                PROVIDE (__end, .)
+                0x200029c0                __HeapBase = .
+                0x20002dc0                . = (. + HEAP_SIZE)
+ *fill*         0x200029c0      0x400 
+                0x20002dc0                __HeapLimit = .
+                0x20002dc0                __heap_limit = .
+                0x20002dc0                __heap_end__ = .
+                0x20007000                __StackTop = (ORIGIN (m_data_2) + LENGTH (m_data_2))
+                0x20006c00                __StackLimit = (__StackTop - STACK_SIZE)
+                0x20007000                PROVIDE (__stack, __StackTop)
+                0x20007000                __RAM_END = __StackTop
+
+.stack          0x20006c00      0x400
+                0x20006c00                . = ALIGN (0x8)
+                0x20006c00                __stack_start__ = .
+                0x20007000                . = (. + STACK_SIZE)
+ *fill*         0x20006c00      0x400 
+                0x20007000                __stack_end__ = .
+
+.ARM.attributes
+                0x00000000       0x30
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x22 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crti.o
+ .ARM.attributes
+                0x00000022       0x34 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+ .ARM.attributes
+                0x00000056       0x1f startup_S32K144.o
+ .ARM.attributes
+                0x00000075       0x39 Foc_model_Matlab_1.o
+ .ARM.attributes
+                0x000000ae       0x39 Foc_model_Matlab_1_data.o
+ .ARM.attributes
+                0x000000e7       0x39 adc_driver.o
+ .ARM.attributes
+                0x00000120       0x39 clock_S32K1xx.o
+ .ARM.attributes
+                0x00000159       0x39 edma_driver.o
+ .ARM.attributes
+                0x00000192       0x39 edma_hw_access.o
+ .ARM.attributes
+                0x000001cb       0x39 edma_irq.o
+ .ARM.attributes
+                0x00000204       0x39 freemaster_S32K1xx.o
+ .ARM.attributes
+                0x0000023d       0x39 freemaster_interface_init.o
+ .ARM.attributes
+                0x00000276       0x39 freemaster_protocol.o
+ .ARM.attributes
+                0x000002af       0x39 freemaster_rec.o
+ .ARM.attributes
+                0x000002e8       0x39 freemaster_scope.o
+ .ARM.attributes
+                0x00000321       0x39 freemaster_serial.o
+ .ARM.attributes
+                0x0000035a       0x39 ftm2_ch1_hall_sensor_isr.o
+ .ARM.attributes
+                0x00000393       0x39 ftm2_input_params_config.o
+ .ARM.attributes
+                0x000003cc       0x39 ftm3_pwm_params.o
+ .ARM.attributes
+                0x00000405       0x39 ftm_chn_irq.o
+ .ARM.attributes
+                0x0000043e       0x39 ftm_common.o
+ .ARM.attributes
+                0x00000477       0x39 ftm_fault_irq.o
+ .ARM.attributes
+                0x000004b0       0x39 ftm_hw_access.o
+ .ARM.attributes
+                0x000004e9       0x39 ftm_ic_driver.o
+ .ARM.attributes
+                0x00000522       0x39 ftm_pwm_driver.o
+ .ARM.attributes
+                0x0000055b       0x39 gpio_irq.o
+ .ARM.attributes
+                0x00000594       0x39 gt_pf.o
+ .ARM.attributes
+                0x000005cd       0x39 interrupt_manager.o
+ .ARM.attributes
+                0x00000606       0x39 lpit_driver.o
+ .ARM.attributes
+                0x0000063f       0x39 lpspi_hw_access.o
+ .ARM.attributes
+                0x00000678       0x39 lpspi_irq.o
+ .ARM.attributes
+                0x000006b1       0x39 lpspi_master_driver.o
+ .ARM.attributes
+                0x000006ea       0x39 lpspi_shared_function.o
+ .ARM.attributes
+                0x00000723       0x39 lpspi_slave_driver.o
+ .ARM.attributes
+                0x0000075c       0x39 lpuart_driver.o
+ .ARM.attributes
+                0x00000795       0x39 lpuart_hw_access.o
+ .ARM.attributes
+                0x000007ce       0x39 lpuart_irq.o
+ .ARM.attributes
+                0x00000807       0x39 mbd_adc_irq.o
+ .ARM.attributes
+                0x00000840       0x39 mbd_main.o
+ .ARM.attributes
+                0x00000879       0x39 osif_baremetal.o
+ .ARM.attributes
+                0x000008b2       0x39 pdb0_params.o
+ .ARM.attributes
+                0x000008eb       0x39 pdb1_params.o
+ .ARM.attributes
+                0x00000924       0x39 pdb_driver.o
+ .ARM.attributes
+                0x0000095d       0x39 pdb_hw_access.o
+ .ARM.attributes
+                0x00000996       0x39 pins_driver.o
+ .ARM.attributes
+                0x000009cf       0x39 pins_port_hw_access.o
+ .ARM.attributes
+                0x00000a08       0x39 power_manager.o
+ .ARM.attributes
+                0x00000a41       0x39 power_manager_S32K1xx.o
+ .ARM.attributes
+                0x00000a7a       0x39 power_smc_hw_access.o
+ .ARM.attributes
+                0x00000ab3       0x39 profile_buffer.o
+ .ARM.attributes
+                0x00000aec       0x39 rtGetInf.o
+ .ARM.attributes
+                0x00000b25       0x39 rtGetNaN.o
+ .ARM.attributes
+                0x00000b5e       0x39 rt_nonfinite.o
+ .ARM.attributes
+                0x00000b97       0x39 rtmodel.o
+ .ARM.attributes
+                0x00000bd0       0x39 s32k_clock_init.o
+ .ARM.attributes
+                0x00000c09       0x39 spi_aml.o
+ .ARM.attributes
+                0x00000c42       0x39 startup.o
+ .ARM.attributes
+                0x00000c7b       0x39 system_S32K144.o
+ .ARM.attributes
+                0x00000cb4       0x39 tpp.o
+ .ARM.attributes
+                0x00000ced       0x39 tpp_ic_init.o
+ .ARM.attributes
+                0x00000d26       0x39 trgmux_driver.o
+ .ARM.attributes
+                0x00000d5f       0x39 trgmux_hw_access.o
+ .ARM.attributes
+                0x00000d98       0x39 wait_aml.o
+ .ARM.attributes
+                0x00000dd1       0x34 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_cos.o)
+ .ARM.attributes
+                0x00000e05       0x34 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_floor.o)
+ .ARM.attributes
+                0x00000e39       0x34 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_sin.o)
+ .ARM.attributes
+                0x00000e6d       0x34 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-w_fmod.o)
+ .ARM.attributes
+                0x00000ea1       0x34 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-w_sqrt.o)
+ .ARM.attributes
+                0x00000ed5       0x34 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_fmod.o)
+ .ARM.attributes
+                0x00000f09       0x34 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_rem_pio2.o)
+ .ARM.attributes
+                0x00000f3d       0x34 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_sqrt.o)
+ .ARM.attributes
+                0x00000f71       0x34 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-k_cos.o)
+ .ARM.attributes
+                0x00000fa5       0x34 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-k_rem_pio2.o)
+ .ARM.attributes
+                0x00000fd9       0x34 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-k_sin.o)
+ .ARM.attributes
+                0x0000100d       0x34 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_fabs.o)
+ .ARM.attributes
+                0x00001041       0x34 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_lib_ver.o)
+ .ARM.attributes
+                0x00001075       0x34 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_matherr.o)
+ .ARM.attributes
+                0x000010a9       0x34 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_scalbn.o)
+ .ARM.attributes
+                0x000010dd       0x34 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_copysign.o)
+ .ARM.attributes
+                0x00001111       0x22 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_addsubdf3.o)
+ .ARM.attributes
+                0x00001133       0x22 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_muldivdf3.o)
+ .ARM.attributes
+                0x00001155       0x22 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_cmpdf2.o)
+ .ARM.attributes
+                0x00001177       0x22 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_unorddf2.o)
+ .ARM.attributes
+                0x00001199       0x22 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_fixdfsi.o)
+ .ARM.attributes
+                0x000011bb       0x22 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_truncdfsf2.o)
+ .ARM.attributes
+                0x000011dd       0x22 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_aeabi_uldivmod.o)
+ .ARM.attributes
+                0x000011ff       0x34 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_udivmoddi4.o)
+ .ARM.attributes
+                0x00001233       0x22 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_dvmd_tls.o)
+ .ARM.attributes
+                0x00001255       0x34 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-errno.o)
+ .ARM.attributes
+                0x00001289       0x34 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-impure.o)
+ .ARM.attributes
+                0x000012bd       0x34 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-memset.o)
+ .ARM.attributes
+                0x000012f1       0x34 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__call_atexit.o)
+ .ARM.attributes
+                0x00001325       0x34 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-fini.o)
+ .ARM.attributes
+                0x00001359       0x34 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-atexit.o)
+ .ARM.attributes
+                0x0000138d       0x34 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__atexit.o)
+ .ARM.attributes
+                0x000013c1       0x34 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtend.o
+ .ARM.attributes
+                0x000013f5       0x22 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtn.o
+                0x00000001                ASSERT ((__StackLimit >= __HeapLimit), region m_data_2 overflowed with stack and heap)
+OUTPUT(Foc_model_Matlab_1.elf elf32-littlearm)
+
+.comment        0x00000000       0xa0
+ .comment       0x00000000       0xa0 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtbegin.o
+                                 0xa1 (size before relaxing)
+ .comment       0x000000a0       0xa1 Foc_model_Matlab_1.o
+ .comment       0x000000a0       0xa1 Foc_model_Matlab_1_data.o
+ .comment       0x000000a0       0xa1 adc_driver.o
+ .comment       0x000000a0       0xa1 clock_S32K1xx.o
+ .comment       0x000000a0       0xa1 edma_driver.o
+ .comment       0x000000a0       0xa1 edma_hw_access.o
+ .comment       0x000000a0       0xa1 edma_irq.o
+ .comment       0x000000a0       0xa1 freemaster_S32K1xx.o
+ .comment       0x000000a0       0xa1 freemaster_interface_init.o
+ .comment       0x000000a0       0xa1 freemaster_protocol.o
+ .comment       0x000000a0       0xa1 freemaster_rec.o
+ .comment       0x000000a0       0xa1 freemaster_scope.o
+ .comment       0x000000a0       0xa1 freemaster_serial.o
+ .comment       0x000000a0       0xa1 ftm2_ch1_hall_sensor_isr.o
+ .comment       0x000000a0       0xa1 ftm2_input_params_config.o
+ .comment       0x000000a0       0xa1 ftm3_pwm_params.o
+ .comment       0x000000a0       0xa1 ftm_chn_irq.o
+ .comment       0x000000a0       0xa1 ftm_common.o
+ .comment       0x000000a0       0xa1 ftm_fault_irq.o
+ .comment       0x000000a0       0xa1 ftm_hw_access.o
+ .comment       0x000000a0       0xa1 ftm_ic_driver.o
+ .comment       0x000000a0       0xa1 ftm_pwm_driver.o
+ .comment       0x000000a0       0xa1 gpio_irq.o
+ .comment       0x000000a0       0xa1 gt_pf.o
+ .comment       0x000000a0       0xa1 interrupt_manager.o
+ .comment       0x000000a0       0xa1 lpit_driver.o
+ .comment       0x000000a0       0xa1 lpspi_hw_access.o
+ .comment       0x000000a0       0xa1 lpspi_irq.o
+ .comment       0x000000a0       0xa1 lpspi_master_driver.o
+ .comment       0x000000a0       0xa1 lpspi_shared_function.o
+ .comment       0x000000a0       0xa1 lpspi_slave_driver.o
+ .comment       0x000000a0       0xa1 lpuart_driver.o
+ .comment       0x000000a0       0xa1 lpuart_hw_access.o
+ .comment       0x000000a0       0xa1 lpuart_irq.o
+ .comment       0x000000a0       0xa1 mbd_adc_irq.o
+ .comment       0x000000a0       0xa1 mbd_main.o
+ .comment       0x000000a0       0xa1 osif_baremetal.o
+ .comment       0x000000a0       0xa1 pdb0_params.o
+ .comment       0x000000a0       0xa1 pdb1_params.o
+ .comment       0x000000a0       0xa1 pdb_driver.o
+ .comment       0x000000a0       0xa1 pdb_hw_access.o
+ .comment       0x000000a0       0xa1 pins_driver.o
+ .comment       0x000000a0       0xa1 pins_port_hw_access.o
+ .comment       0x000000a0       0xa1 power_manager.o
+ .comment       0x000000a0       0xa1 power_manager_S32K1xx.o
+ .comment       0x000000a0       0xa1 power_smc_hw_access.o
+ .comment       0x000000a0       0xa1 profile_buffer.o
+ .comment       0x000000a0       0xa1 rtGetInf.o
+ .comment       0x000000a0       0xa1 rtGetNaN.o
+ .comment       0x000000a0       0xa1 rt_nonfinite.o
+ .comment       0x000000a0       0xa1 rtmodel.o
+ .comment       0x000000a0       0xa1 s32k_clock_init.o
+ .comment       0x000000a0       0xa1 spi_aml.o
+ .comment       0x000000a0       0xa1 startup.o
+ .comment       0x000000a0       0xa1 system_S32K144.o
+ .comment       0x000000a0       0xa1 tpp.o
+ .comment       0x000000a0       0xa1 tpp_ic_init.o
+ .comment       0x000000a0       0xa1 trgmux_driver.o
+ .comment       0x000000a0       0xa1 trgmux_hw_access.o
+ .comment       0x000000a0       0xa1 wait_aml.o
+ .comment       0x000000a0       0xa1 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard/crtend.o
+
+.debug_line     0x00000000     0xce02
+ .debug_line    0x00000000       0x6e startup_S32K144.o
+ .debug_line    0x0000006e      0xb69 Foc_model_Matlab_1.o
+ .debug_line    0x00000bd7      0x4f6 Foc_model_Matlab_1_data.o
+ .debug_line    0x000010cd      0x5b3 adc_driver.o
+ .debug_line    0x00001680      0xee4 clock_S32K1xx.o
+ .debug_line    0x00002564      0x672 edma_driver.o
+ .debug_line    0x00002bd6      0x27e edma_hw_access.o
+ .debug_line    0x00002e54      0x1e7 edma_irq.o
+ .debug_line    0x0000303b       0xbe freemaster_S32K1xx.o
+ .debug_line    0x000030f9      0x2c9 freemaster_interface_init.o
+ .debug_line    0x000033c2      0x134 freemaster_protocol.o
+ .debug_line    0x000034f6      0x18c freemaster_rec.o
+ .debug_line    0x00003682       0xa7 freemaster_scope.o
+ .debug_line    0x00003729      0x15d freemaster_serial.o
+ .debug_line    0x00003886      0x56d ftm2_ch1_hall_sensor_isr.o
+ .debug_line    0x00003df3      0x4f7 ftm2_input_params_config.o
+ .debug_line    0x000042ea      0x1da ftm3_pwm_params.o
+ .debug_line    0x000044c4      0x508 ftm_chn_irq.o
+ .debug_line    0x000049cc      0x582 ftm_common.o
+ .debug_line    0x00004f4e      0x288 ftm_fault_irq.o
+ .debug_line    0x000051d6      0x258 ftm_hw_access.o
+ .debug_line    0x0000542e      0x515 ftm_ic_driver.o
+ .debug_line    0x00005943      0x699 ftm_pwm_driver.o
+ .debug_line    0x00005fdc      0x1e3 gpio_irq.o
+ .debug_line    0x000061bf      0x1b8 gt_pf.o
+ .debug_line    0x00006377      0x25a interrupt_manager.o
+ .debug_line    0x000065d1      0x461 lpit_driver.o
+ .debug_line    0x00006a32      0x308 lpspi_hw_access.o
+ .debug_line    0x00006d3a      0x207 lpspi_irq.o
+ .debug_line    0x00006f41      0x5d1 lpspi_master_driver.o
+ .debug_line    0x00007512      0x2d6 lpspi_shared_function.o
+ .debug_line    0x000077e8      0x516 lpspi_slave_driver.o
+ .debug_line    0x00007cfe      0x724 lpuart_driver.o
+ .debug_line    0x00008422      0x2b0 lpuart_hw_access.o
+ .debug_line    0x000086d2       0x6e lpuart_irq.o
+ .debug_line    0x00008740      0x31f mbd_adc_irq.o
+ .debug_line    0x00008a5f      0x559 mbd_main.o
+ .debug_line    0x00008fb8      0x2a6 osif_baremetal.o
+ .debug_line    0x0000925e      0x1fb pdb0_params.o
+ .debug_line    0x00009459      0x1fb pdb1_params.o
+ .debug_line    0x00009654      0x330 pdb_driver.o
+ .debug_line    0x00009984      0x289 pdb_hw_access.o
+ .debug_line    0x00009c0d      0x32c pins_driver.o
+ .debug_line    0x00009f39      0x279 pins_port_hw_access.o
+ .debug_line    0x0000a1b2      0x27f power_manager.o
+ .debug_line    0x0000a431      0x521 power_manager_S32K1xx.o
+ .debug_line    0x0000a952      0x2d5 power_smc_hw_access.o
+ .debug_line    0x0000ac27      0x174 profile_buffer.o
+ .debug_line    0x0000ad9b      0x10a rtGetInf.o
+ .debug_line    0x0000aea5      0x104 rtGetNaN.o
+ .debug_line    0x0000afa9      0x13e rt_nonfinite.o
+ .debug_line    0x0000b0e7      0x4fd rtmodel.o
+ .debug_line    0x0000b5e4      0x258 s32k_clock_init.o
+ .debug_line    0x0000b83c      0x3dc spi_aml.o
+ .debug_line    0x0000bc18      0x1c1 startup.o
+ .debug_line    0x0000bdd9      0x1dc system_S32K144.o
+ .debug_line    0x0000bfb5      0x4a8 tpp.o
+ .debug_line    0x0000c45d      0x32a tpp_ic_init.o
+ .debug_line    0x0000c787      0x222 trgmux_driver.o
+ .debug_line    0x0000c9a9      0x223 trgmux_hw_access.o
+ .debug_line    0x0000cbcc      0x236 wait_aml.o
+
+.debug_info     0x00000000    0x48572
+ .debug_info    0x00000000       0x26 startup_S32K144.o
+ .debug_info    0x00000026     0x4fd6 Foc_model_Matlab_1.o
+ .debug_info    0x00004ffc     0x2b88 Foc_model_Matlab_1_data.o
+ .debug_info    0x00007b84     0x2e60 adc_driver.o
+ .debug_info    0x0000a9e4     0x530a clock_S32K1xx.o
+ .debug_info    0x0000fcee     0x320c edma_driver.o
+ .debug_info    0x00012efa      0x94e edma_hw_access.o
+ .debug_info    0x00013848      0x554 edma_irq.o
+ .debug_info    0x00013d9c      0x412 freemaster_S32K1xx.o
+ .debug_info    0x000141ae      0xeb6 freemaster_interface_init.o
+ .debug_info    0x00015064      0x41c freemaster_protocol.o
+ .debug_info    0x00015480      0x71d freemaster_rec.o
+ .debug_info    0x00015b9d      0x18c freemaster_scope.o
+ .debug_info    0x00015d29      0x4dd freemaster_serial.o
+ .debug_info    0x00016206     0x2c27 ftm2_ch1_hall_sensor_isr.o
+ .debug_info    0x00018e2d     0x2b95 ftm2_input_params_config.o
+ .debug_info    0x0001b9c2      0xcd2 ftm3_pwm_params.o
+ .debug_info    0x0001c694     0x138b ftm_chn_irq.o
+ .debug_info    0x0001da1f     0x29dc ftm_common.o
+ .debug_info    0x000203fb      0x9dd ftm_fault_irq.o
+ .debug_info    0x00020dd8      0x97a ftm_hw_access.o
+ .debug_info    0x00021752     0x1d4c ftm_ic_driver.o
+ .debug_info    0x0002349e     0x2a4b ftm_pwm_driver.o
+ .debug_info    0x00025ee9      0x310 gpio_irq.o
+ .debug_info    0x000261f9      0x353 gt_pf.o
+ .debug_info    0x0002654c      0x997 interrupt_manager.o
+ .debug_info    0x00026ee3     0x1b2d lpit_driver.o
+ .debug_info    0x00028a10     0x1392 lpspi_hw_access.o
+ .debug_info    0x00029da2      0x748 lpspi_irq.o
+ .debug_info    0x0002a4ea     0x240e lpspi_master_driver.o
+ .debug_info    0x0002c8f8      0xb20 lpspi_shared_function.o
+ .debug_info    0x0002d418     0x1eed lpspi_slave_driver.o
+ .debug_info    0x0002f305     0x2372 lpuart_driver.o
+ .debug_info    0x00031677      0x8eb lpuart_hw_access.o
+ .debug_info    0x00031f62       0xe0 lpuart_irq.o
+ .debug_info    0x00032042      0xb8e mbd_adc_irq.o
+ .debug_info    0x00032bd0     0x3007 mbd_main.o
+ .debug_info    0x00035bd7      0xa36 osif_baremetal.o
+ .debug_info    0x0003660d      0x7a6 pdb0_params.o
+ .debug_info    0x00036db3      0x7d6 pdb1_params.o
+ .debug_info    0x00037589     0x16de pdb_driver.o
+ .debug_info    0x00038c67      0x75b pdb_hw_access.o
+ .debug_info    0x000393c2     0x1360 pins_driver.o
+ .debug_info    0x0003a722      0x89d pins_port_hw_access.o
+ .debug_info    0x0003afbf      0x7dc power_manager.o
+ .debug_info    0x0003b79b     0x1718 power_manager_S32K1xx.o
+ .debug_info    0x0003ceb3      0xc0c power_smc_hw_access.o
+ .debug_info    0x0003dabf       0xac profile_buffer.o
+ .debug_info    0x0003db6b      0x27a rtGetInf.o
+ .debug_info    0x0003dde5      0x1ef rtGetNaN.o
+ .debug_info    0x0003dfd4      0x2e7 rt_nonfinite.o
+ .debug_info    0x0003e2bb     0x2ba2 rtmodel.o
+ .debug_info    0x00040e5d     0x1477 s32k_clock_init.o
+ .debug_info    0x000422d4     0x15fa spi_aml.o
+ .debug_info    0x000438ce      0x2ad startup.o
+ .debug_info    0x00043b7b      0x521 system_S32K144.o
+ .debug_info    0x0004409c     0x1846 tpp.o
+ .debug_info    0x000458e2     0x15bd tpp_ic_init.o
+ .debug_info    0x00046e9f      0xa86 trgmux_driver.o
+ .debug_info    0x00047925      0x823 trgmux_hw_access.o
+ .debug_info    0x00048148      0x42a wait_aml.o
+
+.debug_abbrev   0x00000000     0x7a59
+ .debug_abbrev  0x00000000       0x14 startup_S32K144.o
+ .debug_abbrev  0x00000014      0x48f Foc_model_Matlab_1.o
+ .debug_abbrev  0x000004a3      0x236 Foc_model_Matlab_1_data.o
+ .debug_abbrev  0x000006d9      0x37e adc_driver.o
+ .debug_abbrev  0x00000a57      0x37b clock_S32K1xx.o
+ .debug_abbrev  0x00000dd2      0x3aa edma_driver.o
+ .debug_abbrev  0x0000117c      0x1e2 edma_hw_access.o
+ .debug_abbrev  0x0000135e      0x17b edma_irq.o
+ .debug_abbrev  0x000014d9       0xe3 freemaster_S32K1xx.o
+ .debug_abbrev  0x000015bc      0x1eb freemaster_interface_init.o
+ .debug_abbrev  0x000017a7       0xe8 freemaster_protocol.o
+ .debug_abbrev  0x0000188f      0x26a freemaster_rec.o
+ .debug_abbrev  0x00001af9       0xb1 freemaster_scope.o
+ .debug_abbrev  0x00001baa      0x232 freemaster_serial.o
+ .debug_abbrev  0x00001ddc      0x2a5 ftm2_ch1_hall_sensor_isr.o
+ .debug_abbrev  0x00002081      0x236 ftm2_input_params_config.o
+ .debug_abbrev  0x000022b7      0x126 ftm3_pwm_params.o
+ .debug_abbrev  0x000023dd      0x1ca ftm_chn_irq.o
+ .debug_abbrev  0x000025a7      0x333 ftm_common.o
+ .debug_abbrev  0x000028da      0x1b5 ftm_fault_irq.o
+ .debug_abbrev  0x00002a8f      0x1b5 ftm_hw_access.o
+ .debug_abbrev  0x00002c44      0x321 ftm_ic_driver.o
+ .debug_abbrev  0x00002f65      0x2d4 ftm_pwm_driver.o
+ .debug_abbrev  0x00003239      0x10f gpio_irq.o
+ .debug_abbrev  0x00003348      0x10d gt_pf.o
+ .debug_abbrev  0x00003455      0x1e5 interrupt_manager.o
+ .debug_abbrev  0x0000363a      0x360 lpit_driver.o
+ .debug_abbrev  0x0000399a      0x293 lpspi_hw_access.o
+ .debug_abbrev  0x00003c2d      0x130 lpspi_irq.o
+ .debug_abbrev  0x00003d5d      0x373 lpspi_master_driver.o
+ .debug_abbrev  0x000040d0      0x221 lpspi_shared_function.o
+ .debug_abbrev  0x000042f1      0x355 lpspi_slave_driver.o
+ .debug_abbrev  0x00004646      0x35f lpuart_driver.o
+ .debug_abbrev  0x000049a5      0x19d lpuart_hw_access.o
+ .debug_abbrev  0x00004b42       0x8c lpuart_irq.o
+ .debug_abbrev  0x00004bce      0x1e2 mbd_adc_irq.o
+ .debug_abbrev  0x00004db0      0x30d mbd_main.o
+ .debug_abbrev  0x000050bd      0x26a osif_baremetal.o
+ .debug_abbrev  0x00005327       0xc3 pdb0_params.o
+ .debug_abbrev  0x000053ea       0xc3 pdb1_params.o
+ .debug_abbrev  0x000054ad      0x306 pdb_driver.o
+ .debug_abbrev  0x000057b3      0x22e pdb_hw_access.o
+ .debug_abbrev  0x000059e1      0x2a7 pins_driver.o
+ .debug_abbrev  0x00005c88      0x1e1 pins_port_hw_access.o
+ .debug_abbrev  0x00005e69      0x1e6 power_manager.o
+ .debug_abbrev  0x0000604f      0x363 power_manager_S32K1xx.o
+ .debug_abbrev  0x000063b2      0x240 power_smc_hw_access.o
+ .debug_abbrev  0x000065f2       0x5d profile_buffer.o
+ .debug_abbrev  0x0000664f       0xed rtGetInf.o
+ .debug_abbrev  0x0000673c       0xde rtGetNaN.o
+ .debug_abbrev  0x0000681a      0x11a rt_nonfinite.o
+ .debug_abbrev  0x00006934      0x251 rtmodel.o
+ .debug_abbrev  0x00006b85      0x15a s32k_clock_init.o
+ .debug_abbrev  0x00006cdf      0x25c spi_aml.o
+ .debug_abbrev  0x00006f3b       0xdd startup.o
+ .debug_abbrev  0x00007018      0x13a system_S32K144.o
+ .debug_abbrev  0x00007152      0x2a8 tpp.o
+ .debug_abbrev  0x000073fa      0x256 tpp_ic_init.o
+ .debug_abbrev  0x00007650      0x161 trgmux_driver.o
+ .debug_abbrev  0x000077b1      0x194 trgmux_hw_access.o
+ .debug_abbrev  0x00007945      0x114 wait_aml.o
+
+.debug_aranges  0x00000000      0x770
+ .debug_aranges
+                0x00000000       0x20 startup_S32K144.o
+ .debug_aranges
+                0x00000020       0x20 Foc_model_Matlab_1.o
+ .debug_aranges
+                0x00000040       0x18 Foc_model_Matlab_1_data.o
+ .debug_aranges
+                0x00000058       0x20 adc_driver.o
+ .debug_aranges
+                0x00000078       0x20 clock_S32K1xx.o
+ .debug_aranges
+                0x00000098       0x20 edma_driver.o
+ .debug_aranges
+                0x000000b8       0x20 edma_hw_access.o
+ .debug_aranges
+                0x000000d8       0x20 edma_irq.o
+ .debug_aranges
+                0x000000f8       0x20 freemaster_S32K1xx.o
+ .debug_aranges
+                0x00000118       0x20 freemaster_interface_init.o
+ .debug_aranges
+                0x00000138       0x20 freemaster_protocol.o
+ .debug_aranges
+                0x00000158       0x20 freemaster_rec.o
+ .debug_aranges
+                0x00000178       0x20 freemaster_scope.o
+ .debug_aranges
+                0x00000198       0x20 freemaster_serial.o
+ .debug_aranges
+                0x000001b8       0x20 ftm2_ch1_hall_sensor_isr.o
+ .debug_aranges
+                0x000001d8       0x18 ftm2_input_params_config.o
+ .debug_aranges
+                0x000001f0       0x18 ftm3_pwm_params.o
+ .debug_aranges
+                0x00000208       0x20 ftm_chn_irq.o
+ .debug_aranges
+                0x00000228       0x20 ftm_common.o
+ .debug_aranges
+                0x00000248       0x20 ftm_fault_irq.o
+ .debug_aranges
+                0x00000268       0x20 ftm_hw_access.o
+ .debug_aranges
+                0x00000288       0x20 ftm_ic_driver.o
+ .debug_aranges
+                0x000002a8       0x20 ftm_pwm_driver.o
+ .debug_aranges
+                0x000002c8       0x20 gpio_irq.o
+ .debug_aranges
+                0x000002e8       0x20 gt_pf.o
+ .debug_aranges
+                0x00000308       0x20 interrupt_manager.o
+ .debug_aranges
+                0x00000328       0x20 lpit_driver.o
+ .debug_aranges
+                0x00000348       0x20 lpspi_hw_access.o
+ .debug_aranges
+                0x00000368       0x20 lpspi_irq.o
+ .debug_aranges
+                0x00000388       0x20 lpspi_master_driver.o
+ .debug_aranges
+                0x000003a8       0x20 lpspi_shared_function.o
+ .debug_aranges
+                0x000003c8       0x20 lpspi_slave_driver.o
+ .debug_aranges
+                0x000003e8       0x20 lpuart_driver.o
+ .debug_aranges
+                0x00000408       0x20 lpuart_hw_access.o
+ .debug_aranges
+                0x00000428       0x20 lpuart_irq.o
+ .debug_aranges
+                0x00000448       0x20 mbd_adc_irq.o
+ .debug_aranges
+                0x00000468       0x20 mbd_main.o
+ .debug_aranges
+                0x00000488       0x20 osif_baremetal.o
+ .debug_aranges
+                0x000004a8       0x18 pdb0_params.o
+ .debug_aranges
+                0x000004c0       0x18 pdb1_params.o
+ .debug_aranges
+                0x000004d8       0x20 pdb_driver.o
+ .debug_aranges
+                0x000004f8       0x20 pdb_hw_access.o
+ .debug_aranges
+                0x00000518       0x20 pins_driver.o
+ .debug_aranges
+                0x00000538       0x20 pins_port_hw_access.o
+ .debug_aranges
+                0x00000558       0x20 power_manager.o
+ .debug_aranges
+                0x00000578       0x20 power_manager_S32K1xx.o
+ .debug_aranges
+                0x00000598       0x20 power_smc_hw_access.o
+ .debug_aranges
+                0x000005b8       0x18 profile_buffer.o
+ .debug_aranges
+                0x000005d0       0x20 rtGetInf.o
+ .debug_aranges
+                0x000005f0       0x20 rtGetNaN.o
+ .debug_aranges
+                0x00000610       0x20 rt_nonfinite.o
+ .debug_aranges
+                0x00000630       0x20 rtmodel.o
+ .debug_aranges
+                0x00000650       0x20 s32k_clock_init.o
+ .debug_aranges
+                0x00000670       0x20 spi_aml.o
+ .debug_aranges
+                0x00000690       0x20 startup.o
+ .debug_aranges
+                0x000006b0       0x20 system_S32K144.o
+ .debug_aranges
+                0x000006d0       0x20 tpp.o
+ .debug_aranges
+                0x000006f0       0x20 tpp_ic_init.o
+ .debug_aranges
+                0x00000710       0x20 trgmux_driver.o
+ .debug_aranges
+                0x00000730       0x20 trgmux_hw_access.o
+ .debug_aranges
+                0x00000750       0x20 wait_aml.o
+
+.debug_str      0x00000000    0x11547
+ .debug_str     0x00000000       0xa2 startup_S32K144.o
+ .debug_str     0x000000a2     0x4fa3 Foc_model_Matlab_1.o
+                               0x5212 (size before relaxing)
+ .debug_str     0x00005045       0x1a Foc_model_Matlab_1_data.o
+                               0x3aea (size before relaxing)
+ .debug_str     0x0000505f     0x11b0 adc_driver.o
+                               0x25a7 (size before relaxing)
+ .debug_str     0x0000620f     0x27ec clock_S32K1xx.o
+                               0x3961 (size before relaxing)
+ .debug_str     0x000089fb     0x170e edma_driver.o
+                               0x28e1 (size before relaxing)
+ .debug_str     0x0000a109      0x155 edma_hw_access.o
+                                0x7fa (size before relaxing)
+ .debug_str     0x0000a25e      0x141 edma_irq.o
+                                0x4c7 (size before relaxing)
+ .debug_str     0x0000a39f      0x1b8 freemaster_S32K1xx.o
+                                0x3b0 (size before relaxing)
+ .debug_str     0x0000a557      0x364 freemaster_interface_init.o
+                               0x19f3 (size before relaxing)
+ .debug_str     0x0000a8bb       0xf6 freemaster_protocol.o
+                                0x32c (size before relaxing)
+ .debug_str     0x0000a9b1      0x3ba freemaster_rec.o
+                                0x628 (size before relaxing)
+ .debug_str     0x0000ad6b       0x83 freemaster_scope.o
+                                0x2b1 (size before relaxing)
+ .debug_str     0x0000adee      0x1f1 freemaster_serial.o
+                                0x441 (size before relaxing)
+ .debug_str     0x0000afdf       0x56 ftm2_ch1_hall_sensor_isr.o
+                               0x3b52 (size before relaxing)
+ .debug_str     0x0000b035       0x1b ftm2_input_params_config.o
+                               0x3aeb (size before relaxing)
+ .debug_str     0x0000b050       0x12 ftm3_pwm_params.o
+                               0x12fa (size before relaxing)
+ .debug_str     0x0000b062      0x228 ftm_chn_irq.o
+                               0x11d7 (size before relaxing)
+ .debug_str     0x0000b28a      0xade ftm_common.o
+                               0x2707 (size before relaxing)
+ .debug_str     0x0000bd68       0xfc ftm_fault_irq.o
+                                0xcc3 (size before relaxing)
+ .debug_str     0x0000be64       0xa8 ftm_hw_access.o
+                                0xd61 (size before relaxing)
+ .debug_str     0x0000bf0c      0x4c6 ftm_ic_driver.o
+                               0x1c27 (size before relaxing)
+ .debug_str     0x0000c3d2      0x490 ftm_pwm_driver.o
+                               0x2007 (size before relaxing)
+ .debug_str     0x0000c862       0xf0 gpio_irq.o
+                                0x3b0 (size before relaxing)
+ .debug_str     0x0000c952      0x242 gt_pf.o
+                                0x4d4 (size before relaxing)
+ .debug_str     0x0000cb94      0x2ff interrupt_manager.o
+                                0xb7d (size before relaxing)
+ .debug_str     0x0000ce93      0x5fb lpit_driver.o
+                               0x1d23 (size before relaxing)
+ .debug_str     0x0000d48e      0x4c2 lpspi_hw_access.o
+                               0x1d16 (size before relaxing)
+ .debug_str     0x0000d950       0x42 lpspi_irq.o
+                                0xb00 (size before relaxing)
+ .debug_str     0x0000d992      0x39e lpspi_master_driver.o
+                               0x2081 (size before relaxing)
+ .debug_str     0x0000dd30      0x10d lpspi_shared_function.o
+                                0xd0e (size before relaxing)
+ .debug_str     0x0000de3d      0x15a lpspi_slave_driver.o
+                               0x1ed3 (size before relaxing)
+ .debug_str     0x0000df97      0x935 lpuart_driver.o
+                               0x22bf (size before relaxing)
+ .debug_str     0x0000e8cc      0x17d lpuart_hw_access.o
+                               0x108b (size before relaxing)
+ .debug_str     0x0000ea49       0x46 lpuart_irq.o
+                                0x273 (size before relaxing)
+ .debug_str     0x0000ea8f       0x99 mbd_adc_irq.o
+                                0x7a3 (size before relaxing)
+ .debug_str     0x0000eb28       0xaf mbd_main.o
+                               0x3de9 (size before relaxing)
+ .debug_str     0x0000ebd7      0x1ae osif_baremetal.o
+                               0x10bd (size before relaxing)
+ .debug_str     0x0000ed85        0xe pdb0_params.o
+                               0x1846 (size before relaxing)
+ .debug_str     0x0000ed93        0xe pdb1_params.o
+                               0x1876 (size before relaxing)
+ .debug_str     0x0000eda1      0x43a pdb_driver.o
+                               0x1d3e (size before relaxing)
+ .debug_str     0x0000f1db       0xe6 pdb_hw_access.o
+                                0x713 (size before relaxing)
+ .debug_str     0x0000f2c1      0x565 pins_driver.o
+                               0x1405 (size before relaxing)
+ .debug_str     0x0000f826      0x1c0 pins_port_hw_access.o
+                                0x93c (size before relaxing)
+ .debug_str     0x0000f9e6      0x4c9 power_manager.o
+                               0x1024 (size before relaxing)
+ .debug_str     0x0000feaf      0x501 power_manager_S32K1xx.o
+                               0x195c (size before relaxing)
+ .debug_str     0x000103b0      0x141 power_smc_hw_access.o
+                                0xefc (size before relaxing)
+ .debug_str     0x000104f1       0x11 profile_buffer.o
+                                0x24f (size before relaxing)
+ .debug_str     0x00010502       0xaf rtGetInf.o
+                                0x315 (size before relaxing)
+ .debug_str     0x000105b1       0x23 rtGetNaN.o
+                                0x2ed (size before relaxing)
+ .debug_str     0x000105d4       0x4b rt_nonfinite.o
+                                0x32c (size before relaxing)
+ .debug_str     0x0001061f        0xa rtmodel.o
+                               0x3af8 (size before relaxing)
+ .debug_str     0x00010629       0xa9 s32k_clock_init.o
+                               0x226e (size before relaxing)
+ .debug_str     0x000106d2      0x627 spi_aml.o
+                               0x209f (size before relaxing)
+ .debug_str     0x00010cf9      0x112 startup.o
+                                0x435 (size before relaxing)
+ .debug_str     0x00010e0b       0x8f system_S32K144.o
+                                0x436 (size before relaxing)
+ .debug_str     0x00010e9a      0x359 tpp.o
+                               0x1ace (size before relaxing)
+ .debug_str     0x000111f3      0x104 tpp_ic_init.o
+                               0x19fd (size before relaxing)
+ .debug_str     0x000112f7      0x11a trgmux_driver.o
+                               0x1b79 (size before relaxing)
+ .debug_str     0x00011411       0xd2 trgmux_hw_access.o
+                               0x1a0b (size before relaxing)
+ .debug_str     0x000114e3       0x64 wait_aml.o
+                                0x6ee (size before relaxing)
+
+.debug_loc      0x00000000    0x17d05
+ .debug_loc     0x00000000     0x17ea Foc_model_Matlab_1.o
+ .debug_loc     0x000017ea     0x12b6 adc_driver.o
+ .debug_loc     0x00002aa0     0x4418 clock_S32K1xx.o
+ .debug_loc     0x00006eb8     0x1f14 edma_driver.o
+ .debug_loc     0x00008dcc      0x551 edma_hw_access.o
+ .debug_loc     0x0000931d       0x50 edma_irq.o
+ .debug_loc     0x0000936d      0x3e2 freemaster_S32K1xx.o
+ .debug_loc     0x0000974f      0x12e freemaster_interface_init.o
+ .debug_loc     0x0000987d      0x5f5 freemaster_protocol.o
+ .debug_loc     0x00009e72      0x3df freemaster_rec.o
+ .debug_loc     0x0000a251      0x199 freemaster_scope.o
+ .debug_loc     0x0000a3ea      0x1da freemaster_serial.o
+ .debug_loc     0x0000a5c4       0x8b ftm2_ch1_hall_sensor_isr.o
+ .debug_loc     0x0000a64f      0xae3 ftm_chn_irq.o
+ .debug_loc     0x0000b132     0x13f9 ftm_common.o
+ .debug_loc     0x0000c52b      0x21b ftm_fault_irq.o
+ .debug_loc     0x0000c746      0x114 ftm_hw_access.o
+ .debug_loc     0x0000c85a     0x108e ftm_ic_driver.o
+ .debug_loc     0x0000d8e8     0x1c7a ftm_pwm_driver.o
+ .debug_loc     0x0000f562      0x185 gpio_irq.o
+ .debug_loc     0x0000f6e7       0x26 gt_pf.o
+ .debug_loc     0x0000f70d      0x1aa interrupt_manager.o
+ .debug_loc     0x0000f8b7      0xbe4 lpit_driver.o
+ .debug_loc     0x0001049b      0x696 lpspi_hw_access.o
+ .debug_loc     0x00010b31      0xd87 lpspi_master_driver.o
+ .debug_loc     0x000118b8      0x31f lpspi_shared_function.o
+ .debug_loc     0x00011bd7      0x9c0 lpspi_slave_driver.o
+ .debug_loc     0x00012597     0x1815 lpuart_driver.o
+ .debug_loc     0x00013dac      0x4a8 lpuart_hw_access.o
+ .debug_loc     0x00014254       0x50 mbd_adc_irq.o
+ .debug_loc     0x000142a4       0x1f mbd_main.o
+ .debug_loc     0x000142c3      0x1cd osif_baremetal.o
+ .debug_loc     0x00014490      0x6f0 pdb_driver.o
+ .debug_loc     0x00014b80      0x392 pdb_hw_access.o
+ .debug_loc     0x00014f12      0x53e pins_driver.o
+ .debug_loc     0x00015450      0x48a pins_port_hw_access.o
+ .debug_loc     0x000158da      0x316 power_manager.o
+ .debug_loc     0x00015bf0      0x701 power_manager_S32K1xx.o
+ .debug_loc     0x000162f1      0x49f power_smc_hw_access.o
+ .debug_loc     0x00016790       0x80 rt_nonfinite.o
+ .debug_loc     0x00016810       0x34 rtmodel.o
+ .debug_loc     0x00016844       0x20 s32k_clock_init.o
+ .debug_loc     0x00016864      0x21d spi_aml.o
+ .debug_loc     0x00016a81       0xec startup.o
+ .debug_loc     0x00016b6d       0xeb system_S32K144.o
+ .debug_loc     0x00016c58      0xa64 tpp.o
+ .debug_loc     0x000176bc      0x158 tpp_ic_init.o
+ .debug_loc     0x00017814      0x18b trgmux_driver.o
+ .debug_loc     0x0001799f      0x2a7 trgmux_hw_access.o
+ .debug_loc     0x00017c46       0xbf wait_aml.o
+
+.debug_ranges   0x00000000      0xb88
+ .debug_ranges  0x00000000       0x30 Foc_model_Matlab_1.o
+ .debug_ranges  0x00000030       0xa0 adc_driver.o
+ .debug_ranges  0x000000d0      0x2e8 clock_S32K1xx.o
+ .debug_ranges  0x000003b8       0x30 edma_driver.o
+ .debug_ranges  0x000003e8       0x18 edma_hw_access.o
+ .debug_ranges  0x00000400       0x18 freemaster_rec.o
+ .debug_ranges  0x00000418       0x90 ftm_common.o
+ .debug_ranges  0x000004a8       0x60 ftm_fault_irq.o
+ .debug_ranges  0x00000508       0xe8 ftm_ic_driver.o
+ .debug_ranges  0x000005f0      0x2b8 ftm_pwm_driver.o
+ .debug_ranges  0x000008a8       0x38 interrupt_manager.o
+ .debug_ranges  0x000008e0       0x48 lpit_driver.o
+ .debug_ranges  0x00000928       0x18 lpspi_hw_access.o
+ .debug_ranges  0x00000940       0x48 lpuart_driver.o
+ .debug_ranges  0x00000988       0x30 osif_baremetal.o
+ .debug_ranges  0x000009b8       0x18 pdb_hw_access.o
+ .debug_ranges  0x000009d0       0x20 power_manager.o
+ .debug_ranges  0x000009f0      0x148 power_manager_S32K1xx.o
+ .debug_ranges  0x00000b38       0x20 power_smc_hw_access.o
+ .debug_ranges  0x00000b58       0x18 tpp.o
+ .debug_ranges  0x00000b70       0x18 trgmux_hw_access.o
+
+.debug_frame    0x00000000     0x40d8
+ .debug_frame   0x00000000      0x2e0 Foc_model_Matlab_1.o
+ .debug_frame   0x000002e0      0x22c adc_driver.o
+ .debug_frame   0x0000050c      0x39c clock_S32K1xx.o
+ .debug_frame   0x000008a8      0x388 edma_driver.o
+ .debug_frame   0x00000c30      0x144 edma_hw_access.o
+ .debug_frame   0x00000d74      0x1ac edma_irq.o
+ .debug_frame   0x00000f20      0x150 freemaster_S32K1xx.o
+ .debug_frame   0x00001070       0x4c freemaster_interface_init.o
+ .debug_frame   0x000010bc      0x138 freemaster_protocol.o
+ .debug_frame   0x000011f4      0x180 freemaster_rec.o
+ .debug_frame   0x00001374       0x60 freemaster_scope.o
+ .debug_frame   0x000013d4       0xcc freemaster_serial.o
+ .debug_frame   0x000014a0       0x30 ftm2_ch1_hall_sensor_isr.o
+ .debug_frame   0x000014d0      0x1e0 ftm_chn_irq.o
+ .debug_frame   0x000016b0      0x1f8 ftm_common.o
+ .debug_frame   0x000018a8       0xa0 ftm_fault_irq.o
+ .debug_frame   0x00001948       0x5c ftm_hw_access.o
+ .debug_frame   0x000019a4      0x25c ftm_ic_driver.o
+ .debug_frame   0x00001c00       0xe0 ftm_pwm_driver.o
+ .debug_frame   0x00001ce0       0xc0 gpio_irq.o
+ .debug_frame   0x00001da0       0x38 gt_pf.o
+ .debug_frame   0x00001dd8       0xd8 interrupt_manager.o
+ .debug_frame   0x00001eb0      0x1ac lpit_driver.o
+ .debug_frame   0x0000205c       0xf4 lpspi_hw_access.o
+ .debug_frame   0x00002150       0x58 lpspi_irq.o
+ .debug_frame   0x000021a8      0x1bc lpspi_master_driver.o
+ .debug_frame   0x00002364       0x90 lpspi_shared_function.o
+ .debug_frame   0x000023f4      0x120 lpspi_slave_driver.o
+ .debug_frame   0x00002514      0x398 lpuart_driver.o
+ .debug_frame   0x000028ac       0xf4 lpuart_hw_access.o
+ .debug_frame   0x000029a0       0x58 lpuart_irq.o
+ .debug_frame   0x000029f8       0x74 mbd_adc_irq.o
+ .debug_frame   0x00002a6c       0xb0 mbd_main.o
+ .debug_frame   0x00002b1c       0xf8 osif_baremetal.o
+ .debug_frame   0x00002c14      0x1b0 pdb_driver.o
+ .debug_frame   0x00002dc4       0xe0 pdb_hw_access.o
+ .debug_frame   0x00002ea4      0x1e4 pins_driver.o
+ .debug_frame   0x00003088       0x98 pins_port_hw_access.o
+ .debug_frame   0x00003120       0xe0 power_manager.o
+ .debug_frame   0x00003200       0xc4 power_manager_S32K1xx.o
+ .debug_frame   0x000032c4       0x58 power_smc_hw_access.o
+ .debug_frame   0x0000331c       0x50 rtGetInf.o
+ .debug_frame   0x0000336c       0x30 rtGetNaN.o
+ .debug_frame   0x0000339c       0x74 rt_nonfinite.o
+ .debug_frame   0x00003410       0x28 rtmodel.o
+ .debug_frame   0x00003438       0x44 s32k_clock_init.o
+ .debug_frame   0x0000347c      0x120 spi_aml.o
+ .debug_frame   0x0000359c       0x2c startup.o
+ .debug_frame   0x000035c8       0x40 system_S32K144.o
+ .debug_frame   0x00003608      0x168 tpp.o
+ .debug_frame   0x00003770       0xc8 tpp_ic_init.o
+ .debug_frame   0x00003838       0xbc trgmux_driver.o
+ .debug_frame   0x000038f4       0x80 trgmux_hw_access.o
+ .debug_frame   0x00003974       0xa0 wait_aml.o
+ .debug_frame   0x00003a14       0x2c C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_cos.o)
+ .debug_frame   0x00003a40       0x30 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_floor.o)
+ .debug_frame   0x00003a70       0x2c C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_sin.o)
+ .debug_frame   0x00003a9c       0x4c C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-w_fmod.o)
+ .debug_frame   0x00003ae8       0x4c C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-w_sqrt.o)
+ .debug_frame   0x00003b34       0x38 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_fmod.o)
+ .debug_frame   0x00003b6c       0x40 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_rem_pio2.o)
+ .debug_frame   0x00003bac       0x30 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-e_sqrt.o)
+ .debug_frame   0x00003bdc       0x40 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-k_cos.o)
+ .debug_frame   0x00003c1c       0x54 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-k_rem_pio2.o)
+ .debug_frame   0x00003c70       0x40 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-k_sin.o)
+ .debug_frame   0x00003cb0       0x20 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_fabs.o)
+ .debug_frame   0x00003cd0       0x20 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_matherr.o)
+ .debug_frame   0x00003cf0       0x2c C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_scalbn.o)
+ .debug_frame   0x00003d1c       0x20 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libm.a(lib_a-s_copysign.o)
+ .debug_frame   0x00003d3c       0xac c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_addsubdf3.o)
+ .debug_frame   0x00003de8       0x50 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_muldivdf3.o)
+ .debug_frame   0x00003e38       0xc4 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_cmpdf2.o)
+ .debug_frame   0x00003efc       0x20 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_unorddf2.o)
+ .debug_frame   0x00003f1c       0x24 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_fixdfsi.o)
+ .debug_frame   0x00003f40       0x24 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_arm_truncdfsf2.o)
+ .debug_frame   0x00003f64       0x2c c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_aeabi_uldivmod.o)
+ .debug_frame   0x00003f90       0x34 c:/users/diego/appdata/roaming/mathworks/matlab add-ons/toolboxes/nxp_mbdtoolbox_s32k1xx(2)/tools/gcc-6.3-arm32-eabi/bin/../lib/gcc/arm-none-eabi/6.3.1/thumb/v7e-m/fpv4-sp/hard\libgcc.a(_udivmoddi4.o)
+ .debug_frame   0x00003fc4       0x20 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-errno.o)
+ .debug_frame   0x00003fe4       0x20 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-memset.o)
+ .debug_frame   0x00004004       0x4c C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__call_atexit.o)
+ .debug_frame   0x00004050       0x38 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-fini.o)
+ .debug_frame   0x00004088       0x20 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-atexit.o)
+ .debug_frame   0x000040a8       0x30 C:/Users/diego/AppData/Roaming/MathWorks/MATLAB Add-Ons/Toolboxes/NXP_MBDToolbox_S32K1xx(2)/tools/gcc-6.3-arm32-eabi/arm-none-eabi/newlib/lib/thumb/v7e-m/fpv4-sp/hard\libc.a(lib_a-__atexit.o)
