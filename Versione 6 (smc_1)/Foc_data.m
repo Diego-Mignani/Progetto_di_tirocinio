@@ -101,93 +101,41 @@ PU_System.N_base   = pmsm.N_base;
 PU_System.T_base   = (3/2)*pmsm.p*pmsm.FluxPM*PU_System.I_base;
 PU_System.P_base   = (3/2)*PU_System.V_base*PU_System.I_base;
 
-%% Controller design // Get ballpark values!
+%% Delay calculations
 % Sensor Delays
 pmsm.Rs = pmsm.Rs + inverter.R_board;
 
-PI_params.T1 = Ts;                          %Current Sensor Delay
-PI_params.T2 = Ts_speed;           	%Speed Sensor Delay
-
-%% Delay calculations
-
-% Current Controllers
-PI_params.sigma   = 10*Ts;
-
-PI_params.Ti_i    = pmsm.Lq/pmsm.Rs;                % Current loop integrator time constant
-
-PI_params.Kp_i    = (pmsm.Lq*PU_System.I_base)/(2*PI_params.sigma);   % Kp // Current Loop        
-PI_params.Ki_i    = (pmsm.Rs*PU_System.I_base)/(2*PI_params.sigma);   % Ki // Current Loop
-
-% Speed Controller
-PI_params.delta       = 2*PI_params.sigma - 0.5*Ts;     %sec // delay for current loop to settle down
-PI_params.delay_IIR   = 0.05;
-
-PI_params.delta       = 10*(2*PI_params.sigma + Ts) + PI_params.delay_IIR + Ts_speed + PI_params.T2; % 10x delay for current loop to reach steady-state
-
-PI_params.x       = 1.2;                    % Speed controller delay factor 1< x <20
-
-PI_params.Ti_speed          = (PI_params.x^2)*PI_params.delta;                          % Speed loop integrator time constant
-PI_params.Kp_speed          = (pmsm.J/(PI_params.x*PI_params.delta))*PU_System.N_base;  % Kp // Speed Loop
-PI_params.Ki_speed          = (PI_params.Kp_speed/PI_params.Ti_speed);                  % Ki // Speed Loop    
-PI_params.Ki_speed_texas    = PI_params.Ki_speed*Ts_speed/PI_params.Kp_speed;           % Ki // Speed Loop for TI based controller
-
-
-% Field Weakening Controller
-PI_params.gamma = 0.1*PI_params.sigma;
-PI_params.Kp_fwc  = (pmsm.Lq*PU_System.I_base)/(2*PI_params.gamma);   % Kp // Current Loop        
-PI_params.Ki_fwc  = (pmsm.Rs*PU_System.I_base)/(2*PI_params.gamma);   % Ki // Current Loop
-% %updating for debug
- PI_params.Kp_i = 0.5;
- PI_params.Ki_i = 5;
-
-
 %Updating delays for simulation
-PI_params.delay_Currents    = int32(Ts/Ts_simulink);
 PI_params.delay_Position    = int32(Ts/Ts_simulink);
-PI_params.delay_Speed       = int32(Ts_speed/Ts_simulink);
-PI_params.delay_Speed1      = (PI_params.delay_IIR + 0.5*Ts)/Ts_speed;
 
 %% VARIABILI DI CONTROLLO
 
-% SMC Velocità
-lambda = 20;                 %0.2   |    20
-rho = 0.05;                %0.012   |    0.05
-epsilon = 20;                %0.05  |    20
+% SMCw Parametri di taratura del controllo
+lambda_w = 0.9;                 %0.2   |    20
+rho_w = 0.05;                %0.012   |    0.05
+epsilon_w = 0.1;                %0.05  |    20
 
+% SMCd Parametri di taratura del controllo
+lambda_Id = 0.8;                 %0.2   |    20
+rho_Id = -0.012;                %0.012   |    0.05
+epsilon_Id = 0.05;                %0.05  |    20
 
-% SMC Correnti
-lambda_I = 0.2;                 %0.2   |    20
-rho_I = 0.05;                %0.012   |    0.05
-epsilon_I = 0.05;                %0.05  |    20
-
-% Cotrollo PI Correnti
-zeta1 = 0.707;      
-zeta2 = 1;
-gamma1 = 0.65;                           %0.6
-
-
-%% TUNING PID CONTROLLER
-pmsm.Rs = pmsm.Rs + inverter.R_board;
-
-wnq = (1/(1-gamma1))*(pmsm.Rs/pmsm.Lq);
-Kcq = (2*zeta1*wnq*pmsm.Lq)-pmsm.Rs;
-t_iq = (2*zeta1*wnq*pmsm.Lq-pmsm.Rs)/(wnq^2*pmsm.Lq);
-Kiq = Kcq/t_iq;
-
-wnd = (1/(1-gamma1))*(pmsm.Rs/pmsm.Ld);
-Kcd = (1/pmsm.p)*(2*zeta1*wnd*pmsm.Ld)-pmsm.Rs;
-t_id = (1/pmsm.p)*(2*zeta1*wnd*pmsm.Ld-pmsm.Rs)/(wnd^2*pmsm.Ld);
-Kid = Kcd/t_id;
-
+% SMCq Parametri di taratura del controllo SMCq
+lambda_Iq = 0.8;                 %0.2   |    20
+rho_Iq = -0.4;                %0.012   |    0.05
+epsilon_Iq = 0.2;                %0.05  |    20
 
 %% CALCOLO INDICI INTEGRALI
-error = SpeedError.signals.values;
+try
+    error = SpeedError.signals.values;
 
-%Calcolo degli indici di prestazione
-[ISE, IAE, ITAE] = computeIndices(error, Ts_speed);
+    %Calcolo degli indici di prestazione
+    [ISE, IAE, ITAE] = computeIndices(error, Ts_speed);
+    
+    fprintf('ISE: %.4f\n', ISE);
+    fprintf('IAE: %.4f\n', IAE);
+    fprintf('ITAE: %.4f\n', ITAE);
 
-ok = carica_dati(gamma1, lambda, rho, epsilon, ISE, IAE, ITAE, error);
-
-fprintf('ISE: %.4f\n', ISE);
-fprintf('IAE: %.4f\n', IAE);
-fprintf('ITAE: %.4f\n', ITAE);
+catch
+    error = 0;
+end
