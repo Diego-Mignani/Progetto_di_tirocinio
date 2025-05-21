@@ -7,10 +7,10 @@
  *
  * Code generated for Simulink model 'Foc_model_Matlab'.
  *
- * Model version                   : 10.39
+ * Model version                   : 10.52
  * Simulink Coder version          : 24.2 (R2024b) 21-Jun-2024
  * MBDT for S32K1xx Series Version : 4.2.0 (R2016a-R2020a) 20-Jul-2020
- * C/C++ source code generated on  : Wed Dec 11 16:58:00 2024
+ * C/C++ source code generated on  : Mon May 12 12:33:29 2025
  *
  * Target selection: mbd_s32k.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -49,9 +49,10 @@ volatile uint16_T CntHallValidityIn;
                                 /* '<S2>/SigConvForSigProp_Variant_Source2_0' */
 volatile real32_T DesiredSpeed;        /* '<Root>/Data Store Memory7' */
 volatile boolean_T Enable;             /* '<Root>/Data Store Memory29' */
-volatile real32_T Epsilon;             /* '<Root>/Data Store Memory13' */
+volatile real32_T Epsilon_d;           /* '<Root>/Data Store Memory16' */
+volatile real32_T Epsilon_q;           /* '<Root>/Data Store Memory14' */
+volatile real32_T Epsilon_w;           /* '<Root>/Data Store Memory13' */
 volatile boolean_T FAULT;              /* '<Root>/I_MAX Scalling3' */
-volatile real32_T Gamma;               /* '<Root>/Data Store Memory8' */
 volatile int16_T GlobalDirection;      /* '<Root>/Data Store Memory3' */
 volatile uint32_T GlobalHallState;     /* '<Root>/Data Store Memory4' */
 volatile uint16_T GlobalSpeedCount;    /* '<Root>/Data Store Memory1' */
@@ -69,19 +70,22 @@ volatile uint16_T HallValididyInvalid; /* '<S125>/Merge' */
 volatile real32_T I_ab_afterOffset[2]; /* '<S66>/Add' */
 volatile real32_T IaOffset;            /* '<Root>/Data Store Memory5' */
 volatile real32_T IbOffset;            /* '<Root>/Data Store Memory6' */
-volatile real32_T Id_err;              /* '<S25>/Sum' */
+volatile real32_T Id_err;              /* '<S23>/Sum1' */
 volatile real32_T Id_fb;               /* '<S15>/Signal Copy1' */
 volatile real32_T Idc_afterOffset;     /* '<S141>/Sum' */
-volatile real32_T Idq_ref_PU[2];       /* '<Root>/RT11' */
-volatile real32_T Iq_err;              /* '<S26>/Sum' */
 volatile real32_T Iq_fb;               /* '<S15>/Signal Copy' */
-volatile real32_T Lambda;              /* '<Root>/Data Store Memory9' */
+volatile real32_T Iq_ref_PU;           /* '<Root>/RT11' */
+volatile real32_T Lambda_d;            /* '<Root>/Data Store Memory17' */
+volatile real32_T Lambda_q;            /* '<Root>/Data Store Memory15' */
+volatile real32_T Lambda_w;            /* '<Root>/Data Store Memory9' */
 volatile real32_T PWM[3];              /* '<S11>/Switch1' */
 volatile real32_T PWM_Duty_Cycles[3];  /* '<S12>/Gain' */
 volatile real32_T PWM_Enable;          /* '<S12>/Data Type Conversion' */
-volatile real32_T Rho;                 /* '<Root>/Data Store Memory10' */
+volatile real32_T Rho_d;               /* '<Root>/Data Store Memory18' */
+volatile real32_T Rho_q;               /* '<Root>/Data Store Memory8' */
+volatile real32_T Rho_w;               /* '<Root>/Data Store Memory10' */
 volatile uint32_T SC_PDBIF;            /* '<S138>/PDB1_ISR' */
-volatile real32_T SpeedError;          /* '<S151>/Sum' */
+volatile real32_T SpeedError;          /* '<S154>/Sum' */
 volatile real32_T SpeedMeasured;       /* '<S1>/Input Scaling' */
 volatile real32_T Speed_Ref;           /* '<S152>/Switch' */
 volatile real32_T Speed_Ref_PU;        /* '<Root>/RT2' */
@@ -495,31 +499,44 @@ void Foc_mo_CurrentControl_Reset(void)
   /* InitializeConditions for Delay: '<S76>/Delay One Step' */
   Foc_model_Matlab_DW.DelayOneStep_DSTATE = 500U;
 
-  /* SystemReset for MATLAB Function: '<S26>/MATLAB Function1' */
-  Foc_model_Matlab_DW.integral_not_empty = false;
+  /* InitializeConditions for DiscreteIntegrator: '<S22>/Discrete-Time Integrator' */
+  Foc_model_Matlab_DW.DiscreteTimeIntegrator_PREV_U = 0.0F;
 
-  /* SystemReset for MATLAB Function: '<S25>/MATLAB Function1' */
-  Foc_model_Matlab_DW.integral_not_empty_p = false;
+  /* InitializeConditions for DiscreteIntegrator: '<S23>/Discrete-Time Integrator' */
+  Foc_model_Matlab_DW.DiscreteTimeIntegrator_PREV_U_e = 0.0F;
+}
+
+/* Enable for function-call system: '<Root>/CurrentControl' */
+void Foc_m_CurrentControl_Enable(void)
+{
+  Foc_model_Matlab_DW.CurrentControl_RESET_ELAPS_T = true;
+
+  /* Enable for DiscreteIntegrator: '<S22>/Discrete-Time Integrator' */
+  Foc_model_Matlab_DW.DiscreteTimeIntegrator_SYSTEM_E = 1U;
+
+  /* Enable for DiscreteIntegrator: '<S23>/Discrete-Time Integrator' */
+  Foc_model_Matlab_DW.DiscreteTimeIntegrator_SYSTEM_a = 1U;
 }
 
 /* Output and update for function-call system: '<Root>/CurrentControl' */
 void Foc_model_Ma_CurrentControl(void)
 {
+  real32_T rtb_Add1_f;
   real32_T rtb_Add2;
   real32_T rtb_Add3;
-  real32_T rtb_Kiqtq;
   real32_T rtb_Merge1;
-  real32_T rtb_Merge1_g_tmp;
   real32_T rtb_Merge1_p;
   real32_T rtb_Merge_a;
-  real32_T rtb_Sum_b;
-  real32_T tmp;
-  real32_T wnq;
+  real32_T rtb_Sum4;
+  real32_T rtb_Switch_c_idx_0;
+  real32_T rtb_Switch_c_idx_0_tmp;
+  real32_T u_n;
+  uint32_T CurrentControl_ELAPS_T;
   uint32_T rtb_Add1;
   uint16_T rtb_DataStoreRead5;
   boolean_T OR;
   boolean_T rtb_Compare;
-  boolean_T tmp_0;
+  boolean_T tmp;
 
   /* user code (Output function Body) */
   {
@@ -529,6 +546,16 @@ void Foc_model_Ma_CurrentControl(void)
     tmp1 = profiler_get_cnt();
 
     /* Start Profiling This Function.*/
+    if (Foc_model_Matlab_DW.CurrentControl_RESET_ELAPS_T) {
+      CurrentControl_ELAPS_T = 0U;
+    } else {
+      CurrentControl_ELAPS_T = Foc_model_Matlab_M->Timing.clockTick1 -
+        Foc_model_Matlab_DW.CurrentControl_PREV_T;
+    }
+
+    Foc_model_Matlab_DW.CurrentControl_PREV_T =
+      Foc_model_Matlab_M->Timing.clockTick1;
+    Foc_model_Matlab_DW.CurrentControl_RESET_ELAPS_T = false;
 
     /* Outputs for Atomic SubSystem: '<S65>/Atomic Hall Reading' */
     /* S-Function (register_s32k_read): '<S67>/Read_Register' */
@@ -1016,7 +1043,7 @@ void Foc_model_Ma_CurrentControl(void)
       /* Sum: '<S114>/Add' incorporates:
        *  Constant: '<S114>/Constant'
        */
-      rtb_Merge1_p = (ThetaHalls + 1.0F) - 0.7061F;
+      rtb_Add1_f = (ThetaHalls + 1.0F) - 0.7061F;
 
       /* End of Outputs for SubSystem: '<S112>/If Action Subsystem' */
     } else {
@@ -1024,7 +1051,7 @@ void Foc_model_Ma_CurrentControl(void)
        *  ActionPort: '<S115>/Action Port'
        */
       /* Sum: '<S115>/Add' */
-      rtb_Merge1_p = ThetaHalls - 0.7061F;
+      rtb_Add1_f = ThetaHalls - 0.7061F;
 
       /* End of Outputs for SubSystem: '<S112>/If Action Subsystem1' */
     }
@@ -1034,7 +1061,7 @@ void Foc_model_Ma_CurrentControl(void)
     /* Sum: '<S113>/Add' incorporates:
      *  Rounding: '<S113>/Floor'
      */
-    rtb_Merge1 = rtb_Merge1_p - (real32_T)floor(rtb_Merge1_p);
+    rtb_Merge1_p = rtb_Add1_f - (real32_T)floor(rtb_Add1_f);
 
     /* Sum: '<S66>/Add' incorporates:
      *  DataStoreRead: '<S118>/Data Store Read'
@@ -1046,16 +1073,29 @@ void Foc_model_Ma_CurrentControl(void)
     I_ab_afterOffset[1] = IbOffset - ADC_B;
 
     /* Gain: '<S66>/Multiply' */
-    rtb_Sum_b = 0.00048828125F * I_ab_afterOffset[0];
+    u_n = 0.00048828125F * I_ab_afterOffset[0];
     rtb_Add3 = 0.00048828125F * I_ab_afterOffset[1];
 
     /* Outputs for Atomic SubSystem: '<S20>/Two phase CRL wrap' */
     /* Gain: '<S21>/one_by_sqrt3' incorporates:
      *  Sum: '<S21>/a_plus_2b'
      */
-    rtb_Add3 = ((rtb_Sum_b + rtb_Add3) + rtb_Add3) * 0.577350259F;
+    rtb_Add3 = ((u_n + rtb_Add3) + rtb_Add3) * 0.577350259F;
 
     /* End of Outputs for SubSystem: '<S20>/Two phase CRL wrap' */
+
+    /* DiscreteIntegrator: '<S22>/Discrete-Time Integrator' */
+    if (Foc_model_Matlab_DW.DiscreteTimeIntegrator_SYSTEM_E != 0) {
+      /* DiscreteIntegrator: '<S22>/Discrete-Time Integrator' */
+      rtb_Merge1 = Foc_model_Matlab_DW.DiscreteTimeIntegrator_DSTATE_d;
+    } else {
+      /* DiscreteIntegrator: '<S22>/Discrete-Time Integrator' */
+      rtb_Merge1 = 0.0001F * (real32_T)CurrentControl_ELAPS_T
+        * Foc_model_Matlab_DW.DiscreteTimeIntegrator_PREV_U +
+        Foc_model_Matlab_DW.DiscreteTimeIntegrator_DSTATE_d;
+    }
+
+    /* End of DiscreteIntegrator: '<S22>/Discrete-Time Integrator' */
 
     /* If: '<S51>/If' incorporates:
      *  Constant: '<S53>/Constant'
@@ -1068,23 +1108,24 @@ void Foc_model_Ma_CurrentControl(void)
      *  Sum: '<S54>/Sum'
      *  Sum: '<S55>/Sum'
      */
-    if (rtb_Merge1 < 0.0F) {
+    if (rtb_Merge1_p < 0.0F) {
       /* Outputs for IfAction SubSystem: '<S51>/If Action Subsystem' incorporates:
        *  ActionPort: '<S54>/Action Port'
        */
-      rtb_Merge1 -= (real32_T)(int16_T)(real32_T)floor(rtb_Merge1);
+      rtb_Switch_c_idx_0 = rtb_Merge1_p - (real32_T)(int16_T)(real32_T)floor
+        (rtb_Merge1_p);
 
       /* End of Outputs for SubSystem: '<S51>/If Action Subsystem' */
     } else {
       /* Outputs for IfAction SubSystem: '<S51>/If Action Subsystem1' incorporates:
        *  ActionPort: '<S55>/Action Port'
        */
-      rtb_Merge1 -= (real32_T)(int16_T)rtb_Merge1;
+      rtb_Switch_c_idx_0 = rtb_Merge1_p - (real32_T)(int16_T)rtb_Merge1_p;
 
       /* End of Outputs for SubSystem: '<S51>/If Action Subsystem1' */
     }
 
-    rtb_Merge1_p = 800.0F * rtb_Merge1;
+    rtb_Add1_f = 800.0F * rtb_Switch_c_idx_0;
 
     /* End of If: '<S51>/If' */
 
@@ -1092,14 +1133,14 @@ void Foc_model_Ma_CurrentControl(void)
      *  DataTypeConversion: '<S49>/Data Type Conversion1'
      *  DataTypeConversion: '<S49>/Get_Integer'
      */
-    rtb_Add2 = rtb_Merge1_p - (real32_T)(uint16_T)rtb_Merge1_p;
+    rtb_Add2 = rtb_Add1_f - (real32_T)(uint16_T)rtb_Add1_f;
 
     /* Selector: '<S49>/Lookup' incorporates:
      *  Constant: '<S49>/sine_table_values'
      *  DataTypeConversion: '<S49>/Get_Integer'
      */
-    rtb_Merge1 = Foc_model_Matlab_ConstP.sine_table_values_Value[(uint16_T)
-      rtb_Merge1_p];
+    rtb_Merge1_p = Foc_model_Matlab_ConstP.sine_table_values_Value[(uint16_T)
+      rtb_Add1_f];
 
     /* Sum: '<S50>/Sum4' incorporates:
      *  Constant: '<S49>/offset'
@@ -1110,8 +1151,9 @@ void Foc_model_Ma_CurrentControl(void)
      *  Sum: '<S49>/Sum'
      *  Sum: '<S50>/Sum3'
      */
-    rtb_Merge1 += (Foc_model_Matlab_ConstP.sine_table_values_Value[(int32_T)
-                   ((uint16_T)rtb_Merge1_p + 1U)] - rtb_Merge1) * rtb_Add2;
+    rtb_Sum4 = (Foc_model_Matlab_ConstP.sine_table_values_Value[(int32_T)
+                ((uint16_T)rtb_Add1_f + 1U)] - rtb_Merge1_p) * rtb_Add2 +
+      rtb_Merge1_p;
 
     /* Selector: '<S49>/Lookup' incorporates:
      *  Constant: '<S49>/offset'
@@ -1120,8 +1162,8 @@ void Foc_model_Ma_CurrentControl(void)
      *  Sum: '<S49>/Sum'
      *  Sum: '<S50>/Sum5'
      */
-    rtb_Merge1_g_tmp = Foc_model_Matlab_ConstP.sine_table_values_Value[(int32_T)
-      ((uint16_T)rtb_Merge1_p + 200U)];
+    rtb_Merge1_p = Foc_model_Matlab_ConstP.sine_table_values_Value[(int32_T)
+      ((uint16_T)rtb_Add1_f + 200U)];
 
     /* Sum: '<S50>/Sum6' incorporates:
      *  Constant: '<S49>/offset'
@@ -1132,89 +1174,9 @@ void Foc_model_Ma_CurrentControl(void)
      *  Sum: '<S49>/Sum'
      *  Sum: '<S50>/Sum5'
      */
-    rtb_Merge1_p = (Foc_model_Matlab_ConstP.sine_table_values_Value[(int32_T)
-                    ((uint16_T)rtb_Merge1_p + 201U)] - rtb_Merge1_g_tmp) *
-      rtb_Add2 + rtb_Merge1_g_tmp;
-
-    /* Outputs for Atomic SubSystem: '<S17>/Two inputs CRL' */
-    /* Outputs for Atomic SubSystem: '<S20>/Two phase CRL wrap' */
-    /* SignalConversion: '<S15>/Signal Copy' incorporates:
-     *  AlgorithmDescriptorDelegate generated from: '<S21>/a16'
-     *  Product: '<S47>/asin'
-     *  Product: '<S47>/bcos'
-     *  Sum: '<S47>/sum_Qs'
-     */
-    Iq_fb = rtb_Add3 * rtb_Merge1_p - rtb_Sum_b * rtb_Merge1;
-
-    /* End of Outputs for SubSystem: '<S20>/Two phase CRL wrap' */
-    /* End of Outputs for SubSystem: '<S17>/Two inputs CRL' */
-
-    /* Sum: '<S26>/Sum' */
-    Iq_err = Idq_ref_PU[1] - Iq_fb;
-
-    /* MATLAB Function: '<S26>/MATLAB Function' incorporates:
-     *  Constant: '<S26>/Constant'
-     *  Constant: '<S26>/Constant1'
-     *  DataStoreRead: '<S26>/Data Store Read4'
-     *  MATLAB Function: '<S25>/MATLAB Function'
-     */
-    /* MATLAB Function 'CurrentControl/Control_System/Current_Controllers/PI_Controller_Iq/MATLAB Function': '<S43>:1' */
-    /* '<S43>:1:3' */
-    rtb_Merge1_g_tmp = 1.0F / (1.0F - Gamma);
-    wnq = rtb_Merge1_g_tmp * 1463.60156F;
-
-    /* '<S43>:1:4' */
-    rtb_Add2 = 1.414F * wnq * 0.000435F - 0.636666656F;
-
-    /* '<S43>:1:5' */
-    wnq = rtb_Add2 / (wnq * wnq * 0.000435F);
-
-    /* '<S43>:1:6' */
-    /* '<S43>:1:7' */
-    rtb_Kiqtq = rtb_Add2 / wnq * wnq;
-
-    /* Logic: '<S26>/Logical Operator' incorporates:
-     *  DataStoreRead: '<S26>/Data Store Read1'
-     *  Logic: '<S25>/Logical Operator'
-     */
-    /* MATLAB Function 'CurrentControl/Control_System/Current_Controllers/PI_Controller_Iq/MATLAB Function1': '<S44>:1' */
-    /* '<S44>:1:6' */
-    /* '<S44>:1:7' */
-    /* '<S44>:1:8' */
-    /* '<S44>:1:9' */
-    /* '<S44>:1:10' */
-    /* '<S44>:1:11' */
-    tmp_0 = !Enable;
-
-    /* MATLAB Function: '<S26>/MATLAB Function1' incorporates:
-     *  Constant: '<S26>/Kp1'
-     *  Constant: '<S26>/Kp2'
-     *  Logic: '<S26>/Logical Operator'
-     *  MATLAB Function: '<S26>/MATLAB Function'
-     */
-    if ((!Foc_model_Matlab_DW.integral_not_empty) || tmp_0) {
-      /* '<S44>:1:14' */
-      /* '<S44>:1:15' */
-      Foc_model_Matlab_DW.integral = 0.0F;
-      Foc_model_Matlab_DW.integral_not_empty = true;
-    }
-
-    /* '<S44>:1:19' */
-    wnq = rtb_Add2 * Iq_err;
-    tmp = rtb_Kiqtq * Foc_model_Matlab_DW.integral + wnq;
-    if (((tmp < 1.0F) && (tmp > -1.0F)) || ((tmp >= 1.0F) && (Iq_err < 0.0F)) ||
-        ((tmp <= -1.0F) && (Iq_err > 0.0F))) {
-      /* '<S44>:1:22' */
-      /* '<S44>:1:23' */
-      /* '<S44>:1:24' */
-      /* '<S44>:1:25' */
-      Foc_model_Matlab_DW.integral += Iq_err;
-    }
-
-    /* Gain: '<S24>/Gain1' */
-    /* '<S44>:1:29' */
-    /* '<S44>:1:32' */
-    rtb_Add2 = 2.0F * rtb_Merge_a;
+    rtb_Add1_f = (Foc_model_Matlab_ConstP.sine_table_values_Value[(int32_T)
+                  ((uint16_T)rtb_Add1_f + 201U)] - rtb_Merge1_p) * rtb_Add2 +
+      rtb_Merge1_p;
 
     /* Outputs for Atomic SubSystem: '<S17>/Two inputs CRL' */
     /* Outputs for Atomic SubSystem: '<S20>/Two phase CRL wrap' */
@@ -1224,137 +1186,193 @@ void Foc_model_Ma_CurrentControl(void)
      *  Product: '<S47>/bsin'
      *  Sum: '<S47>/sum_Ds'
      */
-    Id_fb = rtb_Sum_b * rtb_Merge1_p + rtb_Add3 * rtb_Merge1;
+    Id_fb = u_n * rtb_Add1_f + rtb_Add3 * rtb_Sum4;
+
+    /* SignalConversion: '<S15>/Signal Copy' incorporates:
+     *  AlgorithmDescriptorDelegate generated from: '<S21>/a16'
+     *  Product: '<S47>/asin'
+     *  Product: '<S47>/bcos'
+     *  Sum: '<S47>/sum_Qs'
+     */
+    Iq_fb = rtb_Add3 * rtb_Add1_f - u_n * rtb_Sum4;
 
     /* End of Outputs for SubSystem: '<S20>/Two phase CRL wrap' */
     /* End of Outputs for SubSystem: '<S17>/Two inputs CRL' */
 
-    /* MATLAB Function: '<S26>/MATLAB Function1' */
-    rtb_Sum_b = rtb_Kiqtq * Foc_model_Matlab_DW.integral + wnq;
-    if (!(rtb_Sum_b >= -1.0F)) {
-      rtb_Sum_b = -1.0F;
+    /* MATLAB Function: '<S22>/MATLAB Function2' incorporates:
+     *  DataStoreRead: '<S28>/Data Store Read2'
+     *  DataStoreRead: '<S28>/Data Store Read3'
+     *  DataStoreRead: '<S28>/Data Store Read4'
+     *  SignalConversion generated from: '<S27>/ SFunction '
+     */
+    /* MATLAB Function 'CurrentControl/Control_System/Current_Controllers/Controller_Id/MATLAB Function2': '<S27>:1' */
+    /* '<S27>:1:4' */
+    /* '<S27>:1:5' */
+    /* '<S27>:1:6' */
+    /* '<S27>:1:10' */
+    rtb_Add3 = Lambda_d * rtb_Merge1 + Id_fb;
+
+    /* '<S27>:1:13' */
+    if ((real32_T)fabs(rtb_Add3) > Epsilon_d) {
+      /* '<S27>:1:15' */
+      /* '<S27>:1:16' */
+      if (rtIsNaNF(rtb_Add3)) {
+        rtb_Switch_c_idx_0 = (rtNaNF);
+      } else if (rtb_Add3 < 0.0F) {
+        rtb_Switch_c_idx_0 = -1.0F;
+      } else {
+        rtb_Switch_c_idx_0 = (real32_T)(rtb_Add3 > 0.0F);
+      }
+
+      u_n = -Rho_d * rtb_Switch_c_idx_0;
+    } else {
+      /* '<S27>:1:18' */
+      u_n = rtb_Add3 / Epsilon_d * -Rho_d;
     }
 
-    if (!(rtb_Sum_b <= 1.0F)) {
-      rtb_Sum_b = 1.0F;
+    /* DiscreteIntegrator: '<S23>/Discrete-Time Integrator' */
+    /* '<S27>:1:21' */
+    /* '<S27>:1:25' */
+    /* '<S27>:1:27' */
+    if (Foc_model_Matlab_DW.DiscreteTimeIntegrator_SYSTEM_a != 0) {
+      /* DiscreteIntegrator: '<S23>/Discrete-Time Integrator' */
+      rtb_Merge1_p = Foc_model_Matlab_DW.DiscreteTimeIntegrator_DSTAT_dm;
+    } else {
+      /* DiscreteIntegrator: '<S23>/Discrete-Time Integrator' */
+      rtb_Merge1_p = 0.0001F * (real32_T)CurrentControl_ELAPS_T
+        * Foc_model_Matlab_DW.DiscreteTimeIntegrator_PREV_U_e +
+        Foc_model_Matlab_DW.DiscreteTimeIntegrator_DSTAT_dm;
+    }
+
+    /* End of DiscreteIntegrator: '<S23>/Discrete-Time Integrator' */
+
+    /* Gain: '<S23>/Gain' incorporates:
+     *  Gain: '<S26>/Gain1'
+     */
+    rtb_Add2 = 2.0F * rtb_Merge_a;
+
+    /* Sum: '<S23>/Sum1' */
+    Id_err = Iq_ref_PU - Iq_fb;
+
+    /* MATLAB Function: '<S23>/MATLAB Function2' incorporates:
+     *  Constant: '<S23>/Constant10'
+     *  Constant: '<S23>/Constant8'
+     *  Constant: '<S23>/Constant9'
+     *  DataStoreRead: '<S30>/Data Store Read2'
+     *  DataStoreRead: '<S30>/Data Store Read3'
+     *  DataStoreRead: '<S30>/Data Store Read4'
+     *  Gain: '<S23>/Gain'
+     *  Product: '<S26>/Product'
+     *  SignalConversion generated from: '<S29>/ SFunction '
+     */
+    /* MATLAB Function 'CurrentControl/Control_System/Current_Controllers/Controller_Iq/MATLAB Function2': '<S29>:1' */
+    /* '<S29>:1:2' */
+    /* '<S29>:1:3' */
+    /* '<S29>:1:4' */
+    /* '<S29>:1:9' */
+    rtb_Add3 = Lambda_q * rtb_Merge1_p + Id_err;
+    if ((real32_T)fabs(rtb_Add3) > Epsilon_q) {
+      /* '<S29>:1:12' */
+      /* '<S29>:1:13' */
+      if (rtIsNaNF(rtb_Add3)) {
+        rtb_Switch_c_idx_0 = (rtNaNF);
+      } else if (rtb_Add3 < 0.0F) {
+        rtb_Switch_c_idx_0 = -1.0F;
+      } else {
+        rtb_Switch_c_idx_0 = (real32_T)(rtb_Add3 > 0.0F);
+      }
+
+      rtb_Add3 = -Rho_q * rtb_Switch_c_idx_0;
+    } else {
+      /* '<S29>:1:15' */
+      rtb_Add3 = rtb_Add3 / Epsilon_q * -Rho_q;
+    }
+
+    /* '<S29>:1:19' */
+    /* '<S29>:1:20' */
+    /* '<S29>:1:24' */
+    /* '<S29>:1:26' */
+    rtb_Switch_c_idx_0_tmp = rtb_Add2 * Id_fb;
+    rtb_Switch_c_idx_0 = ((rtb_Switch_c_idx_0_tmp - Lambda_q * Id_err) *
+                          0.000435F + (0.598333359F * Iq_fb + 0.00799426902F *
+      rtb_Add2)) + rtb_Add3;
+    if (!(rtb_Switch_c_idx_0 >= -1.0F)) {
+      rtb_Switch_c_idx_0 = -1.0F;
+    }
+
+    if (!(rtb_Switch_c_idx_0 <= 1.0F)) {
+      rtb_Switch_c_idx_0 = 1.0F;
     }
 
     /* Sum: '<S15>/Sum1' incorporates:
-     *  Constant: '<S24>/Constant4'
-     *  DataTypeConversion: '<S24>/Cast To Single'
-     *  Gain: '<S24>/Gain'
-     *  MATLAB Function: '<S26>/MATLAB Function1'
-     *  Product: '<S24>/Product'
-     *  Product: '<S24>/Product1'
+     *  Constant: '<S26>/Constant4'
+     *  DataTypeConversion: '<S26>/Cast To Single'
+     *  Gain: '<S26>/Gain'
+     *  MATLAB Function: '<S23>/MATLAB Function2'
+     *  Product: '<S26>/Product1'
      */
-    rtb_Add3 = ((real32_T)(0.0079942689836159844 * rtb_Add2) + rtb_Sum_b) +
-      rtb_Add2 * Id_fb * 0.000375F;
+    rtb_Add3 = ((real32_T)(0.0079942689836159844 * rtb_Add2) +
+                rtb_Switch_c_idx_0) + rtb_Switch_c_idx_0_tmp * 0.000375F;
 
-    /* Sum: '<S25>/Sum' */
-    Id_err = Idq_ref_PU[0] - Id_fb;
-
-    /* MATLAB Function: '<S25>/MATLAB Function' incorporates:
-     *  Constant: '<S25>/Constant'
-     *  Constant: '<S25>/Constant1'
+    /* MATLAB Function: '<S22>/MATLAB Function2' incorporates:
+     *  Constant: '<S22>/Constant8'
+     *  Constant: '<S22>/Constant9'
+     *  DataStoreRead: '<S28>/Data Store Read2'
+     *  Gain: '<S22>/Gain'
+     *  Product: '<S25>/Product'
+     *  SignalConversion generated from: '<S27>/ SFunction '
      */
-    /* MATLAB Function 'CurrentControl/Control_System/Current_Controllers/PI_Controller_Id/MATLAB Function': '<S41>:1' */
-    /* '<S41>:1:3' */
-    rtb_Add2 = rtb_Merge1_g_tmp * 1697.77783F;
-
-    /* '<S41>:1:4' */
-    rtb_Sum_b = 1.414F * rtb_Add2 * 0.000375F - 0.636666656F;
-
-    /* '<S41>:1:5' */
-    rtb_Add2 = rtb_Sum_b / (rtb_Add2 * rtb_Add2 * 0.000375F);
-
-    /* '<S41>:1:6' */
-    /* '<S41>:1:7' */
-    rtb_Add2 *= rtb_Sum_b / rtb_Add2;
-
-    /* MATLAB Function: '<S25>/MATLAB Function1' incorporates:
-     *  Constant: '<S25>/Ki1'
-     *  Constant: '<S25>/Ki2'
-     *  MATLAB Function: '<S25>/MATLAB Function'
-     */
-    /* MATLAB Function 'CurrentControl/Control_System/Current_Controllers/PI_Controller_Id/MATLAB Function1': '<S42>:1' */
-    /* '<S42>:1:6' */
-    /* '<S42>:1:7' */
-    /* '<S42>:1:8' */
-    /* '<S42>:1:9' */
-    /* '<S42>:1:10' */
-    /* '<S42>:1:11' */
-    if ((!Foc_model_Matlab_DW.integral_not_empty_p) || tmp_0) {
-      /* '<S42>:1:14' */
-      /* '<S42>:1:15' */
-      Foc_model_Matlab_DW.integral_j = 0.0F;
-      Foc_model_Matlab_DW.integral_not_empty_p = true;
+    rtb_Switch_c_idx_0_tmp = 2.0F * rtb_Merge_a * Iq_fb;
+    rtb_Switch_c_idx_0 = (0.598333359F * Id_fb - (Lambda_d * Id_fb +
+      rtb_Switch_c_idx_0_tmp) * 0.000375F) + u_n;
+    if (!(rtb_Switch_c_idx_0 >= -1.0F)) {
+      rtb_Switch_c_idx_0 = -1.0F;
     }
 
-    /* '<S42>:1:19' */
-    wnq = rtb_Sum_b * Id_err;
-    tmp = rtb_Add2 * Foc_model_Matlab_DW.integral_j + wnq;
-    if (((tmp < 1.0F) && (tmp > -1.0F)) || ((tmp >= 1.0F) && (Id_err < 0.0F)) ||
-        ((tmp <= -1.0F) && (Id_err > 0.0F))) {
-      /* '<S42>:1:22' */
-      /* '<S42>:1:23' */
-      /* '<S42>:1:24' */
-      /* '<S42>:1:25' */
-      Foc_model_Matlab_DW.integral_j += Id_err;
-    }
-
-    /* '<S42>:1:29' */
-    /* '<S42>:1:32' */
-    rtb_Sum_b = rtb_Add2 * Foc_model_Matlab_DW.integral_j + wnq;
-    if (!(rtb_Sum_b >= -1.0F)) {
-      rtb_Sum_b = -1.0F;
-    }
-
-    if (!(rtb_Sum_b <= 1.0F)) {
-      rtb_Sum_b = 1.0F;
+    if (!(rtb_Switch_c_idx_0 <= 1.0F)) {
+      rtb_Switch_c_idx_0 = 1.0F;
     }
 
     /* Sum: '<S15>/Sum' incorporates:
-     *  Gain: '<S23>/Gain'
-     *  Gain: '<S23>/Gain1'
-     *  MATLAB Function: '<S25>/MATLAB Function1'
-     *  Product: '<S23>/Product'
+     *  Gain: '<S25>/Gain'
+     *  MATLAB Function: '<S22>/MATLAB Function2'
      */
-    rtb_Sum_b -= 2.0F * rtb_Merge_a * Iq_fb * 0.000435F;
+    u_n = rtb_Switch_c_idx_0 - rtb_Switch_c_idx_0_tmp * 0.000435F;
 
-    /* Sum: '<S30>/Sum1' incorporates:
-     *  Product: '<S30>/Product'
-     *  Product: '<S30>/Product1'
+    /* Sum: '<S34>/Sum1' incorporates:
+     *  Product: '<S34>/Product'
+     *  Product: '<S34>/Product1'
      */
-    rtb_Add2 = rtb_Sum_b * rtb_Sum_b + rtb_Add3 * rtb_Add3;
+    rtb_Add2 = u_n * u_n + rtb_Add3 * rtb_Add3;
 
-    /* Outputs for IfAction SubSystem: '<S22>/D-Q Equivalence' incorporates:
-     *  ActionPort: '<S27>/Action Port'
+    /* Outputs for IfAction SubSystem: '<S24>/D-Q Equivalence' incorporates:
+     *  ActionPort: '<S31>/Action Port'
      */
-    /* If: '<S27>/If' incorporates:
-     *  If: '<S22>/If'
-     *  RelationalOperator: '<S27>/Relational Operator'
+    /* If: '<S31>/If' incorporates:
+     *  If: '<S24>/If'
+     *  RelationalOperator: '<S31>/Relational Operator'
      */
     if (rtb_Add2 > 0.9025F) {
-      /* Outputs for IfAction SubSystem: '<S27>/Limiter' incorporates:
-       *  ActionPort: '<S31>/Action Port'
+      /* Outputs for IfAction SubSystem: '<S31>/Limiter' incorporates:
+       *  ActionPort: '<S35>/Action Port'
        */
-      /* Sqrt: '<S31>/Square Root' */
+      /* Sqrt: '<S35>/Square Root' */
       rtb_Add2 = (real32_T)sqrt(rtb_Add2);
 
-      /* Product: '<S31>/Divide' incorporates:
-       *  Constant: '<S29>/Constant3'
-       *  Product: '<S31>/Product'
-       *  Switch: '<S29>/Switch'
-       *  Switch: '<S31>/Switch'
+      /* Product: '<S35>/Divide' incorporates:
+       *  Constant: '<S33>/Constant3'
+       *  Product: '<S35>/Product'
+       *  Switch: '<S33>/Switch'
+       *  Switch: '<S35>/Switch'
        */
-      rtb_Sum_b = rtb_Sum_b * 0.95F / rtb_Add2;
+      u_n = u_n * 0.95F / rtb_Add2;
       rtb_Add3 = rtb_Add3 * 0.95F / rtb_Add2;
 
-      /* End of Outputs for SubSystem: '<S27>/Limiter' */
+      /* End of Outputs for SubSystem: '<S31>/Limiter' */
     }
 
-    /* End of If: '<S27>/If' */
-    /* End of Outputs for SubSystem: '<S22>/D-Q Equivalence' */
+    /* End of If: '<S31>/If' */
+    /* End of Outputs for SubSystem: '<S24>/D-Q Equivalence' */
 
     /* Outputs for Atomic SubSystem: '<S16>/Two inputs CRL' */
     /* Switch: '<S46>/Switch' incorporates:
@@ -1362,49 +1380,48 @@ void Foc_model_Ma_CurrentControl(void)
      *  Product: '<S45>/qsin'
      *  Sum: '<S45>/sum_alpha'
      */
-    wnq = rtb_Sum_b * rtb_Merge1_p - rtb_Add3 * rtb_Merge1;
+    rtb_Switch_c_idx_0 = u_n * rtb_Add1_f - rtb_Add3 * rtb_Sum4;
 
     /* Gain: '<S63>/one_by_two' incorporates:
      *  AlgorithmDescriptorDelegate generated from: '<S45>/a16'
      */
-    rtb_Add2 = 0.5F * wnq;
+    rtb_Add2 = 0.5F * rtb_Switch_c_idx_0;
 
     /* Gain: '<S63>/sqrt3_by_two' incorporates:
      *  Product: '<S45>/dsin'
      *  Product: '<S45>/qcos'
      *  Sum: '<S45>/sum_beta'
      */
-    rtb_Merge1 = (rtb_Add3 * rtb_Merge1_p + rtb_Sum_b * rtb_Merge1) *
-      0.866025388F;
+    rtb_Sum4 = (rtb_Add3 * rtb_Add1_f + u_n * rtb_Sum4) * 0.866025388F;
 
     /* End of Outputs for SubSystem: '<S16>/Two inputs CRL' */
 
     /* Sum: '<S63>/add_b' */
-    rtb_Merge1_p = rtb_Merge1 - rtb_Add2;
+    rtb_Add1_f = rtb_Sum4 - rtb_Add2;
 
     /* Sum: '<S63>/add_c' */
-    rtb_Add2 = (0.0F - rtb_Add2) - rtb_Merge1;
+    rtb_Add2 = (0.0F - rtb_Add2) - rtb_Sum4;
 
     /* MinMax: '<S60>/Max' incorporates:
      *  AlgorithmDescriptorDelegate generated from: '<S45>/a16'
      *  MinMax: '<S60>/Min'
      */
-    tmp_0 = rtIsNaNF(rtb_Merge1_p);
+    tmp = rtIsNaNF(rtb_Add1_f);
 
     /* Outputs for Atomic SubSystem: '<S16>/Two inputs CRL' */
-    if ((wnq >= rtb_Merge1_p) || tmp_0) {
-      rtb_Merge1 = wnq;
+    if ((rtb_Switch_c_idx_0 >= rtb_Add1_f) || tmp) {
+      rtb_Sum4 = rtb_Switch_c_idx_0;
     } else {
-      rtb_Merge1 = rtb_Merge1_p;
+      rtb_Sum4 = rtb_Add1_f;
     }
 
     /* MinMax: '<S60>/Min' incorporates:
      *  AlgorithmDescriptorDelegate generated from: '<S45>/a16'
      */
-    if ((wnq <= rtb_Merge1_p) || tmp_0) {
-      rtb_Sum_b = wnq;
+    if ((rtb_Switch_c_idx_0 <= rtb_Add1_f) || tmp) {
+      u_n = rtb_Switch_c_idx_0;
     } else {
-      rtb_Sum_b = rtb_Merge1_p;
+      u_n = rtb_Add1_f;
     }
 
     /* End of Outputs for SubSystem: '<S16>/Two inputs CRL' */
@@ -1412,14 +1429,14 @@ void Foc_model_Ma_CurrentControl(void)
     /* MinMax: '<S60>/Max' incorporates:
      *  MinMax: '<S60>/Min'
      */
-    tmp_0 = !rtIsNaNF(rtb_Add2);
-    if ((!(rtb_Merge1 >= rtb_Add2)) && tmp_0) {
-      rtb_Merge1 = rtb_Add2;
+    tmp = !rtIsNaNF(rtb_Add2);
+    if ((!(rtb_Sum4 >= rtb_Add2)) && tmp) {
+      rtb_Sum4 = rtb_Add2;
     }
 
     /* MinMax: '<S60>/Min' */
-    if ((!(rtb_Sum_b <= rtb_Add2)) && tmp_0) {
-      rtb_Sum_b = rtb_Add2;
+    if ((!(u_n <= rtb_Add2)) && tmp) {
+      u_n = rtb_Add2;
     }
 
     /* Gain: '<S60>/one_by_two' incorporates:
@@ -1427,7 +1444,7 @@ void Foc_model_Ma_CurrentControl(void)
      *  MinMax: '<S60>/Min'
      *  Sum: '<S60>/Add'
      */
-    rtb_Add3 = (rtb_Merge1 + rtb_Sum_b) * -0.5F;
+    rtb_Add3 = (rtb_Sum4 + u_n) * -0.5F;
 
     /* Outputs for Atomic SubSystem: '<S16>/Two inputs CRL' */
     /* Gain: '<S12>/Gain' incorporates:
@@ -1439,10 +1456,11 @@ void Foc_model_Ma_CurrentControl(void)
      *  Sum: '<S59>/Add2'
      *  Sum: '<S59>/Add3'
      */
-    PWM_Duty_Cycles[0] = ((wnq + rtb_Add3) * 1.15470052F + 1.0F) * 0.5F;
+    PWM_Duty_Cycles[0] = ((rtb_Switch_c_idx_0 + rtb_Add3) * 1.15470052F + 1.0F) *
+      0.5F;
 
     /* End of Outputs for SubSystem: '<S16>/Two inputs CRL' */
-    PWM_Duty_Cycles[1] = ((rtb_Merge1_p + rtb_Add3) * 1.15470052F + 1.0F) * 0.5F;
+    PWM_Duty_Cycles[1] = ((rtb_Add1_f + rtb_Add3) * 1.15470052F + 1.0F) * 0.5F;
     PWM_Duty_Cycles[2] = ((rtb_Add3 + rtb_Add2) * 1.15470052F + 1.0F) * 0.5F;
 
     /* DataTypeConversion: '<S12>/Data Type Conversion' incorporates:
@@ -1506,6 +1524,16 @@ void Foc_model_Ma_CurrentControl(void)
 
     /* End of Update for Delay: '<S76>/Delay One Step' */
 
+    /* Update for DiscreteIntegrator: '<S22>/Discrete-Time Integrator' */
+    Foc_model_Matlab_DW.DiscreteTimeIntegrator_SYSTEM_E = 0U;
+    Foc_model_Matlab_DW.DiscreteTimeIntegrator_DSTATE_d = rtb_Merge1;
+    Foc_model_Matlab_DW.DiscreteTimeIntegrator_PREV_U = Id_fb;
+
+    /* Update for DiscreteIntegrator: '<S23>/Discrete-Time Integrator' */
+    Foc_model_Matlab_DW.DiscreteTimeIntegrator_SYSTEM_a = 0U;
+    Foc_model_Matlab_DW.DiscreteTimeIntegrator_DSTAT_dm = rtb_Merge1_p;
+    Foc_model_Matlab_DW.DiscreteTimeIntegrator_PREV_U_e = Id_err;
+
     /* user code (Output function Trailer) */
 
     /* Profile Code : Compute function execution time in us. */
@@ -1547,45 +1575,47 @@ void Foc_model_Matl_SpeedControl(void)
     /* End of Switch: '<S152>/Switch' */
     /* End of Outputs for SubSystem: '<S8>/Speed_Ref_Selector' */
 
-    /* Constant: '<S8>/Id_ref' */
-    Foc_model_Matlab_B.Id_ref = 0.0F;
+    /* Outputs for Atomic SubSystem: '<S8>/Contrloller_wr' */
+    /* Sum: '<S154>/Sum' */
+    SpeedError = Speed_fb - Speed_Ref;
 
-    /* Outputs for Atomic SubSystem: '<S8>/PI_Controller_Speed' */
-    /* SampleTimeMath: '<S153>/TSamp'
+    /* SampleTimeMath: '<S156>/TSamp'
      *
-     * About '<S153>/TSamp':
+     * About '<S156>/TSamp':
      *  y = u * K where K = 1 / ( w * Ts )
      *   */
     rtb_TSamp = Speed_Ref * 1000.0F;
-
-    /* Sum: '<S151>/Sum' */
-    SpeedError = Speed_fb - Speed_Ref;
 
     /* MATLAB Function: '<S151>/MATLAB Function' incorporates:
      *  Constant: '<S151>/Constant10'
      *  Constant: '<S151>/Constant8'
      *  Constant: '<S151>/Constant9'
-     *  DataStoreRead: '<S151>/Data Store Read2'
-     *  DataStoreRead: '<S151>/Data Store Read3'
-     *  DataStoreRead: '<S151>/Data Store Read4'
-     *  DiscreteIntegrator: '<S151>/Discrete-Time Integrator'
-     *  Sum: '<S153>/Diff'
-     *  UnitDelay: '<S153>/UD'
+     *  DataStoreRead: '<S155>/Data Store Read2'
+     *  DataStoreRead: '<S155>/Data Store Read3'
+     *  DataStoreRead: '<S155>/Data Store Read4'
+     *  DiscreteIntegrator: '<S154>/Discrete-Time Integrator'
+     *  SignalConversion generated from: '<S153>/ SFunction '
+     *  Sum: '<S156>/Diff'
+     *  UnitDelay: '<S156>/UD'
      *
-     * Block description for '<S153>/Diff':
+     * Block description for '<S156>/Diff':
      *
      *  Add in CPU
      *
-     * Block description for '<S153>/UD':
+     * Block description for '<S156>/UD':
      *
      *  Store in Global RAM
      */
-    /* MATLAB Function 'SpeedControl/PI_Controller_Speed/MATLAB Function': '<S154>:1' */
-    /* '<S154>:1:5' */
-    s = Lambda * Foc_model_Matlab_DW.DiscreteTimeIntegrator_DSTATE + SpeedError;
-    if ((real32_T)fabs(s) > Epsilon) {
-      /* '<S154>:1:8' */
-      /* '<S154>:1:9' */
+    /* MATLAB Function 'SpeedControl/Contrloller_wr/MATLAB Function': '<S153>:1' */
+    /* '<S153>:1:6' */
+    /* '<S153>:1:7' */
+    /* '<S153>:1:8' */
+    /* '<S153>:1:11' */
+    s = Lambda_w * Foc_model_Matlab_DW.DiscreteTimeIntegrator_DSTATE +
+      SpeedError;
+    if ((real32_T)fabs(s) > Epsilon_w) {
+      /* '<S153>:1:14' */
+      /* '<S153>:1:15' */
       if (rtIsNaNF(s)) {
         s = (rtNaNF);
       } else if (s < 0.0F) {
@@ -1594,39 +1624,43 @@ void Foc_model_Matl_SpeedControl(void)
         s = (real32_T)(s > 0.0F);
       }
 
-      s *= -Rho;
+      s *= -Rho_w;
     } else {
-      /* '<S154>:1:11' */
-      s = s / Epsilon * -Rho;
+      /* '<S153>:1:17' */
+      s = s / Epsilon_w * -Rho_w;
     }
 
-    /* '<S154>:1:15' */
-    /* '<S154>:1:16' */
-    /* '<S154>:1:20' */
-    Foc_model_Matlab_B.I_ref = ((((rtb_TSamp - Foc_model_Matlab_DW.UD_DSTATE) +
-      Lambda * SpeedError) * 1.2E-5F + 1.0E-7F * Speed_fb) + s) / 0.097F;
-    if (!(Foc_model_Matlab_B.I_ref >= -0.5F)) {
-      Foc_model_Matlab_B.I_ref = -0.5F;
+    /* '<S153>:1:21' */
+    /* '<S153>:1:24' */
+    /* '<S153>:1:26' */
+    /* '<S153>:1:29' */
+    s = ((((rtb_TSamp - Foc_model_Matlab_DW.UD_DSTATE) - Lambda_w * SpeedError) *
+          1.2E-5F + 1.0E-7F * Speed_fb) + s) / 0.097F;
+    if (!(s >= -0.1F)) {
+      s = -0.1F;
     }
 
-    if (!(Foc_model_Matlab_B.I_ref <= 0.5F)) {
-      Foc_model_Matlab_B.I_ref = 0.5F;
+    if (s <= 0.1F) {
+      Foc_model_Matlab_B.I_ref = s;
+    } else {
+      Foc_model_Matlab_B.I_ref = 0.1F;
     }
 
     /* End of MATLAB Function: '<S151>/MATLAB Function' */
 
-    /* Update for UnitDelay: '<S153>/UD'
+    /* Update for DiscreteIntegrator: '<S154>/Discrete-Time Integrator' */
+    /* '<S153>:1:31' */
+    Foc_model_Matlab_DW.DiscreteTimeIntegrator_DSTATE += 0.001F * SpeedError;
+
+    /* Update for UnitDelay: '<S156>/UD'
      *
-     * Block description for '<S153>/UD':
+     * Block description for '<S156>/UD':
      *
      *  Store in Global RAM
      */
     Foc_model_Matlab_DW.UD_DSTATE = rtb_TSamp;
 
-    /* Update for DiscreteIntegrator: '<S151>/Discrete-Time Integrator' */
-    Foc_model_Matlab_DW.DiscreteTimeIntegrator_DSTATE += 0.001F * SpeedError;
-
-    /* End of Outputs for SubSystem: '<S8>/PI_Controller_Speed' */
+    /* End of Outputs for SubSystem: '<S8>/Contrloller_wr' */
 
     /* user code (Output function Trailer) */
 
@@ -1649,17 +1683,13 @@ void Foc_model_Matlab_step0(void)      /* Sample time: [5.0E-5s, 0.0s] */
 /* Model step function for TID1 */
 void Foc_model_Matlab_step1(void)      /* Sample time: [0.0001s, 0.0s] */
 {
-  int32_T tmp;
-
   /* End of Outputs for S-Function (ftm_s32k_hall_sensor): '<S3>/FTM_Hall_Sensor' */
 
   /* DataStoreWrite: '<S3>/Data Store Write1' */
   HallCntActual = CntHall;
 
   /* RateTransition: '<Root>/RT11' */
-  tmp = Foc_model_Matlab_DW.RT11_ActiveBufIdx << 1;
-  Idq_ref_PU[0] = Foc_model_Matlab_DW.RT11_Buffer[tmp];
-  Idq_ref_PU[1] = Foc_model_Matlab_DW.RT11_Buffer[tmp + 1];
+  Iq_ref_PU = Foc_model_Matlab_DW.RT11_Buffer0;
 
   /* End of Outputs for S-Function (pdb_s32k_isr): '<S138>/PDB1_ISR' */
   /* End of Outputs for S-Function (adc_s32k_isr): '<S138>/ADC1_ISR' */
@@ -1795,6 +1825,14 @@ void Foc_model_Matlab_step1(void)      /* Sample time: [0.0001s, 0.0s] */
 
   /* End of Chart: '<S4>/Enable PDB and start FTM' */
   /* End of Outputs for S-Function (tpp_s32k_isr): '<S4>/GD300_ISR_Callback ' */
+
+  /* Update absolute time */
+  /* The "clockTick1" counts the number of times the code of this task has
+   * been executed. The resolution of this integer timer is 0.0001, which is the step size
+   * of the task. Size of "clockTick1" ensures timer will not overflow during the
+   * application lifespan selected.
+   */
+  Foc_model_Matlab_M->Timing.clockTick1++;
 }
 
 /* Model step function for TID2 */
@@ -1812,12 +1850,7 @@ void Foc_model_Matlab_step2(void)      /* Sample time: [0.001s, 0.0s] */
   /* End of Outputs for SubSystem: '<Root>/SpeedControl' */
 
   /* RateTransition: '<Root>/RT11' */
-  Foc_model_Matlab_DW.RT11_Buffer[(Foc_model_Matlab_DW.RT11_ActiveBufIdx == 0) <<
-    1] = Foc_model_Matlab_B.Id_ref;
-  Foc_model_Matlab_DW.RT11_Buffer[1 + ((Foc_model_Matlab_DW.RT11_ActiveBufIdx ==
-    0) << 1)] = Foc_model_Matlab_B.I_ref;
-  Foc_model_Matlab_DW.RT11_ActiveBufIdx = (int8_T)
-    (Foc_model_Matlab_DW.RT11_ActiveBufIdx == 0);
+  Foc_model_Matlab_DW.RT11_Buffer0 = Foc_model_Matlab_B.I_ref;
 }
 
 /* Model step function for TID3 */
@@ -2134,6 +2167,21 @@ void Foc_model_Matlab_initialize(void)
     LPSPI_DRV_MasterInit(0, &lpspiMasterState0, &spiConfig0);
   }
 
+  /* Start for DataStoreMemory: '<Root>/Data Store Memory14' */
+  Epsilon_q = 0.2F;
+
+  /* Start for DataStoreMemory: '<Root>/Data Store Memory15' */
+  Lambda_q = 0.8F;
+
+  /* Start for DataStoreMemory: '<Root>/Data Store Memory16' */
+  Epsilon_d = 0.05F;
+
+  /* Start for DataStoreMemory: '<Root>/Data Store Memory17' */
+  Lambda_d = 0.8F;
+
+  /* Start for DataStoreMemory: '<Root>/Data Store Memory18' */
+  Rho_d = -0.012F;
+
   /* Start for DataStoreMemory: '<Root>/Data Store Memory5' */
   IaOffset = 2040.0F;
 
@@ -2141,16 +2189,16 @@ void Foc_model_Matlab_initialize(void)
   IbOffset = 2040.0F;
 
   /* Start for DataStoreMemory: '<Root>/Data Store Memory8' */
-  Gamma = 0.6F;
+  Rho_q = -0.4F;
 
   /* Start for DataStoreMemory: '<Root>/Data Store Memory10' */
-  Rho = 0.05F;
+  Rho_w = 0.05F;
 
   /* Start for DataStoreMemory: '<Root>/Data Store Memory13' */
-  Epsilon = 20.0F;
+  Epsilon_w = 0.05F;
 
   /* Start for DataStoreMemory: '<Root>/Data Store Memory9' */
-  Lambda = 20.0F;
+  Lambda_w = 0.9F;
 
   /* SystemInitialize for S-Function (ftm_s32k_hall_sensor): '<S3>/FTM_Hall_Sensor' incorporates:
    *  SubSystem: '<Root>/Hall Sensor'
@@ -2425,6 +2473,23 @@ void Foc_model_Matlab_initialize(void)
   /* SystemInitialize for S-Function (tpp_s32k_isr): '<S4>/GD300_ISR_Callback ' */
   {
   }
+
+  /* End of Enable for S-Function (adc_s32k_isr): '<S138>/ADC1_ISR' */
+
+  /* Enable for S-Function (adc_s32k_isr): '<S138>/ADC1_ISR' incorporates:
+   *  SubSystem: '<S138>/ADC1_IRQHandler'
+   */
+  /* Enable for function-call system: '<S138>/ADC1_IRQHandler' */
+
+  /* Enable for S-Function (fcgen): '<S139>/Function-Call Generator' incorporates:
+   *  SubSystem: '<Root>/CurrentControl'
+   */
+  Foc_m_CurrentControl_Enable();
+
+  /* End of Enable for S-Function (fcgen): '<S139>/Function-Call Generator' */
+
+  /* End of Enable for S-Function (adc_s32k_isr): '<S138>/ADC1_ISR' */
+  /* End of Enable for SubSystem: '<S3>/Subsystem2' */
 }
 
 /* Model terminate function */

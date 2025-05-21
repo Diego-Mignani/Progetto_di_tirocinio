@@ -7,10 +7,10 @@
  *
  * Code generated for Simulink model 'Foc_model_Matlab'.
  *
- * Model version                   : 10.39
+ * Model version                   : 10.52
  * Simulink Coder version          : 24.2 (R2024b) 21-Jun-2024
  * MBDT for S32K1xx Series Version : 4.2.0 (R2016a-R2020a) 20-Jul-2020
- * C/C++ source code generated on  : Wed Dec 11 16:58:00 2024
+ * C/C++ source code generated on  : Mon May 12 12:33:29 2025
  *
  * Target selection: mbd_s32k.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -44,6 +44,7 @@ extern void Foc_model_Matl_HallValueof5(real32_T *rty_position);
 extern void Foc_model_Matl_HallValueof7(real32_T *rty_position);
 extern void Foc_mod_CurrentControl_Init(void);
 extern void Foc_mo_CurrentControl_Reset(void);
+extern void Foc_m_CurrentControl_Enable(void);
 extern void Foc_model_Ma_CurrentControl(void);
 extern void Foc_model_Matl_SpeedControl(void);
 

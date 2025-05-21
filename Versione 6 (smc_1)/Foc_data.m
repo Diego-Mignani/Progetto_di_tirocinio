@@ -111,19 +111,19 @@ PI_params.delay_Position    = int32(Ts/Ts_simulink);
 %% VARIABILI DI CONTROLLO
 
 % SMCw Parametri di taratura del controllo
-lambda_w = 0.9;                 %0.2   |    20
-rho_w = 0.05;                %0.012   |    0.05
-epsilon_w = 0.1;                %0.05  |    20
-
-% SMCd Parametri di taratura del controllo
-lambda_Id = 0.8;                 %0.2   |    20
-rho_Id = -0.012;                %0.012   |    0.05
-epsilon_Id = 0.05;                %0.05  |    20
+lambda_w = 2;                 %0.9   |    20
+rho_w = 0.02;                  %0.05   |    0.05
+epsilon_w = 0.2;                %0.05  |    20
 
 % SMCq Parametri di taratura del controllo SMCq
-lambda_Iq = 0.8;                 %0.2   |    20
-rho_Iq = -0.4;                %0.012   |    0.05
-epsilon_Iq = 0.2;                %0.05  |    20
+lambda_Iq = 0.9;                 %0.8   |    20
+rho_Iq = 0.4;                  %-0.4   |    0.05
+epsilon_Iq = 0.6;                 %0.2  |    20
+
+% SMCd Parametri di taratura del controllo
+lambda_Id = 0.8;                  %0.8   |    20
+rho_Id = 0.012;               %-0.012   |    0.05
+epsilon_Id = 0.05;                %0.05  |    20
 
 %% CALCOLO INDICI INTEGRALI
 try

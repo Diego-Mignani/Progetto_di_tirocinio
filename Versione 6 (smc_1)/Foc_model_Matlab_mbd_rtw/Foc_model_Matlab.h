@@ -7,10 +7,10 @@
  *
  * Code generated for Simulink model 'Foc_model_Matlab'.
  *
- * Model version                   : 10.39
+ * Model version                   : 10.52
  * Simulink Coder version          : 24.2 (R2024b) 21-Jun-2024
  * MBDT for S32K1xx Series Version : 4.2.0 (R2016a-R2020a) 20-Jul-2020
- * C/C++ source code generated on  : Wed Dec 11 16:58:00 2024
+ * C/C++ source code generated on  : Mon May 12 12:33:29 2025
  *
  * Target selection: mbd_s32k.tlc
  * Embedded hardware selection: ARM Compatible->ARM Cortex
@@ -79,7 +79,6 @@
 typedef struct {
   uint32_T ADC1_ISR_o2;                /* '<S138>/ADC1_ISR' */
   uint32_T Read_Register;              /* '<S67>/Read_Register' */
-  real32_T Id_ref;                     /* '<S8>/Id_ref' */
   real32_T I_ref;                      /* '<S151>/MATLAB Function' */
   real32_T Merge;                      /* '<S91>/Merge' */
   uint16_T speedCountDelay;            /* '<S75>/speedCountDelay' */
@@ -99,19 +98,22 @@ typedef struct {
 
 /* Block states (default storage) for system '<Root>' */
 typedef struct {
-  real32_T UD_DSTATE;                  /* '<S153>/UD' */
-  real32_T DiscreteTimeIntegrator_DSTATE;/* '<S151>/Discrete-Time Integrator' */
-  volatile real32_T RT11_Buffer[4];    /* '<Root>/RT11' */
+  real32_T DiscreteTimeIntegrator_DSTATE;/* '<S154>/Discrete-Time Integrator' */
+  real32_T UD_DSTATE;                  /* '<S156>/UD' */
+  real32_T DiscreteTimeIntegrator_DSTATE_d;/* '<S22>/Discrete-Time Integrator' */
+  real32_T DiscreteTimeIntegrator_DSTAT_dm;/* '<S23>/Discrete-Time Integrator' */
+  volatile real32_T RT11_Buffer0;      /* '<Root>/RT11' */
   volatile real32_T RT2_Buffer0;       /* '<Root>/RT2' */
-  real32_T integral;                   /* '<S26>/MATLAB Function1' */
-  real32_T integral_j;                 /* '<S25>/MATLAB Function1' */
+  real32_T DiscreteTimeIntegrator_PREV_U;/* '<S22>/Discrete-Time Integrator' */
+  real32_T DiscreteTimeIntegrator_PREV_U_e;/* '<S23>/Discrete-Time Integrator' */
+  uint32_T CurrentControl_PREV_T;      /* '<Root>/CurrentControl' */
   uint16_T DelayOneStep_DSTATE;        /* '<S76>/Delay One Step' */
   boolean_T DelayOneStep1_DSTATE;      /* '<S76>/Delay One Step1' */
-  volatile int8_T RT11_ActiveBufIdx;   /* '<Root>/RT11' */
   uint8_T is_active_c1_Foc_model_Matlab;/* '<S4>/Enable PDB and start FTM' */
   uint8_T is_c1_Foc_model_Matlab;      /* '<S4>/Enable PDB and start FTM' */
-  boolean_T integral_not_empty;        /* '<S26>/MATLAB Function1' */
-  boolean_T integral_not_empty_p;      /* '<S25>/MATLAB Function1' */
+  uint8_T DiscreteTimeIntegrator_SYSTEM_E;/* '<S22>/Discrete-Time Integrator' */
+  uint8_T DiscreteTimeIntegrator_SYSTEM_a;/* '<S23>/Discrete-Time Integrator' */
+  boolean_T CurrentControl_RESET_ELAPS_T;/* '<Root>/CurrentControl' */
 } DW_Foc_model_Matlab_T;
 
 /* Invariant block signals (default storage) */
@@ -137,6 +139,7 @@ struct tag_RTM_Foc_model_Matlab_T {
    * the timing information for the model.
    */
   struct {
+    uint32_T clockTick1;
     struct {
       uint16_T TID[4];
     } TaskCounters;
@@ -181,9 +184,10 @@ extern volatile uint16_T CntHallValidityIn;
                                 /* '<S2>/SigConvForSigProp_Variant_Source2_0' */
 extern volatile real32_T DesiredSpeed; /* '<Root>/Data Store Memory7' */
 extern volatile boolean_T Enable;      /* '<Root>/Data Store Memory29' */
-extern volatile real32_T Epsilon;      /* '<Root>/Data Store Memory13' */
+extern volatile real32_T Epsilon_d;    /* '<Root>/Data Store Memory16' */
+extern volatile real32_T Epsilon_q;    /* '<Root>/Data Store Memory14' */
+extern volatile real32_T Epsilon_w;    /* '<Root>/Data Store Memory13' */
 extern volatile boolean_T FAULT;       /* '<Root>/I_MAX Scalling3' */
-extern volatile real32_T Gamma;        /* '<Root>/Data Store Memory8' */
 extern volatile int16_T GlobalDirection;/* '<Root>/Data Store Memory3' */
 extern volatile uint32_T GlobalHallState;/* '<Root>/Data Store Memory4' */
 extern volatile uint16_T GlobalSpeedCount;/* '<Root>/Data Store Memory1' */
@@ -201,19 +205,22 @@ extern volatile uint16_T HallValididyInvalid;/* '<S125>/Merge' */
 extern volatile real32_T I_ab_afterOffset[2];/* '<S66>/Add' */
 extern volatile real32_T IaOffset;     /* '<Root>/Data Store Memory5' */
 extern volatile real32_T IbOffset;     /* '<Root>/Data Store Memory6' */
-extern volatile real32_T Id_err;       /* '<S25>/Sum' */
+extern volatile real32_T Id_err;       /* '<S23>/Sum1' */
 extern volatile real32_T Id_fb;        /* '<S15>/Signal Copy1' */
 extern volatile real32_T Idc_afterOffset;/* '<S141>/Sum' */
-extern volatile real32_T Idq_ref_PU[2];/* '<Root>/RT11' */
-extern volatile real32_T Iq_err;       /* '<S26>/Sum' */
 extern volatile real32_T Iq_fb;        /* '<S15>/Signal Copy' */
-extern volatile real32_T Lambda;       /* '<Root>/Data Store Memory9' */
+extern volatile real32_T Iq_ref_PU;    /* '<Root>/RT11' */
+extern volatile real32_T Lambda_d;     /* '<Root>/Data Store Memory17' */
+extern volatile real32_T Lambda_q;     /* '<Root>/Data Store Memory15' */
+extern volatile real32_T Lambda_w;     /* '<Root>/Data Store Memory9' */
 extern volatile real32_T PWM[3];       /* '<S11>/Switch1' */
 extern volatile real32_T PWM_Duty_Cycles[3];/* '<S12>/Gain' */
 extern volatile real32_T PWM_Enable;   /* '<S12>/Data Type Conversion' */
-extern volatile real32_T Rho;          /* '<Root>/Data Store Memory10' */
+extern volatile real32_T Rho_d;        /* '<Root>/Data Store Memory18' */
+extern volatile real32_T Rho_q;        /* '<Root>/Data Store Memory8' */
+extern volatile real32_T Rho_w;        /* '<Root>/Data Store Memory10' */
 extern volatile uint32_T SC_PDBIF;     /* '<S138>/PDB1_ISR' */
-extern volatile real32_T SpeedError;   /* '<S151>/Sum' */
+extern volatile real32_T SpeedError;   /* '<S154>/Sum' */
 extern volatile real32_T SpeedMeasured;/* '<S1>/Input Scaling' */
 extern volatile real32_T Speed_Ref;    /* '<S152>/Switch' */
 extern volatile real32_T Speed_Ref_PU; /* '<Root>/RT2' */
@@ -227,14 +234,17 @@ extern RT_MODEL_Foc_model_Matlab_T *const Foc_model_Matlab_M;
  * These blocks were eliminated from the model due to optimizations:
  *
  * Block '<S21>/Data Type Duplicate' : Unused code path elimination
- * Block '<S31>/Data Type Duplicate' : Unused code path elimination
- * Block '<S38>/Data Type Duplicate' : Unused code path elimination
- * Block '<S38>/Data Type Propagation' : Unused code path elimination
- * Block '<S39>/Data Type Duplicate' : Unused code path elimination
- * Block '<S22>/Data Type Duplicate' : Unused code path elimination
- * Block '<S29>/Data Type Duplicate1' : Unused code path elimination
- * Block '<S29>/Data Type Duplicate2' : Unused code path elimination
- * Block '<S30>/Sqrt' : Unused code path elimination
+ * Block '<S22>/Scope' : Unused code path elimination
+ * Block '<S23>/Scope' : Unused code path elimination
+ * Block '<S35>/Data Type Duplicate' : Unused code path elimination
+ * Block '<S42>/Data Type Duplicate' : Unused code path elimination
+ * Block '<S42>/Data Type Propagation' : Unused code path elimination
+ * Block '<S43>/Data Type Duplicate' : Unused code path elimination
+ * Block '<S24>/Data Type Duplicate' : Unused code path elimination
+ * Block '<S33>/Data Type Duplicate1' : Unused code path elimination
+ * Block '<S33>/Data Type Duplicate2' : Unused code path elimination
+ * Block '<S34>/Sqrt' : Unused code path elimination
+ * Block '<S15>/Id_ref_PU' : Unused code path elimination
  * Block '<S45>/Data Type Duplicate' : Unused code path elimination
  * Block '<S45>/Data Type Duplicate1' : Unused code path elimination
  * Block '<S47>/Data Type Duplicate' : Unused code path elimination
@@ -251,9 +261,12 @@ extern RT_MODEL_Foc_model_Matlab_T *const Foc_model_Matlab_M;
  * Block '<Root>/RT10' : Unused code path elimination
  * Block '<Root>/RT8' : Unused code path elimination
  * Block '<Root>/RT9' : Unused code path elimination
+ * Block '<Root>/Scope' : Unused code path elimination
+ * Block '<Root>/Scope1' : Unused code path elimination
  * Block '<Root>/Scope3' : Unused code path elimination
- * Block '<S153>/Data Type Duplicate' : Unused code path elimination
- * Block '<S151>/To Workspace' : Unused code path elimination
+ * Block '<S156>/Data Type Duplicate' : Unused code path elimination
+ * Block '<S154>/To Workspace' : Unused code path elimination
+ * Block '<S151>/Scope' : Unused code path elimination
  * Block '<S20>/Kalpha' : Eliminated nontunable gain of 1
  * Block '<S20>/Kbeta' : Eliminated nontunable gain of 1
  * Block '<S49>/Get_FractionVal' : Eliminate redundant data type conversion
@@ -272,10 +285,10 @@ extern RT_MODEL_Foc_model_Matlab_T *const Foc_model_Matlab_M;
  * Block '<S66>/Data Type Conversion2' : Eliminate redundant data type conversion
  * Block '<S120>/Data Type Conversion' : Eliminate redundant data type conversion
  * Block '<S120>/counterSize' : Eliminate redundant data type conversion
- * Block '<S29>/enableInportSatLim' : Unused code path elimination
- * Block '<S29>/enableInportSatMethod' : Unused code path elimination
- * Block '<S22>/ReplaceInport_satLim' : Unused code path elimination
- * Block '<S22>/ReplaceInport_satMethod' : Unused code path elimination
+ * Block '<S33>/enableInportSatLim' : Unused code path elimination
+ * Block '<S33>/enableInportSatMethod' : Unused code path elimination
+ * Block '<S24>/ReplaceInport_satLim' : Unused code path elimination
+ * Block '<S24>/ReplaceInport_satMethod' : Unused code path elimination
  * Block '<S46>/Offset' : Unused code path elimination
  * Block '<S46>/Unary_Minus' : Unused code path elimination
  * Block '<S48>/Offset' : Unused code path elimination
@@ -320,29 +333,29 @@ extern RT_MODEL_Foc_model_Matlab_T *const Foc_model_Matlab_M;
  * '<S19>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Space Vector Generator'
  * '<S20>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Clarke Transform/Two phase input'
  * '<S21>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Clarke Transform/Two phase input/Two phase CRL wrap'
- * '<S22>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter'
- * '<S23>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/Nonlinear feedforwar compensation'
- * '<S24>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/Nonlinear feedforwar compensation1'
- * '<S25>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/PI_Controller_Id'
- * '<S26>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/PI_Controller_Iq'
- * '<S27>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/D-Q Equivalence'
- * '<S28>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/D//Q Axis Priority'
- * '<S29>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/Inport//Dialog Selection'
- * '<S30>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/Magnitude_calc'
- * '<S31>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/D-Q Equivalence/Limiter'
- * '<S32>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/D-Q Equivalence/Passthrough'
- * '<S33>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/D//Q Axis Priority/Compare To Constant'
- * '<S34>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/D//Q Axis Priority/Compare To Constant1'
- * '<S35>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/D//Q Axis Priority/flipInputs'
- * '<S36>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/D//Q Axis Priority/flipInputs1'
- * '<S37>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/D//Q Axis Priority/limiter'
- * '<S38>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/D//Q Axis Priority/limiter/limitRef1'
- * '<S39>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/D//Q Axis Priority/limiter/limitRef2'
- * '<S40>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/D//Q Axis Priority/limiter/passThrough'
- * '<S41>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/PI_Controller_Id/MATLAB Function'
- * '<S42>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/PI_Controller_Id/MATLAB Function1'
- * '<S43>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/PI_Controller_Iq/MATLAB Function'
- * '<S44>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/PI_Controller_Iq/MATLAB Function1'
+ * '<S22>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/Controller_Id'
+ * '<S23>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/Controller_Iq'
+ * '<S24>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter'
+ * '<S25>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/Nonlinear feedforwar compensation'
+ * '<S26>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/Nonlinear feedforwar compensation1'
+ * '<S27>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/Controller_Id/MATLAB Function2'
+ * '<S28>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/Controller_Id/Parametri_design'
+ * '<S29>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/Controller_Iq/MATLAB Function2'
+ * '<S30>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/Controller_Iq/Parametri_design'
+ * '<S31>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/D-Q Equivalence'
+ * '<S32>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/D//Q Axis Priority'
+ * '<S33>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/Inport//Dialog Selection'
+ * '<S34>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/Magnitude_calc'
+ * '<S35>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/D-Q Equivalence/Limiter'
+ * '<S36>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/D-Q Equivalence/Passthrough'
+ * '<S37>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/D//Q Axis Priority/Compare To Constant'
+ * '<S38>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/D//Q Axis Priority/Compare To Constant1'
+ * '<S39>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/D//Q Axis Priority/flipInputs'
+ * '<S40>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/D//Q Axis Priority/flipInputs1'
+ * '<S41>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/D//Q Axis Priority/limiter'
+ * '<S42>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/D//Q Axis Priority/limiter/limitRef1'
+ * '<S43>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/D//Q Axis Priority/limiter/limitRef2'
+ * '<S44>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Current_Controllers/DQ Limiter/D//Q Axis Priority/limiter/passThrough'
  * '<S45>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Inverse Park Transform/Two inputs CRL'
  * '<S46>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Inverse Park Transform/Two inputs CRL/Switch_Axis'
  * '<S47>'  : 'Foc_model_Matlab/CurrentControl/Control_System/Park Transform/Two inputs CRL'
@@ -449,10 +462,12 @@ extern RT_MODEL_Foc_model_Matlab_T *const Foc_model_Matlab_M;
  * '<S148>' : 'Foc_model_Matlab/Hardware Initialization/enable_FTM_PDB_ADC_triggering'
  * '<S149>' : 'Foc_model_Matlab/Inverter and Motor - Plant Model/Codegeneration'
  * '<S150>' : 'Foc_model_Matlab/Serial Receive/Code Generation'
- * '<S151>' : 'Foc_model_Matlab/SpeedControl/PI_Controller_Speed'
+ * '<S151>' : 'Foc_model_Matlab/SpeedControl/Contrloller_wr'
  * '<S152>' : 'Foc_model_Matlab/SpeedControl/Speed_Ref_Selector'
- * '<S153>' : 'Foc_model_Matlab/SpeedControl/PI_Controller_Speed/Discrete Derivative'
- * '<S154>' : 'Foc_model_Matlab/SpeedControl/PI_Controller_Speed/MATLAB Function'
+ * '<S153>' : 'Foc_model_Matlab/SpeedControl/Contrloller_wr/MATLAB Function'
+ * '<S154>' : 'Foc_model_Matlab/SpeedControl/Contrloller_wr/Operazioni matematiche'
+ * '<S155>' : 'Foc_model_Matlab/SpeedControl/Contrloller_wr/Parametri_design'
+ * '<S156>' : 'Foc_model_Matlab/SpeedControl/Contrloller_wr/Operazioni matematiche/Discrete Derivative'
  */
 #endif                                 /* Foc_model_Matlab_h_ */
 
